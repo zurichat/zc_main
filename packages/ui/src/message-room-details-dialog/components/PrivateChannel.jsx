@@ -8,7 +8,6 @@ const PrivateChannel = ({ closeEdit }) => {
   const user = JSON.parse(sessionStorage.getItem("organisations"));
   const room = window.location.href.split("/").at(6);
   const BASE_URL = "https://chat.zuri.chat";
-  //const BASE_URL = "https://chat.zuri.chat";
 
   const [data, setData] = useState(null);
 
@@ -17,17 +16,15 @@ const PrivateChannel = ({ closeEdit }) => {
       .get(`${BASE_URL}/api/v1/org/${org_id}/rooms/${room}`)
       .then(res => {
         setData(res.data.data);
-        //console.log(`response is ${JSON.stringify(res.data.data)}`)
       })
       .catch(e => console.log(e));
   }, [5]);
 
   const privateChannel = () => {
-    const tina = user?.find(x => x.id == org_id)?.member_id;
+    const tina = user?.find(x => x.id === org_id)?.member_id;
     console.log("loading");
     if (data !== null) {
       const newData = { ...data, is_private: true };
-      console.log(newData);
       axios
         .put(
           `${BASE_URL}/api/v1/org/${org_id}/members/${tina}/rooms/${room}`,
@@ -35,7 +32,6 @@ const PrivateChannel = ({ closeEdit }) => {
         )
         .then(res => {
           console.log(res);
-          //window.location.reload();
         })
         .catch(e => console.log(e));
     }

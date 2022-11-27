@@ -32,7 +32,6 @@ import FileList from "./components/FileList";
 // getting edited topic from local storage
 const getEditedTopicFromLS = () => {
   let editedTopics = localStorage.getItem("editedTopic");
-  console.log(editedTopics);
   return editedTopics ? JSON.parse(editedTopics) : "";
 };
 
@@ -60,8 +59,8 @@ function MessageRoomDetailsDialog({
   const toggleDeleteChannel = () => setShowDeleteChannel(!showDeleteChannel);
   const toggleLeaveChannelModal = () =>
     setShowLeaveChannelModal(!showLeaveChannelModal);
-  const toggleArchiveChannel = () => setShowArchiveChannel(!showArchiveChannel);
-  const togglePrivateChannel = () => setShowPrivateChannel(!showPrivateChannel);
+  const toggleArchiveChannel = () => setShowArchiveChannel(prev => !prev);
+  const togglePrivateChannel = () => setShowPrivateChannel(prev => !prev);
 
   return (
     <div className="App">
@@ -538,10 +537,8 @@ function SettingPanel({
       <ChannelWrapper>
         <Channels>
           <AiOutlineLock />
-          {/*<ChannelContent>Change to Private Channel</ChannelContent>*/}
           <ChannelContent
             onClick={() => {
-              // closeModal()
               togglePrivateChannel();
             }}
           >
