@@ -21,6 +21,9 @@ export const TopBarWrapperStyle = styled.div`
 `;
 
 export const SidebarWrapperStyle = styled.div`
+  width: 100%;
+  max-width: 260px;
+  min-width: 230px;
   height: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
