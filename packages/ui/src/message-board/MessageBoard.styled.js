@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MessageBoardContainer = styled.section`
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: ${props => props.height};
   gap: 8px;
   flex-direction: column;
 
@@ -14,7 +14,7 @@ export const MessageBoardContainer = styled.section`
     flex-direction: column;
     overflow: hidden scroll;
     box-sizing: border-box;
-    padding-top: 1.5rem;
+    padding-top: 4rem;
 
     .msg-container {
       margin: 8px 10px;

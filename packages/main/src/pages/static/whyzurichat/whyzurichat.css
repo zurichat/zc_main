@@ -1,0 +1,11 @@
+.whyzuri{
+    
+    margin-top: 10rem;
+    display: grid;
+    place-items: center;
+}
+.text {
+    width: 100%;
+    max-width: 685px;
+    color: red;
+}

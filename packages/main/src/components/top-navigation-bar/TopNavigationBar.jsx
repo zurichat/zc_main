@@ -41,8 +41,19 @@ export default function TopNavigationBar() {
     checkIfUserIsLogged();
   }, []);
 
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
+
   return (
-    <header className={TopNavigationBarStyles.pageHeader}>
+    <header className={TopNavigationBarStyles.pageHeader} style={textAlign()}>
       <nav
         className={`navbar navbar-expand-lg navbar-light ${TopNavigationBarStyles.navbar}`}
       >
@@ -56,10 +67,7 @@ export default function TopNavigationBar() {
             className={`d-inline-block align-top ${TopNavigationBarStyles.image}`}
             width={40}
           />
-          <span
-            translate="no"
-            className={`mb-2 ${TopNavigationBarStyles.zuriChat}`}
-          >
+          <span translate="no" className={`${TopNavigationBarStyles.zuriChat}`}>
             Zuri Chat
           </span>
         </Link>
@@ -241,6 +249,18 @@ export default function TopNavigationBar() {
               >
                 <span className={`${TopNavigationBarStyles.item}`}>
                   {t("nav_about")}
+                </span>
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/downloads"
+                className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
+                role="button"
+                aria-expanded="false"
+              >
+                <span className={`${TopNavigationBarStyles.item}`}>
+                  Downloads
                 </span>
               </NavLink>
             </li>
