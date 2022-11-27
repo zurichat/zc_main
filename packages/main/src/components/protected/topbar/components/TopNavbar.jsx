@@ -144,17 +144,6 @@ const TopNavbar = ({ toggleSidebar }) => {
     getOrganizations();
   }, [setOrgId, user.image_url, setUser]);
 
-  // useEffect(() => {
-  //   UpdateInfo();
-  // }, [userProfileImage]);
-
-  // const UpdateInfo = () => {
-  //   getUserInfo().then(res => {
-  //     setUserProfileImage(res?.user.image_url);
-  //     setUser(res.user);
-  //   });
-  // };
-
   const getProfileImage = async e => {
     try {
       const res = await authAxios.get(
