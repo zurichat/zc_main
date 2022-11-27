@@ -288,31 +288,6 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
   return (
     <Wrapper>
       <InputWrapper>
-        {preview.length ? <PreviewItem /> : null}
-        {preview ? (
-          <Preview>
-            <PreviewFile />
-
-            <button
-              style={{
-                position: "absolute",
-                top: "-8px",
-                right: "-10px",
-                height: "24px",
-                width: "24px",
-                borderRadius: "50%",
-                background: "#242424",
-                fontWeight: "800",
-                fontSize: "12px",
-                color: "#fff"
-              }}
-              onClick={clearAttached}
-            >
-              X
-            </button>
-          </Preview>
-        ) : null}
-
         <div className="RichEditor-root">
           <ToolbarTop
             editorState={editorState}
