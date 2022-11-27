@@ -397,6 +397,7 @@ export function MembersPanel({ config }) {
         const users = r.data.data.map(item => {
           return { value: item._id, label: item.email };
         });
+        setUserList(users);
         const channelUserIds = membersList.map(member => member._id);
         setMemberData(r.data.data);
         // check to see if the user is already in a channel
