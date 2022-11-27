@@ -157,7 +157,7 @@ const Profile = () => {
             </button>
             <h6 className={styles.ctaText}>More</h6>
           </div>
-          {dropdown && <Dropdown setDropdown={setDropdown} />}
+          {dropdown && <Dropdown />}
           {modal === "preference" && <Preferences />}
           {modal === "edit profile" && <EditProfile />}
         </div>

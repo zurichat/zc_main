@@ -16,7 +16,6 @@ const NotificationPreference = () => {
   const [notificationSettings, setNotificationSettings] = useState(
     user.settings?.notifications
   );
-
   const [keywordInput, setKeywordInput] = useState("");
   const [durationInput, setDurationInput] = useState("");
   const [durations] = useState([
@@ -38,7 +37,6 @@ const NotificationPreference = () => {
     { name: "after i've been inactive for 30 minute" }
   ]);
   const [notificationSend, setNotificationSend] = useState("");
-
   // const [dataState, setDataState] = useState({
   //   notify_me_about: "",
   //   use_different_settings_mobile: false,
@@ -69,12 +67,23 @@ const NotificationPreference = () => {
   // })
 
   const setData = notification => {
-    authAxios.patch(
-      `/organizations/${user.org_id}/members/${user._id}/settings/notification`,
-      notification
-    );
+    authAxios
+      .patch(
+        `/organizations/${user.org_id}/members/${user._id}/settings/notification`,
+        notification
+      )
+      .then(res => {
+        // console.log("save data res =>", res.data)
+        // setState({ loading: false })
+      })
+      .catch(err => {
+        // console.error(err?.response?.data)
+        // setState({ loading: false })
+      });
   };
 
+  // console.log("show user =>", user)
+  // console.log("notify =>", notificationSettings)
   const handleKeywordChange = e => {
     setKeywordInput(e.target.value);
     let newKeyword = keywordInput;
@@ -289,7 +298,7 @@ const NotificationPreference = () => {
               <label htmlFor="none">{t("notify_nothing")}</label>
             </div>
           </div>
-          <div className={styles.markbox}>
+          {/* <div className={styles.markbox}>
             <input
               type="checkbox"
               className={styles.check}
@@ -301,9 +310,9 @@ const NotificationPreference = () => {
               {" "}
               Use different settings for my mobile device
             </label>
-          </div>
-          <hr className={styles.hrNot} />
-          <div className={styles.markbox}>
+          </div> */}
+          {/* <hr className={styles.hrNot} /> */}
+          {/* <div className={styles.markbox}>
             <input
               type="checkbox"
               className={styles.check}
@@ -312,7 +321,7 @@ const NotificationPreference = () => {
               onClick={handleNotifyMeeting}
             />
             <label htmlFor="for-meeting">Notify me when a meeting is set</label>
-          </div>
+          </div> */}
           {/* <div className={styles.markbox}>
             <input
               type="checkbox"

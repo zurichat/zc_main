@@ -186,12 +186,14 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
           className={styles.modalContainers}
           onClick={closeStatus}
         >
-          <div className={styles.smileys}>
-            <Picker
-              onEmojiClick={onEmojiClick}
-              pickerStyle={{ boxShadow: "none" }}
-              skinTone={SKIN_TONE_MEDIUM_DARK}
-            />
+          <div className={styles.picker}>
+            <div className={styles.smileys}>
+              <Picker
+                onEmojiClick={onEmojiClick}
+                pickerStyle={{ boxShadow: "none" }}
+                skinTone={SKIN_TONE_MEDIUM_DARK}
+              />
+            </div>
           </div>
         </div>
       ) : null}
@@ -295,7 +297,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
               <p
                 onClick={() => {
                   toggleProfileState();
-                  closeModal();
+                  openModal();
                 }}
               >
                 {t("user_view_profile")}
