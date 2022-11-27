@@ -248,7 +248,6 @@
 }
 .h3users {
   font-weight: 700;
-  /* margin-right: -1em; */
   margin-top: 7px;
   cursor: pointer;
   outline: none;
@@ -258,14 +257,10 @@
   padding-left: 5px;
   padding-bottom: 10px;
   position: absolute;
-  /* left: 15px; */
-  /* right: 70px; */
-  /* top: 108px; */
   background: none;
   transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .myp {
-  margin: 10px 1px 10px !important;
   position: relative;
   top: 28px;
 }
@@ -282,10 +277,6 @@
     overflow-y: auto;
     border-radius: 8px 8px 0px 0px;
   }
-
-  /* .header {
-    display: none;
-  } */
 
   .content {
     padding: 10px;
