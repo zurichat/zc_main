@@ -2,7 +2,12 @@ import ChannelModal from "./ChannelModal";
 import styles from "./archive-channel.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import toast, { Toaster } from "react-hot-toast";
+import {
+  NotificationManager,
+  NotificationContainer
+} from "react-notifications";
+import "react-notifications/lib/notifications.css";
+//importing react-notifications
 
 const ArchiveChannel = ({ closeEdit }) => {
   const room = window.location.href.split("/").at(6);
@@ -11,6 +16,7 @@ const ArchiveChannel = ({ closeEdit }) => {
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
   const [isAdmin, setIsAdmin] = useState(false);
   const [prevData, setPrevData] = useState([]);
+  console.log(user, prevData);
 
   useEffect(() => {
     axios
@@ -33,8 +39,7 @@ const ArchiveChannel = ({ closeEdit }) => {
           newData
         )
         .then(res => {
-          toast.success("Successfully archived");
-          console.log(res);
+          NotificationManager.info("Archived Successfully", "Info!", 2000);
           setTimeout(() => {
             window.location.reload();
           }, 2000);
@@ -48,6 +53,7 @@ const ArchiveChannel = ({ closeEdit }) => {
       full
       archiveTitle="Archive this Channel for everyone?"
     >
+      <NotificationContainer />
       <div className={styles.modal}></div>
       <div className={styles.content}>
         <p className={styles.p}>
@@ -81,7 +87,6 @@ const ArchiveChannel = ({ closeEdit }) => {
           )}
         </div>
       </div>
-      <Toaster />
     </ChannelModal>
   );
 };

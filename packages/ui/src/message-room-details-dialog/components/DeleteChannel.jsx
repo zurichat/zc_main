@@ -3,8 +3,10 @@ import styles from "./archive-channel.module.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "react-notifications/lib/notifications.css";
-import toast, { Toaster } from "react-hot-toast";
-import "react-toastify/dist/ReactToastify.css";
+import {
+  NotificationManager,
+  NotificationContainer
+} from "react-notifications";
 const DeleteChannel = ({ closeEdit }) => {
   const room = window.location.href.split("/").at(6);
   const organizationID = localStorage.getItem("currentWorkspace") || null;
@@ -29,7 +31,7 @@ const DeleteChannel = ({ closeEdit }) => {
     axios
       .delete(`${BASE_URL}/api/v1/org/${organizationID}/rooms/${room}`)
       .then(res => {
-        toast.success("Successfully deleted");
+        NotificationManager.success("Successfully deleted");
         setTimeout(() => {
           window.location.reload();
         }, 2000);
@@ -43,6 +45,7 @@ const DeleteChannel = ({ closeEdit }) => {
       full
       archiveTitle="Delete this Channel?"
     >
+      <NotificationContainer />
       <div className={styles.content}>
         <p className={styles.p}>
           When you delete a channel, all messages from this channel will be
@@ -88,7 +91,6 @@ const DeleteChannel = ({ closeEdit }) => {
           )}
         </div>
       </div>
-      <Toaster />
     </ChannelModal>
   );
 };
