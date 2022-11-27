@@ -1,13 +1,4 @@
 import { authAxios } from "../utils/Api";
-import styles from "../utils/styles/paymentMethod.module.css";
-
-// images
-import mastercard from "../assets/Mastercard.svg";
-import jcb from "../assets/jcb.svg";
-import visa from "../assets/visa.svg";
-import amex from "../assets/american-express.svg";
-import dinner from "../assets/dinners-club.svg";
-import discover from "../assets/discover.svg";
 
 // return the token from the session storage
 export const getToken = () => {
@@ -37,61 +28,6 @@ export const getCurrentWorkspaceData = () => {
       .catch(err => {
         console.error(err);
       });
-  }
-};
-
-export const ValidateCard = (name, style) => {
-  switch (name) {
-    case "amex":
-      return (
-        <img
-          className={style ? style : styles.inputImg}
-          src={amex}
-          alt="amex card"
-        />
-      );
-    case "visa":
-      return (
-        <img
-          className={style ? style : styles.inputImg}
-          src={visa}
-          alt="visa card"
-        />
-      );
-    case "mastercard":
-      return (
-        <img
-          className={style ? style : styles.inputImg}
-          src={mastercard}
-          alt="mastercard card"
-        />
-      );
-    case "discover":
-      return (
-        <img
-          className={style ? style : styles.inputImg}
-          src={discover}
-          alt="discover card"
-        />
-      );
-    case "jcb":
-      return (
-        <img
-          className={style ? style : styles.inputImg}
-          src={jcb}
-          alt="jcb card"
-        />
-      );
-    case "diners":
-      return (
-        <img
-          className={style ? style : styles.inputImg}
-          src={dinner}
-          alt="dinner card"
-        />
-      );
-    default:
-      return null;
   }
 };
 

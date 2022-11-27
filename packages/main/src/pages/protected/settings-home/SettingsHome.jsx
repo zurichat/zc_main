@@ -7,7 +7,6 @@ import { IoSettingsOutline, IoSpeedometerOutline } from "react-icons/io5";
 import { FaMagic } from "react-icons/fa";
 import { getUser } from "../settings-home/utils/Common";
 
-// import
 import AdminSettings from "../admin-settings/AdminSettings";
 import right_caret from "../settings-home/assets/cheveron-right.svg";
 import classes from "../settings-home/SettingsHome.module.css";
@@ -32,7 +31,6 @@ const Home = () => {
     <AdminSettings>
       <Container className={`p-4 ${classes.mtN3}`}>
         <div>
-          {/* Picture of User */}
           <h1 className="mb-4">
             {greeting} {user.first_name}!
           </h1>

@@ -1,12 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "../admin-sidebar/AdminSidebar.module.css";
 import { Link, NavLink } from "react-router-dom";
-
-// image
 import avatar from "../admin-sidebar/assets/avatar.svg";
-
-// icons
-
 import zuriLogo from "../admin-sidebar/assets/zuriLogo.svg";
 import grid from "../admin-sidebar/assets/grid.svg";
 import bouy from "../admin-sidebar/assets/bouy.svg";
