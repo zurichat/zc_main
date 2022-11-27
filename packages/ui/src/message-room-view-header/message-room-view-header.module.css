@@ -1,8 +1,9 @@
 .plugin__header {
   /* width: inherit; */
-  height: 41px;
+  height: 40px;
   background-color: #00b87c;
   color: #fff;
+  border-left: 1px solid #fff;
   box-sizing: border-box;
   padding: 3px 16px;
   display: flex !important;

@@ -6,7 +6,8 @@ const CommentBoardWrapper = styled.aside`
   z-index: 999;
   width: 350px;
   position: relative;
-  height: 93vh;
+  height: 85vh;
+  background-color: #fff;
   padding: 0 0 20px 0;
   overflow-y: auto;
   overflow-x: none;
@@ -25,7 +26,7 @@ const CommentBoardHeader = styled.header`
   background: hsla(160, 100%, 36%, 1);
   padding: 6px 16px;
   z-index: 99;
-  height: 41px;
+  height: 40px;
   /* margin-right: -16px; */
   color: white;
   font-weight: 700;
@@ -116,8 +117,9 @@ export const MessagePaneWrapper = styled.div`
   position: fixed;
   bottom: 22px;
   right: 0;
-  width: calc(29% + 20px);
+  border: 2px solid red;
 `;
+
 export {
   CommentBoardWrapper,
   CommentBoardHeader,
