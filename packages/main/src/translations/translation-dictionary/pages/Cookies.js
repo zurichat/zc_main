@@ -3,35 +3,70 @@ export default [
     key: "textOne",
     en: "We use third-party",
     de: "Wir verwenden Dritte",
+    nl: "Wij gebruiken derden",
     engb: "We use third-party",
-    fr: "Nous utilisons une tierce partie"
+    fr: "Nous utilisons une tierce partie",
+    zh: "我们使用第三方",
+    ar: "نحن نستخدم طرف ثالث",
+    es: "utilizamos a terceros",
+    it: "utilizziamo terze parti",
+    iw: "אנו משתמשים בצדדים שלישיים",
+    pt: "utilizamos terceiros"
   },
   {
     key: "textTwo",
     en: "cookies",
     de: "Kekse",
+    nl: "koekjes",
     engb: "cookies",
-    fr: "biscuits"
+    fr: "biscuits",
+    zh: "饼干",
+    ar: "بسكويت",
+    es: "galletas",
+    it: "biscotti",
+    iw: "אנו משתמשים בצדדים שלישיים",
+    pt: "cookies"
   },
   {
     key: "textThree",
     en: "in order to personalize your site experience.",
     de: "um Ihre Websiteerfahrung zu personalisieren.",
+    nl: "om uw site-ervaring te personaliseren.",
     engb: "in order to personalize your site experience.",
-    fr: "afin de personnaliser votre expérience de site."
+    fr: "afin de personnaliser votre expérience de site.",
+    zh: "以使你的网站体验个性化",
+    ar: "من أجل تخصيص تجربة موقعك",
+    es: "para personalizar su experiencia en el sitio.",
+    it: "per personalizzare l'esperienza del sito",
+    iw: "על מנת להתאים אישית את חוויית האתר שלך",
+    pt: "a fim de personalizar a sua experiência no site"
   },
   {
     key: "accept",
     en: "Allow",
     de: "Erlauben",
+    nl: "accepteer",
     engb: "Allow",
-    fr: "Permettre"
+    fr: "Permettre",
+    zh: "接受",
+    ar: "السماح",
+    es: "aceptar",
+    it: "accettare",
+    iw: "לְקַבֵּל",
+    pt: "aceitar"
   },
   {
     key: "decline",
     en: "Decline",
     de: "Ablehnen",
+    nl: "daling",
     engb: "Decline",
-    fr: "Déclin"
+    fr: "Déclin",
+    zh: "衰退",
+    ar: "انخفاض",
+    es: "descenso",
+    it: "declino",
+    iw: "יְרִידָה",
+    pt: "declinar"
   }
 ];
