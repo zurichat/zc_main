@@ -21,7 +21,6 @@ const ToggleSwitch = ({ label, onChange }) => {
       .get(`${BASE_URL}/api/v1/org/${org_id}/rooms/${room}`)
       .then(res => {
         setData(res.data.data);
-        //console.log(`response is ${JSON.stringify(res.data.data)}`)
       })
       .catch(e => console.log(e));
   }, [5]);
@@ -39,7 +38,6 @@ const ToggleSwitch = ({ label, onChange }) => {
         )
         .then(res => {
           console.log(res);
-          //window.location.reload();
         })
         .catch(e => console.log(e));
     }
@@ -61,7 +59,6 @@ const ToggleSwitch = ({ label, onChange }) => {
             onChange={handleChange}
             onClick={state ? privateChannel : undefined}
           />
-          {/* <span className={`${styles.switch}`} /> */}
         </label>
       </div>
     </div>
