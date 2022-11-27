@@ -216,6 +216,8 @@ const Sidebar = props => {
                 image={draftIcon}
               />
 
+          <hr color="#d4d4d4" />
+
               <Starred starredRooms={starredRooms} />
               {singleItems}
               {categorizedItems}

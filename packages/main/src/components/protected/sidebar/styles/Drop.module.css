@@ -1,30 +1,30 @@
 .dropDown,
 .dropdown_active {
   cursor: pointer;
+  padding: 15px 20px;
 }
 
 .dropDown:hover,
 .item__list:hover,
 .dropDown::selection {
-  background-color: #f1fffa;
+  background-color: #c5f0de;
   color: black;
 }
 
 .dropdown_active,
 .item__list__active {
-  border-radius: 4px;
-  background-color: #7ed5af;
+  background-color: #c5f0de;
 }
 
 .dropdown_active p.dropdown__room,
 .item__list__active div.dropDown__name {
-  color: white;
+  color: #000;
 }
 
 .dropDown__name {
   color: #454545;
 
-  font-size: 18px;
+  font-size: 15px;
   line-height: 28px;
   font-weight: 400;
 }
@@ -42,7 +42,7 @@
 }
 .dropdown_active,
 .item__list__active .item__imageWhite {
-  display: inline-block;
+  display: flex;
 }
 
 .item__img {
@@ -76,7 +76,7 @@
 .dropdown__room {
   color: rgb(39, 37, 37);
   padding-inline-start: 0.5rem;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 28px;
   font-weight: 400;
 }
@@ -100,16 +100,25 @@
 }
 
 .icon,
+.icon2,
 .item__icon {
   width: unset;
 }
 
-.icon {
+.icon,
+.icon2 {
   transform: rotate(-90deg);
   transition: all 0s ease-in-out;
 }
+.icon2 {
+  font-size: 15px;
+  border-radius: 15px;
+  background-color: #00b87c;
+  color: #fff;
+}
 
-.icon.open {
+.icon.open,
+.icon2.open {
   transform: rotate(0deg);
 }
 
