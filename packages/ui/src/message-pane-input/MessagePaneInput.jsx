@@ -231,10 +231,12 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
     }
   };
 
+  // preview component for audios
   const AudioFilePreview = ({ source }) => {
     return <audio controls src={source} />;
   };
 
+  // preview component for documents
   const DocumentFilePreview = ({ fileName, extension }) => {
     return (
       <StyledDocumentPreview>
@@ -249,24 +251,29 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
     );
   };
 
-  // const PreviewFile = ({ file }) => {
-  //   if (file.src.includes("data:image")) {
-  //     return <img src={file.src} alt="Image Preview" />;
-  //   } else if (file.src.includes("data:audio")) {
-  //     return <AudioFilePreview source={file.src} />;
-  //   } else if (file.src.includes("data:video")) {
-  //     return <video autoPlay muted src={file.src} />;
-  //   } else {
-  //     return (
-  //       <DocumentFilePreview fileName={file.name} extension={file.extension} />
-  //     );
-  //   }
-  // };
+  // generic preview component for files of any type
+  const PreviewFile = ({ file }) => {
+    if (file?.src.includes("data:image")) {
+      return <img src={file?.src} alt="Image Preview" />;
+    } else if (file?.src.includes("data:audio")) {
+      return <AudioFilePreview source={file?.src} />;
+    } else if (file?.src.includes("data:video")) {
+      return <video autoPlay muted src={file?.src} />;
+    } else {
+      return (
+        <DocumentFilePreview
+          fileName={file?.name}
+          extension={file?.extension}
+        />
+      );
+    }
+  };
 
+  // used to render the preview on the message input
   const PreviewItem = () => {
     return (
       <div className="previewContainer">
-        {preview.map(file => {
+        {preview?.map(file => {
           return (
             <Preview key={file.id}>
               <PreviewFile file={file} />
@@ -276,48 +283,6 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
         })}
       </div>
     );
-  };
-  // const clearAttached = () => {
-  //   setPreview("");
-  //   setSentAttachedFile("");
-  // };
-  //
-  // const AudioFilePreview = ({ source }) => {
-  //   return <audio controls src={source} />;
-  // };
-  //
-  // const DocumentFilePreview = ({ fileName, extension }) => {
-  //   return (
-  //     <StyledDocumentPreview>
-  //       <div>
-  //         <BsFillFileEarmarkFill style={{ width: "42px", height: "42px" }} />
-  //       </div>
-  //       <div style={{ width: "85%" }}>
-  //         <h6>{fileName}</h6>
-  //         <p>{extension}</p>
-  //       </div>
-  //     </StyledDocumentPreview>
-  //   );
-  // };
-  //
-  const PreviewFile = () => {
-    console.log(sentAttachedFile);
-    if (!sentAttachedFile || !sentAttachedFile.name) {
-      return <div>No data</div>;
-    }
-
-    let fileName = sentAttachedFile.name;
-    let extension = fileName.substring(fileName.lastIndexOf(".") + 1);
-
-    if (preview.includes("data:image")) {
-      return <img src={preview} alt="Image Preview" />;
-    } else if (preview.includes("data:audio")) {
-      return <AudioFilePreview source={preview} />;
-    } else if (preview.includes("data:video")) {
-      return <video autoPlay muted src={preview} />;
-    } else {
-      return <DocumentFilePreview fileName={fileName} extension={extension} />;
-    }
   };
 
   return (
@@ -367,6 +332,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
             plugins={[emojiPlugin, mentionPlugin]}
           />
         </div>
+        {preview?.length > 0 ? <PreviewItem /> : null}
         <ToolbarBottom
           editorState={editorState}
           setEditorState={setEditorState}
