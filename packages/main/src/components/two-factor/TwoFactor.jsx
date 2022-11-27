@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "../styles/SettingsTab.module.css";
+import styles from "../two-factor/SettingsTab.module.css";
 
 const TwoFactor = () => {
   return (
