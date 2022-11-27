@@ -13,7 +13,6 @@ export const TopBarWrapperStyle = styled.div`
   align-items: center;
   background-color: var(--bg-color);
   overflow: unset;
-
   @media (min-width: 1441px) {
     top: 0;
     left: 0;
@@ -28,11 +27,9 @@ export const SidebarWrapperStyle = styled.div`
   -ms-overflow-style: none;
   scrollbar-width: none;
   background-color: var(--bg-color);
-
   &::-webkit-scrollbar {
     display: none;
   }
-
   @media (max-width: 768px) {
     display: none;
   }
