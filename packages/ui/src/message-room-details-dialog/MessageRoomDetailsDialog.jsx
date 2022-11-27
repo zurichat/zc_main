@@ -24,7 +24,7 @@ import { BsPersonCircle } from "react-icons/bs";
 import { ListGroup } from "react-bootstrap";
 
 import axios from "axios";
-import { StyledTabs } from "./MessageRoomDetailsDialog.styled";
+import { StyledTabs, ErrorModal } from "./MessageRoomDetailsDialog.styled";
 import { getSampleMemberList } from "~/utils/samples";
 import FileList from "./components/FileList";
 
@@ -61,6 +61,11 @@ function MessageRoomDetailsDialog({
 
   const [description, setDescription] = useState("");
   const [roomData, setRoomData] = useState(null);
+  const [errorModal, setErrorModal] = useState("");
+
+  const handleDescriptionUpdate = update => {
+    setDescription(update.description);
+  };
 
   useEffect(() => {
     let isFetched = true;
@@ -73,17 +78,19 @@ function MessageRoomDetailsDialog({
     const org_id = organization.user.org_id;
 
     const fetchData = async () => {
-      const res = await fetch(
-        `https://chat.zuri.chat/api/v1/org/${org_id}/rooms/${room_id}`
-      );
+      await axios
+        .get(`https://chat.zuri.chat/api/v1/org/${org_id}/rooms/${room_id}`)
+        .then(res => {
+          setRoomData(res.data);
+          setDescription(res.data.data.description);
+        })
+        .catch(e => {
+          setErrorModal("Could not fetch description");
 
-      if (!res.ok) {
-        throw Error("Could not fetch data");
-      }
-
-      const data = await res.json();
-      setRoomData(data);
-      setDescription(data.data.description);
+          setTimeout(() => {
+            setErrorModal("");
+          }, [4000]);
+        });
     };
 
     if (isFetched) {
@@ -93,10 +100,11 @@ function MessageRoomDetailsDialog({
     return () => {
       isFetched = false;
     };
-  });
+  }, []);
 
   return (
     <div className="App">
+      {errorModal && <ErrorModal>{errorModal}</ErrorModal>}
       <DialogOverlays isOpen={showDialog} onDismiss={close}>
         <DialogContents style={{ padding: "1rem 2rem" }}>
           <StyledTabs
@@ -157,6 +165,8 @@ function MessageRoomDetailsDialog({
             <EditDescriptionModal
               closeEdit={toggleEditDescriptionModal}
               roomData={roomData}
+              handleDescriptionUpdate={handleDescriptionUpdate}
+              description={description}
             />
           )}
 

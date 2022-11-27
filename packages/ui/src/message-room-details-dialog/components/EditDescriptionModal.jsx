@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-
+import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
 import {
   ModalContainer,
   DescModal,
@@ -9,11 +9,16 @@ import {
   ModalButtons,
   CancelBtn,
   AcceptBtn,
-  ModalTopic
+  ModalTopic,
+  ErrorModal
 } from "../MessageRoomDetailsDialog.styled";
 
-const EditDescriptionModal = ({ closeEdit, roomData }) => {
-  const roomDescription = roomData.data.description;
+const EditDescriptionModal = ({
+  closeEdit,
+  roomData,
+  handleDescriptionUpdate,
+  description
+}) => {
   const descriptionRef = useRef();
 
   // to update data
@@ -22,7 +27,7 @@ const EditDescriptionModal = ({ closeEdit, roomData }) => {
     const member_id = roomData.data.created_by;
     const room_id = roomData.data._id;
 
-    const editedDescription = {
+    const newDescription = {
       room_name: roomData.data.room_name,
       description: descriptionRef.current.value,
       topic: roomData.data.topic,
@@ -30,25 +35,12 @@ const EditDescriptionModal = ({ closeEdit, roomData }) => {
       is_archived: roomData.data.is_archived
     };
 
-    fetch(
+    handleDescriptionUpdate(newDescription);
+
+    axios.put(
       `https://chat.zuri.chat/api/v1/org/${org_id}/members/${member_id}/rooms/${room_id}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: JSON.stringify(editedDescription)
-      }
-    )
-      .then(res => {
-        if (!res.ok) {
-          throw Error("Could not change description");
-        }
-      })
-      .catch(err => {
-        //
-      });
+      newDescription
+    );
   };
 
   return (
@@ -66,7 +58,7 @@ const EditDescriptionModal = ({ closeEdit, roomData }) => {
         </ModalTop>
         <Modalbody>
           <textarea ref={descriptionRef} placeholder="Add description">
-            {roomDescription}
+            {description}
           </textarea>
 
           <p>Let people know what this channel is for.</p>
