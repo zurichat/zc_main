@@ -132,18 +132,15 @@
 
 .modalContainers {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100000;
-  background: #ffffff;
-  /* display: none; */
-  justify-content: center;
-  padding-top: 5.6875rem;
-  padding-bottom: 2rem;
-  z-index: 2;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.7);
+  display: grid;
+  place-items: center;
 }
 
 .modalBackDrop {
@@ -267,10 +264,6 @@
   height: 18px;
 }
 /* The section of the picker */
-
-.smileys {
-  padding-top: 20px;
-}
 
 .picker {
   position: fixed;
