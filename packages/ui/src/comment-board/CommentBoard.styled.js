@@ -1,17 +1,13 @@
 import styled from "styled-components";
 
 const CommentBoardWrapper = styled.aside`
-  /* width: 60%; */
   display: ${props => (props.showCommentBoard ? "grid" : "none")};
   grid-template-rows: auto 1fr auto;
   z-index: 999;
   width: 450px;
 
-  /* margin-top: 40px; */
   position: relative;
-  /* position: fixed; */
 
-  /* right: 10px; */
   top: -9px;
   height: 93vh;
   padding: 0 0 20px 0;
@@ -39,14 +35,11 @@ const CommentMessagesWrapper = styled.div`
   padding-left: 8px;
   margin-bottom: 9px;
   padding-top: 1.1rem;
-  /* height: 69vh; */
-  /* overflow-x: none;
-  overflow-y: scroll; */
-  /* Style message */
+  padding-bottom: 100px;
+
   .msg-container {
     display: flex;
     gap: 16px;
-    /* position: relative; */
   }
 
   .img__wrapper {
@@ -63,10 +56,6 @@ const CommentMessagesWrapper = styled.div`
     width: 100%;
   }
 
-  .msgParticulars {
-    /* width: 368px;
-    padding-left: 1.5rem; */
-  }
   #hoverItems {
     position: relative;
     top: 0px;
@@ -87,7 +76,6 @@ export const ParentMessage = styled.div`
   #hoverItems {
     position: relative;
     top: 10px;
-    /* display: none; */
   }
   hr {
     width: 70%;
@@ -103,6 +91,11 @@ export const ParentMessage = styled.div`
   }
 `;
 
+export const MessagePaneWrapper = styled.div`
+  position: fixed;
+  bottom: 22px;
+  width: 28%;
+`;
 export {
   CommentBoardWrapper,
   CommentBoardHeader,

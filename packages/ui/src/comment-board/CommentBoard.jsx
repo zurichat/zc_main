@@ -1,19 +1,18 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import UnstyledButton from "~/shared/button/Button";
 import {
   CommentBoardWrapper,
   CommentBoardHeader,
   CommentMessagesWrapper,
-  CommentMessageItem,
-  ParentMessage
+  ParentMessage,
+  MessagePaneWrapper
 } from "./CommentBoard.styled";
-// import { messageContext } from "@zuri/messaging";
+
 import { getSampleMessages } from "~/utils/samples";
 import MessagePaneInput from "~/message-pane-input/MessagePaneInput";
 import RichTextRenderer from "~/rich-text-renderer/RichTextRenderer";
 import axios from "axios";
 import MessagePane from "../message-pane/MessagePane";
-// const data = useContext(messageContext);
 
 const CommentBoard = ({
   commentBoardConfig,
@@ -109,7 +108,6 @@ const CommentBoard = ({
       {thread === "thread" ? (
         <div>
           <CommentBoardWrapper showCommentBoard={displayCommentBoard}>
-            {/* <div style={{ position: "sticky", top: "0px" }}> */}
             <CommentBoardHeader>
               {commentBoardConfig.commentBoardHeader || "Comments"}
 
@@ -132,10 +130,12 @@ const CommentBoard = ({
                 <MessagePane key={idx} message={message} />
               ))}
             </CommentMessagesWrapper>
-            <MessagePaneInput
-              sendMessageHandler={commentBoardConfig.sendChatMessageHandler}
-              addToMessages={addToMessages}
-            />
+            <MessagePaneWrapper>
+              <MessagePaneInput
+                sendMessageHandler={commentBoardConfig.sendChatMessageHandler}
+                addToMessages={addToMessages}
+              />
+            </MessagePaneWrapper>
           </CommentBoardWrapper>
         </div>
       ) : (
@@ -145,24 +145,4 @@ const CommentBoard = ({
   );
 };
 
-// <div key={idx * (3 / 0.63)} className="message_container">
-// <div>
-//   <div className="img_container">
-//     <img src={`${message.sender.sender_image_url}`} />
-//   </div>
-// </div>
-
-// <div className="text-content">
-//   <div className="user_name">
-//     <p>{message.sender.sender_name} 5️⃣ </p>
-
-//     <p className="time_ago">6 hours ago</p>
-//   </div>
-//   <CommentMessageItem>
-//     <RichTextRenderer
-//       richUiMessageConfig={message.richUiData}
-//     />
-//   </CommentMessageItem>
-// </div>
-// </div>
 export default CommentBoard;
