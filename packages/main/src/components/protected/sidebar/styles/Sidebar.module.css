@@ -7,11 +7,9 @@
   height: 100%;
   font-size: 16px;
   padding: 0;
-
   display: flex;
   min-width: 6px;
   max-width: 300px;
-
   overflow-y: scroll;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
@@ -51,7 +49,6 @@
 
 .subCon2 {
   height: 100%;
-  padding: 10px;
   width: unset;
   /* overflow-y:inherit;
   -ms-overflow-style: none;
@@ -64,7 +61,7 @@
 
 .orgDiv {
   width: inherit;
-  height: 44px;
+  padding: 18px 20px;
   background-color: #00b87c;
   color: #fff;
 }
