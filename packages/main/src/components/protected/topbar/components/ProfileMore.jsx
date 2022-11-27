@@ -7,14 +7,16 @@ import toast, { Toaster } from "react-hot-toast";
 import Preferences from "./Preferences";
 import { getCurrentWorkspace, getUser } from "../utils/common";
 import { authAxios } from "../utils/api";
+import useOnClickOutside from "../hooks/useClickOutside";
 
-export const Dropdown = () => {
+export const Dropdown = ({ setDropdown }) => {
   const { toggleModalState } = useContext(ProfileContext);
   const [modal, setModal] = useState("");
-
+  const ref = useRef();
   const user = getUser();
   const currentWorkspace = getCurrentWorkspace();
   const [workspaceData, setWorkspaceData] = React.useState({});
+  useOnClickOutside(ref, () => setDropdown(false));
 
   useEffect(() => {
     if (currentWorkspace) {
@@ -30,6 +32,7 @@ export const Dropdown = () => {
     }
   }, [currentWorkspace]);
 
+  useEffect(() => {}, []);
   // console.log('workspace==>', workspaceData)
 
   const state = useContext(TopbarContext);
@@ -43,12 +46,12 @@ export const Dropdown = () => {
     navigator.clipboard.writeText(copiedText).then(
       () => {
         toast.success("Member ID Copied", {
-          position: "bottom-center"
+          position: "top-right"
         });
       },
       err => {
         toast.error(err?.message, {
-          position: "bottom-center"
+          position: "top-right"
         });
       }
     );
@@ -56,13 +59,16 @@ export const Dropdown = () => {
 
   return (
     <>
-      <div className={styles.profileDropDown}>
+      <div
+        className={styles.profileDropDown}
+        onClick={state.closeModal}
+        ref={ref}
+      >
         <div className={styles.topSection}>
           <p
             onClick={() => {
               setReusableModal("preference");
               toggleModalState();
-              // console.log(reusableModal)
             }}
             className={styles.paragraph}
           >
