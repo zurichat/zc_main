@@ -2,12 +2,15 @@ import React from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { RiErrorWarningLine } from "react-icons/ri";
 import styles from "./Steps.module.css";
+import { useTranslation } from "react-i18next";
 
 export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
   const history = useHistory();
   let location = useLocation();
   const organizations = location.state;
   // console.log(location);
+
+  const { t } = useTranslation();
 
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
 
@@ -31,16 +34,17 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
     <div>
       <div className={styles.wrapper}>
         <div className={styles.email}>
-          {user ? <span>Signed in as {user.email}</span> : null}
+          {user ? (
+            <span>
+              {t("create_workspace_eight")} {user.email}
+            </span>
+          ) : null}
         </div>
 
         <div className={styles.centerWrapper}>
-          <h4> Step 1 of 3</h4>
-          <h1>What is the name of your company or team ?</h1>
-          <h4>
-            This will be the name of your workspace. Choose something that your
-            team will recognise
-          </h4>
+          <h4>{t("create_workspace_nine")}</h4>
+          <h1>{t("create_workspace_ten")} ?</h1>
+          <h4>{t("create_workspace_eleven")}</h4>
           {error && (
             <div className={`${styles.errWrapper} d-flex text-danger`}>
               <RiErrorWarningLine />
@@ -59,13 +63,15 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
             data-cy="create_workspace_textfield"
           />
 
-          <span className={styles.charLimit}>Maximum 50 characters</span>
+          <span className={styles.charLimit}>
+            {t("create_workspace_twelve")}
+          </span>
 
           <div className={styles.buttonContainer}>
             <Link to="/create-workspace">
               {" "}
               <button style={{ backgroundColor: "#f40101", color: "white" }}>
-                Cancel
+                {t("create_workspace_fourteen")}
               </button>
             </Link>
             <button
@@ -86,7 +92,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
               }}
               data-cy="create_workspace_continue_action_element"
             >
-              Continue
+              {t("create_workspace_thirteen")}
             </button>
           </div>
         </div>
