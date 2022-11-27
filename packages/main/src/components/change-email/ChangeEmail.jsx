@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/SettingsTab.module.css";
+import styles from "../change-email/SettingsTab.module.css";
 
 const ChangeEmail = () => {
   return (
