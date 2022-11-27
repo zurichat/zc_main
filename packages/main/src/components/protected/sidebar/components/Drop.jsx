@@ -16,16 +16,9 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
   const popup = () => setOptions(!options);
   const room = () => setNewRoom(!newRoom);
   const { t } = useTranslation();
-  // const [isOpen, setOpen] = useState(false)
-  // const [items,   setItems] = useState(data);
-  // const [selectedItem, setSelectedItem] = useState(null)
-
-  // const handleItemClick = id => {
-  //   selectedItem == id ? setSelectedItem(null) : setSelectedItem(id)
-  // }
 
   return (
-    <div className={`row p-0 ${styles.dropDown} text-decoration-none `}>
+    <div className={`row ${styles.dropDown} align-items-center text-decoration-none `}>
       {newRoom ? <DropRoom trigger={newRoom} setTrigger={setNewRoom} /> : ""}
 
       <div
@@ -42,9 +35,8 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
           />
           <p className={`mb-0 ${styles.dropDown__title}`}> {categoryName}</p>
         </div>
-        {/* <img src={infoIcon} alt="icon" role="button" /> */}
         <div onClick={popup}>
-          <AiOutlinePlus className={`${styles.icon}`} />
+          <AiOutlinePlus className={`${styles.icon2}`} />
           {options ? (
             <>
               <div className={`${styles.dropdown__menu}`}>
