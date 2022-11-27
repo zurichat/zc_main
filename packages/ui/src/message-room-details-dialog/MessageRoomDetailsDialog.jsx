@@ -25,7 +25,7 @@ import { BsPersonCircle } from "react-icons/bs";
 import { ListGroup } from "react-bootstrap";
 
 import axios from "axios";
-import { StyledTabs } from "./MessageRoomDetailsDialog.styled";
+import { StyledTabs, ErrorModal } from "./MessageRoomDetailsDialog.styled";
 import { getSampleMemberList } from "~/utils/samples";
 import FileList from "./components/FileList";
 
@@ -62,8 +62,53 @@ function MessageRoomDetailsDialog({
   const toggleArchiveChannel = () => setShowArchiveChannel(prev => !prev);
   const togglePrivateChannel = () => setShowPrivateChannel(prev => !prev);
 
+  const [description, setDescription] = useState("");
+  const [roomData, setRoomData] = useState(null);
+  const [errorModal, setErrorModal] = useState("");
+
+  const handleDescriptionUpdate = update => {
+    setDescription(update.description);
+  };
+
+  useEffect(() => {
+    let isFetched = true;
+
+    const path = window.location.pathname;
+    const newPath = path.split("/");
+    const room_id = newPath[4];
+
+    const organization = JSON.parse(localStorage.getItem("userData"));
+    const org_id = organization.user.org_id;
+
+    const fetchData = async () => {
+      await axios
+        .get(`https://chat.zuri.chat/api/v1/org/${org_id}/rooms/${room_id}`)
+        .then(res => {
+          setRoomData(res.data);
+          setDescription(res.data.data.description);
+        })
+        .catch(e => {
+          setErrorModal("Could not fetch description");
+        });
+    };
+
+    if (isFetched) {
+      fetchData();
+    }
+
+    const timer = setTimeout(() => {
+      setErrorModal("");
+    }, [4000]);
+
+    return () => {
+      isFetched = false;
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <div className="App">
+      {errorModal && <ErrorModal>{errorModal}</ErrorModal>}
       <DialogOverlays isOpen={showDialog} onDismiss={close}>
         <DialogContents style={{ padding: "1rem 2rem" }}>
           <StyledTabs
@@ -102,6 +147,7 @@ function MessageRoomDetailsDialog({
                   toggleEditDescriptionModal={toggleEditDescriptionModal}
                   toggleLeaveChannelModal={toggleLeaveChannelModal}
                   closeModal={close}
+                  channelDescription={description}
                 />
               </TabPanel>
               <TabPanel>
@@ -120,6 +166,15 @@ function MessageRoomDetailsDialog({
               </TabPanel>
             </TabPanels>
           </StyledTabs>
+          {showEditDescriptionModal && (
+            <EditDescriptionModal
+              closeEdit={toggleEditDescriptionModal}
+              roomData={roomData}
+              handleDescriptionUpdate={handleDescriptionUpdate}
+              description={description}
+            />
+          )}
+
           {showEditTopicModal && (
             <EditTopicModal
               addTopic={addTopic}
@@ -129,9 +184,6 @@ function MessageRoomDetailsDialog({
           )}
         </DialogContents>
       </DialogOverlays>
-      {showEditDescriptionModal && (
-        <EditDescriptionModal closeEdit={toggleEditDescriptionModal} />
-      )}
       {showLeaveChannelModal && (
         <LeaveChannelModal
           closeEdit={toggleLeaveChannelModal}
@@ -154,9 +206,11 @@ function AboutPanel({
   toggleEditTopicModal,
   toggleEditDescriptionModal,
   toggleLeaveChannelModal,
+  channelDescription,
   addTopic
 }) {
   const [showMore, setShowMore] = useState(false);
+
   return (
     <div style={{ margin: "0 5px" }}>
       <OverallWrapper>
@@ -189,7 +243,9 @@ function AboutPanel({
               Edit
             </EditLabel>
           </Description>
-          <EditContent>Add description.</EditContent>
+          <EditContent>
+            {channelDescription ? channelDescription : "Add description."}
+          </EditContent>
         </EachSegment>
         <EachSegment>
           <Label>Created By</Label>
