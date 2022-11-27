@@ -1,7 +1,6 @@
 import React from "react";
-import styles from "../styles/SettingsTab.module.css";
+import styles from "../time-zone/SettingsTab.module.css";
 import TimeZones from "../constants/TimeZone";
-
 const TimeZone = () => {
   return (
     <div className={styles.passwordsection}>
