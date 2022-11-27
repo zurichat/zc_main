@@ -58,9 +58,6 @@ window.addEventListener("zuri-plugin-load", () => {
                 ""
               )}`
             }
-            // baseName: `/workspace/${localStorage.getItem(
-            //   "currentWorkspace"
-            // )}/${appName.replace("zuri-", "")}`
           });
         });
       });

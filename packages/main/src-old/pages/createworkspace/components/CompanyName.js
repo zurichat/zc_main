@@ -63,9 +63,6 @@ function CompanyName({ input }) {
               localStorage.setItem("member_id", member_id);
             });
         }, 500);
-
-        // localStorage.setItem("currentWorkspace", newOrgId);
-        // createDefaultChannel(newOrgId)
       })
       .catch(err => {
         console.error(err.message);

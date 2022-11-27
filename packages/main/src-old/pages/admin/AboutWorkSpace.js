@@ -8,9 +8,8 @@ import { authAxios } from "./Utils/api";
 const AboutWorkSpace = () => {
   const [orgDetails, setOrgdetails] = useState({});
   const [items, setItems] = useState(null);
-  // const currentWorkspace = localStorage.getItem("currentWorkspace");
 
-  const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+  const currentWorkspace = localStorage.getItem("currentWorkspace");
 
   if (!currentWorkspace) {
     return null;
