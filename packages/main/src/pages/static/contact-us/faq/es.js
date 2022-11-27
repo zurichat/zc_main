@@ -64,7 +64,7 @@ const Topics = [
   //   ]
   // },
   {
-    topic: "Problemas de conexión",
+    topic: "Problemas de conexión ",
     faqs: [
       {
         title: "Zurichat no está cargando. ¿Cómo puedo solucionar problemas?",
