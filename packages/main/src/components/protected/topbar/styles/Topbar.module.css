@@ -124,7 +124,7 @@
   max-width: 326px; */
   width: 326px;
   max-width: calc(100% - 24px);
-  z-index: 9999;
+  z-index: 99999999;
   border: 1px solid #bebebe;
   border-radius: 4px;
   /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */

@@ -4,8 +4,8 @@
   background: #fff;
   position: fixed;
   right: 0;
-  top: 3em;
-  border-left: #f6f6f6 1px solid;
+  top: 2.8em;
+  border-left: #eee 1px solid;
   z-index: 10000;
   overflow-y: scroll;
 }
@@ -13,6 +13,9 @@
   display: none;
 }
 
+.ProfileContainer img {
+  max-width: 90%;
+}
 .containerNone {
   display: none;
 }
@@ -29,6 +32,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
+  height: 72px;
 }
 
 .title {
@@ -119,7 +123,7 @@
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 25px;
 }
 
