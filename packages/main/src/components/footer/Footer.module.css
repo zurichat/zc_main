@@ -97,7 +97,6 @@
 }
 
 .bottom_footer {
-  display: flex;
   padding-top: 20px;
   border-top: 2px solid rgba(187, 186, 231, 0.15);
   justify-content: center;
@@ -107,6 +106,7 @@
   color: #6a6a6a;
   font-size: 14.5px;
   font-weight: 500;
+  margin-bottom: 0;
   text-align: center;
 }
 
