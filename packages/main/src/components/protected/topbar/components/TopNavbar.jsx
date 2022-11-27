@@ -21,7 +21,7 @@ import TopbarModal from "./TopbarModal";
 import styles from "../styles/TopNavBar.module.css";
 import LanguageIcon from "../../../top-navigation-bar/LanguageIcon";
 
-const TopNavbar = () => {
+const TopNavbar = ({ toggleSidebar }) => {
   const theme = localStorage.getItem("theme");
   // if (theme !== null || theme !== "") {
   //   const topBar = document.getElementById(
@@ -158,7 +158,7 @@ const TopNavbar = () => {
           effect="solid"
           place="bottom"
           type="dark"
-          offset="{'top': 3, 'left': 0.8}"
+          offset={{ top: 3, left: 0.8 }}
         >
           {title}
         </ReactTooltip>
@@ -183,13 +183,6 @@ const TopNavbar = () => {
         </ToggleStatus>
       );
   }
-
-  const [toggleSidebar, setToggleSidebar] = useState(false);
-
-  const handleToggleSidebar = () => {
-    console.log("toggling");
-    setToggleSidebar(!toggleSidebar);
-  };
 
   // useEffect(() => {
   //   //Handle sidebar on mobile
@@ -268,7 +261,7 @@ const TopNavbar = () => {
         </div>
         {/* </a> */}
         <button
-          onClick={handleToggleSidebar}
+          onClick={toggleSidebar}
           type="button"
           aria-label="hamburger-menu"
           className={styles["hamburger__menu-button"]}
@@ -279,7 +272,7 @@ const TopNavbar = () => {
         </button>
       </BrandWrapper>
 
-      <div className="ms-4" style={{ flex: 1 }}>
+      <div style={{ flex: 1 }}>
         {/* <BaseInput
           value={search}
           onChange={e => setSearch(e.target.value)}
