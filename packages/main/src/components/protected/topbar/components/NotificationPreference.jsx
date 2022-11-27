@@ -12,6 +12,7 @@ const NotificationPreference = () => {
   const [notificationSettings, setNotificationSettings] = useState(
     user.settings?.notifications
   );
+  console.log(user.settings?.notifications);
   const [keywordInput, setKeywordInput] = useState("");
   const [durationInput, setDurationInput] = useState("");
   const [durations] = useState([
@@ -33,6 +34,24 @@ const NotificationPreference = () => {
     { name: "after i've been inactive for 30 minute" }
   ]);
   const [notificationSend, setNotificationSend] = useState("");
+
+  const getData = () => {
+    authAxios
+      .get(`/organizations/${user.org_id}/members/${user._id}`)
+      .then(res => {
+        console.log("get data res =>", res.data);
+        // setState({ loading: false })
+      })
+      .catch(err => {
+        // console.error(err?.response?.data)
+        // setState({ loading: false })
+      });
+    console.log(user, "from profile context");
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
   // const [dataState, setDataState] = useState({
   //   notify_me_about: "",
   //   use_different_settings_mobile: false,
@@ -294,7 +313,7 @@ const NotificationPreference = () => {
               <label htmlFor="none">Nothing</label>
             </div>
           </div>
-          {/* <div className={styles.markbox}>
+          <div className={styles.markbox}>
             <input
               type="checkbox"
               className={styles.check}
@@ -306,9 +325,9 @@ const NotificationPreference = () => {
               {" "}
               Use different settings for my mobile device
             </label>
-          </div> */}
-          {/* <hr className={styles.hrNot} /> */}
-          {/* <div className={styles.markbox}>
+          </div>
+          <hr className={styles.hrNot} />
+          <div className={styles.markbox}>
             <input
               type="checkbox"
               className={styles.check}
@@ -317,7 +336,7 @@ const NotificationPreference = () => {
               onClick={handleNotifyMeeting}
             />
             <label htmlFor="for-meeting">Notify me when a meeting is set</label>
-          </div> */}
+          </div>
           {/* <div className={styles.markbox}>
             <input
               type="checkbox"
