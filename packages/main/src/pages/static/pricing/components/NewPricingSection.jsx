@@ -1,69 +1,41 @@
 import React, { useState } from "react";
 import styles from "./NewPricingSection.module.css";
 import {
-  en_Pricing,
-  fr_Pricing,
-  zh_Pricing,
-  de_Pricing,
-  en_plans,
-  fr_plans,
-  zh_plans,
-  de_plans,
-  en_features,
-  fr_features,
-  zh_features,
-  de_features
-} from "../pricing-dummy.data";
+  pricing_keys,
+  pricing_plans,
+  pricing_features
+} from "../pricingKeysData";
 import PricingBox from "./PricingBox";
 
-const data_lang = localStorage.getItem("myLanguage");
 const NewPricingSection = () => {
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.mobile}>
-          {data_lang == "en"
-            ? en_Pricing.map((item, id) => (
-                <PricingBox pricing={item} key={id} />
-              ))
-            : data_lang == "fr"
-            ? fr_Pricing.map((item, id) => (
-                <PricingBox pricing={item} key={id} />
-              ))
-            : data_lang == "zh"
-            ? zh_Pricing.map((item, id) => (
-                <PricingBox pricing={item} key={id} />
-              ))
-            : data_lang == "de"
-            ? de_Pricing.map((item, id) => (
-                <PricingBox pricing={item} key={id} />
-              ))
-            : null}
+        <div className={styles.mobile} style={textAlign()}>
+          {pricing_keys.map((item, id) => (
+            <PricingBox pricing={item} key={id} />
+          ))}
         </div>
       </div>
 
       <div className={styles.desktop}>
         <section className={styles.pricingWrapper}>
-          {data_lang == "en" ? (
-            <PricingBox pricing={en_features} />
-          ) : data_lang == "fr" ? (
-            <PricingBox pricing={fr_features} />
-          ) : data_lang == "zh" ? (
-            <PricingBox pricing={zh_features} />
-          ) : data_lang == "de" ? (
-            <PricingBox pricing={de_features} />
-          ) : null}
-          {/* // <PricingBox pricing={features} /> */}
+          {<PricingBox pricing={pricing_features} style={textAlign()} />}
 
-          {data_lang == "en"
-            ? en_plans.map((plan, id) => <PricingBox pricing={plan} key={id} />)
-            : data_lang == "fr"
-            ? fr_plans.map((plan, id) => <PricingBox pricing={plan} key={id} />)
-            : data_lang == "zh"
-            ? zh_plans.map((plan, id) => <PricingBox pricing={plan} key={id} />)
-            : data_lang == "de"
-            ? de_plans.map((plan, id) => <PricingBox pricing={plan} key={id} />)
-            : null}
+          {pricing_plans.map((plan, id) => (
+            <PricingBox pricing={plan} key={id} />
+          ))}
         </section>
       </div>
     </div>

@@ -22,8 +22,20 @@ const Message = ({ type }) => {
       </div>
     );
   }
+
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
+
   return (
-    <div className={styles.message_box}>
+    <div className={styles.message_box} style={textAlign()}>
       <div className={styles.message}>
         <p className={styles.p}>{t("pricing.sectionFour.headline")}</p>
         <div className={styles.buttonSection}>

@@ -13,13 +13,13 @@ const PricingBox = ({ pricing }) => {
     <section className={styles.pricing}>
       <header className={styles.pricing__header}>
         <div>
-          <h5>{pricing.title}</h5>
-          <p className={styles.subheading}>{pricing.subTitle}</p>
+          <h5>{t(pricing.title)}</h5>
+          <p className={styles.subheading}>{t(pricing.subTitle)}</p>
           {pricing.amount && (
             <div>
               <span className={styles.price}>{pricing.amount}</span>
               <span className={styles.subPrice}>
-                {toggle ? "/yearly" : "/month"}
+                {toggle ? t("yearly_price") : t("monthly_price")}
               </span>
             </div>
           )}
@@ -57,7 +57,7 @@ const PricingBox = ({ pricing }) => {
                 alt="check-mark"
               />
             ) : (
-              <p>{item}</p>
+              <p>{t(item)}</p>
             )}
           </div>
         ))}
