@@ -13,7 +13,6 @@ export const TopBarWrapperStyle = styled.div`
   align-items: center;
   background-color: var(--bg-color);
   overflow: unset;
-
   @media (min-width: 1441px) {
     top: 0;
     left: 0;
@@ -21,18 +20,16 @@ export const TopBarWrapperStyle = styled.div`
 `;
 
 export const SidebarWrapperStyle = styled.div`
-  flex-basis: 20%;
-  max-width: 300px;
+  width: 100%;
+  max-width: 260px;
   min-width: 230px;
   height: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
   background-color: var(--bg-color);
-
   &::-webkit-scrollbar {
     display: none;
   }
-
   @media (max-width: 768px) {
     display: none;
   }
@@ -46,5 +43,8 @@ export const WorkspaceWrapperStyle = styled.div`
 
   & > #zuri-plugin-load-section {
     height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 `;
