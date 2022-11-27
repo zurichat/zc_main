@@ -7,9 +7,9 @@ const LiveBroadcast = () => {
   const [isHost, setHost] = useState(true);
 
   const rtcProps = {
-    appId: process.env.REACT_APP_AGORA_LB_APP_ID,
-    channel: "live",
-    token: process.env.REACT_APP_AGORA_LB_TOKEN,
+    appId: process.env.REACT_APP_AGORA_TOKEN,
+    channel: "plug",
+    token: process.env.REACT_APP_AGORA_APP_ID,
     role: isHost ? "host" : "audience"
   };
 
