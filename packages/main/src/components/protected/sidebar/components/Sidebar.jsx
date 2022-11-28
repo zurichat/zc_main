@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
+import liveicon from "../assets/icons/newlive.svg";
 import draftIcon from "../assets/icons/draft-icon.svg";
-
 import { subscribeToChannel } from "@zuri/utilities";
 import { ACTIONS } from "../reducers/sidebar.reducer";
 import Header from "./Header";
@@ -221,7 +221,18 @@ const Sidebar = props => {
                 image={draftIcon}
               />
 
+
+
+              <SingleRoom
+                name="LiveBroadcast"
+                image={liveicon}
+                link={`/workspace/${currentWorkspace}/LiveBroadcast`}
+              />
+
+          <hr color="#d4d4d4" />
               <hr color="#d4d4d4" />
+
+
 
               <Starred starredRooms={starredRooms} />
               {singleItems}
