@@ -10,6 +10,7 @@ const AddMemberModal = props => {
     handleShow,
     handleClose,
     userList,
+    searchList,
     addMembersEvent,
     isLoading
   } = props;
@@ -47,7 +48,7 @@ const AddMemberModal = props => {
             closeMenuOnSelect={false}
             components={animatedComponents}
             isMulti
-            options={userList}
+            options={searchList}
             isLoading={isLoading}
             placeholder="Enter a name or email"
             value={selectedMembers}
