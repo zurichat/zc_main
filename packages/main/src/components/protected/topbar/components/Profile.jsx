@@ -157,7 +157,7 @@ const Profile = () => {
             </button>
             <h6 className={styles.ctaText}>More</h6>
           </div>
-          {dropdown && <Dropdown />}
+          {dropdown && <Dropdown setDropdown={setDropdown} />}
           {modal === "preference" && <Preferences />}
           {modal === "edit profile" && <EditProfile />}
         </div>
@@ -200,24 +200,6 @@ const Profile = () => {
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Local time</div>
           <div className={styles.infoContent}>{currentTime}</div>
-        </div>
-
-        <div className={styles.social}>
-          <div className={styles.icons}>
-            <img src={linkedin} alt="linkedin" />
-          </div>
-          <div className={styles.icons}>
-            <img src={facebook} alt="linkedin" />
-          </div>
-          <div className={styles.icons}>
-            <img src={github} alt="linkedin" />
-          </div>
-          <div className={styles.icons}>
-            <img src={twitter} alt="linkedin" />
-          </div>
-          <div className={styles.icons}>
-            <img src={instagram} alt="linkedin" />
-          </div>
         </div>
       </div>
     </div>
