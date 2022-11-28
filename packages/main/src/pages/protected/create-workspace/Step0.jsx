@@ -33,7 +33,7 @@ export default function Index() {
   }, []);
 
   return (
-    <div>
+    <>
       <Wrapper>
         <TopSection
           style={
@@ -79,7 +79,7 @@ export default function Index() {
           <UserOrganisationsListing user={user} organizations={organizations} />
         </div>
       ) : null}
-    </div>
+    </>
   );
 }
 

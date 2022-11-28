@@ -16,7 +16,7 @@ export default function Index() {
   });
 
   return (
-    <div>
+    <>
       <TopNavigationBar />
 
       <Switch>
@@ -72,6 +72,6 @@ export default function Index() {
           )}
         />
       </Switch>
-    </div>
+    </>
   );
 }

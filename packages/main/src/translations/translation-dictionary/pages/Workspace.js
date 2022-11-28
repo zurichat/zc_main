@@ -238,7 +238,7 @@ export default [
     pt: "Isto pode ser qualquer coisa - um projecto, campanha, evento, ou o negócio que está a tentar fechar"
   },
   {
-    key: "create_workspace_eighteen\n",
+    key: "create_workspace_eighteen",
     en: "Back",
     de: "Zurück",
     nl: "Terug",
