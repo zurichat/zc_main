@@ -22,7 +22,7 @@ const AdminOwners = ({ admins }) => {
 
   const handleChange = e => {
     filterAdmins(e.target.value);
-    console.log(e);
+    // console.log(e);
   };
 
   const handleSort = role => {
@@ -34,7 +34,7 @@ const AdminOwners = ({ admins }) => {
         let nameB = b.first_name.toLowerCase();
         return nameA < nameB ? -1 : nameA > nameB ? 1 : 0;
       });
-      console.log(adminObj);
+      // console.log(adminObj);
     }
 
     if (selectValue === "name") {
@@ -43,7 +43,7 @@ const AdminOwners = ({ admins }) => {
         let roleB = b.role.toLowerCase();
         return roleA < roleB ? 1 : roleA > roleB ? -1 : 0;
       });
-      console.log(adminObj);
+      // console.log(adminObj);
     }
   };
   return (

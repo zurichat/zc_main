@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import styles from "../styles/retention.module.css";
+import styles from "../retention-exports/Retention.module.css";
 import { Link } from "react-router-dom";
 import { FiAlertTriangle, FiAlertCircle } from "react-icons/fi";
 
