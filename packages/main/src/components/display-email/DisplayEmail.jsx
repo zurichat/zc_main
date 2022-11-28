@@ -40,7 +40,7 @@ const myStyle = {
 };
 
 const modifyOrganizationSettings = () => {
-  let organizationid = "6158c1ac3a1e49b1e5165df3";
+  let organizationid = localStorage.getItem("currentWorkspace");
   let showDE = false;
   let token = localStorage.getItem("token");
   axios.defaults.baseURL = "https://api.zuri.chat";
