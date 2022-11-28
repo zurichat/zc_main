@@ -16,6 +16,7 @@ import {
   GlobalWorkSpaceStyle,
   WorkspaceSidebarStyle
 } from "./Workspace.style";
+import useParamHook from "./useParamHook";
 import styles from "./Workspace.module.css";
 import axios from "axios";
 import { setupCache } from "axios-cache-adapter";
@@ -47,11 +48,17 @@ const instance = axios.create({
 });
 
 export default function Index() {
+  // const { workspaceId } = useParams();
+  const {
+    workspaceId: { workspaceId, short_id }
+  } = useParamHook({ workspaceId: "workspaceId" });
+
   const [tablet] = useMediaQuery("(max-width: 769px");
-  const { workspaceId } = useParams();
+
   const location = useLocation();
+  // console.log(location)
   const history = useHistory();
-  const match = useRouteMatch(`/workspace/${workspaceId}`);
+  const match = useRouteMatch(`/workspace/${short_id}`);
   const pluginsName = ["plugin-music"];
   const [workspaces, setWorkspaces] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -59,6 +66,7 @@ export default function Index() {
   const switchWorkspace = id => {
     console.log(id);
     window.location.href = `/workspace/${id}/plugin-chat/all-dms`;
+    history.replace(`/workspace/${id}/plugin-chat/`);
   };
 
   const getAcronymn = sentence => {
@@ -79,19 +87,31 @@ export default function Index() {
         }
       );
 
-      let userSpace = response.data.data;
-      setWorkspaces(userSpace);
+      const userSpace = response.data.data;
+      const urlsTracker = JSON.parse(localStorage.getItem("urlsTracker"));
+
+      const newUserSpace = [];
+      userSpace.forEach(spaceUser => {
+        const current = urlsTracker.workspaceIds.filter(
+          urlId => urlId.real_id === spaceUser.id
+        );
+        spaceUser["short_id"] = current[0].short_id;
+        newUserSpace.push(spaceUser);
+      });
+
+      setWorkspaces(newUserSpace);
     }
   };
 
   useEffect(() => {
     window.dispatchEvent(new Event("zuri-plugin-load"));
     match.isExact &&
-      history.replace(`/workspace/${workspaceId}/plugin-chat/all-dms`);
+      history.replace(`/workspace/${short_id}/plugin-chat/all-dms`);
   }, []);
   // Temporary
   useEffect(() => {
     localStorage.setItem("currentWorkspace", workspaceId);
+    localStorage.setItem("currentWorkspaceShort", short_id);
   }, [workspaceId]);
   useEffect(() => {
     window.localStorage.setItem("lastLocation", location.pathname);
@@ -141,12 +161,13 @@ export default function Index() {
                 >
                   <div
                     className={`${
-                      window.location.pathname.includes(workSpace.id)
+                      window.location.pathname.includes(workSpace.short_id)
                         ? styles.currentWorkspace
                         : styles.workspaceAvatar
                     }`}
                     role="button"
-                    onClick={() => switchWorkspace(workSpace.id)}
+                    // onClick={() => switchWorkspace(short_id)}
+                    onClick={() => switchWorkspace(workSpace.short_id)}
                     title={workSpace.name}
                   >
                     <div className={`${styles.workspaceAvatarM}`}>
