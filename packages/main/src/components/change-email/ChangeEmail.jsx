@@ -1,11 +1,12 @@
 import React, { useRef } from "react";
 import useForm from "../use-form-hook";
 import styles from "../change-email/SettingsTab.module.css";
+import { BASE_API_URL } from "@zuri/utilities";
 
 const ChangeEmail = () => {
   const formElement = useRef(null);
   const user = sessionStorage.getItem(`user`);
-  const FORM_ENDPOINT = `https://staging.api.zuri.chat/users/${user.id}`;
+  const FORM_ENDPOINT = `${BASE_API_URL}/users/${user.id}`;
   const { message, handleSubmit } = useForm({
     form: formElement,
     options: {
