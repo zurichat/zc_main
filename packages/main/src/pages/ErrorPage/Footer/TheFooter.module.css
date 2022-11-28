@@ -1,43 +1,42 @@
-footer {
+.mainFooter {
   background-color: #009967;
   position: absolute;
   width: 100%;
-
   color: white;
   padding-block: 3rem;
 
   padding-left: 1.5rem;
 }
-.footer_logo {
+.mainFooter_logo {
   margin-bottom: 1.5rem;
 }
-footer h5 {
+.mainFooter h5 {
   margin-bottom: 1rem;
 }
-.sFooter {
+.dFooter {
   text-align: center;
   margin-top: 1.7rem;
 }
-.sFooter p {
+.dFooter p {
   margin-bottom: 0rem;
 }
 .percentages {
   margin-bottom: 5rem;
 }
-.fFooter div {
+.cFooter div {
   margin-top: 2rem;
 }
 
 @media only screen and (min-width: 860px) {
-  .fFooter {
+  .cFooter {
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
   }
-  .fFooter div {
+  .cFooter div {
     margin-top: 0rem;
   }
-  footer {
+  .mainFooter {
     padding-left: 0;
   }
 }
