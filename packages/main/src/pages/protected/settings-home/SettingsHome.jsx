@@ -112,7 +112,11 @@ const Home = () => {
           />
 
           <div className="mt-2">
-            <Link to="/admin/stats" className="" style={{ display: "flex" }}>
+            <Link
+              to="/admin/settings/ManageWorkspace"
+              className=""
+              style={{ display: "flex" }}
+            >
               <div>
                 <span
                   className={classes.settings_icon_holder}
