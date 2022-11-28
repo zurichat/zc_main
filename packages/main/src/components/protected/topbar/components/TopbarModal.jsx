@@ -100,8 +100,6 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
     setPresence
   } = state;
 
-  // const workspace = sessionStorage.getItem("currentWorkspace");
-
   const currentWorkspace = localStorage.getItem("currentWorkspace");
   let token = sessionStorage.getItem("token");
 

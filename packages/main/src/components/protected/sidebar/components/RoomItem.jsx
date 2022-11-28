@@ -10,10 +10,7 @@ import { useRouteMatch } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const RoomItem = ({ room, baseUrl, pluginId }) => {
-  // let currentWorkspace = localStorage.getItem("currentWorkspace");
-
-  const currentWorkspaceShort =
-    localStorage.getItem("currentWorkspaceShort") || null;
+  const currentWorkspaceShort = localStorage.getItem("currentWorkspaceShort");
 
   const { t } = useTranslation();
   const [click, isClicked] = useClick();

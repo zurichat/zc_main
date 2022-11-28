@@ -30,7 +30,6 @@ export default function Index({ createWorkspaceData }) {
     );
     console.log(createWorkspaceApiCall);
     const workspaceId = createWorkspaceApiCall.data.data.organization_id;
-    // const workspaceId = "tr456vdh";
 
     // Rename the Workspace
     const renameWorkspaceApiCall = await axios.patch(
@@ -82,9 +81,6 @@ export default function Index({ createWorkspaceData }) {
     localStorage.setItem("currentWorkspace", workspaceId);
     localStorage.setItem("currentWorkspaceShort", short_id);
 
-    console.log(workspaceId, short_id, "Checking for IDS");
-
-    // localStorage.setItem("currentWorkspace", workspaceId);
     // history.push(`/workspace/${workspaceId}`);
     history.push(`/create-workspace/step-3`);
   };

@@ -2,9 +2,8 @@ import { authAxios } from "./Api";
 export const GetUserInfo = async () => {
   let user = JSON.parse(sessionStorage.getItem("user"));
 
-  const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+  const currentWorkspace = localStorage.getItem("currentWorkspace");
 
-  // const currentWorkspace = localStorage.getItem("currentWorkspace");
   let token = sessionStorage.getItem("token");
 
   if ((user && token) !== null) {

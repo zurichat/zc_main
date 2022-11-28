@@ -15,13 +15,7 @@ const UserOrganization = ({ organizations, user }) => {
   useEffect(() => {
     const urlsTracker = { workspaceIds: [] };
 
-    const hhh = organizations.map(org => {
-      //**********************************/
-      // THIS CODE IS FROM Step0.jsx
-
-      // const name = org.name;
-      // const newName = name.replace(/ /gi, "-");
-
+    const organizationsWithShortUrl = organizations.map(org => {
       urlsTracker.workspaceIds.push({
         real_id: org.id,
         short_id: `${org.id.slice(4, 6)}${org.id.slice(6, 8)}${org.id.slice(
@@ -32,24 +26,15 @@ const UserOrganization = ({ organizations, user }) => {
 
       localStorage.setItem("urlsTracker", JSON.stringify(urlsTracker));
 
-      //***********************************/
-
       org["short_id"] = urlsTracker.workspaceIds.filter(
         urlId => urlId.real_id === org.id
       )[0]?.short_id;
       return org;
     });
 
-    setNewOrganizations([...hhh]);
+    setNewOrganizations([...organizationsWithShortUrl]);
   }, [organizations]);
 
-  // const urlIds
-  // console.log(JSON.parse(urlIds).workspaceIds)
-  // const newOrganizations = [...organizations]
-
-  // newOrganizations.map(org => {
-  //   org['short_id'] = urlIds.filter(urlId => urlId === org.id)[0].short_id
-  // })
   const { t } = useTranslation();
 
   return (

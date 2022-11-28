@@ -29,10 +29,6 @@ const useParamHook = props => {
             short_id: params[key]
           };
         }
-
-        // if (!urlIdes) {
-        //   urlIds[key] = params[key]
-        // }
       }
     }
   }

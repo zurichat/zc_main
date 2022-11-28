@@ -42,7 +42,7 @@ const Profile = () => {
   useEffect(() => {
     if (currentWorkspace) {
       authAxios
-        .get(`v`)
+        .get(`/organization/${currentWorkspace}`)
         .then(res => {
           setWorkspaceData(res.data.data);
         })

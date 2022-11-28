@@ -22,7 +22,6 @@ export default function Index() {
       { headers: { Authorization: `Bearer ${user.token}` } }
     );
     const { data } = result.data;
-    // console.log(data, 'from step 0 .jsxxxxxxxxxxxxxxxxxxxxx')
     setOrganizations(data);
     setIsactive(!isActive);
   }
