@@ -16,36 +16,43 @@ const ContactSideBarData = [
     title: "Chat to us",
     desc: "Our team is here to help",
     addDesc: "",
-    attachment: "zuri.chat@gmail.com"
+    attachment: "zuri.chat@gmail.com",
+    id: "mail"
   },
   {
     icon: <MdLocationOn size={15} />,
     title: "Office",
     desc: "Come say hello at our office",
     addDesc: "Beavaton, Oregon",
-    attachment: "Washington County, USA"
+    attachment: "Washington County, USA",
+    id: "location"
   },
   {
     icon: <FiPhone size={15} />,
     title: "Phone",
     desc: "Mon-Fri 8am - 5pm",
     addDesc: "",
-    attachment: "763-654-5423"
+    attachment: "763-654-5423",
+    id: "phone"
   }
 ];
 
 const socialIcons = [
   {
-    icon: <GrFacebookOption />
+    icon: <GrFacebookOption />,
+    id: "facebook"
   },
   {
-    icon: <GrTwitter />
+    icon: <GrTwitter />,
+    id: "twitter"
   },
   {
-    icon: <GrInstagram />
+    icon: <GrInstagram />,
+    id: "instagram"
   },
   {
-    icon: <GrLinkedinOption />
+    icon: <GrLinkedinOption />,
+    id: "linkedin"
   }
 ];
 
@@ -58,8 +65,8 @@ const ContactSideBar = () => {
       </div>
 
       <div className={contactStyle.contactMenuDataContainer}>
-        {ContactSideBarData.map((data, index) => (
-          <div key={index} className={contactStyle.contactDataGroup}>
+        {ContactSideBarData.map(data => (
+          <div key={data.id} className={contactStyle.contactDataGroup}>
             <span className={contactStyle.contactDataIcon}>{data.icon}</span>
             <div className={contactStyle.contactData}>
               <p className={contactStyle.contactDataTitle}>{data.title}</p>
@@ -74,8 +81,8 @@ const ContactSideBar = () => {
       </div>
 
       <div className={contactStyle.socialGroup}>
-        {socialIcons.map((item, index) => (
-          <div key={index}>
+        {socialIcons.map(item => (
+          <div key={item.id}>
             <span>{item.icon}</span>
           </div>
         ))}
