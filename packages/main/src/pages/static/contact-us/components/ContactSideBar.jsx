@@ -1,31 +1,32 @@
 import React from "react";
 import contactStyle from "./ContactSideBar.module.css";
-import MessageIcon from "../assets/message-icon.svg";
-import LocationIcon from "../assets/location-icon.svg";
-import PhoneIcon from "../assets/phone-icon.svg";
+import { MdLocationOn } from "react-icons/md";
+import { FiMail, FiPhone } from "react-icons/fi";
 
-import FacebookIcon from "../assets/facebook-icon.svg";
-import TwitterIcon from "../assets/twitter-icon.svg";
-import InstagramIcon from "../assets/instagram-icon.svg";
-import LinkedInIcon from "../assets/linkedin-icon.svg";
+import {
+  GrFacebookOption,
+  GrTwitter,
+  GrInstagram,
+  GrLinkedinOption
+} from "react-icons/gr";
 
 const ContactSideBarData = [
   {
-    icon: MessageIcon,
+    icon: <FiMail size={15} />,
     title: "Chat to us",
     desc: "Our team is here to help",
     addDesc: "",
     attachment: "zuri.chat@gmail.com"
   },
   {
-    icon: LocationIcon,
+    icon: <MdLocationOn size={15} />,
     title: "Office",
     desc: "Come say hello at our office",
     addDesc: "Beavaton, Oregon",
     attachment: "Washington County, USA"
   },
   {
-    icon: PhoneIcon,
+    icon: <FiPhone size={15} />,
     title: "Phone",
     desc: "Mon-Fri 8am - 5pm",
     addDesc: "",
@@ -33,7 +34,20 @@ const ContactSideBarData = [
   }
 ];
 
-const socialIcons = [FacebookIcon, TwitterIcon, InstagramIcon, LinkedInIcon];
+const socialIcons = [
+  {
+    icon: <GrFacebookOption />
+  },
+  {
+    icon: <GrTwitter />
+  },
+  {
+    icon: <GrInstagram />
+  },
+  {
+    icon: <GrLinkedinOption />
+  }
+];
 
 const ContactSideBar = () => {
   return (
@@ -46,13 +60,7 @@ const ContactSideBar = () => {
       <div className={contactStyle.contactMenuDataContainer}>
         {ContactSideBarData.map((data, index) => (
           <div key={index} className={contactStyle.contactDataGroup}>
-            <div>
-              <img
-                src={data.icon}
-                alt="MessageIcon"
-                className={contactStyle.contactDataIcon}
-              />
-            </div>
+            <span className={contactStyle.contactDataIcon}>{data.icon}</span>
             <div className={contactStyle.contactData}>
               <p className={contactStyle.contactDataTitle}>{data.title}</p>
               <p className={contactStyle.contactDataDesc}>{data.desc}</p>
@@ -67,7 +75,9 @@ const ContactSideBar = () => {
 
       <div className={contactStyle.socialGroup}>
         {socialIcons.map((item, index) => (
-          <img src={item} key={index} alt="FacebookIcon" />
+          <div key={index}>
+            <span>{item.icon}</span>
+          </div>
         ))}
       </div>
     </div>

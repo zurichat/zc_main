@@ -16,9 +16,9 @@
   margin-bottom: 0;
 }
 .contactMainBoardTitleContainer p {
-  font-size: 13px !important;
+  font-size: 13px;
   margin-top: -10px;
-  max-width: 100% !important;
+  max-width: 100%;
   text-align: center;
 
 }
@@ -31,7 +31,7 @@
   margin-bottom: 1.5rem;
 }
 .inputGroup label {
-  font-size: 13px !important;
+  font-size: 13px;
   font-weight: 600;
 }
 .inputGroup input,
@@ -60,7 +60,7 @@
   margin-bottom: 1.5rem;
 }
 .inputGroupCheckBox label {
-  font-size: 13px !important;
+  font-size: 13px;
   margin-left: 8px;
 }
 
@@ -87,7 +87,7 @@
     padding: 2.5rem 0;
   }
   .contactMainBoardTitleContainer p {
-    max-width: 100% !important;
+    max-width: 100%;
     width: 80%;
     margin: auto;
   }

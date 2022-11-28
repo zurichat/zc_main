@@ -1,56 +1,58 @@
-.sidebarContainer{
-    background-color: #009967;
-    color: white;
-    padding: 40px 32px;
+.sidebarContainer {
+  background-color: #009967;
+  color: white;
+  padding: 40px 32px;
 }
-.topTitleContainer{
-    text-align: center;
+.topTitleContainer {
+  text-align: center;
 }
 
-.topTitleContainer h1{
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 0;
+.topTitleContainer h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0;
 }
 .topTitleContainer p {
-    font-size: 13px !important;
-    margin-top: -10px;
+  font-size: 13px;
+  margin-top: -10px;
 }
 
-.contactMenuDataContainer{
-    margin-top: 32px;
+.contactMenuDataContainer {
+  margin-top: 32px;
 }
-.contactDataGroup{
-    display: flex;
-    align-items: start;
-    gap: 12px;
-    margin-bottom: 2rem;
+.contactDataGroup {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 2rem;
 }
-.contactDataIcon{
-    height: 15px;
+.contactDataIcon {
+  display: flex;
+  align-items: flex-start;
 }
-.contactData{
-    margin-top: -2px;
-    display: flex;
-    flex-direction: column;
-    gap: 1;
+.contactData {
+  margin-top: -4px;
+  display: flex;
+  flex-direction: column;
+  gap: 1;
 }
-.contactDataTitle{
-    font-weight: 500;
+.contactDataTitle {
+  font-weight: 500;
+  font-size: 1rem;
 }
-.contactDataDesc{
-    font-size: 90% !important;
+.contactDataDesc {
+  font-size: 90% ;
 }
-.contactDataAttachment{
-    font-weight: 500;
-    font-size: 0.8rem !important;
+.contactDataAttachment {
+  font-weight: 500;
+  font-size: 0.8rem ;
 }
-.socialGroup{
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: row;
+.socialGroup {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
 }
-.socialGroup img{
-    height: 20px;
-    margin: 0 .5rem;
+.socialGroup svg {
+  margin: 0 0.5rem;
+  font-size: 1rem;
 }
