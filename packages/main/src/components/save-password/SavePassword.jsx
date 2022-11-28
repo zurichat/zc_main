@@ -4,7 +4,7 @@ import styles from "../save-password/SettingsTab.module.css";
 
 const SavePassword = () => {
   const formElement = useRef(null);
-  const user = sessionStorage.getItem(`user`);
+  const user = JSON.parse(sessionStorage.getItem("user"));
   const FORM_ENDPOINT = `https://staging.api.zuri.chat/users/${user.id}`;
   const { message, handleSubmit } = useForm({
     form: formElement.current,
@@ -34,13 +34,7 @@ const SavePassword = () => {
           <label htmlFor="current_password" className="form-label">
             Current password
           </label>
-          <input
-            name="current_password"
-            id="current_password"
-            type="password"
-            className="form-control"
-            required
-          />
+          <input type="password" className="form-control" required />
         </div>
         <div className="col-md-5">
           <label htmlFor="password" className="form-label">
