@@ -188,6 +188,11 @@ h6 {
     background-color: var(--bg-2);
     left: 0px;
   } */
+/* background color change for modal */
+[data-test-id="layout-wrapper"]{
+  background: var(--primary-color) !important;
+ }
+
 
 /* Customize the label (the container) */
 .container {
