@@ -238,7 +238,7 @@ export default [
     pt: "Isto pode ser qualquer coisa - um projecto, campanha, evento, ou o negócio que está a tentar fechar"
   },
   {
-    key: "create_workspace_eighteen",
+    key: "create_workspace_eighteen\n",
     en: "Back",
     de: "Zurück",
     nl: "Terug",
@@ -390,5 +390,75 @@ export default [
     it: "Spazio di lavoro",
     iw: "סביבת עבודה",
     pt: "Espaço de trabalho"
+  },
+  {
+    key: "workspace_head",
+    en: "Choose A Workspace",
+    de: "Wählen Sie einen Arbeitsbereich",
+    nl: "Een werkruimte kiezen",
+    engb: "Choose A Workspace",
+    fr: "Choisir un espace de travail",
+    zh: "选择一个工作空间",
+    ar: "اختر مساحة عمل",
+    es: "Elija un espacio de trabajo",
+    it: "Scegliere uno spazio di lavoro",
+    iw: "בחר סביבת עבודה",
+    pt: "Escolha um espaço de trabalho"
+  },
+  {
+    key: "workspace_paragraph_first",
+    en: "Looking to create a workspace instead",
+    de: "Stattdessen wollen Sie einen Arbeitsbereich schaffen",
+    nl: "Op zoek naar een werkruimte",
+    engb: "Looking to create a workspace instead",
+    fr: "Vous cherchez plutôt à créer un espace de travail",
+    zh: "希望创建一个工作空间来代替",
+    ar: "تتطلع إلى إنشاء مساحة عمل بدلاً من ذلك",
+    es: "En su lugar, busca crear un espacio de trabajo",
+    it: "Cercando invece di creare uno spazio di lavoro",
+    iw: "מחפש ליצור מרחב עבודה במקום",
+    pt: "Procurando em vez disso criar um espaço de trabalho"
+  },
+  {
+    key: "workspace_span",
+    en: "Create a new workspace",
+    de: "Einen neuen Arbeitsbereich erstellen",
+    nl: "Een nieuwe werkruimte creëren",
+    engb: "Create a new workspace",
+    fr: "Créer un nouvel espace de travail",
+    zh: "创建一个新的工作空间",
+    ar: "قم بإنشاء مساحة عمل جديدة",
+    es: "Crear un nuevo espacio de trabajo",
+    it: "Creare un nuovo spazio di lavoro",
+    iw: "צור סביבת עבודה חדשה",
+    pt: "Criar um novo espaço de trabalho"
+  },
+  {
+    key: "invalid_workspace",
+    en: "Not seeing your workspace",
+    de: "Sie sehen Ihren Arbeitsbereich nicht",
+    nl: "Uw werkruimte niet zien",
+    engb: "Not seeing your workspace",
+    fr: "Ne pas voir votre espace de travail",
+    zh: "看不到你的工作空间",
+    ar: "عدم رؤية مساحة العمل الخاصة بك",
+    es: "No ver su espacio de trabajo",
+    it: "Non vedere il proprio spazio di lavoro",
+    iw: "לא רואה את סביבת העבודה שלך",
+    pt: "Não ver o seu espaço de trabalho"
+  },
+  {
+    key: "different_email",
+    en: "Try a different email",
+    de: "Versuchen Sie eine andere E-Mail",
+    nl: "Probeer een andere e-mail",
+    engb: "Try a different email",
+    fr: "Essayez un autre courriel",
+    zh: "尝试不同的电子邮件",
+    ar: "جرب بريدًا إلكترونيًا مختلفًا",
+    es: "Pruebe con otro correo electrónico",
+    it: "Provare con un'altra e-mail",
+    iw: "נסה אימייל אחר",
+    pt: "Tente um e-mail diferente"
   }
 ];

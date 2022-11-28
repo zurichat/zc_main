@@ -32,8 +32,20 @@ export default function Index() {
     }
   }, []);
 
+  //text align right for arabic and hebrew
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
+
   return (
-    <>
+    <div style={textAlign()}>
       <Wrapper>
         <TopSection
           style={
@@ -79,7 +91,7 @@ export default function Index() {
           <UserOrganisationsListing user={user} organizations={organizations} />
         </div>
       ) : null}
-    </>
+    </div>
   );
 }
 

@@ -35,9 +35,20 @@ export default function Index() {
     }
   }, []);
   const history = useHistory();
+  //text align right for arabic and hebrew
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
 
   return (
-    <>
+    <div style={textAlign()}>
       {/* <TopNavigationBar /> */}
 
       <div style={{ paddingTop: "5em" }} />
@@ -50,7 +61,7 @@ export default function Index() {
           fontSize: "${18 / 17}rem"
         }}
       >
-        {t("workspace_paragraph_first")}{" "}
+        {t("workspace_paragraph_first")}?{" "}
         <span
           style={{ color: "#00b87c", fontWeight: "450", cursor: "pointer" }}
           onClick={() => history.push("/create-workspace")}
@@ -65,6 +76,6 @@ export default function Index() {
       )}
 
       {/* <Footer /> */}
-    </>
+    </div>
   );
 }
