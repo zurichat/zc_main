@@ -32,8 +32,7 @@ const ContactSideBarData = [
     title: "Phone",
     desc: "Mon-Fri 8am - 5pm",
     addDesc: "",
-    attachment: "763-654-5423",
-    id: "phone"
+    attachment: "763-654-5423"
   }
 ];
 
