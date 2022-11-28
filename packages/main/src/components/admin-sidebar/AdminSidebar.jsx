@@ -175,60 +175,10 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/admin/settings/usergroups"
-          >
-            <FiUsers className={styles.icon} />
-            User groups
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/admin/invites"
-          >
-            <FiUserPlus className={styles.icon} />
-            Invitations
-          </Link>
-          <NavLink
-            exact
-            onClick={() => setModal(!openModal)}
-            activeClassName={styles.sidebarLinkActive}
-            className={styles.sidebarLink}
-            to="/admin/settings/billings"
-          >
-            <FiCreditCard className={styles.icon} />
-            Billings
-          </NavLink>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/"
-          >
-            <FiScissors className={styles.icon} />
-            Authentication
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/admin/settings/deprecation"
-          >
-            <FiScissors className={styles.icon} />
-            Deprecation
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
             to="/"
           >
             <FiCheckSquare className={styles.icon} />
             About this workspace
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/"
-          >
-            <FiAlertCircle className={styles.icon} />
-            Support for Transport layer security
           </Link>
         </div>
       </div>
@@ -266,27 +216,9 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
-          >
-            API
-            <FiExternalLink className={styles.iconRight} />
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/components/gateways"
-          >
-            Gateways
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
             to="/pricing"
           >
             Pricing
-          </Link>
-          <Link className={styles.sidebarLink} to="/blog">
-            Our blog
           </Link>
           <Link className={styles.sidebarLink} to="/signout">
             Sign out
