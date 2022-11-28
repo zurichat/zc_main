@@ -15,6 +15,7 @@ import whyzurichat from "./pages/whyzurichat";
 import Cookies from "./pages/Cookies";
 import ContactUs from "./pages/ContactUs";
 import Plugins from "./pages/Plugins";
+import Profile from "./pages/Profile";
 import ModalComponent from "./components/ModalComponent";
 
 import DownloadDesktop from "./pages/DownloadDesktop";
@@ -34,6 +35,7 @@ import SideBar from "./components/SideBar";
 import Download from "./pages/Download";
 import DownloadDesktopSectionTwo from "./pages/DownloadDesktopSectionTwo";
 import DownloadMobileSectionTwo from "./pages/DownloadMobileSectionTwo";
+import EditProfile from "./components/EditProfile";
 
 const resources = {};
 
@@ -54,6 +56,7 @@ const Translations = [
   ...Download,
   ...Workspace,
   ...UserOrganizationsListing,
+   ...Profile,
   ...TopBarModal,
 
   ...DownloadDesktop,
@@ -76,7 +79,8 @@ const Translations = [
   ...FAQ,
 
   ...SideBar,
-  ...Preferences
+  ...Preferences,
+  ...EditProfile
 ];
 
 Translations.forEach(o => {
