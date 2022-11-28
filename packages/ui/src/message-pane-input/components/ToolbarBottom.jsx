@@ -26,7 +26,7 @@ import { AiOutlineGif } from "react-icons/ai";
 import classes from "./Gif.module.css";
 import ReactGiphySearchbox from "react-giphy-searchbox";
 import sendfile from "./SendFile.module.css";
-
+import axios from "axios";
 const BoldIcon = () => <img src={Bold} alt="" />;
 const ItalicIcon = () => <img src={Italic} alt="" />;
 const ListIcon = () => <img src={List} alt="" />;
@@ -58,7 +58,7 @@ const ToolbarBottom = props => {
   const [inputKey, setInputKey] = useState("any-key-press");
   const [showAttachInputBox, setshowAttachInputBox] = useState(false);
   // Add files to variable on selection
-  const [files, setFile] = useState()
+  const [files, setFile] = useState(null);
 
   //const [preview, setPreview] = useState('')
 
@@ -82,52 +82,56 @@ const ToolbarBottom = props => {
   }, []);
 
   //Handles sending of attachedfile
-  const handleAttachMedia = e => {
+  const handleAttachMedia = () => {
     {
-      e.preventDefault();
-      
-        
       //Post request is sent here
-      sendMessageHandler(attachedFile);
+      // sendMessageHandler(attachedFile);
       // Function to upload files
-      handleSubmit()
+      handleSubmit();
       //Then this is to clear the file from the state
       props.sentAttachedFile(null);
       clearAttached();
     }
   };
   function handleSubmit() {
-    alert("Uploading File(s)")
+    alert("Uploading File(s)");
     const url = process.env.url;
     const formData = new FormData();
     for (let i = 0; i < files.length; i++) {
-      formData.append(files[i].name, files[i])
+      formData.append(files[i].name, files[i]);
     }
-    
+
     const config = {
       headers: {
-        'content-type': 'multipart/form-data',
-      },
+        "content-type": "multipart/form-data"
+      }
     };
-    axios.post(url, formData, config).then((response) => {
-      alert("File(s) has been uploaded")
+    axios.post(url, formData, config).then(response => {
+      alert("File(s) has been uploaded");
     });
-
   }
   const handleClickAway = () => {
     setshowAttachInputBox(false);
   };
 
   const handleSelectMedia = e => {
+    setAttachedFile(e.target.files);
 
-    setAttachedFile(e.target.files)
-    
     // Assign files to file state
-      setFile(e.target.files)
+    setFile(e.target.files);
 
     setAttachedFile(e.target.files);
     props.sentAttachedFile(e.target.files);
     setshowAttachInputBox(false);
+  };
+
+  const onSend = e => {
+    e.preventDefault();
+    if (files != null) {
+      handleAttachMedia();
+    } else {
+      handleClickSendMessage();
+    }
   };
 
   // on click clear attached file
@@ -251,7 +255,7 @@ const ToolbarBottom = props => {
           </span>
         </FormatContainer>
         <SendContainer>
-          <UnstyledButton onClick={handleClickSendMessage || handleAttachMedia}>
+          <UnstyledButton onClick={onSend}>
             <SendIcon />
           </UnstyledButton>
         </SendContainer>

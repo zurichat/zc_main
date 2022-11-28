@@ -78,4 +78,4 @@ dist
 .env.test
 
 packages/main/ignore
-packages/root-config/cypress.env.json
+
