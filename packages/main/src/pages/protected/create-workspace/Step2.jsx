@@ -15,20 +15,8 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
   const [workspaceDefaultChannelName, setWorkspaceDefaultChannelName] =
     React.useState(createWorkspaceData.workspaceDefaultChannelName);
 
-  //text align right for arabic and hebrew
-  const textAlign = () => {
-    if (
-      window.localStorage.myLanguage === "ar" ||
-      window.localStorage.myLanguage === "iw"
-    ) {
-      return {
-        textAlign: "right"
-      };
-    }
-  };
-
   return (
-    <div style={textAlign()}>
+    <div>
       <div className={styles.wrapper}>
         <div className={styles.email}>
           {user ? (
