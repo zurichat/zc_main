@@ -4,6 +4,7 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 // All components imported here
 import { GeneralErrorBoundary, GeneralLoading } from "./components";
+import ManageMembers from "./components/manage-members/ManageMembers";
 
 // All utilities imported here
 import { withSuspense } from "./utils";
@@ -23,12 +24,17 @@ import {
   ResetPassword,
   ChangePassword,
   WhyZuriChat,
-  PrivacyPage
+  WhyZuri,
+  PrivacyPage,
+  Preferences
 } from "./pages";
-import Preferences from "../src/pages/preferences/index";
-import WhyZuri from "./pages/static/whyzurichat";
+
 import TermsOfService from "../src-old/pages/termsOfService/index";
 import { useAuth } from "./auth/use-auth";
+import SettingsHome from "../src/pages/protected/settings-home/SettingsHome";
+import AccountProfile from "./pages/protected/account-profile/AccountProfile";
+import ManageWorkspace from "./pages/protected/manage-workspace/ManageWorkspace";
+import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
 
 const { Workspace, CreateWorkspace, ChooseWorkspace } = lazily(() =>
   import("./pages/protected")
@@ -107,6 +113,21 @@ const App = () => (
           </ProtectFromAuthRoute>
           <ProtectedRoute exact path="/signout">
             <NewSignOut />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings">
+            <SettingsHome />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/accountsProfile">
+            <AccountProfile />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/ManageWorkspace">
+            <ManageWorkspace />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/managemembers">
+            <ManageMembers />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/aboutworkspace">
+            <AboutWorkSpace />
           </ProtectedRoute>
           <ProtectedRoute exact path="/choose-workspace">
             {withSuspense(ChooseWorkspace)}

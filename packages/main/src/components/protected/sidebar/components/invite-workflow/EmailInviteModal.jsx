@@ -15,6 +15,7 @@ import { Loader } from "./Loader";
 
 export const EmailInviteModal = props => {
   const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+
   const userToken = sessionStorage.getItem("token") || null;
   const [listEmail, setListEmail] = useState([]);
   const [inviteStep, setInviteStep] = useState(1);
