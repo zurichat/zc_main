@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "../styles/adminowners.module.css";
+import styles from "../admin-owners/AdminOwners.module.css";
 import { FiSearch } from "react-icons/fi";
 import AdminOwnersItem from "./AdminOwnersItem";
 
@@ -22,7 +22,6 @@ const AdminOwners = ({ admins }) => {
 
   const handleChange = e => {
     filterAdmins(e.target.value);
-    //eslint-disable-next-line
     console.log(e);
   };
 
@@ -35,7 +34,6 @@ const AdminOwners = ({ admins }) => {
         let nameB = b.first_name.toLowerCase();
         return nameA < nameB ? -1 : nameA > nameB ? 1 : 0;
       });
-      //eslint-disable-next-line
       console.log(adminObj);
     }
 
@@ -45,7 +43,6 @@ const AdminOwners = ({ admins }) => {
         let roleB = b.role.toLowerCase();
         return roleA < roleB ? 1 : roleA > roleB ? -1 : 0;
       });
-      //eslint-disable-next-line
       console.log(adminObj);
     }
   };
@@ -53,7 +50,6 @@ const AdminOwners = ({ admins }) => {
     <div className={styles.container}>
       <div className={styles.tabContainer}>
         <div className={styles.topContent}>
-          {/* part 1 */}
           <label>
             <span className={styles.sortBy}>Sort By</span>
             <select
@@ -64,9 +60,7 @@ const AdminOwners = ({ admins }) => {
               <option value="FullName">FullName</option>
             </select>
           </label>
-          {/* end of part 1 */}
 
-          {/* part 2 */}
           <div className={styles.search}>
             <div className={styles.searchContainer}>
               <FiSearch className={styles.icon} />
@@ -78,7 +72,6 @@ const AdminOwners = ({ admins }) => {
               />
             </div>
           </div>
-          {/* end of part 2 */}
         </div>
       </div>
       {filtered !== null
