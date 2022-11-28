@@ -18,7 +18,7 @@ const myStyle = {
 const modifyOrganizationSettings = () => {
   let organizationid = localStorage.getItem("currentWorkspace");
   let showDN = true;
-  let token = localStorage.getItem("token");
+  let token = sessionStorage.getItem("token");
   axios.defaults.baseURL = "https://api.zuri.chat";
   axios.defaults.headers.common = { Authorization: `bearer ${token}` };
   axios({
