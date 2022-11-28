@@ -4,8 +4,6 @@ import styles from "../about-workspace-tabs/AboutWorkspaceTab.module.css";
 import RetentionAndExports from "../retention-exports/RetentionAndExports";
 import AdminOwners from "../admin-owners/AdminOwners";
 import OverviewWorkspace from "../overview-workspace/OverviewWorkspace";
-
-// icons
 import { FiMenu } from "react-icons/fi";
 import { CardProvider } from "../context/CardContext";
 
