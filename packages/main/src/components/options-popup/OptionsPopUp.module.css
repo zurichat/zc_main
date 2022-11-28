@@ -1,0 +1,73 @@
+
+.optionsIcon {
+  height: 16px;
+  width: 16px;
+}
+
+.popUpBtn {
+  align-self: center;
+  z-index: 2;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  padding: 6px 12px 4px 12px;
+}
+
+.popUpBtn:active {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.popUpWrap {
+  position: relative;
+  display: inline-block;
+}
+.popUpContent {
+  position: absolute;
+  background-color: #f8f8f8;
+  min-width: 200px;
+  z-index: 4;
+  bottom: 48px;
+  right: -60px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.1);
+}
+
+.popUpContent .listWrap {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.popUpContent .listItem {
+  font-size: 14px;
+  padding: 4px 12px;
+  text-align: left;
+  padding-left: 24px;
+  font-weight: 400;
+}
+
+.popUpContent .listItem:first-child {
+  margin: 12px 0 9px 0;
+  color: #292829;
+}
+
+.popUpContent .listItem:first-child:hover {
+  color: #f8f8f8;
+  background-color: rgba(16, 92, 43, 0.61);
+}
+
+.divider {
+  height: 1px;
+  background-color: #d0d0d0;
+}
+
+.popUpContent .listItem:last-child {
+  margin: 9px 0 12px 0;
+}
+
+.popUpContent .listItem:last-child:hover {
+  color: #292829;
+  background-color: rgba(174, 22, 22, 0.85);
+}
