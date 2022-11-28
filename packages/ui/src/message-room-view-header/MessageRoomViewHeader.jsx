@@ -9,7 +9,6 @@ export default function MessageRoomViewHeader(props) {
   const { t } = useTranslation();
   const [showDialog, setShowDialog] = useState(false);
   const [tabIndex, setTabIndex] = useState(0);
-
   return (
     <div>
       {showDialog && (
