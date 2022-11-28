@@ -10,10 +10,11 @@ import "react-notifications/lib/notifications.css";
 //importing react-notifications
 
 const ArchiveChannel = ({ closeEdit }) => {
-  const room = window.location.href.split("/").at(6);
+  // const room = window.location.href.split("/").at(6);
   const organizationID = localStorage.getItem("currentWorkspace") || null;
   const BASE_URL = "https://chat.zuri.chat";
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
+  const room = sessionStorage.getItem("currentRoom") || null;
   const [isAdmin, setIsAdmin] = useState(false);
   const [prevData, setPrevData] = useState([]);
   console.log(user, prevData);

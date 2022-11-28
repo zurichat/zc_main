@@ -8,7 +8,7 @@ import {
   NotificationContainer
 } from "react-notifications";
 const DeleteChannel = ({ closeEdit }) => {
-  const room = window.location.href.split("/").at(6);
+  const room = sessionStorage.getItem("currentRoom") || null;
   const organizationID = localStorage.getItem("currentWorkspace") || null;
   const BASE_URL = "https://chat.zuri.chat";
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
