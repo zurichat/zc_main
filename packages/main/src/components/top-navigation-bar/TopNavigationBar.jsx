@@ -362,10 +362,10 @@ export default function TopNavigationBar() {
                 <img
                   className={TopNavigationBarStyles.country_logo}
                   src={de}
-                  alt="Deutch"
-                  title="Deutch"
+                  alt="Deutsch"
+                  title="Deutsch"
                 />{" "}
-                <span>Deutch</span>
+                <span>Deutsch</span>
               </button>
             </Modal.Body>
 
