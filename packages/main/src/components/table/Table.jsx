@@ -1,8 +1,7 @@
 import React from "react";
-import OptionsIcon from "../icons/three-dots.svg";
-import styles from "../styles/Members.module.css";
-import AvatarIcon from "../icons/avatar.png";
-import ToolTipMenu from "./ToolTipMenu";
+import styles from "../table/Members.module.css";
+import AvatarIcon from "../table/assets/avatar.png";
+import ToolTipMenu from "../tool-tip-menu/ToolTipMenu";
 
 const imageShot = AvatarIcon;
 
@@ -45,8 +44,6 @@ const Table = props => {
                   {user.account_type}
                 </td>
                 <td className={styles.member} key="">
-                  {/* // onClick={props.toggleModal}
-                            // onMouseLeave={props.toggleModal}> */}
                   <ToolTipMenu />
                 </td>
               </tr>

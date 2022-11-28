@@ -1,13 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../manage-members/Members.module.css";
 import OptionsPopUp from "../options-popup/OptionsPopUp";
-// import { Route } from "react-router";
 import { Link } from "react-router-dom";
-// import { GetWorkspaceUsers } from '../../../../../../utilities/src/zuri-utilities';
-// import { GetWorkspaceUsers } from "@zuri/utilities";
 import Table from "../table/Table";
 import AdminSettings from "../../pages/protected/admin-settings/AdminSettings";
-// import UserOrganization from "../../../create-workspace/components/UserOrganization";
 import { authAxios } from "../manage-members/utils/Api";
 import { getUser, getCurrentWorkspace } from "../manage-members/utils/Common";
 
@@ -16,84 +12,18 @@ const ManageMembers = ({ organization }) => {
   const organisationId = getCurrentWorkspace();
   const [users, setUsers] = useState({});
 
-  // useEffect(async () => {
-  //     getMembers()
-  //   }, [])
-
-  // const getMembers = async  () => {
-  // try {
-  //     const res= await authAxios.get(`https://api.zuri.chat/organizations/${organization.id}/members`)
-
-  //     setUsers(res.data.data)
-  //         // eslint-disable-next-line no-console
-  //         console.log(res.data);
-
-  //     // console.log(res.data)
-  // } catch (err) {
-  //       if (err) throw err
-  // }
-  // }
-
   useEffect(() => {
     if (organisationId) {
       authAxios
         .get(`/organizations/${organisationId}/members`)
         .then(res => {
           setUsers(res.data.data);
-          //   console.log(res.data)
         })
         .catch(err => {
           console.error(err);
         });
     }
   }, [organisationId]);
-
-  // const users = [
-  //     {
-  //         _id: 1,
-  //         first_name: "Joe",
-  //         last_name: "Kunste",
-  //         email: "maridbheh@gmail.com",
-  //         account_role: "Primary Owner",
-  //         verify: "Active",
-  //         image_url: "https://bit.ly/sage-adebayo",
-  //         account_type: "Default"
-
-  //     },
-  //     {
-  //         _id: 2,
-  //         first_name: "Me",
-  //         last_name: "Kunste",
-  //         email: "maridbheh@gmail.com",
-  //         account_role: "Primary Owner",
-  //         verify: "Active",
-  //         image_url: "",
-  //         account_type: "Default"
-
-  //     },
-  //     {
-  //         _id: 3,
-  //         first_name: "Pee",
-  //         last_name: "Thiii",
-  //         email: "maridbheh@gmail.com",
-  //         account_role: "Full Member",
-  //         verify: "Active",
-  //         image_url: "https://bit.ly/sage-adebayo",
-  //         account_type: "Default"
-
-  //     },
-  //     {
-  //         _id: 4,
-  //         first_name: "Goe",
-  //         last_name: "Abhu",
-  //         email: "maridbheh@gmail.com",
-  //         account_role: "Admin Owner",
-  //         verify: "Active",
-  //         image_url: "https://bit.ly/sage-adebayo",
-  //         account_type: "Default"
-
-  //     },
-  // ];
 
   const [billing, setBilling] = useState("Active");
 
@@ -104,10 +34,6 @@ const ManageMembers = ({ organization }) => {
   const updateQuery = query => {
     setQuery(query.trim());
   };
-
-  // //const clearQuery = () => {
-  //     this.updateQuery("");
-  // };
 
   const showingMembers =
     query === ""
@@ -123,30 +49,9 @@ const ManageMembers = ({ organization }) => {
             userF.account_role.toLowerCase().includes(query.toLowerCase())
         );
 
-  // const getModal = data => {
-  //     setShowModal(true);
-  // };
-
   const toggleModal = () => {
     setShowModal(!showModal);
   };
-
-  // useEffect(() => {
-  //     const checkIfClickedOutside = e => {
-  //         // If the menu is open and the clicked target is not within the menu,
-  //         // then close the menu
-  //         if (showModal && ref.current && !ref.current.contains(e.target)) {
-  //             setShowModal(false)
-  //         }
-  //     }
-
-  //     document.addEventListener("mousedown", checkIfClickedOutside)
-
-  //     return () => {
-  //         // Cleanup the event listener
-  //         document.removeEventListener("mousedown", checkIfClickedOutside)
-  //     }
-  // }, [showModal])
 
   return (
     <AdminSettings>
@@ -177,11 +82,7 @@ const ManageMembers = ({ organization }) => {
             </button>
           </div>
           {showModal ? (
-            <OptionsPopUp
-              ref={ref}
-              toggleModal={toggleModal}
-              // name={this.state.dataModal.name}
-            />
+            <OptionsPopUp ref={ref} toggleModal={toggleModal} />
           ) : null}
           <Table
             users={users}
