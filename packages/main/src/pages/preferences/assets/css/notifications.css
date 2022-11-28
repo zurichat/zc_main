@@ -1,0 +1,33 @@
+.notifications {
+  width: 90%;
+}
+
+.notificationsPage {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.notificationSchedule a {
+  text-decoration: none;
+  color: #009967;
+}
+
+.day1 {
+  margin-left: 5rem;
+}
+
+.day2 {
+  margin-left: 3.4rem;
+}
+
+.day3 {
+  margin-left: 4.4rem;
+}
+
+.day4 {
+  margin-left: 5.6rem;
+}
+
+span p {
+  margin-bottom: 0;
+}
