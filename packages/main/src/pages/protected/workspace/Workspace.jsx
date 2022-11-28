@@ -120,7 +120,10 @@ export default function Index() {
         <TopBar toggleSidebar={toggleSidebar} />
       </TopBarWrapperStyle>
 
-      <div style={{ display: "flex", height: "calc(100vh - 48px)" }}>
+      <div
+        style={{ display: "flex", height: "calc(100vh - 48px)" }}
+        id="workspace-all"
+      >
         {/* only show extra side bar if (workspaces.length > 1) */}
         {workspaces && workspaces.length > 1 && (
           <div
