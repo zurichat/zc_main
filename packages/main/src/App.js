@@ -4,6 +4,7 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 // All components imported here
 import { GeneralErrorBoundary, GeneralLoading } from "./components";
+import ManageMembers from "./components/manage-members/ManageMembers";
 
 // All utilities imported here
 import { withSuspense } from "./utils";
@@ -115,6 +116,9 @@ const App = () => (
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/ManageWorkspace">
             <ManageWorkspace />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/managemembers">
+            <ManageMembers />
           </ProtectedRoute>
           <ProtectedRoute exact path="/choose-workspace">
             {withSuspense(ChooseWorkspace)}
