@@ -128,14 +128,14 @@ export default [
   {
     key: "language",
     en: "Language",
-
     fr: "Langue",
     zh: "语言",
-    ar: "لغة",
-    es: "Idioma",
     it: "Lingua",
     iw: "שפה",
-    pt: "Idioma"
+    pt: "Idioma",
+    de: "Taal",
+    ar: "لغة",
+    es: "Idioma"
   },
   {
     key: "choose_language",
