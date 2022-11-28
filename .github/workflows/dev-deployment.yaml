@@ -26,6 +26,7 @@ jobs:
             git reset --hard origin/dev
             git stash
             git pull origin dev
+            nvm use 16
             yarn install
             yarn build
             pm2 restart zc_main_dev
