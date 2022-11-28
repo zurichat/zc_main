@@ -5361,10 +5361,7 @@ agora-rtc-react@^1.1.0:
   dependencies:
     agora-rtc-sdk-ng "^4.3.0"
 
-
 agora-rtc-sdk-ng@^4.15.0, agora-rtc-sdk-ng@^4.3.0:
-agora-rtc-sdk-ng@^4.3.0:
-
   version "4.15.0"
   resolved "https://registry.yarnpkg.com/agora-rtc-sdk-ng/-/agora-rtc-sdk-ng-4.15.0.tgz#b9b078580ae588e4f1a29188cbd2576a950807cf"
   integrity sha512-55WyOe4cVquF3gIlEunWjasRPDlVt3GfU5wFvRlGuPDXxQK0Z8xNP07Hq/Q4D45k9qc3lzZ5LPxLznywDWPUWQ==
@@ -8091,6 +8088,13 @@ dotenv-webpack@^7.1.0:
   version "7.1.0"
   resolved "https://registry.npmjs.org/dotenv-webpack/-/dotenv-webpack-7.1.0.tgz"
   integrity sha512-+aUOe+nqgLerA/n611oyC15fY79BIkGm2fOxJAcHDonMZ7AtDpnzv/Oe591eHAenIE0t6w03UyxDnLs/YUxx5Q==
+  dependencies:
+    dotenv-defaults "^2.0.2"
+
+dotenv-webpack@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/dotenv-webpack/-/dotenv-webpack-8.0.1.tgz#6656550460a8076fab20e5ac2eac867e72478645"
+  integrity sha512-CdrgfhZOnx4uB18SgaoP9XHRN2v48BbjuXQsZY5ixs5A8579NxQkmMxRtI7aTwSiSQcM2ao12Fdu+L3ZS3bG4w==
   dependencies:
     dotenv-defaults "^2.0.2"
 
