@@ -24,6 +24,7 @@ import DownloadIos from "./pages/DownloadIos";
 import DownloadWindows from "./pages/DownloadWindows";
 
 import Pricing from "./pages/Pricing";
+import PrivacyPage from "./pages/PrivacyPolicy";
 
 import Footer from "./components/Footer";
 import FAQ from "./components/FAQ";
@@ -64,6 +65,7 @@ const Translations = [
   ...ModalComponent,
 
   ...Pricing,
+  ...PrivacyPage,
   ...DownloadDesktopSectionTwo,
   ...DownloadMobileSectionTwo,
   ...ProfileMore,

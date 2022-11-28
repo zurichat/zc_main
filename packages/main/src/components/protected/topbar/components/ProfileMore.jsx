@@ -1,32 +1,32 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import styles from "../styles/Profile.module.css";
 
-import { useTranslation } from "react-i18next";
-
 import { ProfileContext } from "../context/profile-modal.context";
 import { TopbarContext } from "../context/topbar.context";
 import toast, { Toaster } from "react-hot-toast";
 import Preferences from "./Preferences";
 import { getCurrentWorkspace, getUser } from "../utils/common";
 import { authAxios } from "../utils/api";
+import useOnClickOutside from "../hooks/useClickOutside";
 
-export const Dropdown = () => {
+import { useTranslation } from "react-i18next";
+
+export const Dropdown = ({ setDropdown }) => {
   const { t } = useTranslation();
 
   const { toggleModalState } = useContext(ProfileContext);
   const [modal, setModal] = useState("");
-
+  const ref = useRef();
   const user = getUser();
   const currentWorkspace = getCurrentWorkspace();
   const [workspaceData, setWorkspaceData] = React.useState({});
-
+  useOnClickOutside(ref, () => setDropdown(false));
   useEffect(() => {
     if (currentWorkspace) {
       authAxios
         .get(`/organizations/${currentWorkspace}`)
         .then(res => {
           setWorkspaceData(res.data.data);
-          // console.log(res.data.data)
         })
         .catch(err => {
           console.error(err);
@@ -47,12 +47,12 @@ export const Dropdown = () => {
     navigator.clipboard.writeText(copiedText).then(
       () => {
         toast.success("Member ID Copied", {
-          position: "bottom-center"
+          position: "top-right"
         });
       },
       err => {
         toast.error(err?.message, {
-          position: "bottom-center"
+          position: "top-right"
         });
       }
     );
@@ -60,13 +60,12 @@ export const Dropdown = () => {
 
   return (
     <>
-      <div className={styles.profileDropDown}>
+      <div className={styles.profileDropDown} ref={ref}>
         <div className={styles.topSection}>
           <p
             onClick={() => {
               setReusableModal("preference");
               toggleModalState();
-              // console.log(reusableModal)
             }}
             className={styles.paragraph}
           >
