@@ -1,0 +1,94 @@
+.adminandOwners {
+  padding: 8px 8px 8px 8px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.peopleAvatar {
+  padding: 0 8px 0 0;
+}
+.buttonAvatar {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  line-height: inherit;
+  overflow: initial;
+  padding: 0;
+  text-align: initial;
+  vertical-align: initial;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  outline: none;
+}
+
+.imgAvatar {
+  height: 36px;
+  width: 36px;
+  border-radius: 4px;
+  background-color: rgba(29, 28, 29, 0.13);
+  color: #1d1c1d;
+  vertical-align: middle;
+  flex-shrink: 0;
+  border: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+}
+.admin {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+.adminName {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.1rem;
+}
+.details {
+  display: flex;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 0;
+  margin-top: -0.9rem;
+  position: relative;
+}
+.spanName {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+.spanDot {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-right: 4px;
+  font-size: 1.125rem;
+  margin-left: 0.2rem;
+}
+.spanEmail {
+  color: rgba(29, 28, 29, 0.7);
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.125rem;
+}
+
+.status {
+  font-size: 15px;
+  line-height: 1.46668;
+  font-weight: 400;
+  position: absolute;
+  top: 20px;
+  right: 32px;
+}
