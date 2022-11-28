@@ -22,7 +22,6 @@ export const getCurrentWorkspaceData = () => {
     authAxios
       .get(`/organizations/${getCurrentWorkspace()}`)
       .then(res => {
-        // console.log(res.data.data)
         return res.data.data;
       })
       .catch(err => {
@@ -43,8 +42,6 @@ export const removeUserSession = () => {
   sessionStorage.removeItem("user");
   sessionStorage.removeItem("session_id");
 };
-
-// ================================================
 
 // The section of the password length
 export const isLength = password => {
