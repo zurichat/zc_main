@@ -125,3 +125,15 @@ export const StyledTabs = styled(Tabs)`
     border-bottom: 3px solid #00b87c;
   }
 `;
+
+export const ErrorModal = styled.div`
+  position: fixed;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  z-index: 1000;
+`;

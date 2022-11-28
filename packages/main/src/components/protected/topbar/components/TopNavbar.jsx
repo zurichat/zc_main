@@ -86,6 +86,7 @@ const TopNavbar = ({ toggleSidebar }) => {
         event.event === "UpdateOrganizationMemberPresence"
       ) {
         if (event.id === session_user["id"]) {
+          // UpdateInfo();
           getProfileImage();
         } else return;
       } else return;
@@ -153,10 +154,7 @@ const TopNavbar = ({ toggleSidebar }) => {
       console.error("Error", err);
     }
   };
-
-  useEffect(() => {
-    getProfileImage();
-  }, []);
+  getProfileImage();
 
   let toggleStatus = null;
 
