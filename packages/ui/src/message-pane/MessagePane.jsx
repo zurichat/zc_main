@@ -15,7 +15,7 @@ function MessagePane({
 }) {
   return (
     <div className={styles.MessageContainer}>
-      <div className={styles.hoverItemsContainer}>
+      <div id="hoverItems" className={styles.hoverItemsContainer}>
         <HoverItems
           id={message._id}
           handleShowMoreOptions={onShowMoreOptions}

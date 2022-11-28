@@ -67,10 +67,7 @@ export default function TopNavigationBar() {
             className={`d-inline-block align-top ${TopNavigationBarStyles.image}`}
             width={40}
           />
-          <span
-            translate="no"
-            className={`mb-2 ${TopNavigationBarStyles.zuriChat}`}
-          >
+          <span translate="no" className={`${TopNavigationBarStyles.zuriChat}`}>
             Zuri Chat
           </span>
         </Link>
@@ -365,10 +362,10 @@ export default function TopNavigationBar() {
                 <img
                   className={TopNavigationBarStyles.country_logo}
                   src={de}
-                  alt="Deutch"
-                  title="Deutch"
+                  alt="Deutsch"
+                  title="Deutsch"
                 />{" "}
-                <span>Deutch</span>
+                <span>Deutsch</span>
               </button>
             </Modal.Body>
 

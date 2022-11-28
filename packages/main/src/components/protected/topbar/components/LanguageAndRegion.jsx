@@ -12,9 +12,13 @@ const options = [
   { value: "en", label: "Choose a default language" },
   { value: "en", label: "English (US)" },
   { value: "fr", label: "French (FR)" },
-  { value: "de", label: "Deutch (DU)" }
-  // { value: "zh", label: "Chinese (ZH)" },
-  //{ value: "ar", label: "Arabic (AR)" }
+  { value: "de", label: "Deutch (DU)" },
+  { value: "zh", label: "Chinese (ZH)" },
+  { value: "ar", label: "Arabic (AR)" },
+  { value: "es", label: "Espanol (ES)" },
+  { value: "it", label: "Italian (IT)" },
+  { value: "iw", label: "Hebrew (IW)" },
+  { value: "pt", label: "Portugese (PT)" }
 ];
 
 const LanguageAndRegion = () => {
