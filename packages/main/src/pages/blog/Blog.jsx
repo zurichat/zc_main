@@ -2,10 +2,12 @@ import React from "react";
 import style from "./Blog.module.css";
 import PreviousArrow from "./assets/Vector.png";
 import NextArrow from "./assets/Vector1.png";
+import { TopNavigationBar, Footer } from "../../components";
 
 export default function index() {
   return (
     <>
+      <TopNavigationBar />
       <main className={`${style.container}`}>
         <section className={`${style.hero}`}>
           <h1 className={`${style.hero__heading}`}>
@@ -231,6 +233,7 @@ export default function index() {
           </form>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
