@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "../admin-owners/AdminOwners.module.css";
 import { FiSearch } from "react-icons/fi";
-import AdminOwnersItem from "./AdminOwnersItem";
+import AdminOwnersItem from "../admin-owners-item/AdminOwnersItem";
 
 const AdminOwners = ({ admins }) => {
   const [adminObj, setAdminObj] = useState(admins);
