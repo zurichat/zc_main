@@ -22,18 +22,8 @@ import { useTranslation } from "react-i18next";
 const About = () => {
   const { t } = useTranslation();
 
-  const textAlign = () => {
-    if (
-      window.localStorage.myLanguage === "ar" ||
-      window.localStorage.myLanguage === "iw"
-    ) {
-      return {
-        textAlign: "right"
-      };
-    }
-  };
   return (
-    <div style={textAlign()}>
+    <div>
       <TopNavigationBar />
       <div className={`container mb-5`}>
         <div className={`${styles.banner}`}>

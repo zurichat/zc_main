@@ -33,6 +33,7 @@ import SideBar from "./components/SideBar";
 import Download from "./pages/Download";
 import DownloadDesktopSectionTwo from "./pages/DownloadDesktopSectionTwo";
 import DownloadMobileSectionTwo from "./pages/DownloadMobileSectionTwo";
+import ProfileMore from "./pages/ProfileMore";
 
 const resources = {};
 
@@ -65,6 +66,7 @@ const Translations = [
   ...Pricing,
   ...DownloadDesktopSectionTwo,
   ...DownloadMobileSectionTwo,
+  ...ProfileMore,
 
   // Components
   ...NavBar,

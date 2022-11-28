@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import styles from "../styles/Profile.module.css";
 
+import { useTranslation } from "react-i18next";
+
 import { ProfileContext } from "../context/profile-modal.context";
 import { TopbarContext } from "../context/topbar.context";
 import toast, { Toaster } from "react-hot-toast";
@@ -9,6 +11,8 @@ import { getCurrentWorkspace, getUser } from "../utils/common";
 import { authAxios } from "../utils/api";
 
 export const Dropdown = () => {
+  const { t } = useTranslation();
+
   const { toggleModalState } = useContext(ProfileContext);
   const [modal, setModal] = useState("");
 
@@ -66,16 +70,17 @@ export const Dropdown = () => {
             }}
             className={styles.paragraph}
           >
-            View preferences
+            {t("profilemore_preferences")}
           </p>
-          <p className={styles.paragraph}>View your files</p>
+          <p className={styles.paragraph}>{t("profile_view_files")}</p>
           <p onClick={() => toggleUserPresence()} className={styles.paragraph}>
-            Set yourself {presence === "true" ? "away" : "active"}
+            {t("profile_set_yourself")}{" "}
+            {presence === "true" ? "away" : "active"}
           </p>
         </div>
         <div className={styles.bottomSection}>
           <p className={styles.paragraphNull} onClick={CopyToClipBoard}>
-            Copy member ID
+            {t("profile_copy_member")}
           </p>
           <small className={styles.small} ref={getText}>
             U031203013
@@ -88,7 +93,9 @@ export const Dropdown = () => {
             }
             style={{ color: "black", fontWeight: "normal" }}
           >
-            <p className={styles.paragraphNull}>Account settings</p>
+            <p className={styles.paragraphNull}>
+              {t("profile_account_settings")}
+            </p>
           </a>
         </div>
       </div>
