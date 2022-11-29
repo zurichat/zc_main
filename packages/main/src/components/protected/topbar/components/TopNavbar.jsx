@@ -10,7 +10,7 @@ import { TopbarContext } from "../context/topbar.context";
 
 import { authAxios } from "../utils/api";
 import { getUserInfo, subscribeToChannel } from "@zuri/utilities";
-
+import { useLocation } from "react-router-dom";
 import Profile from "./Profile";
 import { BigModal } from "./BigModal";
 import TopBarSearchModal from "./TopBarSearchModal";
@@ -44,6 +44,18 @@ const TopNavbar = ({ toggleSidebar }) => {
 
   const state = useContext(TopbarContext);
   const [showModal] = state.show;
+  const location = useLocation();
+  const urlsList = JSON.parse(localStorage.getItem("urlsTracker"));
+
+  const getRealUrl = () => {
+    const visibleUrl = location?.pathname?.split("/")[2];
+    if (visibleUrl.length > 8) return visibleUrl;
+    if (urlsList) {
+      return urlsList.workspaceIds?.find(url => url.short_id === visibleUrl)
+        ?.real_id;
+    }
+    return visibleUrl;
+  };
 
   const [organizations, setOrganizations] = useState([]);
 
@@ -146,7 +158,7 @@ const TopNavbar = ({ toggleSidebar }) => {
   const getProfileImage = async e => {
     try {
       const res = await authAxios.get(
-        `/organizations/${currentWorkspace}/members/${userdef.id}`
+        `/organizations/${getRealUrl()}/members/${userdef.id}`
       );
       setUserProfileImage(res.data.data.image_url);
     } catch (err) {
