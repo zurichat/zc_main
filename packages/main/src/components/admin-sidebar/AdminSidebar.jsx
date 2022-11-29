@@ -175,7 +175,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/admin/settings/aboutworkspace"
           >
             <FiCheckSquare className={styles.icon} />
             About this workspace
@@ -186,35 +186,28 @@ const AdminSidebar = ({ setModal, openModal }) => {
         <h6 className={styles.sidebarHeading}>OTHERS</h6>
         <div className={styles.sidebarMenuItems}>
           <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/"
-          >
-            Tour
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
+            onClick={() => setModal(prev => !prev)}
             className={styles.sidebarLink}
             to="/admin/settings/managemembers"
           >
             Manage members
           </Link>
           <Link
-            onClick={() => setModal(!openModal)}
+            onClick={() => setModal(prev => !prev)}
             className={styles.sidebarLink}
-            to="/"
+            to="/legal"
           >
             Brand guidelines
           </Link>
           <Link
-            onClick={() => setModal(!openModal)}
+            onClick={() => setModal(prev => !prev)}
             className={styles.sidebarLink}
             to="/help"
           >
             Help
           </Link>
           <Link
-            onClick={() => setModal(!openModal)}
+            onClick={() => setModal(prev => !prev)}
             className={styles.sidebarLink}
             to="/pricing"
           >
