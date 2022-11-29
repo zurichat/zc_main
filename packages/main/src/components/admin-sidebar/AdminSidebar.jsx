@@ -188,13 +188,6 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
-          >
-            Tour
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
             to="/admin/settings/managemembers"
           >
             Manage members
@@ -202,7 +195,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/legal"
           >
             Brand guidelines
           </Link>
