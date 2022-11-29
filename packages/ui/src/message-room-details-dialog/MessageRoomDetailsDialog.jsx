@@ -355,8 +355,6 @@ export function MembersPanel({ config }) {
 
     const theUserData = JSON.parse(localStorage.getItem("userData"));
 
-    console.log(theUserData.user.org_id);
-
     const theOrganizarionId = theUserData.user.org_id;
 
     const theAdminId = theUserData.user._id;
