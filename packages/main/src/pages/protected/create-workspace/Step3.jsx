@@ -13,6 +13,8 @@ import { useTranslation } from "react-i18next";
 export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
   const history = useHistory();
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
+
+  const short_id = localStorage.getItem("currentWorkspaceShort") || null;
   const organizationID = localStorage.getItem("currentWorkspace") || null;
 
   const { t } = useTranslation();
@@ -44,7 +46,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
         console.error(err);
       });
 
-    history.push(`/workspace/${organizationID}`);
+    history.push(`/workspace/${short_id}`);
   };
 
   const handleDelete = index => {
