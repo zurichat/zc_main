@@ -175,7 +175,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/admin/settings/aboutworkspace"
           >
             <FiCheckSquare className={styles.icon} />
             About this workspace

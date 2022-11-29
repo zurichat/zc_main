@@ -14,6 +14,7 @@ import { getUserInfo, BASE_API_URL } from "@zuri/utilities";
 
 const MarketPlace = () => {
   let currentWorkspace = localStorage.getItem("currentWorkspace");
+
   let token = sessionStorage.getItem("token");
 
   // States
