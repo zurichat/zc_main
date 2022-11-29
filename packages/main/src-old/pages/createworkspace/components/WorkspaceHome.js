@@ -114,7 +114,7 @@ const WorkspaceHome = () => {
           <img src={Pic} alt="" />
         </ImageSection>
       </TopSection>
-      {/*  {user ? (
+      {/* {user ? (
         <UserOrganization user={user} organizations={organizations} />
       ) : null} */}
     </Wrapper>
