@@ -316,6 +316,7 @@ export function MembersPanel({ config }) {
   const [selectedMember, setSelectedMember] = useState(null);
   const [isLoading, setisLoading] = useState(false);
   const [userList, setUserList] = useState([]);
+  const [searchList, setSearchList] = useState([]);
   const [memberData, setMemberData] = useState([]);
   const [membersList, setMembersList] = useState(roomMembers);
   const [isSearching, setIsSearching] = useState(false);
@@ -397,18 +398,10 @@ export function MembersPanel({ config }) {
         });
         const channelUserIds = membersList.map(member => member._id);
         setMemberData(r.data.data);
-        // check to see if the user is already in a channel
-        const checkedUsers = users.map(user => {
-          if (channelUserIds.includes(user.value)) {
-            return {
-              ...user,
-              label: `${user.label} (Already in this channel)`,
-              isDisabled: true
-            };
-          }
-          return user;
-        });
-        setUserList(checkedUsers);
+        // check and ensuring that members of a channel don't show up in the searchList
+        const memberSet = new Set(membersList);
+        const newList = userList.filter(user => !memberSet.has(user));
+        setSearchList(newList);
         setisLoading(false);
       })
       .catch(() => {
@@ -464,7 +457,7 @@ export function MembersPanel({ config }) {
         handleShow={handleaddModalShow}
         handleClose={handleClose}
         addMembersEvent={addMembersEvent}
-        userList={userList}
+        searchList={searchList}
       />
 
       {selectedMember && (
