@@ -71,7 +71,6 @@
     "@popperjs/core": "^2.10.1",
     "@reach/dialog": "^0.16.0",
     "@reach/tabs": "^0.16.1",
-    "@novu/notification-center": "^0.9.2",
     "@reduxjs/toolkit": "^1.6.2",
     "agora-react-uikit": "^1.1.0",
     "agora-rtc-sdk-ng": "^4.15.0",
