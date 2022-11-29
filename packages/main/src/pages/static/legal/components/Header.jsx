@@ -1,22 +1,22 @@
 /* eslint-disable react/no-unknown-property */
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import headerStyles from "../component-styles/HeaderStyle.module.css";
-import zurichatlogo from "../component-assets/zurilogo.svg";
+import headerStyles from "../styles/HeaderStyle.module.css";
+import zurichatlogo from "../assets/zurilogo.svg";
 import { useTranslation } from "react-i18next";
 import Modal from "react-bootstrap/Modal";
 
-import world from "../component-assets/language/world.png";
-import uk from "../component-assets/language/uk.png";
-import de from "../component-assets/language/de.png";
-import fr from "../component-assets/language/fr.png";
-import zh from "../component-assets/language/zh.png";
-import es from "../component-assets/language/es.png";
-import it from "../component-assets/language/it.png";
-import us from "../component-assets/language/us.png";
-import ar from "../component-assets/language/ar.png";
-import he from "../component-assets/language/he.png";
-import pt from "../component-assets/language/pt.png";
+import world from "../language/world.png";
+import uk from "../language/uk.png";
+import de from "../language/de.png";
+import fr from "../language/fr.png";
+import zh from "../language/zh.png";
+import es from "../language/es.png";
+import it from "../language/it.png";
+import us from "../language/us.png";
+import ar from "../language/ar.png";
+import he from "../language/he.png";
+import pt from "../language/pt.png";
 
 const HeaderSearchSuggestion = () => {
   const { t } = useTranslation();

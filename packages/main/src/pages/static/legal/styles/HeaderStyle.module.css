@@ -1,0 +1,266 @@
+.pageHeader {
+  box-shadow: 0 0.5rem 1rem rgba(187, 186, 231, 0.15);
+  background-color: white;
+  top: 0;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  font-family: "Lato";
+}
+
+.navbar {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  max-width: 95%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.navbar_toggle_icon {
+  padding-bottom: 0;
+}
+.navbar_toggle_icon span {
+  line-height: 1;
+  width: 30px;
+  margin: 5px 0;
+  text-align: center;
+  justify-content: center;
+  background: rgb(85, 83, 83);
+  border-radius: 4px;
+}
+
+/* .navLinkFeatures {
+  _margin-right: 30px;
+}
+
+.navLinkPricing {
+  _margin-right: 30px;
+}
+
+.navLinkComms {
+  _margin-right: 30px;
+} */
+
+.modal_header button {
+  font-size: 2rem;
+  padding-right: 0.5rem;
+  background-color: white;
+}
+.modal_header button span {
+  padding: 0;
+}
+.select {
+  font-size: 18px;
+  display: inline-flex;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.select span {
+  padding-left: 20px;
+  padding-bottom: 0;
+}
+
+.select:hover {
+  outline-style: none;
+  background-color: #00b87c;
+  color: white;
+}
+.country {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  padding: 20px;
+}
+.world {
+  padding: 5px;
+  background-color: white;
+}
+.world img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.world:hover {
+  background-color: rgb(128, 126, 126);
+}
+.country_logo {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.image {
+  margin: auto;
+}
+
+.search_wrapper {
+  position: relative;
+}
+
+.navbarBrand span {
+  padding: 0.5rem;
+  font-size: 22px;
+  margin: 0 !important;
+}
+
+.signs li {
+  padding: 0 20px;
+}
+
+.signU {
+  color: #00b87c;
+  font-weight: 400;
+  font-size: 18px;
+  padding-top: 8px;
+  padding-bottom: 0;
+}
+
+.signU:hover {
+  padding-bottom: 6px;
+  border-bottom: 0.2rem solid #00b87c;
+}
+
+.signIn {
+  background-color: #00b87c;
+  color: white;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 8px 20px;
+  border-radius: 4px;
+}
+
+.signIn:hover {
+  background-color: #156349;
+  color: white;
+}
+
+.item {
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+
+  /* padding: 8px 5px; */
+}
+.navbarNav span {
+  padding-bottom: 0;
+}
+.navbarNav li span:hover {
+  padding-bottom: 2px;
+  border-bottom: 0.2rem solid #00b87c;
+}
+
+/* .toggle {
+  _margin-right: 12px;
+} */
+
+@media only screen and (max-width: 1200px) {
+  .navbarNav {
+    flex-basis: 80%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .search_wrapper {
+    display: none;
+  }
+
+  .navbarNav {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .navbarNav li {
+    padding: 5px 0;
+  }
+
+  .signs {
+    display: grid;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  .signs li {
+    margin: 0.5rem 0;
+    list-style: none;
+    padding: 0;
+  }
+
+  .search_wrapper2 {
+    margin-right: -20%;
+  }
+  .language {
+    position: absolute;
+    display: flex;
+    left: 85%;
+    top: 20px;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+  .language {
+    left: 80vw;
+  }
+  .country {
+    padding: 5px;
+  }
+  .select {
+    font-size: 14px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .select span {
+    padding-left: 0;
+    padding-bottom: 0;
+  }
+}
+@media only screen and (max-width: 680px) {
+  .language {
+    left: 78vw;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .language {
+    left: 76vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbarNav li span {
+    padding-left: 0;
+  }
+  .language {
+    left: 72vw;
+  }
+
+  .navbarBrand {
+    padding-left: 0;
+  }
+
+  /* .toggle {
+    _margin-right: 30px;
+  } */
+
+  .search_wrapper2 {
+    margin-right: -10%;
+  }
+
+  /* .toggle {
+    _margin-right: 30px;
+  } */
+}
+@media only screen and (max-width: 414px) {
+  .language {
+    left: 68vw;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .language {
+    left: 65vw;
+  }
+}

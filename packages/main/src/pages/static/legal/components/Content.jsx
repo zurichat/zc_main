@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Style from "../styles/content.module.css";
-import Link from "../../../components/Link";
+import Link from "../component/Link";
 // import CustomLinks from "./contentData"
 import UserTerms from "../assets/user-grid.png";
 import Security from "../assets/security1.png";
