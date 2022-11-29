@@ -14,19 +14,25 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   const [editDetails, setEditDetails] = useState(false);
   const history = useHistory();
   const [orgs, setOrgs] = React.useState([]);
+  const userData = JSON.parse(localStorage.getItem("userData"));
 
   useEffect(() => {
-    const organisation_id = localStorage.getItem("currentWorkspace");
-
-    if (organisation_id) {
+    if (userData.currentWorkspace) {
       //Fetch organization logo
       axios
-        .get(`/organizations/${organisation_id}`)
+        .get(
+          `https://staging.api.zuri.chat/organizations/${userData.currentWorkspace}`,
+          {
+            headers: {
+              Authorization: `Bearer ${userData.token}`
+            }
+          }
+        )
         .then(res => {
           setOrgLogoUrl(res.data.data.logo_url ? res.data.data.logo_url : "");
         })
         .catch(err => {
-          console.error(err);
+          console.error(err, "from modal component");
         });
     }
 
