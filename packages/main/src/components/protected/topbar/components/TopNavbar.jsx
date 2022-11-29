@@ -52,6 +52,7 @@ const TopNavbar = ({ toggleSidebar }) => {
   const [messages, setMessages] = useState("");
   const [isSearchOpen, setOpenSearch] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const userdef = JSON.parse(sessionStorage.getItem("user"));
 
   const onSearchSubmit = e => {
     if (e.keyCode === 13 && searchValue.length >= 1) {
@@ -112,8 +113,6 @@ const TopNavbar = ({ toggleSidebar }) => {
   // }, [search])
 
   useEffect(() => {
-    const userdef = JSON.parse(sessionStorage.getItem("user"));
-
     async function getOrganizations() {
       await authAxios
         .get(`/users/${userdef.email}/organizations`)
@@ -147,7 +146,7 @@ const TopNavbar = ({ toggleSidebar }) => {
   const getProfileImage = async e => {
     try {
       const res = await authAxios.get(
-        `/organizations/${orgId}/members/${user._id}`
+        `/organizations/${currentWorkspace}/members/${userdef.id}`
       );
       setUserProfileImage(res.data.data.image_url);
     } catch (err) {
