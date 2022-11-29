@@ -398,6 +398,7 @@ export function MembersPanel({ config }) {
         });
         const channelUserIds = membersList.map(member => member._id);
         setMemberData(r.data.data);
+        setUserList(users);
         // check and ensuring that members of a channel don't show up in the searchList
         const memberSet = new Set(membersList);
         const newList = userList.filter(user => !memberSet.has(user));
