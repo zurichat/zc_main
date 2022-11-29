@@ -1,33 +1,3 @@
-// import React, { useState } from "react";
-// import AgoraUIKit from "agora-react-uikit";
-
-// const VoiceCall = () => {
-//   const [videoCall, setVideoCall] = useState(true);
-
-//   const rtcProps = {
-//     appId: "88dc67fa159b4d1ea40fd971f5e05654",
-//     channel: "test",
-//     token: `007eJxTYFj84evc3RaTC9ZPctizOPGholqOV9dj6yv6MV
-//     YpN1vmT76pwGBhkZJsZp6WaGhqmWSSYpiaaGKQlmJpbphmmmpgamZqwv2oNbkhkJHh9+JdLIwMEAjiszCUpBaXMDAAAPiMIfM=`
-//   };
-
-//   const callbacks = {
-//     EndCall: () => setVideoCall(false)
-//   };
-
-//   return videoCall ? (
-//     <div style={{ display: "flex", width: "100vw", height: "100vh" }}>
-//       <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />
-//     </div>
-//   ) : (
-//     <div>
-//       <h3 onClick={() => setVideoCall(true)}>Join</h3>
-//     </div>
-//   );
-// };
-
-// export default VoiceCall;
-
 import React, { useState } from "react";
 import AgoraUIKit, { layout } from "agora-react-uikit";
 import "agora-react-uikit/dist/index.css";
@@ -42,13 +12,6 @@ const VoiceCall = () => {
     token: process.env.REACT_APP_AGORA_TOKEN,
     role: isHost ? "host" : "audience"
   };
-  // const rtcProps = {
-  //   appId: "88dc67fa159b4d1ea40fd971f5e05654",
-  //   channel: "test",
-  //   token: `007eJxTYFj84evc3RaTC9ZPctizOPGholqOV9dj6yv6MV
-  //   YpN1vmT76pwGBhkZJsZp6WaGhqmWSSYpiaaGKQlmJpbphmmmpgamZqwv2oNbkhkJHh9+JdLIwMEAjiszCUpBaXMDAAAPiMIfM=`,
-  //   role: isHost ? "host" : "audience"
-  // };
 
   const styleProps = {
     iconSize: 50,
