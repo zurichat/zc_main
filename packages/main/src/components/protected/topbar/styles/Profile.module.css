@@ -4,13 +4,17 @@
   background: #fff;
   position: fixed;
   right: 0;
-  top: 2.9em;
-  border-left: #f6f6f6 1px solid;
-  z-index: 10000;
+  top: 3em;
+  border-left: rgba(0, 0, 0, 0.1) 1px solid;
+  z-index: 99;
   overflow-y: scroll;
 }
 .ProfileContainer::-webkit-scrollbar {
   display: none;
+}
+
+.ProfileContainer img {
+  max-width: 90%;
 }
 
 .containerNone {
@@ -19,7 +23,7 @@
 
 .header {
   width: 100%;
-  height: 44px;
+  height: 36px;
   z-index: 40;
   top: 0;
   left: 0;
@@ -63,9 +67,11 @@
 }
 
 .userDetails {
+  margin-top: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   flex-direction: column;
 }
 
@@ -113,11 +119,16 @@
 
 .buttonGroups {
   position: relative;
-  margin-top: 1.5rem;
+  margin-top: 2.6rem;
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 25px;
+}
+
+.buttonGroups svg {
+  margin-right: unset;
 }
 
 .buttonGroups button {
@@ -240,7 +251,7 @@
   display: none;
 }
 .h3users {
-  margin-right: -1em;
+  font-weight: 700;
   margin-top: 7px;
   cursor: pointer;
   outline: none;
@@ -250,16 +261,12 @@
   padding-left: 5px;
   padding-bottom: 10px;
   position: absolute;
-  /* left: 15px; */
-  right: 70px;
-  /* top: 108px; */
   background: none;
   transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .myp {
-  margin: 7px 1px 10px !important;
   position: relative;
-  top: 25px;
+  top: 28px;
 }
 
 @media (max-width: 768px) {
@@ -274,10 +281,6 @@
     overflow-y: auto;
     border-radius: 8px 8px 0px 0px;
   }
-
-  /* .header {
-    display: none;
-  } */
 
   .content {
     padding: 10px;
