@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
-// import {GetUserInfo} from '@zuri/utilities'
 import { SignoutStyleWrapper } from "../sign-out/component/SignoutStyle";
 import logo from "../sign-out/assets/zuri.svg";
 import { Helmet } from "react-helmet";
