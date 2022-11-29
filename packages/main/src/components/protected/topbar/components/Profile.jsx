@@ -20,7 +20,11 @@ import { FiSettings } from "react-icons/fi";
 import { authAxios } from "../utils/api";
 import { getCurrentWorkspace, getUser } from "../utils/common";
 
+import { useTranslation } from "react-i18next";
+
 const Profile = () => {
+  const { t } = useTranslation();
+
   const {
     userProfileImage,
     toggleModalState,
@@ -77,7 +81,7 @@ const Profile = () => {
       </svg>
 
       <div className={styles.header}>
-        <div className={styles.title}>Profile</div>
+        <div className={styles.title}>{t("profile_user")}</div>
         <svg
           onClick={toggleProfileState}
           className={styles.closeIcon}
@@ -97,17 +101,19 @@ const Profile = () => {
           <h3 className={styles.h3users}>
             {user.first_name
               ? `${user.first_name} ${user.last_name} `
-              : "Anonnymous"}{" "}
+              : t("profile_user_name")}{" "}
             {/* <span>{<StatusBadgeModal />  === '' ? <StatusBadgeModal />  :'0' }</span> */}
             {/* <ProfileStatusBadgeModal /> */}
             <StatusBadgeModal />
           </h3>
 
-          <p className={styles.myp}>{user.bio ? user.bio : "What you do"}</p>
+          <p className={styles.myp}>
+            {user.bio ? user.bio : t("profile_user_description")}
+          </p>
         </div>
 
         <div className={styles.buttonGroupsMobile}>
-          <button>Message</button>
+          <button>{t("profile_message")}</button>
           <button
             onClick={() => {
               toggleModalState();
@@ -140,13 +146,13 @@ const Profile = () => {
             >
               <BiUser className={styles.ctaButtonIcon} />
             </button>
-            <h6 className={styles.ctaText}> Edit Profile</h6>
+            <h6 className={styles.ctaText}> {t("profile_edit_profile")}</h6>
           </div>
           <div>
             <button onClick={state.openStatus} className={styles.ctaButton}>
               <AiFillEdit className={styles.ctaButtonIcon} />
             </button>
-            <h6 className={styles.ctaText}> Edit Status</h6>
+            <h6 className={styles.ctaText}> {t("profile_edit_status")}</h6>
           </div>
           <div>
             <button
@@ -155,50 +161,50 @@ const Profile = () => {
             >
               <FaEllipsisH className={styles.ctaButtonIcon} />
             </button>
-            <h6 className={styles.ctaText}>More</h6>
+            <h6 className={styles.ctaText}>{t("profile_more_items")}</h6>
           </div>
-          {dropdown && <Dropdown />}
+          {dropdown && <Dropdown setDropdown={setDropdown} />}
           {modal === "preference" && <Preferences />}
           {modal === "edit profile" && <EditProfile />}
         </div>
 
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
-          <div className={styles.infoTitle}>What i do</div>
-          <div className={styles.infoContent}>Design</div>
+          <div className={styles.infoTitle}>{t("profile_what_i_do")}</div>
+          <div className={styles.infoContent}>{t("profile_design")}</div>
         </div>
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
-          <div className={styles.infoTitle}>Pronouns</div>
+          <div className={styles.infoTitle}>{t("profile_pronouns")}</div>
           <div className={styles.infoContent}>
-            {user.pronouns ? user.pronouns : "null"}
+            {user.pronouns ? user.pronouns : t("profile_number_status")}
           </div>
         </div>
         <div className={styles.moreInfo}>
-          <div className={styles.infoTitle}>Display name</div>
+          <div className={styles.infoTitle}>{t("profile_display_name")}</div>
           <div className={styles.infoContent}>
             {user.display_name ? user.display_name : user.username}
             {/* {user.display_name ? user.display_name : user.user_name} */}
           </div>
         </div>
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
-          <div className={styles.infoTitle}>Status</div>
+          <div className={styles.infoTitle}>{t("profile_status")}</div>
           <div className={styles.infoContent}>
             <span>{user?.status?.text !== "" ? user?.status?.text : "0"}</span>
           </div>
         </div>
         <div className={styles.moreInfo}>
-          <div className={styles.infoTitle}>Email address</div>
+          <div className={styles.infoTitle}>{t("profile_email_address")}</div>
           <div className={styles.infoContent}>
-            {user.email ? user.email : "null"}
+            {user.email ? user.email : t("profile_number_status")}
           </div>
         </div>
         <div className={styles.moreInfo}>
-          <div className={styles.infoTitle}>Phone number</div>
+          <div className={styles.infoTitle}>{t("profile_phone_number")}</div>
           <div className={styles.infoContent}>
-            {user.phone ? user.phone : "null"}
+            {user.phone ? user.phone : t("profile_number_status")}
           </div>
         </div>
         <div className={styles.moreInfo}>
-          <div className={styles.infoTitle}>Local time</div>
+          <div className={styles.infoTitle}>{t("profile_local_time")}</div>
           <div className={styles.infoContent}>{currentTime}</div>
         </div>
       </div>
