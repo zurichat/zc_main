@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 
 export default function MessageRoomViewHeader(props) {
   const { t } = useTranslation();
-  const [showDialog, setShowDialog] = useState(false);
+  const [showDialog, setShowDialog] = useState(showDialog);
   const [tabIndex, setTabIndex] = useState(0);
   return (
     <div>
