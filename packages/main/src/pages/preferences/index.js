@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // components
 import Header from "./components/Header";
@@ -23,9 +23,10 @@ export default function index() {
   const [showAccessibility, setShowAccessibility] = useState(false);
   const [showAppearance, setShowAppearance] = useState(false);
   const [showLangRegion, setShowLangRegion] = useState(false);
-  const [showNotifications, setShowNotifications] = useState(false);
-  const [showPrivacy, setShowPrivacy] = useState(true);
+  const [showNotifications, setShowNotifications] = useState(true);
+  const [showPrivacy, setShowPrivacy] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
+  const [preference, setPreference] = useState("notifications");
 
   const accessibility = () => {
     setShowAccessibility(true);
@@ -81,12 +82,49 @@ export default function index() {
     setShowSidebar(true);
   };
 
+  useEffect(() => {
+    preference === "notifications"
+      ? setShowNotifications(true)
+      : setShowNotifications(false);
+    preference === "sidebar" ? setShowSidebar(true) : setShowSidebar(false);
+    preference === "appearance"
+      ? setShowAppearance(true)
+      : setShowAppearance(false);
+    preference === "privacy" ? setShowPrivacy(true) : setShowPrivacy(false);
+    preference === "accessibility"
+      ? setShowAccessibility(true)
+      : setShowAccessibility(false);
+    preference === "language"
+      ? setShowLangRegion(true)
+      : setShowLangRegion(false);
+  }, [preference]);
+
+  const handleChange = e => {
+    setPreference(e.target.value);
+    console.log(preference);
+  };
+
   return (
     <>
       <Header />
       <div className={`${styles.preferenceCon} border-top`}>
         <div className={`${styles.body} mx-auto d-flex`}>
-          <div className={`${styles.sidebar} w-25 border-end pt-5`}>
+          <select
+            value={preference}
+            onChange={handleChange}
+            className={`${styles.dropdownCon}`}
+          >
+            <option value="notifications">Notifications</option>
+            <option value="sidebar">Sidebar</option>
+            <option value="appearance">Appearance</option>
+            <option value="privacy">Privacy</option>
+            <option value="accessibility">Accessibility</option>
+            <option value="language">Language & Region</option>
+          </select>
+
+          <div
+            className={`${styles.sidebar} ${styles.btnCon} w-25 border-end pt-5`}
+          >
             <button
               onClick={notifications}
               className={`${styles.preference} 
@@ -142,6 +180,7 @@ export default function index() {
               <p className="mb-0">Language & Region</p>
             </button>
           </div>
+
           <div className={`${styles.mainbar} w-75`}>
             {showAccessibility && <Accessibility />}
             {showAppearance && <Appearance />}

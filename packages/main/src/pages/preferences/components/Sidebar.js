@@ -1,7 +1,6 @@
 import React from "react";
 
 import styles from "../assets/css/sidebar.css";
-// import "../assets/css/main.css"
 
 // images
 import unread from "../assets/images/unread.png";

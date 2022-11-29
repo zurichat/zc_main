@@ -19,7 +19,7 @@ export default function Appearance() {
             Automatically switch between light and dark themes when your system
             does.
           </i>
-          <div className="mt-4 d-flex">
+          <div className="mt-4 flex-column flex-xl-row d-flex">
             <div className="d-flex align-items-center mb-3">
               <label htmlFor="checkbox2" className=" position-relative">
                 <input
@@ -28,7 +28,7 @@ export default function Appearance() {
                   id="checkbox2"
                   className="position-absolute bottom-0 end-0"
                 />
-                <img src={whiteMode} alt="" className="me-5" />
+                <img src={whiteMode} alt="" className="me-5 w-100" />
               </label>
             </div>
             <div className="d-flex align-items-center mb-3">
@@ -39,7 +39,7 @@ export default function Appearance() {
                   id="checkbox3"
                   className="position-absolute bottom-0 end-0"
                 />
-                <img src={darkMode} alt="" />
+                <img src={darkMode} alt="" className="w-100" />
               </label>
             </div>
           </div>

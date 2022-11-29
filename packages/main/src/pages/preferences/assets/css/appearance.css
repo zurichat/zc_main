@@ -1,12 +1,10 @@
 .appearance {
-  /* border: 2px solid black; */
   margin-top: 1rem;
   display: flex;
   justify-content: end;
 }
 
 .appearanceCon {
-  /* border: 2px solid rgb(255, 0, 0); */
   width: 93%;
 }
 

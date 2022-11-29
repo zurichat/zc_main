@@ -4,10 +4,39 @@ header {
 
 .preferenceCon {
   color: #5B5A5B;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 850px) {
+  .preferenceCon {
+    font-size: 0.85rem;
+  }
 }
 
 .body {
   width: 91%;
+}
+
+.dropdownCon {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .body {
+    flex-direction: column;
+    width: 97.5%;
+  }
+
+  .dropdownCon {
+    display: block;
+    width: 15rem;
+    margin-left: 1rem;
+    padding: 10px;
+  }
+
+  .btnCon {
+    display: none;
+  }
 }
 
 .preference {
@@ -25,6 +54,12 @@ header {
 .preference:active {
   background-color: #009967;
   color: white;
+}
+
+@media (max-width:850px) {
+  .mainbar {
+    width: 100% !important;
+  }
 }
 
 input[type="radio"] {

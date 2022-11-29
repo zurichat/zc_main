@@ -2,9 +2,21 @@
   width: 90%;
 }
 
+@media (max-width: 850px) {
+  .notifications {
+    width: 100%;
+  }
+}
+
 .notificationsPage {
   width: 90%;
   margin: 0 auto;
+}
+
+@media (max-width: 850px) {
+  .notificationsPage {
+    width: 95%;
+  }
 }
 
 .notificationSchedule a {
@@ -26,6 +38,29 @@
 
 .day4 {
   margin-left: 5.6rem;
+}
+
+@media (max-width: 850px) {
+  .weekdays {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .day1 {
+    margin-left: 0 !important;
+  }
+  
+  .day2 {
+    margin-left: 0 !important;
+  }
+  
+  .day3 {
+    margin-left: 0 !important;
+  }
+  
+  .day4 {
+    margin-left: 0 !important;
+  }
 }
 
 span p {

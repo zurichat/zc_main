@@ -1,6 +1,5 @@
 import React from "react";
 
-// css
 import styles from "../assets/css/notifications.css";
 import "../assets/css/main.css";
 
@@ -63,7 +62,7 @@ export default function Notifications() {
           </select>
         </div>
         <div className="my-4">
-          <div className="d-flex align-items-center mb-3">
+          <div className={`${styles.weekdays} d-flex align-items-center mb-3`}>
             <p>Monday</p>
             <span className={`${styles.day1} d-flex`}>
               <select name="" id="">
@@ -75,7 +74,7 @@ export default function Notifications() {
               </select>
             </span>
           </div>
-          <div className="d-flex align-items-center mb-3">
+          <div className={`${styles.weekdays} d-flex align-items-center mb-3`}>
             <p>Tuesday</p>
             <span className={`${styles.day1} d-flex`}>
               <select name="" id="">
@@ -87,7 +86,7 @@ export default function Notifications() {
               </select>
             </span>
           </div>
-          <div className="d-flex align-items-center mb-3">
+          <div className={`${styles.weekdays} d-flex align-items-center mb-3`}>
             <p>Wednesday</p>
             <span className={`${styles.day2} d-flex`}>
               <select name="" id="">
@@ -99,7 +98,7 @@ export default function Notifications() {
               </select>
             </span>
           </div>
-          <div className="d-flex align-items-center mb-3">
+          <div className={`${styles.weekdays} d-flex align-items-center mb-3`}>
             <p>Thursday</p>
             <span className={`${styles.day3} d-flex`}>
               <select name="" id="">
@@ -111,7 +110,7 @@ export default function Notifications() {
               </select>
             </span>
           </div>
-          <div className="d-flex align-items-center mb-3">
+          <div className={`${styles.weekdays} d-flex align-items-center mb-3`}>
             <p>Friday</p>
             <span className={`${styles.day4} d-flex`}>
               <select name="" id="">
@@ -123,7 +122,7 @@ export default function Notifications() {
               </select>
             </span>
           </div>
-          <div className="d-flex align-items-center mb-3">
+          <div className={`${styles.weekdays} d-flex align-items-center mb-3`}>
             <p>Saturday</p>
             <span className={`${styles.day3} d-flex`}>
               <select name="" id="">
@@ -135,7 +134,7 @@ export default function Notifications() {
               </select>
             </span>
           </div>
-          <div className="d-flex align-items-center mb-3">
+          <div className={`${styles.weekdays} d-flex align-items-center mb-3`}>
             <p>Sunday</p>
             <span className={`${styles.day1} d-flex`}>
               <select name="" id="">
@@ -171,7 +170,7 @@ export default function Notifications() {
       </div>
       <hr />
       <div className="">
-        <div className="d-flex align-items-center mb-3 ms-5">
+        <div className="d-flex align-items-center mb-3 ms-md-5 ms-3">
           <input type="checkbox" name="" id="checkbox1" />
           <label htmlFor="checkbox1">
             Send me an email notification for direct messages
