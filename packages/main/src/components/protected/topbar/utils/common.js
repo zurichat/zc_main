@@ -18,7 +18,9 @@ export const getCurrentWorkspace = () => {
     workspaceId: { workspaceId, short_id }
   } = useParamHook({ workspaceId: "workspaceId" });
 
-  localStorage.setItem("currentWorkspace", workspaceId);
+  const userData = JSON.parse(localStorage.getItem("userData"));
+
+  localStorage.setItem("currentWorkspace", userData.currentWorkspace);
   localStorage.setItem("currentWorkspaceShort", short_id);
 
   let currentWorkspace = localStorage.getItem("currentWorkspace") || null;
