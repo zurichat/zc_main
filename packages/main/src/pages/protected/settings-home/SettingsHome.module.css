@@ -1,5 +1,4 @@
 
-
 .mtN3 {
   margin-top: -1rem;
 }
@@ -181,4 +180,8 @@
 .footer_links {
   display: flex;
   flex-direction: column;
+}
+
+.footer_links:hover {
+  background-color: #FFFFFF !important;
 }

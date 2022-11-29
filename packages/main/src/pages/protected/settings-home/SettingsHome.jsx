@@ -168,7 +168,9 @@ const Home = () => {
                   margin: "0.75rem"
                 }}
               >
-                <Link to="/tour">Tour</Link>
+                <Link to="/whyzurichat" target="_blank">
+                  Our Blog
+                </Link>
               </li>
               <li
                 style={{
@@ -222,9 +224,7 @@ const Home = () => {
                   margin: "0.75rem"
                 }}
               >
-                <Link to="/whyzurichat" target="_blank">
-                  Our Blog
-                </Link>
+                <Link to="/pricing">Pricing</Link>
               </li>
               <li
                 style={{
