@@ -38,13 +38,4 @@ export const SidebarWrapperStyle = styled.div`
 export const WorkspaceWrapperStyle = styled.div`
   height: 100%;
   padding-left: 2rem;
-  // background-color: var(--bg-color);
-  // overflow: auto;
-
-  // & > #zuri-plugin-load-section {
-  //   height: 100%;
-  //   width: 100%;
-  //   display: flex;
-  //   flex-direction: column;
-  // }
 `;
