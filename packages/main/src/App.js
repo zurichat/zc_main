@@ -32,6 +32,7 @@ import SettingsHome from "../src/pages/protected/settings-home/SettingsHome";
 import AccountProfile from "./pages/protected/account-profile/AccountProfile";
 import ManageWorkspace from "./pages/protected/manage-workspace/ManageWorkspace";
 import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
+import Help from "./pages/static/help";
 
 const { Workspace, CreateWorkspace, ChooseWorkspace } = lazily(() =>
   import("./pages/protected")
@@ -90,6 +91,7 @@ const App = () => (
           {/* <Route exact path="/sign-out" component={SignOut} /> */}
           <Route exact path="/about" component={AboutPage} />
           <Route exact path="/downloads" component={DownloadsPage} />
+          <Route exact path="/help" component={Help} />
           <Route exact path="/contact-us" component={ContactUsPage} />
           <Route exact path="/plugins" component={PluginsPage} />
           <Route exact path="/pricing" component={PricingPage} />

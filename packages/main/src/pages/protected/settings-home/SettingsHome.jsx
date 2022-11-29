@@ -176,15 +176,7 @@ const Home = () => {
                   margin: "0.75rem"
                 }}
               >
-                <Link to="/download-apps">Download Apps</Link>
-              </li>
-              <li
-                style={{
-                  display: "inline-block",
-                  margin: "0.75rem"
-                }}
-              >
-                <Link to="/legal">Brand Guidelines</Link>
+                <Link to="/downloads">Download Apps</Link>
               </li>
             </div>
             <div className={classes.footer_links}>
@@ -202,17 +194,7 @@ const Home = () => {
                   margin: "0.75rem"
                 }}
               >
-                <Link to="/confirm-deactivation" target="_blank">
-                  API
-                </Link>
-              </li>
-              <li
-                style={{
-                  display: "inline-block",
-                  margin: "0.75rem"
-                }}
-              >
-                <Link to="/pricing">Pricing</Link>
+                <Link to="/legal">Brand Guidelines</Link>
               </li>
             </div>
             <div className={classes.footer_links}>
@@ -232,18 +214,18 @@ const Home = () => {
               >
                 <Link to="/privacy">Policies</Link>
               </li>
+            </div>
+            <div className={classes.footer_links}>
               <li
                 style={{
                   display: "inline-block",
                   margin: "0.75rem"
                 }}
               >
-                <Link to="/ZurichatBlog" target="_blank">
+                <Link to="/whyzurichat" target="_blank">
                   Our Blog
                 </Link>
               </li>
-            </div>
-            <div className={classes.footer_links}>
               <li
                 style={{
                   display: "inline-block",
