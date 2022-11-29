@@ -35,20 +35,10 @@ export default function Index() {
     }
   }, []);
   const history = useHistory();
-  //text align right for arabic and hebrew
-  const textAlign = () => {
-    if (
-      window.localStorage.myLanguage === "ar" ||
-      window.localStorage.myLanguage === "iw"
-    ) {
-      return {
-        textAlign: "right"
-      };
-    }
-  };
+  
 
   return (
-    <div style={textAlign()}>
+    <div >
       {/* <TopNavigationBar /> */}
 
       <div style={{ paddingTop: "5em" }} />
