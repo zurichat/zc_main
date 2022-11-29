@@ -8,32 +8,39 @@ import EditWorkspaceModal from "./EditWorkspaceModal";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import defaultLogo from "../assets/icons/zuri-chat-logo.svg";
+import toast, { Toaster } from "react-hot-toast";
 
 const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   const [orgLogoUrl, setOrgLogoUrl] = useState("");
   const [editDetails, setEditDetails] = useState(false);
   const history = useHistory();
   const [orgs, setOrgs] = React.useState([]);
+  const userData = JSON.parse(localStorage.getItem("userData"));
 
   useEffect(() => {
-    const organisation_id = localStorage.getItem("currentWorkspace");
-
-    if (organisation_id) {
+    if (userData.currentWorkspace) {
       //Fetch organization logo
       axios
-        .get(`/organizations/${organisation_id}`)
+        .get(
+          `https://staging.api.zuri.chat/organizations/${userData.currentWorkspace}`,
+          {
+            headers: {
+              Authorization: `Bearer ${userData.token}`
+            }
+          }
+        )
         .then(res => {
           setOrgLogoUrl(res.data.data.logo_url ? res.data.data.logo_url : "");
         })
         .catch(err => {
-          console.error(err);
+          toast.error(err?.message ?? "Something went wrong", {
+            position: "top-center"
+          });
         });
     }
 
     setOrgs(JSON.parse(sessionStorage.getItem("organisations")));
-    // console.log(orgs);
   }, []);
-  // console.log(orgs);
 
   // HoverFunctionality
   const useHover = () => {
@@ -260,6 +267,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           <p onClick={() => history.push("/")}> {t("modal_open_chat")}</p>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

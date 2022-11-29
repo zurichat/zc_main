@@ -78,6 +78,7 @@ export default function Index() {
 
   const fetchUserWorkspacesResponse = async () => {
     let userData = JSON.parse(sessionStorage.getItem("user"));
+
     if (userData) {
       let response = await instance.get(
         `https://api.zuri.chat/users/${userData.email}/organizations`,
@@ -106,7 +107,7 @@ export default function Index() {
 
   useEffect(() => {
     window.dispatchEvent(new Event("zuri-plugin-load"));
-    match.isExact &&
+    match?.isExact &&
       history.replace(`/workspace/${short_id}/plugin-chat/all-dms`);
   }, []);
   // Temporary
