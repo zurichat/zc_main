@@ -8,6 +8,7 @@ import EditWorkspaceModal from "./EditWorkspaceModal";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import defaultLogo from "../assets/icons/zuri-chat-logo.svg";
+import toast, { Toaster } from "react-hot-toast";
 
 const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   const [orgLogoUrl, setOrgLogoUrl] = useState("");
@@ -30,6 +31,11 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         )
         .then(res => {
           setOrgLogoUrl(res.data.data.logo_url ? res.data.data.logo_url : "");
+        })
+        .catch(err => {
+          toast.error(err?.message ?? "Something went wrong", {
+            position: "top-center"
+          });
         });
     }
 
@@ -261,6 +267,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           <p onClick={() => history.push("/")}> {t("modal_open_chat")}</p>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };
