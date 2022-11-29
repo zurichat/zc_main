@@ -1,14 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
-import styles from "../styles/ModalComponentStyles.module.css";
-import EmailInviteModal from "./invite-workflow/EmailInviteModal";
-// import axios from "axios";
+import { BASE_API_URL } from "@zuri/utilities";
+import axios from "axios";
+import React, { useEffect, useRef, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 import { RiArrowRightSLine as Arrow } from "react-icons/ri";
 import { useHistory } from "react-router-dom";
-import EditWorkspaceModal from "./EditWorkspaceModal";
-import axios from "axios";
-import { useTranslation } from "react-i18next";
 import defaultLogo from "../assets/icons/zuri-chat-logo.svg";
-import toast, { Toaster } from "react-hot-toast";
+import styles from "../styles/ModalComponentStyles.module.css";
+import EditWorkspaceModal from "./EditWorkspaceModal";
+import EmailInviteModal from "./invite-workflow/EmailInviteModal";
 
 const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   const [orgLogoUrl, setOrgLogoUrl] = useState("");
@@ -22,7 +22,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
       //Fetch organization logo
       axios
         .get(
-          `https://staging.api.zuri.chat/organizations/${userData.currentWorkspace}`,
+          `https://${BASE_API_URL}/organizations/${userData.currentWorkspace}`,
           {
             headers: {
               Authorization: `Bearer ${userData.token}`
