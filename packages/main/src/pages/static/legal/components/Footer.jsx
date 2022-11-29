@@ -162,13 +162,6 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
-        {/* <div className={styles.bottom_footer}>
-          <p>
-            {" "}
-            &copy; {getYear()} Zuri Chat. {t("footer_rights")}
-          </p>
-        </div> */}
       </div>
 
       <div className={styles.bottom_footer}>
