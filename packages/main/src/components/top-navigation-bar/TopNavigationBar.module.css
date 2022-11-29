@@ -178,10 +178,6 @@
   padding-bottom: 2px;
   border-bottom: 0.2rem solid #00b87c;
 }
-.notification{
-  display:flex;
-  justify-content:space-between
-}
 
 /* .toggle {
     _margin-right: 12px;
@@ -239,10 +235,6 @@
   }
   .country {
     padding: 5px;
-  }
-  .notification{
-    display:none;
-
   }
 
   .world {
