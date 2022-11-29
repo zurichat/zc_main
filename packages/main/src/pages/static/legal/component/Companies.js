@@ -1,7 +1,5 @@
 import React from "react";
 import style from "../../LandingPage/styles/LandingPage.module.css";
-// images
-// images
 import hotels from "../../LandingPage/assets/hotels.svg";
 import ingress from "../../LandingPage/assets/ingress.svg";
 import camphouse from "../../LandingPage/assets/camphouse.svg";

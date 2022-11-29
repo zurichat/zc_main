@@ -89,7 +89,6 @@ const App = () => (
         <Switch>
           {/* <GeneralLoading /> */}
           <Route exact path="/" component={HomePage} />
-          {/* <Route exact path="/sign-out" component={SignOut} /> */}
           <Route exact path="/about" component={AboutPage} />
           <Route exact path="/downloads" component={DownloadsPage} />
           <Route exact path="/help" component={Help} />

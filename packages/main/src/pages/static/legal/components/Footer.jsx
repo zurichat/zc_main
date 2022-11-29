@@ -8,7 +8,6 @@ import twitter from "../assets/twitter.svg";
 import linkedin from "../assets/linkedin.svg";
 import instagram from "../assets/instagram.svg";
 import { useTranslation } from "react-i18next";
-// import { googleTranslateElementInit } from "../translator";
 
 const Footer = () => {
   // googleTranslateElementInit();

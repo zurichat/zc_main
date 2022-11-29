@@ -21,16 +21,14 @@ const Signout = ({ history }) => {
         Authorization: `Bearer ${token}`
       }
     })
-      .then(res => {
-        // console.log(res)
-      })
+      .then(res => {})
       .catch(err => {
         console.error(err);
       })
       .finally(() => {
         window.sessionStorage.clear();
       });
-  });
+  }, []);
 
   const { t } = useTranslation();
   return (
