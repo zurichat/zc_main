@@ -2,7 +2,13 @@ import { useRouteMatch } from "react-router-dom";
 import { navigateToUrl } from "single-spa";
 import styles from "../styles/Drop.module.css";
 
-export default function SingleRoom({ image, name, link }) {
+export default function SingleRoom({
+  image,
+  name,
+  link,
+  setAddChannel,
+  setAddChannelDetails
+}) {
   const match = useRouteMatch(link);
   return (
     <div
@@ -11,7 +17,15 @@ export default function SingleRoom({ image, name, link }) {
       } `}
     >
       <div
-        onClick={() => navigateToUrl(link)}
+        onClick={
+          setAddChannel
+            ? () => {
+                setAddChannel(status => !status);
+              }
+            : setAddChannelDetails
+            ? () => setAddChannelDetails(status => !status)
+            : () => navigateToUrl(link)
+        }
         className={`col-12 d-flex align-items-center ${styles.plugin__title}`}
       >
         <div className={`d-flex align-items-center`}>

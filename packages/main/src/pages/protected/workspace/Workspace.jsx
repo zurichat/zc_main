@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   Switch,
   Route,
@@ -16,6 +16,9 @@ import {
 } from "./Workspace.style";
 
 // import { GeneralLoading } from "../../../components";
+import AddPeople from "../../../components/channel/addpeople/AddPeople";
+import CreateChannel from "../../../components/channel/createchannel/CreateChannel";
+import ChannelDetails from "../../../components/channel/channeldetails/ChannelDetails";
 
 const { Sidebar, TopBar } = lazily(() =>
   import("../../../components/protected")
@@ -23,6 +26,9 @@ const { Sidebar, TopBar } = lazily(() =>
 
 export default function Index() {
   const { workspaceId } = useParams();
+  const [addChannel, setAddChannel] = useState(false);
+  const [addPeople, setAddPeople] = useState(false);
+  const [addChannelDetails, setAddChannelDetails] = useState(false);
   const location = useLocation();
   const history = useHistory();
   const match = useRouteMatch(`/workspace/${workspaceId}`);
@@ -57,10 +63,25 @@ export default function Index() {
 
       <div style={{ display: "flex", height: "calc(100vh - 48px)" }}>
         <SidebarWrapperStyle>
-          <Sidebar />
+          <Sidebar
+            setAddChannel={setAddChannel}
+            setAddChannelDetails={setAddChannelDetails}
+          />
         </SidebarWrapperStyle>
-
+        {addChannel && (
+          <CreateChannel
+            setAddPeople={setAddPeople}
+            setAddChannel={setAddChannel}
+          />
+        )}
+        {addPeople && <AddPeople setAddPeople={setAddPeople} />}
+        {addChannelDetails && (
+          <ChannelDetails setAddChannelDetails={setAddChannelDetails} />
+        )}
+        {/* {addChannel?? <CreateChannel/> } */}
         <WorkspaceWrapperStyle>
+          {/* {addChannel && <CreateChannel />} */}
+
           <div id="zuri-plugin-load-section"></div>
           <Switch>
             <Route exact path="/workspace/:workspaceId">

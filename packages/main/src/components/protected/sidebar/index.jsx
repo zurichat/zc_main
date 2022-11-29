@@ -5,7 +5,7 @@ import { fetchUser } from "./utils/fetch-user-details";
 import { themeColors } from "@zuri/utilities";
 import { reducer } from "./reducers/sidebar.reducer";
 
-export default function App() {
+export default function App({ setAddChannel, setAddChannelDetails }) {
   const [state, dispatch] = useReducer(reducer, {});
   const theme = localStorage.getItem("theme");
   if (theme !== null && theme !== "") {
@@ -28,7 +28,12 @@ export default function App() {
     <SkeletonLoader COUNTER={12} />
   ) : (
     <>
-      <Sidebar state={state} dispatch={dispatch} />
+      <Sidebar
+        state={state}
+        dispatch={dispatch}
+        setAddChannelDetails={setAddChannelDetails}
+        setAddChannel={setAddChannel}
+      />
     </>
   );
 }

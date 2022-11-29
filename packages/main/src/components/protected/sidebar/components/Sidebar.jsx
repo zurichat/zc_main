@@ -89,6 +89,7 @@ const Sidebar = props => {
           <Category
             key={categoryData[0]?.name}
             name={key}
+            setAddChannel={props.setAddChannel}
             data={categoryData}
           />
         );
@@ -126,8 +127,19 @@ const Sidebar = props => {
             image={dmIcon}
             link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
           />
+          <SingleRoom name="Channels" image={draftIcon} />
+          {/* setAddChannel={props.setAddChannel} */}
+          <SingleRoom
+            setAddChannel={props.setAddChannel}
+            name="create channel"
+            image={draftIcon}
+          />
+          <SingleRoom
+            name="#meachanic-team-prybar"
+            image={draftIcon}
+            setAddChannelDetails={props.setAddChannelDetails}
+          />
           <SingleRoom name="Drafts" image={draftIcon} />
-
           <Starred starredRooms={starredRooms} />
           {singleItems}
           {categorizedItems}

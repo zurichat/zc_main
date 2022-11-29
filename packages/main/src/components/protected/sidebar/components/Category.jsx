@@ -44,6 +44,7 @@ export default function Category(props) {
                 id={plugin.group_name}
                 // isDirect={true}
                 items={plugin}
+                setAddChannel={props.setAddChannel}
               />
             );
           }

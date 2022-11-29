@@ -1,11 +1,12 @@
 import styles from "../styles/Drop.module.css";
 import RoomItem from "./RoomItem";
 
-export default function Room({ items, isOpen }) {
+export default function Room({ items, isOpen, setAddChannel }) {
   return (
     <ul className={`col-12 ps-4 ${styles.item__row} ${isOpen && styles.open}`}>
       {Array.isArray(items.joined_rooms) &&
         items.joined_rooms.map((room, idx) => {
+          console.log(items);
           if (room.room_name !== undefined) {
             return (
               <RoomItem
@@ -17,6 +18,8 @@ export default function Room({ items, isOpen }) {
             );
           }
         })}
+
+      <li> </li>
     </ul>
   );
 }

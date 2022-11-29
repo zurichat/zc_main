@@ -1,0 +1,149 @@
+.addpeople__wrapper{
+        position: fixed;
+        top: "50%";
+        right: "50%";
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        transform: "translate(-50%, -50%)";
+        border: "2px solid #000";
+        box-shadow: 24;
+        transition: 0.8s ease-in-out;
+        background: rgba(64, 64, 64, 0.3);
+    }
+
+
+.addpeople__container {
+    width: 45%;
+    height: 60%;
+    font-family: 'Lato';
+    font-style: normal;
+    margin: 5% 30%;
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 5%;
+}
+
+.addpeople__flex,
+.admin__container {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.addpeople__text {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 40px;
+    color: #090809;
+}
+
+.addpeople__img img {
+    height: 14px;
+    width: 14px;
+}
+
+.addpeople__txt {
+    color: #999899;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.inputradio label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    padding-left: 2%;
+
+}
+
+.admin__container {
+    width: 75%;
+    margin: 5% 0px 5% 0px;
+}
+
+.admin_text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #030303;
+
+}
+
+.admin_txt_faint {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #667085;
+}
+
+.addpeople__button {
+    width: 100%;
+    background: #009967;
+    border-radius: 4px;
+}
+
+.addpeople__buttn_txt {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    padding: 12px 0px 12px 40%;
+}
+
+@media screen and (min-width:350px) and (max-width:550px) {
+
+    .addpeople__container {
+          
+            height: 50%;
+          
+            margin: 10% 5%;
+                width: 90%;
+          
+        }
+    .addpeople__text {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 30px;
+        color: #090809;
+    }
+
+    .inputradio label {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .admin_text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #030303;
+
+    }
+
+    .admin_txt_faint {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        color: #667085;
+    }
+        .addpeople__buttn_txt {
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 32px;
+            padding: 9px 0px 9px 40%;
+        }
+}
+@media screen and (min-width:650px) and (max-width:1050px) {
+.addpeople__container {
+
+        height: 40%;
+
+        margin: 10% 5%;
+        width: 90%;
+
+    }
+}

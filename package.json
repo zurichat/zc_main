@@ -45,5 +45,9 @@
     "pretty-quick": "^3.1.1",
     "rimraf": "^3.0.2",
     "serve": "^12.0.0"
+  },
+  "dependencies": {
+    "@mui/material": "^5.10.16",
+    "react-hook-form": "^7.39.7"
   }
 }
