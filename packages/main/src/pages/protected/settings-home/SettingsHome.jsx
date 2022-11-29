@@ -250,7 +250,7 @@ const Home = () => {
                   margin: "0.75rem"
                 }}
               >
-                <Link to="/session-signout">Sign Out</Link>
+                <Link to="/signout">Sign Out</Link>
               </li>
             </div>
           </ul>
