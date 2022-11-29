@@ -85,10 +85,22 @@ export default function Homepage() {
       </div>
     );
   };
+
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
+
   return (
     <>
       <TopNavigationBar />
-      <div className={`${style.homepage}`}>
+      <div className={`${style.homepage}`} style={textAlign()}>
         {/* { COOKIES BANNER} */}
         <div>{loading ? "" : <Cookies />}</div>
         {/* FEATURES */}
@@ -103,6 +115,7 @@ export default function Homepage() {
               pContent2={t("plugin.dm.description")}
               href="/signup"
               aContent={t("plugin.dm.link")}
+              rowOrder={style.ft_row_reverse}
             />
             {/* music plugin */}
             <FeatureRow

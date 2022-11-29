@@ -12,7 +12,7 @@ export default function SingleRoom({
   const match = useRouteMatch(link);
   return (
     <div
-      className={`row p-0 pl-2 text-decoration-none ${
+      className={`row text-decoration-none ${
         match?.isExact ? styles.dropdown_active : styles.dropDown
       } `}
     >

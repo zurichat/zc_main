@@ -21,7 +21,7 @@ import TopbarModal from "./TopbarModal";
 import styles from "../styles/TopNavBar.module.css";
 import LanguageIcon from "../../../top-navigation-bar/LanguageIcon";
 
-const TopNavbar = () => {
+const TopNavbar = ({ toggleSidebar }) => {
   const theme = localStorage.getItem("theme");
   // if (theme !== null || theme !== "") {
   //   const topBar = document.getElementById(
@@ -33,8 +33,14 @@ const TopNavbar = () => {
 
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext);
-  const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
-    useContext(ProfileContext);
+  const {
+    setUser,
+    user,
+    userProfileImage,
+    setOrgId,
+    orgId,
+    setUserProfileImage
+  } = useContext(ProfileContext);
 
   const state = useContext(TopbarContext);
   const [showModal] = state.show;
@@ -80,7 +86,8 @@ const TopNavbar = () => {
         event.event === "UpdateOrganizationMemberPresence"
       ) {
         if (event.id === session_user["id"]) {
-          UpdateInfo();
+          // UpdateInfo();
+          getProfileImage();
         } else return;
       } else return;
     });
@@ -137,41 +144,53 @@ const TopNavbar = () => {
     getOrganizations();
   }, [setOrgId, user.image_url, setUser]);
 
-  useEffect(() => {
-    UpdateInfo();
-  }, [userProfileImage]);
-
-  const UpdateInfo = () => {
-    getUserInfo().then(res => {
-      setUserProfileImage(res?.user.image_url);
-      setUser(res.user);
-    });
+  const getProfileImage = async e => {
+    try {
+      const res = await authAxios.get(
+        `/organizations/${orgId}/members/${user._id}`
+      );
+      setUserProfileImage(res.data.data.image_url);
+    } catch (err) {
+      console.error("Error", err);
+    }
   };
+  getProfileImage();
 
   let toggleStatus = null;
+
+  const StatusToolTip = ({ title }) => {
+    return (
+      <div className={styles["status__tool__tip"]}>
+        <ReactTooltip
+          id="toggleStatus"
+          effect="solid"
+          place="bottom"
+          type="dark"
+          offset={{ top: 3, left: 0.8 }}
+        >
+          {title}
+        </ReactTooltip>
+      </div>
+    );
+  };
 
   switch (presence) {
     case "true":
       toggleStatus = (
         <ToggleStatus>
-          <div className="user-active" />
+          <div className="user-active" data-tip data-for="toggleStatus" />
+          <StatusToolTip title="Active" />
         </ToggleStatus>
       );
       break;
     default:
       toggleStatus = (
         <ToggleStatus>
-          <div className="user-away" />
+          <div className="user-away" data-tip data-for="toggleStatus" />
+          <StatusToolTip title="Away" />
         </ToggleStatus>
       );
   }
-
-  const [toggleSidebar, setToggleSidebar] = useState(false);
-
-  const handleToggleSidebar = () => {
-    console.log("toggling");
-    setToggleSidebar(!toggleSidebar);
-  };
 
   // useEffect(() => {
   //   //Handle sidebar on mobile
@@ -250,7 +269,7 @@ const TopNavbar = () => {
         </div>
         {/* </a> */}
         <button
-          onClick={handleToggleSidebar}
+          onClick={toggleSidebar}
           type="button"
           aria-label="hamburger-menu"
           className={styles["hamburger__menu-button"]}
@@ -261,7 +280,7 @@ const TopNavbar = () => {
         </button>
       </BrandWrapper>
 
-      <div className="ms-4" style={{ flex: 1 }}>
+      <div style={{ flex: 1 }}>
         {/* <BaseInput
           value={search}
           onChange={e => setSearch(e.target.value)}

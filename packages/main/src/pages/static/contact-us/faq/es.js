@@ -37,34 +37,34 @@ const Topics = [
       { title: "Artículo 4 relacionado" }
     ]
   },
+  // {
+  //   topic: "Facturación y planes",
+  //   faqs: [
+  //     {
+  //       title: "Qué tipo de planes están disponibles?",
+  //       details:
+  //         'Ofrecemos una versión gratuita de Zurichat y tres planes pagados para elegir: Pro, Business + y Enterprise Grid. Para explorar planes y encontrar el adecuado para usted, <a href="https://zuri.chat/"> zurichat.com/pricing </a> visita.'
+  //     },
+  //     {
+  //       title: "¿Puedo probar Zurichat gratis?",
+  //       details:
+  //         "Seguro! Puede usar la versión gratuita de Zurichat durante todo el tiempo que desee, pero los propietarios y los administradores de Workspace pueden solicitar el plan Pro o Business + de forma gratuita. Cree un espacio de trabajo si no tiene uno, luego use el siguiente formulario para enviarnos una nota. Asegúrese de incluir su nombre y url de espacio de trabajo, y el plan que desea juzgar."
+  //     },
+  //     {
+  //       title: "Cómo funciona la facturación?",
+  //       details:
+  //         'Ofrecemos una política de facturación justa, esto significa que solo paga por los miembros de su espacio de trabajo que utilizan Zurichat. Lea más sobre nuestra <a href="https://zuri.chat/"> Política de facturación justa </a>, y eche un vistazo a <a href="https://zuri.chat/"> nuestra guía para facturar < / a> para más información.'
+  //     }
+  //   ],
+  //   articles: [
+  //     { title: "Artículo 1 relacionado" },
+  //     { title: "Artículo 2 relacionado" },
+  //     { title: "Artículo 3 relacionado" },
+  //     { title: "Artículo 4 relacionado" }
+  //   ]
+  // },
   {
-    topic: "Facturación y planes",
-    faqs: [
-      {
-        title: "Qué tipo de planes están disponibles?",
-        details:
-          'Ofrecemos una versión gratuita de Zurichat y tres planes pagados para elegir: Pro, Business + y Enterprise Grid. Para explorar planes y encontrar el adecuado para usted, <a href="https://zuri.chat/"> zurichat.com/pricing </a> visita.'
-      },
-      {
-        title: "¿Puedo probar Zurichat gratis?",
-        details:
-          "Seguro! Puede usar la versión gratuita de Zurichat durante todo el tiempo que desee, pero los propietarios y los administradores de Workspace pueden solicitar el plan Pro o Business + de forma gratuita. Cree un espacio de trabajo si no tiene uno, luego use el siguiente formulario para enviarnos una nota. Asegúrese de incluir su nombre y url de espacio de trabajo, y el plan que desea juzgar."
-      },
-      {
-        title: "Cómo funciona la facturación?",
-        details:
-          'Ofrecemos una política de facturación justa, esto significa que solo paga por los miembros de su espacio de trabajo que utilizan Zurichat. Lea más sobre nuestra <a href="https://zuri.chat/"> Política de facturación justa </a>, y eche un vistazo a <a href="https://zuri.chat/"> nuestra guía para facturar < / a> para más información.'
-      }
-    ],
-    articles: [
-      { title: "Artículo 1 relacionado" },
-      { title: "Artículo 2 relacionado" },
-      { title: "Artículo 3 relacionado" },
-      { title: "Artículo 4 relacionado" }
-    ]
-  },
-  {
-    topic: "Problemas de conexión",
+    topic: "Problemas de conexión ",
     faqs: [
       {
         title: "Zurichat no está cargando. ¿Cómo puedo solucionar problemas?",

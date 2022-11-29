@@ -7,7 +7,7 @@ import ZuriChatLogo from "../../assets/zuri-chat-logo/logo.svg";
 import facebook from "../../assets/social-icons/facebook.svg";
 import twitter from "../../assets/social-icons/twitter.svg";
 import linkedin from "../../assets/social-icons/linkedin.svg";
-import instagram from "../../assets/social-icons/instagram.svg";
+import instagram from "../../assets/social-icons/instagram.png";
 
 import { useTranslation } from "react-i18next";
 
@@ -18,8 +18,19 @@ export default function Footer() {
     return new Date().getFullYear();
   };
 
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
+
   return (
-    <div className={styles.footer}>
+    <div className={styles.footer} style={textAlign()}>
       <div className={styles.top_footer}>
         <div className={styles.logo}>
           <Link to="/" className={`me-0 me-md-2 ${styles.link}`}>
@@ -40,19 +51,7 @@ export default function Footer() {
             <h5>{t("footer_company")}</h5>
             <ul>
               <li>
-                <Link to="/careers">{t("footer_careers")}</Link>
-              </li>
-
-              <li>
                 <Link to="/whyzurichat">{t("footer_why_zuri_chat")}</Link>
-              </li>
-
-              <li>
-                <Link to="/open-marketplace">{t("footer_market")}</Link>
-              </li>
-
-              <li>
-                <Link to="/dao-features">{t("footer_web3")}</Link>
               </li>
             </ul>
           </div>
@@ -69,10 +68,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link to="/ZurichatBlog">{t("footer_blog")}</Link>
-              </li>
-              <li>
-                <Link to="/plugins">{t("nav_plugin")}</Link>
+                <Link to="/plugins">{t("footer_plugin")}</Link>
               </li>
             </ul>
           </div>
@@ -85,9 +81,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/contact-us">{t("footer_contact")}</Link>
-              </li>
-              <li>
-                <Link to="/downloads">{t("footer_downloads")}</Link>
               </li>
             </ul>
           </div>
@@ -105,6 +98,7 @@ export default function Footer() {
                     <img
                       src={facebook}
                       alt="Facebook"
+                      width={24}
                       title="Connect with us on Facebook"
                     />
                   </a>
@@ -119,6 +113,7 @@ export default function Footer() {
                     <img
                       src={instagram}
                       alt="Instagram"
+                      width={21}
                       title="Connect with us on Instagram"
                     />
                   </a>
@@ -134,6 +129,7 @@ export default function Footer() {
                     <img
                       src={twitter}
                       alt="Twitter"
+                      width={24}
                       title="Connect with us on Twitter"
                     />
                   </a>
@@ -144,6 +140,7 @@ export default function Footer() {
                     <img
                       src={linkedin}
                       alt="Linkedin"
+                      width={24}
                       title="Connect with us on Linkedin"
                     />
                   </a>

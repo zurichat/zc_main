@@ -8,17 +8,23 @@ import AddAnotherIcon from "./assets/AddAnotherIcon.svg";
 import LinkIcon from "./assets/LinkIcon.svg";
 import { AiOutlineClose } from "react-icons/ai";
 import { sendInviteAPI } from "../../../utils/new-invite.utils";
+import { useTranslation } from "react-i18next";
 
 export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
   const history = useHistory();
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
+
+  const short_id = localStorage.getItem("currentWorkspaceShort") || null;
   const organizationID = localStorage.getItem("currentWorkspace") || null;
+
+  const { t } = useTranslation();
 
   if (!createWorkspaceData.workspaceName) history.push("/create-workspace");
   if (!createWorkspaceData.workspaceDefaultChannelName)
     history.push("/create-workspace/step-2");
 
   const [values, setValues] = useState([""]);
+  const [alert, setAlert] = useState(false);
 
   const addEmailInput = () => {
     setValues([...values, ""]);
@@ -40,7 +46,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
         console.error(err);
       });
 
-    history.push(`/workspace/${organizationID}`);
+    history.push(`/workspace/${short_id}`);
   };
 
   const handleDelete = index => {
@@ -52,32 +58,39 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
     await window.navigator.clipboard.writeText(
       `${BASE_CLIENT_URL}/workspace/${organizationID}`
     );
-    alert(
-      "link has been copied: " +
-        `${BASE_CLIENT_URL}/workspace/${organizationID}`
-    );
+    setAlert(true);
+    setTimeout(() => {
+      setAlert(false);
+    }, 2300);
   };
 
   return (
     <div>
       <div className={styles.wrapper}>
         <div className={styles.email}>
-          {user ? <span>Signed in as {user.email}</span> : null}
+          {user ? (
+            <span>
+              {t("create_workspace_eight")} {user.email}
+            </span>
+          ) : null}
         </div>
 
+        {alert && (
+          <Alert>
+            <h6>{t("create_workspace_twenty_six")}:</h6>
+            {`${BASE_CLIENT_URL}/workspace/${organizationID}`}
+          </Alert>
+        )}
         <div className={styles.centerWrapper}>
-          <h4> Step 3 of 3</h4>
+          <h4> {t("create_workspace_nineteen")}</h4>
           <h1>
-            Who do you email most about{" "}
+            {t("create_workspace_twenty")}{" "}
             <span
               style={{ color: "var(--primary-color)" }}
             >{`${createWorkspaceData.workspaceName}`}</span>
             ?
           </h1>
-          <h4>
-            Give Zuri Chat a spin and add a few coworkers you talk with
-            regularly.
-          </h4>
+          <h4>{t("create_workspace_twenty_one")}.</h4>
           <form onSubmit={handleSubmit}>
             {/* <InputSection> */}
             {values?.map((k, index) => (
@@ -104,7 +117,9 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
               <AddLinkWrapper>
                 <Plus onClick={addEmailInput}>+</Plus>
                 <img src={AddAnotherIcon} alt="" />
-                <Another onClick={addEmailInput}>Add Another</Another>
+                <Another onClick={addEmailInput}>
+                  {t("create_workspace_twenty_two")}
+                </Another>
               </AddLinkWrapper>
 
               <SharableLink>
@@ -113,9 +128,9 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
                   style={{ color: "#00B87C", cursor: "pointer" }}
                   onClick={handleCopy}
                 >
-                  &nbsp;&nbsp;Get a shareable link
+                  &nbsp;&nbsp;{t("create_workspace_twenty_three")}
                 </span>
-                <span> instead</span>
+                <span>{t("create_workspace_twenty_four")} </span>
               </SharableLink>
             </InputLinkSection>
             {/* </InputSection> */}
@@ -137,7 +152,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
               }}
               data-cy="create_workspace_continue_action_element"
             >
-              Proceed to Workspace
+              {t("create_workspace_twenty_five")}
             </button>
             {/* </div> */}
           </form>
@@ -273,4 +288,17 @@ export const Button = styled.button`
   @media (max-width: 35rem) {
     font-size: 1rem;
   }
+`;
+
+export const Alert = styled.div`
+  font-size: 0.7rem;
+  position: fixed;
+  top: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 19px 19px 37px #c5c5c5, -19px -19px 37px #fbfbfb;
+  z-index: 99999;
 `;

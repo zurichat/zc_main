@@ -4,18 +4,31 @@ import standardStyles from "../styles/UserPreference.module.css";
 import Select from "react-select";
 import { authAxios } from "../utils/api";
 import { ProfileContext } from "../context/profile-modal.context";
+import { useTranslation } from "react-i18next";
 
 const ssKey = "language-and-region";
 
 const options = [
+  { value: "en", label: "Choose a default language" },
   { value: "en", label: "English (US)" },
   { value: "fr", label: "French (FR)" },
-  { value: "du", label: "Deutch (DU)" },
+  { value: "de", label: "Deutch (DU)" },
   { value: "zh", label: "Chinese (ZH)" },
-  { value: "ar", label: "Arabic (AR)" }
+  { value: "ar", label: "Arabic (AR)" },
+  { value: "es", label: "Espanol (ES)" },
+  { value: "it", label: "Italian (IT)" },
+  { value: "iw", label: "Hebrew (IW)" },
+  { value: "pt", label: "Portugese (PT)" }
 ];
 
 const LanguageAndRegion = () => {
+  const { t } = useTranslation();
+
+  const saveLang = lang => {
+    localStorage.setItem("myLanguage", lang);
+    location.reload();
+  };
+
   const { user, orgId } = useContext(ProfileContext);
   const [langreg, setLangreg] = useState(user.settings.languages_and_regions);
   const [selectedTimezone, setSelectedTimezone] = useState(
@@ -41,6 +54,9 @@ const LanguageAndRegion = () => {
       .catch(err => {
         // error
       });
+    //console.log(langreg.langreg.language.toString());
+    //localStorage.setItem("myLanguage", langreg.language.toString());
+    //location.reload();
   };
   const handleSelect = selectedOptions => {
     let options = [];
@@ -94,7 +110,7 @@ const LanguageAndRegion = () => {
         <form>
           <div className={styles.section}>
             <label className={styles.subhead} htmlFor="language">
-              Language
+              {t("language")}
             </label>
             <select
               className={styles.selectbox}
@@ -102,6 +118,10 @@ const LanguageAndRegion = () => {
               onChange={e => {
                 setLangreg({ ...langreg, language: e.target.value });
                 handleData({ ...langreg, language: e.target.value });
+                //console.log(e.target.value);
+                saveLang(e.target.value);
+                //localStorage.setItem("myLanguage", e.target.value);
+                //location.reload();
               }}
               name="language"
               id="language"
@@ -114,12 +134,10 @@ const LanguageAndRegion = () => {
                 );
               })}
             </select>
-            <p className={styles.note}>
-              Choose the language you want to use in Zurichat.
-            </p>
+            <p className={styles.note}>{t("choose_language")}</p>
           </div>
           <div className={styles.section}>
-            <div className={styles.subhead}>Time zone</div>
+            <div className={styles.subhead}>{t("timezone")}</div>
             <input
               type="checkbox"
               className={styles.cbox}
@@ -139,9 +157,7 @@ const LanguageAndRegion = () => {
                 }
               }}
             />
-            <span className={styles.checkmark}>
-              Set time zone automatically
-            </span>
+            <span className={styles.checkmark}>{t("set_timezone")}</span>
             {/* <TimezoneSelect
               styles={customStyles}
               className={styles.optSelect}
@@ -150,10 +166,7 @@ const LanguageAndRegion = () => {
               defaultValue="badbitches"
               onChange={setSelectedTimezone}
             /> */}
-            <p className={`${styles.note} my-2`}>
-              Zurichat uses your time zone to send summary and notification
-              emails, for times in your activity feeds and for reminders.
-            </p>
+            <p className={`${styles.note} my-2`}>{t("timezone_info")}</p>
           </div>
           {/* <div className={styles.section}>
             <div className={styles.subhead} htmlFor="spell-check">

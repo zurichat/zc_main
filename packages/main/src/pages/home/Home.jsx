@@ -58,11 +58,22 @@ export default function Index() {
     });
   }
 
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
+
   return (
     <div>
       <TopNavigationBar />
 
-      <div className={`${styles.homepage}`}>
+      <div className={`${styles.homepage}`} style={textAlign()}>
         {/* HERO */}
         <div className={`${styles.hero_wrap}`}>
           <div className={`hero ${styles.hero}`}>
@@ -90,7 +101,7 @@ export default function Index() {
               <img
                 src={MacBookAirWithZuriChatPreview}
                 className={`${styles.hero_img}`}
-                alt=""
+                alt="mac"
               />
             </div>
           </div>
@@ -98,25 +109,6 @@ export default function Index() {
 
         {/* { COOKIES BANNER} */}
         <div>{showCookies ? "" : <CookiesNotification />}</div>
-
-        {/* COMPANIES */}
-        <div className={`${styles.company_banner_wrap}`}>
-          <div className={`${styles.company_banner}`}>
-            <p className={`${styles.cbp}`}>
-              Trusted By Top Companies Worldwide
-            </p>
-            <div className={`${styles.logos}`}>
-              <img src={HngLogo} alt="" className={`${styles.logo}`} />
-              <img src={I4gLogo} alt="" className={`${styles.logo}`} />
-              <img src={CampHouseLogo} alt="" className={`${styles.logo}`} />
-              <img
-                src={ZuriInternshipLogo}
-                alt=""
-                className={`${styles.logo}`}
-              />
-            </div>
-          </div>
-        </div>
 
         {/* FEATURES */}
         <div className={`${styles.features_wrap}`}>
@@ -192,7 +184,20 @@ export default function Index() {
       </div>
 
       <SubscribeToNewsletter />
-
+      {/* COMPANIES */}
+      <div className={`${styles.company_banner_wrap}`}>
+        <div className={`${styles.company_banner}`}>
+          <p className={`${styles.cbp}`}>
+            {t("landing_hero_trusted_companies")}
+          </p>
+          <div className={`${styles.logos}`}>
+            <img src={HngLogo} alt="" className={`${styles.logo}`} />
+            <img src={I4gLogo} alt="" className={`${styles.logo}`} />
+            <img src={CampHouseLogo} alt="" className={`${styles.logo}`} />
+            <img src={ZuriInternshipLogo} alt="" className={`${styles.logo}`} />
+          </div>
+        </div>
+      </div>
       <Footer />
     </div>
   );

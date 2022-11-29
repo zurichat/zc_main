@@ -1,14 +1,15 @@
 .plugin__header {
   /* width: inherit; */
-  height: 44px;
+  height: 40px;
   background-color: #00b87c;
   color: #fff;
+  border-left: 1px solid #fff;
   box-sizing: border-box;
-  padding: 5px 16px;
+  padding: 3px 16px;
   display: flex !important;
   font-size: 10px;
   justify-content: space-between;
-  position: fixed;
+
   width: 100%;
   z-index: 1;
 }
@@ -32,7 +33,6 @@
   border-radius: 0.5em;
 }
 .plugin__header__arrow {
-  margin-left: 0.3em;
   font-size: 2.5em;
 }
 .plugin__header__thumbnail {

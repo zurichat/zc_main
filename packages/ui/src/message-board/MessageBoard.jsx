@@ -19,7 +19,8 @@ function MessageBoard({
   messages = [],
   onSendMessage,
   onSendAttachedFile,
-  onReact
+  onReact,
+  height
 }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [showEmoji, setShowEmoji] = useState(false);
@@ -64,18 +65,17 @@ function MessageBoard({
       setRight(20);
       setTop(100);
     }
-    // console.log(window.innerWidth - event.clientX)
   };
 
   function handleEmojiClicked(event, emojiObject, messageId) {
-    const shouldScroll =
-      onReact && onReact(event, emojiObject, messageId || currentMessageId);
-    setScrollToBottom(shouldScroll);
+    const message_id = messageId || currentMessageId;
+    onReact && onReact(event, emojiObject, message_id);
+    setScrollToBottom(false);
   }
 
   const messagesEndRef = useRef(null);
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef.current?.scrollIntoView("auto");
   };
 
   useEffect(() => {
@@ -85,18 +85,22 @@ function MessageBoard({
 
   return (
     <>
-      <MessageBoardContainer>
+      <MessageBoardContainer height={height}>
         <div className="MsgBoard">
-          {messages.map((message, i) => (
-            <MessagePane
-              key={`message-item-${i}`}
-              onShowMoreOptions={handleShowMoreOptions}
-              onShowEmoji={handleShowEmoji}
-              onEmojiClicked={handleEmojiClicked}
-              message={message}
-              currentUserId={currentUserId}
-            />
-          ))}
+          {Array.from(new Set(messages.map(a => a._id)))
+            .map(id => {
+              return messages.find(a => a._id === id);
+            })
+            .map((message, i) => (
+              <MessagePane
+                key={`message-item-${i}`}
+                onShowMoreOptions={handleShowMoreOptions}
+                onShowEmoji={handleShowEmoji}
+                onEmojiClicked={handleEmojiClicked}
+                message={message}
+                currentUserId={currentUserId}
+              />
+            ))}
           <div ref={messagesEndRef} />
         </div>
         {isLoadingMessages && (
@@ -110,7 +114,6 @@ function MessageBoard({
             </div>
           </div>
         )}
-
         <div className="input-text">
           <MessagePaneInput
             onSendMessage={handleSendMessage}

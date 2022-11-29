@@ -24,8 +24,8 @@ export default function App({ setAddChannel, setAddChannelDetails }) {
     fetchUser(dispatch);
   }, []);
 
-  return !state.user ? (
-    <SkeletonLoader COUNTER={12} />
+  return !state.user && state.IS_LOADING ? (
+    <SkeletonLoader COUNTER={10} />
   ) : (
     <>
       <Sidebar
