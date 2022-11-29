@@ -1,8 +1,10 @@
 /* eslint-env node */
-const { mergeWithRules } = require("webpack-merge");
-const singleSpaDefaults = require("webpack-config-single-spa-react");
-const Dotenv = require("dotenv-webpack");
-const path = require("path");
+import Dotenv from "dotenv-webpack";
+import { findUpSync } from "find-up";
+import { dirname, join } from "path";
+import { fileURLToPath } from "url";
+import singleSpaDefaults from "webpack-config-single-spa-react";
+import { mergeWithRules } from "webpack-merge";
 
 const mergeRules = {
   plugins: "replace",
@@ -20,8 +22,11 @@ const mergeRules = {
     }
   }
 };
+const findEnv = () => findUpSync(process.env.ENV_FILE || ".env");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-module.exports = (webpackConfigEnv, argv) => {
+export default (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
     orgName: "zuri",
     projectName: "utilities",
@@ -31,14 +36,22 @@ module.exports = (webpackConfigEnv, argv) => {
 
   return mergeWithRules(mergeRules)(defaultConfig, {
     output: {
-      path: path.join(__dirname, "..", "..", "dist") // string (default)
-      // filename: "[name].js", // string (default)
-      // publicPath: path.join(__dirname, '..', 'dist', 'assets') // string
+      path: join(__dirname, "..", "..", "dist")
     },
     plugins: [
       new Dotenv({
-        path: "./environments/.env.development"
+        path: findEnv()
       })
-    ]
+    ],
+    module: {
+      rules: [
+        {
+          test: /\.m?js/,
+          resolve: {
+            fullySpecified: false
+          }
+        }
+      ]
+    }
   });
 };
