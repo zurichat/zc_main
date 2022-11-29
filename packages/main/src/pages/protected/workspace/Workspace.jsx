@@ -78,7 +78,7 @@ export default function Index() {
 
   const fetchUserWorkspacesResponse = async () => {
     let userData = JSON.parse(sessionStorage.getItem("user"));
-    console.log(userData, "userData");
+
     if (userData) {
       let response = await instance.get(
         `https://api.zuri.chat/users/${userData.email}/organizations`,
@@ -87,10 +87,6 @@ export default function Index() {
             Authorization: `Bearer ${userData.token}`
           }
         }
-      );
-      console.log(
-        `https://api.zuri.chat/users/${userData.email}/organizations`,
-        "omo"
       );
 
       const userSpace = response.data.data;
@@ -113,8 +109,6 @@ export default function Index() {
     window.dispatchEvent(new Event("zuri-plugin-load"));
     match?.isExact &&
       history.replace(`/workspace/${short_id}/plugin-chat/all-dms`);
-
-    console.log(short_id, "short_id");
   }, []);
   // Temporary
   useEffect(() => {
