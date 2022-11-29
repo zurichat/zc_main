@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
 import liveicon from "../assets/icons/newlive.svg";
+import phoneicon from "../assets/icons/phone.svg";
 import draftIcon from "../assets/icons/draft-icon.svg";
 import { subscribeToChannel } from "@zuri/utilities";
 import { ACTIONS } from "../reducers/sidebar.reducer";

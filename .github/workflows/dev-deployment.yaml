@@ -26,7 +26,6 @@ jobs:
             git reset --hard origin/dev
             git stash
             git pull origin dev
-            whoami
-            yarn install
+            yarn install --ignore-engines
             yarn build
             pm2 restart zc_main_dev
