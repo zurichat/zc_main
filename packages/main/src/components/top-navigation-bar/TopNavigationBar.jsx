@@ -260,7 +260,7 @@ export default function TopNavigationBar() {
                 aria-expanded="false"
               >
                 <span className={`${TopNavigationBarStyles.item}`}>
-                  Downloads
+                  {t("nav_downloads")}
                 </span>
               </NavLink>
             </li>
