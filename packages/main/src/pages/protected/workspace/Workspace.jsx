@@ -33,6 +33,7 @@ import {
 } from "react-icons/bs";
 import { useMediaQuery } from "@chakra-ui/react";
 import VideoChat from "../../../components/media-chat/VideoChat";
+import VoiceCall from "../../../components/media-chat/VoiceCall/VoiceCall";
 
 const cache = setupCache({
   // check if response header has a specification for caching
@@ -243,6 +244,9 @@ export default function Index() {
 
             <Route path="/workspace/:workspaceId/video-chat">
               <VideoChat />
+            </Route>
+            <Route path="/workspace/:workspaceId/voice-call">
+              <VoiceCall />
             </Route>
 
             {/* <Route

@@ -20,6 +20,13 @@ import nl from "./assets/language/nl.png";
 import pt from "./assets/language/pt.png";
 import world from "./assets/language/world.png";
 
+import {
+  NovuProvider,
+  PopoverNotificationCenter,
+  NotificationBell,
+  IMessage
+} from "@novu/notification-center";
+
 export default function TopNavigationBar() {
   const { t } = useTranslation();
 
@@ -30,11 +37,13 @@ export default function TopNavigationBar() {
 
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isUserLoggedIn, setUserLoggedIn] = React.useState(false);
+  const [user, setUser] = React.useState("");
 
   const checkIfUserIsLogged = () => {
     let user = JSON.parse(sessionStorage.getItem("user"));
     let token = sessionStorage.getItem("token");
     setUserLoggedIn(user && token);
+    setUser(user.id);
   };
 
   React.useEffect(() => {
@@ -265,7 +274,22 @@ export default function TopNavigationBar() {
               </NavLink>
             </li>
           </ul>
-
+          {isUserLoggedIn && (
+            <div className={TopNavigationBarStyles.notification}>
+              <NovuProvider
+                backendUrl={"http://139.144.17.179:3000"}
+                socketUrl={"http://139.144.17.179:3002"}
+                subscriberId={user}
+                applicationIdentifier={"tDH5Bg2NQ5QL"}
+              >
+                <PopoverNotificationCenter>
+                  {({ unseenCount }) => (
+                    <NotificationBell unseenCount={unseenCount} />
+                  )}
+                </PopoverNotificationCenter>
+              </NovuProvider>
+            </div>
+          )}
           <ul
             className={`d-lg-none navbar-nav-scroll ${TopNavigationBarStyles.signs}`}
           >
