@@ -1,5 +1,6 @@
-import React from "react";
+import { BASE_API_URL } from "@zuri/utilities";
 import axios from "axios";
+import React from "react";
 
 const myStyle = {
   inputfield: {
@@ -17,7 +18,7 @@ const modifyOrganizationSettings = () => {
   let organizationid = localStorage.getItem("currentWorkspace");
   let defaultchannels = "";
   let token = sessionStorage.getItem("token");
-  axios.defaults.baseURL = "https://api.zuri.chat";
+  axios.defaults.baseURL = BASE_API_URL;
   axios.defaults.headers.common = { Authorization: `bearer ${token}` };
   axios({
     method: "patch",
