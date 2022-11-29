@@ -30,16 +30,11 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         )
         .then(res => {
           setOrgLogoUrl(res.data.data.logo_url ? res.data.data.logo_url : "");
-        })
-        .catch(err => {
-          console.error(err, "from modal component");
         });
     }
 
     setOrgs(JSON.parse(sessionStorage.getItem("organisations")));
-    // console.log(orgs);
   }, []);
-  // console.log(orgs);
 
   // HoverFunctionality
   const useHover = () => {

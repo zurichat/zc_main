@@ -117,9 +117,6 @@ const TopNavbar = ({ toggleSidebar }) => {
   //       .then(response => {
   //         setMessages(response.data.results)
   //       })
-  //       .catch(err => {
-  //         console.error(err)
-  //       })
   //   }
   //   searchFunction()
   // }, [search])
@@ -142,13 +139,7 @@ const TopNavbar = ({ toggleSidebar }) => {
               return response.data.data.find(
                 member => member.email === userdef.email
               );
-            })
-            .catch(err => {
-              console.error(err.response.data);
             });
-        })
-        .catch(err => {
-          console.error(err);
         });
     }
 
