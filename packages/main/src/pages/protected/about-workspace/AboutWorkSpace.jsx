@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import AdminSettings from "./index";
-import AboutWorkSpaceTabs from "./components/AboutWorkSpaceTabs";
-import styles from "./styles/aboutWorkspace.module.css";
+import AdminSettings from "../admin-settings/AdminSettings";
+import AboutWorkSpaceTabs from "../../../components/about-workspace-tabs/AboutWorkSpaceTabs";
+import styles from "../about-workspace/AboutWorkspace.module.css";
 import { FiAlertOctagon } from "react-icons/fi";
-import { authAxios } from "./Utils/api";
+import { authAxios } from "../about-workspace/utils/Api";
 
 const AboutWorkSpace = () => {
   const [orgDetails, setOrgdetails] = useState({});
   const [items, setItems] = useState(null);
-
   const currentWorkspace = localStorage.getItem("currentWorkspace");
 
   if (!currentWorkspace) {
@@ -53,7 +52,6 @@ const AboutWorkSpace = () => {
   useEffect(() => {
     getOrgDetails();
     workspaceuser();
-    //eslint-disable-next-line
   }, []);
 
   return (
