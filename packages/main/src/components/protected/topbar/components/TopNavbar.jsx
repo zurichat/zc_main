@@ -256,7 +256,7 @@ const TopNavbar = ({ toggleSidebar }) => {
     console.log("test3", user);
   }, []);
   return (
-    <TopbarWrapper>
+    <TopbarWrapper id="topBarWrapper">
       {
         <div
           className={`${toggleSidebar && styles["mobile_sidebar_open"]} ${
