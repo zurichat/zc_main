@@ -11,13 +11,13 @@
   color: white;
   font-weight: bold;
   font-size: 1.125em;
-  width: auto;
   padding-right: 8px;
   line-height: 1.2em;
 }
 
 .resultCard {
   padding: 0.5em;
+  line-height: 1.8em;
 }
 
 .total {
@@ -60,4 +60,114 @@
   font-weight: 700;
   font-size: 1em;
   cursor: pointer;
+}
+
+.filter-search-type {
+  display: inline-flex;
+  gap: 20px;
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  margin-top: 44px;
+  padding: 15px 30px 0 10px;
+}
+
+.filter-search-type span {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.file-card {
+  display: flex;
+  gap: 20px;
+  margin: 15px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 20px 10px;
+  cursor: pointer;
+}
+
+.file-card:hover {
+  box-shadow: 0 5px 20px -10px lightgrey;
+}
+
+.file-card img {
+  height: 60px;
+  width: 60px;
+  border-radius: 5px;
+}
+
+.file-card p:first-of-type {
+  font-weight: bold;
+}
+
+.file-card p:nth-of-type(2) {
+  font-size: 0.8em;
+}
+
+.people-card {
+  display: flex;
+  gap: 10px;
+  margin: 15px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 15px 10px;
+  cursor: pointer;
+}
+
+.people-card:hover {
+  box-shadow: 0 5px 20px -10px lightgrey;
+}
+.people-card img {
+  height: 80px;
+  width: 80px;
+  border-radius: 5px;
+}
+
+.people-card p:first-of-type {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.people-card p:nth-of-type(2) {
+  font-size: 1em;
+}
+
+.people-card p:nth-of-type(3) {
+  font-size: 0.8em;
+}
+
+.channel-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: 15px;
+  border: 1px solid lightgray;
+  padding: 15px 10px;
+  cursor: pointer;
+}
+
+.channel-card:hover {
+  box-shadow: 0 5px 20px -10px lightgrey;
+}
+
+.channel-card p:first-of-type {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.channel-card p:nth-of-type(3) {
+  font-size: 0.8em;
+  color: gray;
+}
+
+.channel-card button {
+  font-size: 1em;
+  font-weight: 700;
+  background-color: #00b87c;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.4em 1em;
+  margin-right: 15px;
 }

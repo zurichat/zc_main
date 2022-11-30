@@ -249,7 +249,7 @@ const TopNavbar = ({ toggleSidebar }) => {
     navigateToUrl("/search");
   };
   return (
-    <TopbarWrapper>
+    <TopbarWrapper id="topBarWrapper">
       {
         <div
           className={`${toggleSidebar && styles["mobile__sidebar__open"]} ${
