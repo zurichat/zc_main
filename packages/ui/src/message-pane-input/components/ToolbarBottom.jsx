@@ -27,6 +27,9 @@ import classes from "./Gif.module.css";
 import ReactGiphySearchbox from "react-giphy-searchbox";
 import sendfile from "./SendFile.module.css";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const BoldIcon = () => <img src={Bold} alt="" />;
 const ItalicIcon = () => <img src={Italic} alt="" />;
 const ListIcon = () => <img src={List} alt="" />;
@@ -87,29 +90,13 @@ const ToolbarBottom = props => {
       //Post request is sent here
       // sendMessageHandler(attachedFile);
       // Function to upload files
-      handleSubmit();
+
       //Then this is to clear the file from the state
       props.sentAttachedFile(null);
       clearAttached();
     }
   };
-  function handleSubmit() {
-    alert("Uploading File(s)");
-    const url = process.env.url;
-    const formData = new FormData();
-    for (let i = 0; i < files.length; i++) {
-      formData.append(files[i].name, files[i]);
-    }
 
-    const config = {
-      headers: {
-        "content-type": "multipart/form-data"
-      }
-    };
-    axios.post(url, formData, config).then(response => {
-      alert("File(s) has been uploaded");
-    });
-  }
   const handleClickAway = () => {
     setshowAttachInputBox(false);
   };
