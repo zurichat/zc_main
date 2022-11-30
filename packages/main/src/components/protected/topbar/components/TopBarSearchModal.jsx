@@ -3,20 +3,27 @@ import { useState, useEffect, useContext } from "react";
 import SearchModalResult from "./ModalAutoCompleteResult";
 import { BigModal } from "./BigModal";
 import { FilterItem } from "./FilterItem";
-import { plugins } from "../utils/topbar-api";
+import { plugins, getDummmyData } from "../utils/topbar-api";
 import { ProfileContext } from "../context/profile-modal.context";
 import { useTranslation } from "react-i18next";
 import TopBarSearchModalUI from "./TopBarSearchModalUI";
 import { FaSearch } from "react-icons/fa";
+import axios from "axios";
 
 const base_URL = "https://jsonplaceholder.typicode.com/todos";
 
 const TopBarSearchModal = () => {
+  const [searchType, setSearchType] = useState("messages");
   const [value, setValue] = useState("");
   const [keys, setKeys] = useState("");
   const [filters, setFilters] = useState({});
   const [isSearchOpen, setOpenSearch] = useState(false);
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState({
+    messages: [],
+    files: [],
+    channels: [],
+    people: []
+  });
   const [isLoading, setLoading] = useState(false);
   const { user } = useContext(ProfileContext);
   const { t } = useTranslation();
@@ -31,20 +38,21 @@ const TopBarSearchModal = () => {
     setKeys("");
     setValue("");
   };
+  const handleSearchType = type => {
+    setSearchType(type);
+  };
+
   const onSearchSubmit = async e => {
     if (e.keyCode === 13 && value.length >= 1) {
       setOpenSearch(true);
-      const getResult = async () => {
+      const getDummmData = async () => {
         try {
           setLoading(true);
-          let response = await exactPlugin.apiCall(
-            user.org_id,
-            user._id,
-            value,
-            keys
+          const response = await axios.get(
+            "https://mockjson-co.herokuapp.com/bin/63823afddca66f003e203108"
           );
           if (response.status >= 200 || response.status <= 299) {
-            setResult(response.data.results.data);
+            setResult(response.data);
           }
           setLoading(false);
         } catch (e) {
@@ -52,31 +60,13 @@ const TopBarSearchModal = () => {
           console.error(e);
         }
       };
-      getResult();
+      getDummmData();
     }
   };
 
   const onInputChange = e => {
     setValue(e.target.value);
   };
-  useEffect(() => {
-    async function getData() {
-      if (!exactPlugin?.filterCall) {
-        setFilters({});
-        return;
-      }
-      try {
-        const response = await exactPlugin.filterCall(user.org_id, user._id);
-
-        if (response.status >= 200 || response.status <= 299) {
-          setFilters(response.data.data);
-        }
-      } catch (e) {
-        setFilters({});
-      }
-    }
-    getData();
-  }, [exactPlugin?.name, user._id]);
 
   const FilterList =
     filters === {} || !filters
@@ -178,7 +168,7 @@ const TopBarSearchModal = () => {
           </div>
         </div>
         <ul className={styles.ListWrapper}>
-          <TopBarSearchModalUI />
+          <TopBarSearchModalUI handleSearchType={handleSearchType} />
           {filters === {} ? (
             <li>
               <SearchModalResult title="" />
@@ -197,6 +187,7 @@ const TopBarSearchModal = () => {
           result={result}
           inputValue={value}
           clearSearch={ClearSearch}
+          searchType={searchType}
         />
       ) : null}
     </div>
