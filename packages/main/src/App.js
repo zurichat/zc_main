@@ -103,7 +103,7 @@ const App = () => (
           <Route path="/whyzurichat" component={WhyZuriChat} />
           <Route path="/privacy" component={PrivacyPage} />
           <Route path="/terms" component={TermsOfService} />
-          <Route path="/errorPage" component={ErrorPage} />
+          <Route path="*" component={ErrorPage} />
 
           <ProtectFromAuthRoute exact path="/login">
             <Login />
