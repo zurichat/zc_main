@@ -1,0 +1,166 @@
+.footer_container {
+  background: #f8f8ff;
+}
+
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 1.875rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1190px;
+  font-family: "Lato";
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer li {
+  padding-left: 0;
+  text-decoration: none;
+}
+
+.footer a {
+  padding-left: 0;
+  text-decoration: none;
+}
+
+.top_footer {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding-bottom: 20px;
+}
+
+.logo {
+  margin-top: 15px;
+  display: flex;
+}
+
+.logo_img {
+  display: inline-block;
+  margin: auto;
+}
+
+.logo span {
+  display: inline-block;
+  color: black;
+  padding: 0.5rem;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+}
+
+.menu li {
+  padding-bottom: 20px;
+}
+
+.menu a {
+  color: #6a6a6a;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.menu a:hover {
+  color: #00b87c;
+}
+
+.menu h5 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.social {
+  margin-top: 0;
+}
+
+.social h5 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.social ul {
+  display: inline-flex;
+}
+
+.social li {
+  padding: 0 20px 0 0;
+}
+
+.bottom_footer {
+  display: flex;
+  padding-top: 20px;
+  border-top: 2px solid rgba(187, 186, 231, 0.15);
+  justify-content: center;
+}
+
+.bottom_footer p {
+  color: #6a6a6a;
+  font-size: 14.5px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* media queries */
+
+@media screen and (max-width: 1190px) {
+  .footer {
+    max-width: 940px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .footer {
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .top_footer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+
+  .logo {
+    padding-left: 10px;
+  }
+
+  .menu {
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+
+  .menu a:hover {
+    color: #00b87c;
+  }
+
+  .social {
+    padding-left: 0;
+  }
+
+  .bottom_footer {
+    padding-top: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+  }
+
+  .menu a:hover {
+    color: #00b87c;
+  }
+}
