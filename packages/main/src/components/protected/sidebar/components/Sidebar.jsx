@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
 import liveicon from "../assets/icons/newlive.svg";
+import phoneicon from "../assets/icons/phone.svg";
 import draftIcon from "../assets/icons/draft-icon.svg";
 import { subscribeToChannel } from "@zuri/utilities";
 import { ACTIONS } from "../reducers/sidebar.reducer";
@@ -223,19 +224,19 @@ const Sidebar = props => {
                 name={`${t("workspace_chat.drafts")}`}
                 image={draftIcon}
               />
-
-
-
               <SingleRoom
                 name="LiveBroadcast"
                 image={liveicon}
                 link={`/workspace/${currentWorkspace}/LiveBroadcast`}
               />
+              <SingleRoom
+                name="Voice Call"
+                image={phoneicon}
+                link={`/workspace/${currentWorkspace}/voice-call`}
+              />
 
-          <hr color="#d4d4d4" />
               <hr color="#d4d4d4" />
-
-
+              <hr color="#d4d4d4" />
 
               <Starred starredRooms={starredRooms} />
               {singleItems}
