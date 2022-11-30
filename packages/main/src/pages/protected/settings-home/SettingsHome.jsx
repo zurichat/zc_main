@@ -35,7 +35,7 @@ const Home = () => {
 
         <div className={classes.card}>
           <div className="mt-2">
-            <div className="" style={{ display: "flex" }}>
+            <div className="" style={{ display: "flex", paddingLeft: "1.4em" }}>
               <div>
                 <span
                   className={classes.settings_icon_holder}
@@ -112,7 +112,11 @@ const Home = () => {
           />
 
           <div className="mt-2">
-            <Link to="/admin/stats" className="" style={{ display: "flex" }}>
+            <Link
+              to="/admin/settings/ManageWorkspace"
+              className=""
+              style={{ display: "flex" }}
+            >
               <div>
                 <span
                   className={classes.settings_icon_holder}
@@ -151,62 +155,51 @@ const Home = () => {
             style={{
               listStyle: "none",
               fontSize: "1rem",
-              textAlign: "center",
+              textAlign: "left",
               margin: "4rem auto",
-              lineHeight: "2rem"
+              lineHeight: "2rem",
+              display: "inline-block"
             }}
           >
-            <li
-              style={{
-                display: "inline-block",
-                margin: "0.75rem"
-              }}
-            >
-              <Link to="/tour">Tour</Link>
-            </li>
-            <li
-              style={{
-                display: "inline-block",
-                margin: "0.75rem"
-              }}
-            >
-              <Link to="/download-apps">Download Apps</Link>
-            </li>
-            <li
-              style={{
-                display: "inline-block",
-                margin: "0.75rem"
-              }}
-            >
-              <Link to="/legal">Brand Guidelines</Link>
-            </li>
-            <li
-              style={{
-                display: "inline-block",
-                margin: "0.75rem"
-              }}
-            >
-              <Link to="/help">Help</Link>
-            </li>
-            <li
-              style={{
-                display: "inline-block",
-                margin: "0.75rem"
-              }}
-            >
-              <Link to="/confirm-deactivation" target="_blank">
-                API
-              </Link>
-            </li>
-            <li
-              style={{
-                display: "inline-block",
-                margin: "0.75rem"
-              }}
-            >
-              <Link to="/pricing">Pricing</Link>
-            </li>
-            <div>
+            <div className={classes.footer_links}>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/whyzurichat" target="_blank">
+                  Our Blog
+                </Link>
+              </li>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/downloads">Download Apps</Link>
+              </li>
+            </div>
+            <div className={classes.footer_links}>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/help">Help</Link>
+              </li>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/legal">Brand Guidelines</Link>
+              </li>
+            </div>
+            <div className={classes.footer_links}>
               <li
                 style={{
                   display: "inline-block",
@@ -223,15 +216,15 @@ const Home = () => {
               >
                 <Link to="/privacy">Policies</Link>
               </li>
+            </div>
+            <div className={classes.footer_links}>
               <li
                 style={{
                   display: "inline-block",
                   margin: "0.75rem"
                 }}
               >
-                <Link to="/ZurichatBlog" target="_blank">
-                  Our Blog
-                </Link>
+                <Link to="/pricing">Pricing</Link>
               </li>
               <li
                 style={{
@@ -239,7 +232,7 @@ const Home = () => {
                   margin: "0.75rem"
                 }}
               >
-                <Link to="/session-signout">Sign Out</Link>
+                <Link to="/signout">Sign Out</Link>
               </li>
             </div>
           </ul>

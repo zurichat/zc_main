@@ -23,8 +23,8 @@ import { getCurrentWorkspace, getUser } from "../utils/common";
 import { useTranslation } from "react-i18next";
 
 const Profile = () => {
-    const { t } = useTranslation();
-  
+  const { t } = useTranslation();
+
   const {
     userProfileImage,
     toggleModalState,
@@ -107,7 +107,9 @@ const Profile = () => {
             <StatusBadgeModal />
           </h3>
 
-          <p className={styles.myp}>{user.bio ? user.bio : t("profile_user_description")}</p>
+          <p className={styles.myp}>
+            {user.bio ? user.bio : t("profile_user_description")}
+          </p>
         </div>
 
         <div className={styles.buttonGroupsMobile}>
