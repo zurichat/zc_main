@@ -1,9 +1,9 @@
 import React from "react";
+import { BsQuestionCircle } from "react-icons/bs";
+import { FaStar } from "react-icons/fa";
 
 import styles from "../assets/css/notifications.css";
 import "../assets/css/main.css";
-
-import question from "../assets/images/question.png";
 
 export default function Notifications() {
   return (
@@ -13,7 +13,7 @@ export default function Notifications() {
           <p>Notify about...</p>
           <p>
             About notifications
-            <img src={question} className="ms-2" role="button" alt="" />
+            <BsQuestionCircle className="ms-2" role="button" />
           </p>
         </div>
         <div>

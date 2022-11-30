@@ -223,7 +223,6 @@ const Sidebar = props => {
                 name={`${t("workspace_chat.drafts")}`}
                 image={draftIcon}
               />
-
               <SingleRoom
                 name="LiveBroadcast"
                 image={liveicon}

@@ -1,16 +1,15 @@
 import React from "react";
+import { RiSendPlane2Line, RiHome5Line } from "react-icons/ri";
+import {
+  BsJustifyLeft,
+  BsBookmarks,
+  BsBook,
+  BsChatText,
+  BsFolder2Open
+} from "react-icons/bs";
+import { IoChatbubblesOutline } from "react-icons/io5";
 
 import styles from "../assets/css/sidebar.css";
-
-// images
-import unread from "../assets/images/unread.png";
-import dms from "../assets/images/dms.png";
-import thread from "../assets/images/thread.png";
-import drafts from "../assets/images/drafts.png";
-import saved from "../assets/images/saved.png";
-import zuri from "../assets/images/zuri.png";
-import folder from "../assets/images/folder.png";
-import people from "../assets/images/people.png";
 
 export default function Sidebar() {
   return (
@@ -21,56 +20,56 @@ export default function Sidebar() {
           <div className="d-flex align-items-center mb-3">
             <input type="checkbox" name="" id="checkbox1" />
             <label htmlFor="checkbox1">
-              <img src={unread} alt="" className="mx-2" />
+              <BsJustifyLeft className="mx-2" />
               Unread messages
             </label>
           </div>
           <div className="d-flex align-items-center mb-3">
             <input type="checkbox" name="" id="checkbox2" />
             <label htmlFor="checkbox2">
-              <img src={dms} alt="" className="mx-2" />
+              <IoChatbubblesOutline className="mx-2" />
               All DMs
             </label>
           </div>
           <div className="d-flex align-items-center mb-3">
             <input type="checkbox" name="" id="checkbox1" />
             <label htmlFor="checkbox1">
-              <img src={thread} alt="" className="mx-2" />
+              <BsChatText className="mx-2" />
               Thread
             </label>
           </div>
           <div className="d-flex align-items-center mb-3">
             <input type="checkbox" name="" id="checkbox2" />
             <label htmlFor="checkbox2">
-              <img src={drafts} alt="" className="mx-2" />
+              <RiSendPlane2Line className="mx-2" />
               Drafts & New
             </label>
           </div>
           <div className="d-flex align-items-center mb-3">
             <input type="checkbox" name="" id="checkbox1" />
             <label htmlFor="checkbox1">
-              <img src={saved} alt="" className="mx-2" />
+              <BsBookmarks className="mx-2" />
               Saved Items
             </label>
           </div>
           <div className="d-flex align-items-center mb-3">
             <input type="checkbox" name="" id="checkbox2" />
             <label htmlFor="checkbox2">
-              <img src={zuri} alt="" className="mx-2" />
+              <RiHome5Line className="mx-2" />
               Zuri Chat Connect
             </label>
           </div>
           <div className="d-flex align-items-center mb-3">
             <input type="checkbox" name="" id="checkbox1" />
             <label htmlFor="checkbox1">
-              <img src={folder} alt="" className="mx-2" />
+              <BsFolder2Open className="mx-2" />
               Files
             </label>
           </div>
           <div className="d-flex align-items-center mb-3">
             <input type="checkbox" name="" id="checkbox2" />
             <label htmlFor="checkbox2">
-              <img src={people} alt="" className="mx-2" />
+              <BsBook className="mx-2" />
               People & user groups
             </label>
           </div>

@@ -8,7 +8,7 @@
   width: 93%;
 }
 
-input[type="radio"] {
+.appearanceCon input[type="radio"] {
   appearance: none;
   background-color: #fff;
   margin: 0;
@@ -23,14 +23,14 @@ input[type="radio"] {
   border-radius: 50%;
 }
 
-input[type="radio"]::before {
+.appearanceCon input[type="radio"]::before {
   content: "";
   width: 0.65em;
   height: 0.65em;
   border-radius: 50%;
 }
 
-input[type="radio"]:checked{
+.appearanceCon input[type="radio"]:checked{
   background-image: url(../images/checkbox.png);
   background-position: center;
   background-repeat: no-repeat;

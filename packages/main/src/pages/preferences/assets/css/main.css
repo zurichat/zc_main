@@ -1,3 +1,5 @@
+/* @import { FaStar } from "react-icons/fa"; */
+
 header {
   width: 90%;
 }
@@ -31,7 +33,7 @@ header {
     display: block;
     width: 15rem;
     margin-left: 1rem;
-    padding: 10px;
+    padding: 7px;
   }
 
   .btnCon {
@@ -85,7 +87,7 @@ input[type="radio"]::before {
 }
 
 input[type="radio"]:checked{
-  background-image: url(..//images/checked.png);
+  background-image: url(../images/checked.png);
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid #009967;

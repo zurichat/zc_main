@@ -1,6 +1,5 @@
 import React from "react";
-
-import info from "../assets/images/info.png";
+import { BiInfoCircle } from "react-icons/bi";
 
 import styles from "../assets/css/sidebar.css";
 
@@ -36,7 +35,7 @@ export default function Privacy() {
           people
         </p>
         <p className={`${styles.stopped}`}>
-          <img src={info} alt="" className="me-2" />
+          <BiInfoCircle className="me-2" />
           You haven’t blocked any invitations from anyone yet.
         </p>
       </div>

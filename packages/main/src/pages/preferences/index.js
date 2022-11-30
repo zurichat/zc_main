@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { BsBell, BsGlobe, BsLayoutTextSidebarReverse } from "react-icons/bs";
+import { IoColorFilterOutline } from "react-icons/io5";
+import { FiMonitor } from "react-icons/fi";
+import { MdPrivacyTip } from "react-icons/md";
 
 // components
 import Header from "./components/Header";
@@ -8,14 +12,6 @@ import LangRegion from "./components/LangRegion";
 import Notifications from "./components/Notifications";
 import Privacy from "./components/Privacy";
 import Sidebar from "./components/Sidebar";
-
-// images
-import colorfilter from "./assets/images/colorfilter.png";
-import global from "./assets/images/global.png";
-import notification from "./assets/images/notification.png";
-import security from "./assets/images/security.png";
-import slider from "./assets/images/slider.png";
-import monitor from "./assets/images/monitor.png";
 
 import styles from "./assets/css/main.css";
 
@@ -131,7 +127,7 @@ export default function index() {
                   d-flex border rounded w-75 align-items-center py-2 mb-3`}
               role="button"
             >
-              <img src={notification} className="me-3 ms-1" alt="" />
+              <BsBell className="me-3 ms-1" />
               <p className="mb-0">Notifications</p>
             </button>
             <button
@@ -140,7 +136,7 @@ export default function index() {
                   d-flex border rounded w-75 align-items-center py-2 mb-3`}
               role="button"
             >
-              <img src={slider} className="me-3 ms-1" alt="" />
+              <BsLayoutTextSidebarReverse className="me-3 ms-1" />
               <p className="mb-0">Sidebar</p>
             </button>
             <button
@@ -149,7 +145,7 @@ export default function index() {
                   d-flex border rounded w-75 align-items-center py-2 mb-3`}
               role="button"
             >
-              <img src={colorfilter} className="me-3" alt="" />
+              <IoColorFilterOutline className="me-2 ms-1" />
               <p className="mb-0">Appearance</p>
             </button>
             <button
@@ -158,7 +154,7 @@ export default function index() {
                 d-flex border rounded w-75 align-items-center py-2 mb-3`}
               role="button"
             >
-              <img src={security} className="me-3" alt="" />
+              <MdPrivacyTip className="me-3 ms-1" />
               <p className="mb-0">Privacy</p>
             </button>
             <button
@@ -167,7 +163,7 @@ export default function index() {
                   d-flex border rounded w-75 align-items-center py-2 mb-3`}
               role="button"
             >
-              <img src={monitor} className="me-3" alt="" />
+              <FiMonitor className="me-3 ms-1" />
               <p className="mb-0">Accessibility</p>
             </button>
             <button
@@ -176,7 +172,7 @@ export default function index() {
                   d-flex border rounded w-75 align-items-center py-2 mb-3`}
               role="button"
             >
-              <img src={global} className="me-3" alt="" />
+              <BsGlobe className="me-3 ms-1" />
               <p className="mb-0">Language & Region</p>
             </button>
           </div>
