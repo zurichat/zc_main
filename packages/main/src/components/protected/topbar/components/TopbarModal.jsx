@@ -7,7 +7,6 @@ import axios from "axios";
 import defaultAvatar from "../assets/images/avatar_vct.svg";
 import smile from "../assets/images/smile.png";
 import edit from "../assets/images/pen.png";
-import { useTranslation } from "react-i18next";
 
 import styles from "../styles/Topbar.module.css";
 import { TopbarContext } from "../context/topbar.context";
@@ -16,6 +15,7 @@ import { ProfileContext } from "../context/profile-modal.context";
 import Preferences from "./Preferences";
 import EditProfile from "./EditProfile";
 import MembersModal from "./MembersModal";
+import Downloads from "./Downloads";
 import SetStatusModal from "./SetStatusModal";
 import NewStatusModal from "./NewStatusModal";
 import { authAxios } from "../utils/api";
@@ -33,6 +33,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
 
   const state = useContext(TopbarContext);
   const [showModal, setShowModal] = state.show;
+
 
   const handleClearStatus = async () => {
     setUser({
@@ -97,7 +98,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
     reusableModal,
     setReusableModal,
     presence,
-    setPresence
+    setPresence,
   } = state;
 
   const currentWorkspace = localStorage.getItem("currentWorkspace");
@@ -127,8 +128,6 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
     }
   }, []);
 
-  const { t } = useTranslation();
-
   const config = {
     headers: {
       Authorization: `Bearer ${token}`
@@ -145,20 +144,20 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
 
   switch (presence) {
     case "true":
-      userAppearance = `${t("user_appearance_active")}`;
+      userAppearance = "Set yourself as away";
       toggleAppearance = (
         <div className={styles.online}>
           <span className={styles.activeCircle} />
-          <span className={styles.active}>{t("user_active")} </span>
+          <span className={styles.active}> Active </span>
         </div>
       );
       break;
     default:
-      userAppearance = `${t("user_appearance_away")}`;
+      userAppearance = "Set yourself as active";
       toggleAppearance = (
         <div className={styles.online}>
           <span className={styles.awayCircle} />
-          <span className={styles.away}>{t("user_away")}</span>
+          <span className={styles.away}>Away </span>
         </div>
       );
   }
@@ -186,12 +185,14 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
           className={styles.modalContainers}
           onClick={closeStatus}
         >
-          <div className={styles.smileys}>
-            <Picker
-              onEmojiClick={onEmojiClick}
-              pickerStyle={{ boxShadow: "none" }}
-              skinTone={SKIN_TONE_MEDIUM_DARK}
-            />
+          <div className={styles.picker}>
+            <div className={styles.smileys}>
+              <Picker
+                onEmojiClick={onEmojiClick}
+                pickerStyle={{ boxShadow: "none" }}
+                skinTone={SKIN_TONE_MEDIUM_DARK}
+              />
+            </div>
           </div>
         </div>
       ) : null}
@@ -226,7 +227,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
                     ? `${user.user_name
                         .charAt(0)
                         .toUpperCase()}${user.user_name.slice(1)}`
-                    : `${t("user_anonymous")}`}
+                    : "Anonymous"}
                 </h4>
                 {toggleAppearance}
               </div>
@@ -258,14 +259,14 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
 
               <div className={styles.statusContent}>
                 {!(user?.status?.text || user?.status?.tag)
-                  ? `${t("user_status_update")}`
+                  ? "Update your status"
                   : user?.status?.text}
               </div>
             </div>
 
             <div className={styles.optionSection} style={{ marginTop: "1rem" }}>
               {(user?.status?.text || user?.status?.tag) && (
-                <p onClick={handleClearStatus}>{t("user_clear_status")}</p>
+                <p onClick={handleClearStatus}>Clear status</p>
               )}
               <p
                 onClick={() => {
@@ -290,15 +291,15 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
                   toggleModalState();
                 }}
               >
-                {t("user_edit_profile")}
+                Edit profile
               </p>
               <p
                 onClick={() => {
                   toggleProfileState();
-                  closeModal();
+                  openModal();
                 }}
               >
-                {t("user_view_profile")}
+                View profile
               </p>
               <p
                 onClick={() => {
@@ -306,18 +307,34 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
                   toggleModalState();
                 }}
               >
-                {t("user_preferences")}
+                Preferences
               </p>
             </div>
 
             <hr className={styles.hr} />
 
+            <div className={styles.optionSection}>
+              <p
+                onClick={() => {
+                  setReusableModal("downloads");
+                }}
+              >
+                Downloads
+              </p>
+            </div>
+
             {reusableModal === "edit profile" && <EditProfile />}
 
             {reusableModal === "preference" && <Preferences />}
 
+            {reusableModal === "downloads" && (
+              <Downloads setModal={setReusableModal} />
+            )}
+
+            <hr className={styles.hr} />
+
             <div className={styles.optionSection}>
-              <p onClick={logout}>{t("user_signout")}</p>
+              <p onClick={logout}>Sign out</p>
             </div>
           </section>
           <div className={styles.modalBackDrop} onClick={closeModal}></div>

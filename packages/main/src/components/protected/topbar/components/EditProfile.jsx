@@ -9,10 +9,8 @@ import Loader from "react-loader-spinner";
 import toast, { Toaster } from "react-hot-toast";
 import { data } from "../utils/country-code";
 import { StyledProfileWrapper } from "../styles/StyledEditProfile.styled";
-import { useTranslation } from "react-i18next";
 const EditProfile = () => {
   // const imageRef = useRef(null)
-  const { t } = useTranslation();
   const avatarRef = useRef(null);
   const {
     user,
@@ -49,6 +47,7 @@ const EditProfile = () => {
     links[index] = e.target.value;
     setLinks(links[index]);
   };
+
 
   //Function handling Image Upload
   const handleImageChange = event => {
@@ -118,13 +117,11 @@ const EditProfile = () => {
       });
   };
 
-  useEffect(() => {
-    setUserProfileImage(user.image_url);
-  }, [user]);
+
   // This will handle the profile form submission
   const handleFormSubmit = async e => {
     e.preventDefault();
-    setState(prev => ({ ...prev, loading: true }));
+    setState({ ...state, loading: true });
     const data = {
       first_name: state.first_name,
       last_name: state.last_name,
@@ -133,25 +130,27 @@ const EditProfile = () => {
       bio: state.bio,
       time_zone: state.timezone
     };
+
     try {
       const res = await authAxios.patch(
         `/organizations/${orgId}/members/${user._id}/profile`,
         data
       );
-
-      // setState({ loading: false });
-      setState(prev => ({ ...prev, loading: false }));
+      setState({ loading: false });
       toast.success("User Profile Updated Successfully", {
         position: "top-center"
       });
     } catch (err) {
-      // setState({ loading: false });
-      setState(prev => ({ ...prev, loading: false }));
+      console.error("Error", err);
+      setState({ loading: false });
       toast.error(err?.message, {
         position: "top-center"
       });
     }
+
+
   };
+
   return (
     <ProfileModal full title="Edit profile">
       <>
@@ -176,7 +175,7 @@ const EditProfile = () => {
                     className="inputLabel"
                     style={{ color: "var(--text-color-bold)" }}
                   >
-                    {t("Edit_profile_firstName")}
+                    First Name
                   </label>
                   <input
                     type="text"
@@ -195,7 +194,7 @@ const EditProfile = () => {
                     className="inputLabel"
                     style={{ color: "var(--text-color-bold)" }}
                   >
-                    {t("Edit_profile_lastName")}
+                    Last Name
                   </label>
                   <input
                     type="text"
@@ -216,7 +215,7 @@ const EditProfile = () => {
                     className="inputLabel"
                     style={{ color: "var(--text-color-bold)" }}
                   >
-                    {t("Edit_profile_chooseDisplayName")}
+                    Choose a Display Name
                   </label>
                   <input
                     type="text"
@@ -232,7 +231,8 @@ const EditProfile = () => {
                     className="para"
                     style={{ color: "var(--text-color-gray)" }}
                   >
-                    {t("Edit_profile_uniqueNameWarning")}
+                    Please use a unique and permanent display name. If someone
+                    uses your exact name, you should change it!
                   </p>
                 </div>
               </div>
@@ -242,7 +242,7 @@ const EditProfile = () => {
                   className="inputLabel"
                   style={{ color: "var(--text-color-bold)" }}
                 >
-                  {t("Edit_profile_profession")}
+                  What you do
                 </label>
                 <input
                   type="text"
@@ -253,7 +253,7 @@ const EditProfile = () => {
                   name="bio"
                 />
                 <p className="para" style={{ color: "var(--text-color-gray)" }}>
-                  {t("Edit_profile_professionExplain")} <b>ZURI</b>
+                  Let people know what you do at <b>ZURI</b>
                 </p>
               </div>
 
@@ -262,7 +262,7 @@ const EditProfile = () => {
                   className="inputLabel"
                   style={{ color: "var(--text-color-bold)" }}
                 >
-                  {t("Edit_profile_phoneNumber")}
+                  Phone Number
                 </label>
                 <div className="phone-container">
                   <select
@@ -295,7 +295,7 @@ const EditProfile = () => {
                   className="inputLabel"
                   style={{ color: "var(--text-color-bold)" }}
                 >
-                  {t("Edit_profile_timeZone")}
+                  Time Zone
                 </label>
                 <div className="time-container">
                   <select
@@ -381,9 +381,7 @@ const EditProfile = () => {
                     />
                   ) : (
                     <div className="profile__img-wrapper">
-                      <span className="pictureHeading">
-                        {t("Edit_profile_profilePhoto")}
-                      </span>
+                      <span className="pictureHeading">Profile photo</span>
                       <img className="img" src={image} alt="profile-pic" />
                     </div>
                   )}
@@ -406,7 +404,7 @@ const EditProfile = () => {
                       width={40}
                     />
                   ) : ( */}
-                  {t("Edit_profile_uploadImage")}
+                  Upload an Image
                   {/* ) */}
                 </label>
                 <div
@@ -414,7 +412,7 @@ const EditProfile = () => {
                   className="rmvBtn"
                   onClick={handleImageDelete}
                 >
-                  {t("Edit_profile_removeImage")}
+                  Remove photo
                 </div>
               </div>
             </div>
@@ -428,7 +426,7 @@ const EditProfile = () => {
           </div>
           <div className="button-wrapper">
             <button className="btns cncBtn" onClick={toggleModalState}>
-              {t("Edit_profile_cancel")}
+              Cancel
             </button>
             <button onClick={handleFormSubmit} className="btns saveBtn">
               {state.loading ? (

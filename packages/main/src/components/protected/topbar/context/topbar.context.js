@@ -79,6 +79,8 @@ export const TopbarProvider = ({ children }) => {
         console.error(err?.response?.data);
       });
   };
+
+
   // Passes all functions and states to the state object
   const state = {
     openModal,

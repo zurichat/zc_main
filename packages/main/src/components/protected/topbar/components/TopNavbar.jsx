@@ -39,7 +39,7 @@ const TopNavbar = ({ toggleSidebar }) => {
     userProfileImage,
     setOrgId,
     orgId,
-    setUserProfileImage
+    setUserProfileImage,
   } = useContext(ProfileContext);
 
   const state = useContext(TopbarContext);
@@ -63,20 +63,27 @@ const TopNavbar = ({ toggleSidebar }) => {
     setSearchValue(value);
   };
 
-  const getLoggedInUser = async () => {
+  const getLoggedInUser = async () => { 
     try {
       const userInfo = await getUserInfo();
+      console.log(userInfo, 'top nav bar')
       //Check if user id is valid and get user organization
       if (userInfo.user._id !== "") {
         setUser(userInfo);
+        setUserProfileImage(userInfo.user.image_url)
       }
     } catch (error) {
       console.error(error);
     }
   };
 
+
+
+  
+
+
   useEffect(() => {
-    getLoggedInUser();
+    getLoggedInUser()
     subscribeToChannel(currentWorkspace, event => {
       const session_user = JSON.parse(sessionStorage.getItem("user"));
       if (
@@ -85,13 +92,26 @@ const TopNavbar = ({ toggleSidebar }) => {
         event.event === "UpdateOrganizationMemberProfile" ||
         event.event === "UpdateOrganizationMemberPresence"
       ) {
-        if (event.id === session_user["id"]) {
-          // UpdateInfo();
-          getProfileImage();
-        } else return;
+        // if (event.id === session_user["id"]) {
+        //   getProfileImage();
+        // } else return;
       } else return;
     });
   }, []);
+
+
+
+  // const UpdateInfo = () => {
+  //   getUserInfo().then(res => {
+  //     console.log("res", res)
+  //     setUserProfileImage(res?.user.image_url);
+  //     // setUser(res.user);
+  //   });
+  // }
+
+  // useEffect(() => {
+  //   UpdateInfo();
+  // }, [user]);
 
   // useEffect(() => {
   //   const searchFunction = async () => {
@@ -113,6 +133,7 @@ const TopNavbar = ({ toggleSidebar }) => {
 
   useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem("user"));
+    console.log('userDEf', userdef)
 
     async function getOrganizations() {
       await authAxios
@@ -144,23 +165,12 @@ const TopNavbar = ({ toggleSidebar }) => {
     getOrganizations();
   }, [setOrgId, user.image_url, setUser]);
 
-  const getProfileImage = async e => {
-    try {
-      const res = await authAxios.get(
-        `/organizations/${orgId}/members/${user._id}`
-      );
-      setUserProfileImage(res.data.data.image_url);
-    } catch (err) {
-      console.error("Error", err);
-    }
-  };
-  getProfileImage();
 
   let toggleStatus = null;
 
   const StatusToolTip = ({ title }) => {
     return (
-      <div className={styles["status__tool__tip"]}>
+      <div className={styles["status_tool_tip"]}>
         <ReactTooltip
           id="toggleStatus"
           effect="solid"
@@ -246,11 +256,14 @@ const TopNavbar = ({ toggleSidebar }) => {
 
     navigateToUrl("/search");
   };
+  useEffect(() => {
+    console.log('test3', user)
+  }, []);
   return (
     <TopbarWrapper>
       {
         <div
-          className={`${toggleSidebar && styles["mobile__sidebar__open"]} ${
+          className={`${toggleSidebar && styles["mobile_sidebar_open"]} ${
             styles["mobile__sidebar"]
           }`}
         >
@@ -330,7 +343,7 @@ const TopNavbar = ({ toggleSidebar }) => {
       <ProfileImageContainer className="d-flex justify-content-end">
         {toggleStatus}
         <ProfileImg
-          src={userProfileImage ? userProfileImage : defaultAvatar}
+          src={user ? userProfileImage : defaultAvatar}
           onClick={openModal}
           role="button"
           className="avatar-img"
