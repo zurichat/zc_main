@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import styles from "../styles/EditWorkspaceModal.module.css";
-import { IoMdClose as Close } from "react-icons/io";
 import { BASE_API_URL } from "@zuri/utilities";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { IoMdClose as Close } from "react-icons/io";
+import styles from "../styles/EditWorkspaceModal.module.css";
 
 const EditWorkspaceModal = ({ workSpace, editDetails, setEditDetails }) => {
   // getting current workspace id
@@ -57,14 +57,14 @@ const EditWorkspaceModal = ({ workSpace, editDetails, setEditDetails }) => {
         }
       };
       const response = await axios.patch(
-        `https://api.zuri.chat/organizations/${organizationID}/name`,
+        `${BASE_API_URL}/organizations/${organizationID}/name`,
         {
           organization_name: `${workspaceNameChange}`
         },
         config
       );
       const response2 = await axios.patch(
-        `https://api.zuri.chat/organizations/${organizationID}/url`,
+        `${BASE_API_URL}/organizations/${organizationID}/url`,
         {
           url: `${workspaceURLChange}`
         },

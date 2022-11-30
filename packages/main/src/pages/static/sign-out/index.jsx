@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { withRouter } from "react-router-dom";
+import { BASE_API_URL } from "@zuri/utilities";
 import axios from "axios";
-import { SignoutStyleWrapper } from "../sign-out/component/SignoutStyle";
-import logo from "../sign-out/assets/zuri.svg";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import "../../i18n";
 import { useTranslation } from "react-i18next";
+import { withRouter } from "react-router-dom";
+import "../../i18n";
+import logo from "../sign-out/assets/zuri.svg";
+import { SignoutStyleWrapper } from "../sign-out/component/SignoutStyle";
 
 const Signout = ({ history }) => {
   const orgName = localStorage.getItem("orgName");
@@ -15,7 +16,7 @@ const Signout = ({ history }) => {
   useEffect(() => {
     axios({
       method: "post",
-      url: `https://api.zuri.chat/auth/logout`,
+      url: `${BASE_API_URL}/auth/logout`,
       headers: {
         Authorization: `Bearer ${token}`
       }
