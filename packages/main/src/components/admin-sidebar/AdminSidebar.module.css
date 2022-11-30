@@ -63,6 +63,10 @@
   align-items: flex-start;
 }
 
+.sidebarMenuItems a {
+  text-decoration: none;
+}
+
 .sidebarLink,
 .sidebarLinkActive {
   display: flex;
