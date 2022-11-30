@@ -32,6 +32,12 @@ svg {
   background-color: #00b87c;
   color: #fff;
 }
+
+.btn_wrapper > button.active {
+  background-color: #00b87c;
+  color: #fff;
+}
+
 .btn_wrapper > button:hover svg {
   color: #fff;
 }
