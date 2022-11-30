@@ -28,6 +28,7 @@ const MarketPlaceContainer = ({
   user
 }) => {
   let currentWorkspace = localStorage.getItem("currentWorkspace");
+
   let token = sessionStorage.getItem("token");
 
   const history = useHistory();

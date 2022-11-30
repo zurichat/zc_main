@@ -1,6 +1,6 @@
-import { useState, useEffect, useContext, createContext } from "react";
-import { deleteAllUtilitiesCache, BASE_API_URL } from "@zuri/utilities";
+import { BASE_API_URL, deleteAllUtilitiesCache } from "@zuri/utilities";
 import axios from "axios";
+import { createContext, useContext, useEffect, useState } from "react";
 const authContext = createContext();
 
 // Provider component that wraps your app and makes auth object ...
@@ -32,13 +32,13 @@ function useProvideAuth() {
 
   // ... to save the user to state.
   const signin = async (email, password) => {
-    const response = await axios.post("https://api.zuri.chat/auth/login", {
+    const response = await axios.post(`${BASE_API_URL}/auth/login`, {
       email,
       password
     });
     const { data } = response.data;
     const fetchUserWorkspacesResponse = await axios.get(
-      `https://api.zuri.chat/users/${data.user.email}/organizations`,
+      `${BASE_API_URL}/users/${data.user.email}/organizations`,
       {
         headers: {
           Authorization: `Bearer ${data.user.token}`
@@ -46,7 +46,7 @@ function useProvideAuth() {
       }
     );
     const userWorkspaces = fetchUserWorkspacesResponse.data.data;
-    console.log('auth', data)
+    console.log("auth", data);
     setUser(data.user);
     return { ...data, userWorkspaces };
   };

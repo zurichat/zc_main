@@ -1,0 +1,183 @@
+.settings_wrapper {
+  border-bottom: 1px solid #dedede;
+  padding: 20px 0;
+  background: #fff;
+}
+
+.settingLogoIconContainer {
+  width: 55px;
+  height: 50px;
+  margin-top: 7px;
+  border-radius: 2px;
+}
+
+.settingLogoIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.settingleftText {
+  margin-left: 15px;
+}
+
+.settingleft .settingleftText span {
+  margin-top: -1px;
+}
+
+.iconConfig {
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.settingsright .iconButton button {
+  width: 200px;
+}
+
+.settings_wrapper button {
+  outline: none;
+}
+
+.settings_wrapper button:hover {
+  color: #fff;
+}
+
+.settings_wrapper:last-child {
+  border-bottom: none;
+}
+
+.settingsTab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.settingsTab:nth-child(6),
+.settingsTab:nth-child(7) {
+  border-bottom: 1px solid #dedede;
+  padding: 20px 0;
+}
+
+/* .settingleft {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 15px;
+  color: #242424;
+  font-weight: bold;
+  width: 70%;
+}
+
+.settingleft span {
+  font-size: 14px;
+  font-weight: normal;
+  color: rgba(58, 58, 58, 0.9);
+} */
+
+.emailLink {
+  color: #b8003c !important;
+  /* font-size: 12px; */
+  text-decoration: none;
+}
+
+.settingsright button {
+  background: #ffffff;
+  border: 1px solid rgba(0, 184, 124, 0.5);
+  color: rgba(0, 184, 124, 0.5);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 9px 18px !important;
+  font-size: 13px;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  font-weight: 600;
+  line-height: 15px;
+  width: 100%;
+  height: 40px;
+}
+
+.settingsright button:hover {
+  color: rgba(0, 184, 123, 0.719);
+}
+
+.settingsright .signout {
+  background: #f40101;
+  color: white;
+  font-size: 12px;
+}
+
+.settingsright .delete {
+  font-size: 12px;
+}
+
+.settings_wrapper {
+  padding: 10px 0;
+}
+
+.settingleft {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #1d1c1d;
+  width: 70%;
+}
+
+.settingleft span {
+  display: block;
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #616061;
+}
+
+.settingsbutton button {
+  background: #fbfbfb;
+  border: 1px solid #dadada;
+  color: #999999;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 9px 18px !important;
+  font-size: 13px;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  font-weight: 600;
+  line-height: 15px;
+  width: 100%;
+  height: 40px;
+}
+
+.settingsbutton button:hover {
+  color: #999999;
+}
+
+@media screen and (max-width: 868px) {
+  #settingtab {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .settingsright {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #settingtab {
+    width: 100%;
+  }
+
+  .settingsTab {
+    align-items: flex-start;
+  }
+
+  #settingleft {
+    width: 95%;
+  }
+}
