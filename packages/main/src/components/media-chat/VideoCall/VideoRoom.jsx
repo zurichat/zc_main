@@ -97,14 +97,23 @@ const VideoRoom = ({ token, channelName, uid, closeRoom }) => {
     closeRoom(prev => prev - 1);
   };
 
+  const videoContainer = {
+    height: "100%",
+    width: "100%"
+  };
+
   return (
     <div className={`${Styles.videoroom}`}>
       <div className={`${Styles.videoroomRooms}`}>
-        {users.map(user => {
-          return <VideoPlayer key={user.id} user={user} />;
-        })}
-        {/* <Grid item xs={gridSpacing} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
-        </Grid> */}
+        <Grid container className={`${Styles.videoContainer}`}>
+          {users.map(user => {
+            return (
+              <Grid item key={user.uid} xs={gridSpacing}>
+                <VideoPlayer user={user} localId={uid} />
+              </Grid>
+            );
+          })}
+        </Grid>
       </div>
       <div className={`${Styles.controlBar}`}>
         <div className="audio" onClick={() => mute("audio")}>
