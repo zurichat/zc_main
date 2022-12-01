@@ -286,6 +286,11 @@
   justify-content: space-between;
   width: 100%;
 }
+@media screen and (max-width: 600px) {
+  .contentBox {
+    flex-direction: column;
+  }
+}
 
 @media screen and (min-width: 769px) {
   .effectiveAll {
