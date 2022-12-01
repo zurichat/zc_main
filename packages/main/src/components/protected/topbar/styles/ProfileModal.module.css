@@ -229,7 +229,7 @@
   max-width: 885px;
   background: #fff;
   border-radius: 4px;
-  overflow: hidden;
+  overflow: auto;
   padding-bottom: 20px;
   /* height: 90vh; */
 }
