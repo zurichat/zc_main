@@ -280,7 +280,7 @@ export default function TopNavigationBar() {
                 backendUrl={"http://139.144.17.179:3000"}
                 socketUrl={"http://139.144.17.179:3002"}
                 subscriberId={user.id}
-                applicationIdentifier={"tDH5Bg2NQ5QL"}
+                applicationIdentifier={"JJef8vc6vtAj"}
               >
                 <PopoverNotificationCenter>
                   {({ unseenCount }) => (
