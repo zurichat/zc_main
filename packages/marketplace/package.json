@@ -12,7 +12,7 @@
     "prettify": "prettier -w .",
     "analyze": "webpack --mode=production --env analyze",
     "build": "concurrently yarn:build:*",
-    "build:webpack": "NODE_ENV=production webpack --mode=production"
+    "build:webpack": "webpack --mode=production"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
