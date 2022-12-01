@@ -36,10 +36,10 @@
 .body {
   display: flex;
   flex-direction: row;
-  overflow-y: scroll;
+  overflow-y: hidden;
   /* position: relative; */
   margin-top: 0%;
-  height: 100% !important;
+  height: 100%;
 }
 .toggle {
   display: none;
@@ -125,6 +125,12 @@
 
 .allPreferences {
   width: 100%;
+}
+.buttonToggle {
+  /* background-color: red; */
+
+  height: 90vh;
+  /* padding-top: 20px; */
 }
 
 @media screen and (max-width: 768px) {

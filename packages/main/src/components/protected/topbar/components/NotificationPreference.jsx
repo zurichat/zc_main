@@ -241,7 +241,7 @@ const NotificationPreference = () => {
   };
 
   return (
-    <div className={styles.notifications}>
+    <>
       {/*  THE SECTION OF THE CONTENT */}
       <div className={standardStyles.modalContent}>
         <div className={styles.itemTitle1}>
@@ -545,7 +545,7 @@ const NotificationPreference = () => {
           </label>
         </div> */}
       </div>
-    </div>
+    </>
   );
 };
 

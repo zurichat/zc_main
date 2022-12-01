@@ -18,8 +18,7 @@
   position: relative;
 }
 .itemsContainer {
-  margin-top: 15px;
-  position: fixed;
+  margin-top: 30px;
 }
 .one,
 .active {
