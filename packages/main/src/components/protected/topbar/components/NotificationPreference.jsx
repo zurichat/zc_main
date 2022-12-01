@@ -16,7 +16,6 @@ const NotificationPreference = () => {
   const [notificationSettings, setNotificationSettings] = useState(
     user.settings?.notifications
   );
-
   const [keywordInput, setKeywordInput] = useState("");
   const [durationInput, setDurationInput] = useState("");
   const [durations] = useState([
@@ -38,7 +37,6 @@ const NotificationPreference = () => {
     { name: "after i've been inactive for 30 minute" }
   ]);
   const [notificationSend, setNotificationSend] = useState("");
-
   // const [dataState, setDataState] = useState({
   //   notify_me_about: "",
   //   use_different_settings_mobile: false,
@@ -289,7 +287,7 @@ const NotificationPreference = () => {
               <label htmlFor="none">{t("notify_nothing")}</label>
             </div>
           </div>
-          <div className={styles.markbox}>
+          {/* <div className={styles.markbox}>
             <input
               type="checkbox"
               className={styles.check}
@@ -301,9 +299,9 @@ const NotificationPreference = () => {
               {" "}
               Use different settings for my mobile device
             </label>
-          </div>
-          <hr className={styles.hrNot} />
-          <div className={styles.markbox}>
+          </div> */}
+          {/* <hr className={styles.hrNot} /> */}
+          {/* <div className={styles.markbox}>
             <input
               type="checkbox"
               className={styles.check}
@@ -312,7 +310,7 @@ const NotificationPreference = () => {
               onClick={handleNotifyMeeting}
             />
             <label htmlFor="for-meeting">Notify me when a meeting is set</label>
-          </div>
+          </div> */}
           {/* <div className={styles.markbox}>
             <input
               type="checkbox"

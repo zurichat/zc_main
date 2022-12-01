@@ -17,14 +17,12 @@ export const Dropdown = ({ setDropdown }) => {
   const currentWorkspace = getCurrentWorkspace();
   const [workspaceData, setWorkspaceData] = React.useState({});
   useOnClickOutside(ref, () => setDropdown(false));
-
   useEffect(() => {
     if (currentWorkspace) {
       authAxios
         .get(`/organizations/${currentWorkspace}`)
         .then(res => {
           setWorkspaceData(res.data.data);
-          // console.log(res.data.data)
         })
         .catch(err => {
           console.error(err);
@@ -32,7 +30,6 @@ export const Dropdown = ({ setDropdown }) => {
     }
   }, [currentWorkspace]);
 
-  useEffect(() => {}, []);
   // console.log('workspace==>', workspaceData)
 
   const state = useContext(TopbarContext);
@@ -59,11 +56,7 @@ export const Dropdown = ({ setDropdown }) => {
 
   return (
     <>
-      <div
-        className={styles.profileDropDown}
-        onClick={state.closeModal}
-        ref={ref}
-      >
+      <div className={styles.profileDropDown} ref={ref}>
         <div className={styles.topSection}>
           <p
             onClick={() => {
