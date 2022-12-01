@@ -29,7 +29,8 @@ import {
   BsGearFill,
   BsPlusCircle
 } from "react-icons/bs";
-import VideoChat from "../../../components/media-chat/VideoChat";
+import Staging from "../../../components/media-chat/VideoCall/Staging";
+// import VideoChat from "../../../components/media-chat/VideoChat";
 import VoiceCall from "../../../components/media-chat/VoiceCall/VoiceCall";
 import { Sidebar, TopBar } from "../../../components/protected";
 
@@ -228,35 +229,36 @@ export default function Index() {
           <Sidebar />
         </SidebarWrapperStyle>
         <WorkspaceWrapperStyle>
-          <div id="zuri-plugin-load-section"></div>
-          <Switch>
-            <Route exact path="/workspace/:workspaceId">
-              <h1>Welcome to your Workspace</h1>
-            </Route>
-            <Route path="/workspace/:workspaceId/LiveBroadcast">
-              <LiveBroadcast />
-            </Route>
+          <div id="zuri-plugin-load-section">
+            <Switch>
+              <Route exact path="/workspace/:workspaceId">
+                <h1>Welcome to your Workspace</h1>
+              </Route>
+              <Route path="/workspace/:workspaceId/LiveBroadcast">
+                <LiveBroadcast />
+              </Route>
 
-            <Route path="/workspace/:workspaceId/video-chat">
-              <VideoChat />
-            </Route>
-            <Route path="/workspace/:workspaceId/voice-call">
-              <VoiceCall />
-            </Route>
+              <Route path="/workspace/:workspaceId/video-chat">
+                <Staging workspaceId={workspaceId} />
+              </Route>
+              <Route path="/workspace/:workspaceId/voice-call">
+                <VoiceCall />
+              </Route>
 
-            {/* <Route
-              exact
-              path="/workspace/:workspaceId/marketplace"
-              component={() => <h1>MarketPlace</h1>}
-            /> */}
+              {/* <Route
+                exact
+                path="/workspace/:workspaceId/marketplace"
+                component={() => <h1>MarketPlace</h1>}
+              /> */}
 
-            {/* All other routes not by main go to Single SPA */}
-            {/* <Route path="/workspace/:workspaceId/*">
-              <div id="zuri-plugin-load-section">
-                <p>SHOULD SHOW PLUGINS</p>
-              </div>
-            </Route> */}
-          </Switch>
+              {/* All other routes not by main go to Single SPA */}
+              {/* <Route path="/workspace/:workspaceId/*">
+                <div id="zuri-plugin-load-section">
+                  <p>SHOULD SHOW PLUGINS</p>
+                </div>
+              </Route> */}
+            </Switch>
+          </div>
         </WorkspaceWrapperStyle>
       </div>
     </>

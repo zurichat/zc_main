@@ -1,0 +1,45 @@
+.videoChat {
+    height: 100%;
+}
+
+.staging{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stagingWrapper {
+    max-width: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.videoContainer {
+    height: 300px;
+    width: 500px;
+    border-radius: 8px;
+    background-color: black;
+}
+
+.stagingBtn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: white;
+    background: #00b87c;
+    display: inline-block;
+}
+
+.stagingBtn:disabled {
+    background-color: #00b87ba4;
+}
+
+.userVideo {
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+}

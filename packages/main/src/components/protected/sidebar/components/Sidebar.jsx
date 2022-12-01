@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import styles from "../styles/Sidebar.module.css";
 import { useTranslation } from "react-i18next";
-
+import videoIcon from "../assets/icons/videos.svg";
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
 import liveicon from "../assets/icons/newlive.svg";
@@ -217,7 +217,7 @@ const Sidebar = props => {
               />
               <SingleRoom
                 name="Video Chat"
-                image={dmIcon}
+                image={videoIcon}
                 link={`/workspace/${currentWorkspace}/video-chat`}
               />
               <SingleRoom

@@ -7,7 +7,6 @@
     "type": "git",
     "url": "https://github.com/zurichat/zc_main"
   },
-  
   "bugs": {
     "url": "https://github.com/zurichat/zc_main/issues"
   },
@@ -38,7 +37,7 @@
     "eslint-plugin-css-modules": "^2.11.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-react": "^7.28.0",
-    "husky": "^7.0.2",
+    "husky": "^8.0.2",
     "lerna": "^4.0.0",
     "lint-staged": ">=10",
     "opener": "^1.5.2",

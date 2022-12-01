@@ -1,0 +1,12 @@
+.videoplayer {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: black;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+}
