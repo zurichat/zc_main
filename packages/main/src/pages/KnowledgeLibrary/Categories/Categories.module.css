@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+}
+
+.header-p {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 24px;
+  color: #323132;
+  text-align: center;
+  margin: 2.5rem 0 1.5rem;
+}
+
+.item-box {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #323132;
+  border: 1px solid #adacad;
+  border-radius: 10px 10px 0px 0px;
+  padding: 1rem 2rem;
+  margin-bottom: 5px;
+}
+
+.links-box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #adacad;
+  padding: 1rem 2rem;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.links-box a {
+  display: block;
+  text-decoration: none;
+  color: #003d29;
+  padding: 0.5rem 0;
+  width: fit-content;
+}

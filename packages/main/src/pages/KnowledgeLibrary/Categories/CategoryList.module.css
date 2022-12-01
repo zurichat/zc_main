@@ -1,0 +1,29 @@
+.category img {
+  margin-right: 1rem;
+}
+
+.category ul {
+  padding-left: 2rem;
+}
+
+.category ul li {
+  padding: 0.2rem 0;
+}
+
+.display {
+  display: block;
+  /*overflow: hidden;
+  */
+  height: min-content;
+  will-change: height;
+  transition: height 0.5s ease-in 0s;
+}
+
+.hide {
+  display: none;
+  /*overflow: hidden;
+  */
+  height: 0px;
+  will-change: height;
+  transition: height 0.5s ease-in 0s;
+}

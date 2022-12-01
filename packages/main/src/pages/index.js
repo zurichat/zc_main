@@ -14,3 +14,4 @@ export { default as ResetPassword } from "./reset-password";
 export { default as ChangePassword } from "./reset-password/ChangePassword";
 export { default as WhyZuriChat } from "./static/whyzurichat";
 export { default as PrivacyPage } from "./static/privacy-policy";
+export { default as KnowledgeLibrary } from "./KnowledgeLibrary/KnowledgeLibrary";
