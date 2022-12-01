@@ -127,10 +127,7 @@
   width: 100%;
 }
 .buttonToggle {
-  /* background-color: red; */
-
   height: 90vh;
-  /* padding-top: 20px; */
 }
 
 @media screen and (max-width: 768px) {
