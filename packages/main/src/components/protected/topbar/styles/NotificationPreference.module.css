@@ -39,7 +39,7 @@
   overflow-y: hidden;
   /* position: relative; */
   margin-top: 0%;
-  height: 100%;
+  height: min-content;
 }
 .toggle {
   display: none;

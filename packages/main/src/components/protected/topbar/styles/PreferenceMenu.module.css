@@ -12,7 +12,7 @@
 .notifySidebar {
   width: 200px;
   background: var(--background-menu);
-  height: 250%;
+  height: 100%;
   float: left;
   position: fixed;
   position: relative;
