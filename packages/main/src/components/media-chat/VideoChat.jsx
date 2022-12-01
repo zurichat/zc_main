@@ -1,3 +1,4 @@
+import { AGORA_APP_ID, AGORA_TOKEN } from "@zuri/utilities";
 import AgoraUIKit from "agora-react-uikit";
 import { useState } from "react";
 
@@ -5,9 +6,9 @@ const VideoChat = () => {
   const [videoCall, setVideoCall] = useState(true);
 
   const rtcProps = {
-    appId: process.env.REACT_APP_AGORA_APP_ID,
+    appId: AGORA_APP_ID,
     channel: "plug",
-    token: process.env.REACT_APP_AGORA_TOKEN
+    token: AGORA_TOKEN
   };
 
   const callbacks = {

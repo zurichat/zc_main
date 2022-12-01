@@ -70,7 +70,17 @@ export default function Index({ createWorkspaceData }) {
       { headers: { Authorization: "Bearer " + user.token } }
     );
     // Redirect
+
+    // Adding new code
+
+    const short_id = `${workspaceId.slice(4, 6)}${workspaceId.slice(
+      6,
+      8
+    )}${workspaceId.slice(-3, -1)}`;
+
     localStorage.setItem("currentWorkspace", workspaceId);
+    localStorage.setItem("currentWorkspaceShort", short_id);
+
     // history.push(`/workspace/${workspaceId}`);
     history.push(`/create-workspace/step-3`);
   };
