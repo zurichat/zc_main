@@ -8,7 +8,7 @@ import VideoOff from "./../../../assets/media/video-off.svg";
 import exit from "./../../../assets/media/exit.svg";
 import AgoraRTC from "agora-rtc-sdk-ng";
 import { Grid } from "@material-ui/core";
-import { AGORA_APP_ID } from "@zuri/utilities";
+import { AGORA_APP_ID, AGORA_TOKEN } from "@zuri/utilities";
 
 const VideoRoom = ({ token, channelName, uid, closeRoom }) => {
   const [trackState, setTrackState] = useState({ video: true, audio: true });
@@ -17,6 +17,7 @@ const VideoRoom = ({ token, channelName, uid, closeRoom }) => {
   const [gridSpacing, setGridSpacing] = useState(12);
 
   const APP_ID = AGORA_APP_ID;
+  const Token = AGORA_TOKEN;
 
   const client = AgoraRTC.createClient({
     mode: "rtc",
@@ -46,7 +47,7 @@ const VideoRoom = ({ token, channelName, uid, closeRoom }) => {
     client.on("user-left", handleUserLeft);
 
     client
-      .join(APP_ID, channelName, `${token}`, uid)
+      .join(APP_ID, "plug", `${Token}`, null)
       .then(uid =>
         Promise.all([AgoraRTC.createMicrophoneAndCameraTracks(), uid])
       )
@@ -95,11 +96,6 @@ const VideoRoom = ({ token, channelName, uid, closeRoom }) => {
     localTracks[0].close();
     localTracks[1].close();
     closeRoom(prev => prev - 1);
-  };
-
-  const videoContainer = {
-    height: "100%",
-    width: "100%"
   };
 
   return (
