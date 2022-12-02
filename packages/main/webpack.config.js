@@ -3,7 +3,6 @@ const { mergeWithRules } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa-react");
 const path = require("path");
 const webpack = require("webpack");
-const DotenvWebpackPlugin = require("dotenv-webpack");
 
 const mergeRules = {
   externals: {
