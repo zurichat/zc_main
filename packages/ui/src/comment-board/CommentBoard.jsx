@@ -52,7 +52,6 @@ const CommentBoard = ({
   useEffect(async () => {
     try {
       const data = await getRoomMessagesHandler();
-      console.log(data);
       // setMessages(data)
     } catch (err) {
       console.log(err);

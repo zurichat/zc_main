@@ -8,7 +8,7 @@ export default function MessageBox({ message }) {
       <div className="img__wrapper">
         <img
           src={
-            message.sender.sender_image_url ||
+            message?.sender?.sender_image_url ||
             `https://i.pravatar.cc/300?u=${message.sender_id}`
           }
           alt="user-avatar"
@@ -26,7 +26,7 @@ export default function MessageBox({ message }) {
         <div className="msgParticulars">
           <div className="name-time">
             <span className="name">
-              <strong> {message.sender.sender_name} </strong>
+              <strong> {message?.sender?.sender_name} </strong>
             </span>
             <span className="time">
               {DateTime.fromMillis(message.timestamp).toFormat("T a")}
