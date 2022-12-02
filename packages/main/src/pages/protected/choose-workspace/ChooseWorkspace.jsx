@@ -35,9 +35,10 @@ export default function Index() {
     }
   }, []);
   const history = useHistory();
+  
 
   return (
-    <>
+    <div >
       {/* <TopNavigationBar /> */}
 
       <div style={{ paddingTop: "5em" }} />
@@ -50,7 +51,7 @@ export default function Index() {
           fontSize: "${18 / 17}rem"
         }}
       >
-        {t("workspace_paragraph_first")}{" "}
+        {t("workspace_paragraph_first")}?{" "}
         <span
           style={{ color: "#00b87c", fontWeight: "450", cursor: "pointer" }}
           onClick={() => history.push("/create-workspace")}
@@ -65,6 +66,6 @@ export default function Index() {
       )}
 
       {/* <Footer /> */}
-    </>
+    </div>
   );
 }
