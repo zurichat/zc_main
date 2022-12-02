@@ -18,7 +18,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   const userData = JSON.parse(localStorage.getItem("userData"));
 
   useEffect(() => {
-    if (userData.currentWorkspace) {
+    if (userData?.currentWorkspace) {
       //Fetch organization logo
       axios
         .get(
