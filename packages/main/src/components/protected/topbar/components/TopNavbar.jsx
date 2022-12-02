@@ -151,7 +151,7 @@ const TopNavbar = ({ toggleSidebar }) => {
       const res = await authAxios.get(
         `/organizations/${getRealUrl()}/members/${userdef.id}`
       );
-      setUserProfileImage(res.data.data.image_url);
+      setUserProfileImage(res?.data?.data?.image_url);
     } catch (err) {
       console.error("Error", err);
     }
@@ -249,7 +249,7 @@ const TopNavbar = ({ toggleSidebar }) => {
     navigateToUrl("/search");
   };
   return (
-    <TopbarWrapper>
+    <TopbarWrapper id="topBarWrapper">
       {
         <div
           className={`${toggleSidebar && styles["mobile__sidebar__open"]} ${
