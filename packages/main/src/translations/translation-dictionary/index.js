@@ -56,7 +56,7 @@ const Translations = [
   ...Download,
   ...Workspace,
   ...UserOrganizationsListing,
-   ...Profile,
+  ...Profile,
   ...TopBarModal,
 
   ...DownloadDesktop,
