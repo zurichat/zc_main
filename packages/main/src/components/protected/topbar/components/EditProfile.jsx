@@ -161,7 +161,7 @@ const EditProfile = () => {
                 <div className="mobileAvataeCon">
                   <img
                     ref={avatarRef}
-                    src={userProfileImage}
+                    src={userProfileImage ? userProfileImage : defaultAvatar}
                     alt="profile-pic"
                     className="avatar"
                   />

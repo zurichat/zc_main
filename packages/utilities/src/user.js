@@ -13,19 +13,19 @@ export const getUserInfo = async () => {
 
   if ((user && token) !== null) {
     const url = `${BASE_API_URL}/organizations/${currentWorkspace}/members/?query=${user.email}`;
-    // const cache = await caches.open("zuri-utilities-getuserinfo");
-    // const cachedUserInfoResponse = await cache.match(url);
-    // if (cachedUserInfoResponse) {
-    //   const cachedUserInfo = await cachedUserInfoResponse.json();
-    //   console.log("GetUserInfo-cached");
-    //   const userInfo = Array.isArray(cachedUserInfo.data);
-    //   let userData = {
-    //     currentWorkspace,
-    //     token,
-    //     user: userInfo ? { ...cachedUserInfo.data[0] } : {}
-    //   };
-    //   return userData;
-    // }
+    const cache = await caches.open("zuri-utilities-getuserinfo");
+    const cachedUserInfoResponse = await cache.match(url);
+    if (cachedUserInfoResponse) {
+      const cachedUserInfo = await cachedUserInfoResponse.json();
+      console.log("GetUserInfo-cached");
+      const userInfo = Array.isArray(cachedUserInfo.data);
+      let userData = {
+        currentWorkspace,
+        token,
+        user: userInfo ? { ...cachedUserInfo.data[0] } : {}
+      };
+      return userData;
+    }
     try {
       const response = await axios.get(url, {
         headers: {
@@ -40,7 +40,7 @@ export const getUserInfo = async () => {
       };
 
       localStorage.setItem("userData", JSON.stringify(userData));
-      // cache.add(url);
+      cache.add(url);
       return userData;
     } catch (err) {
       console.error("failed to get user info in current workspace", err);
