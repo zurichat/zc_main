@@ -44,8 +44,7 @@ module.exports = (webpackConfigEnv, argv) => {
         "process.env.REACT_APP_VERSION": JSON.stringify(
           process.env.npm_package_version
         )
-      }),
-      new DotenvWebpackPlugin()
+      })
     ],
     resolve: {
       fallback: {
