@@ -1,12 +1,21 @@
 import React from "react";
 import styles from "../styles/TopBarSearchModalUI.module.css";
-const TopBarSearchModalUI = () => {
+
+const TopBarSearchModalUI = ({ handleSearchType }) => {
+  const setSearchType = (e, type) => {
+    if (e.classList.contains("active")) {
+      e.classList.remove("active");
+    } else {
+      e.classList.add("active");
+    }
+  };
+
   return (
     <div>
       <div className={styles.wrapper}>
         <p>I am looking for...</p>
         <div className={styles.btn_wrapper}>
-          <button>
+          <button onClick={e => setSearchType(e, "messages")}>
             <span className="icon">
               <svg data-g7q="true" aria-hidden="true" viewBox="0 0 20 20">
                 <path
@@ -19,7 +28,7 @@ const TopBarSearchModalUI = () => {
             </span>
             <span>Messages</span>
           </button>
-          <button>
+          <button onClick={e => setSearchType(e, "files")}>
             <span className="icon">
               <svg data-g7q="true" aria-hidden="true" viewBox="0 0 20 20">
                 <path
@@ -32,7 +41,7 @@ const TopBarSearchModalUI = () => {
             </span>
             <span>Files</span>
           </button>
-          <button>
+          <button onClick={e => setSearchType(e, "channels")}>
             <span className="icon">
               <svg data-g7q="true" aria-hidden="true" viewBox="0 0 20 20">
                 <path
@@ -45,7 +54,7 @@ const TopBarSearchModalUI = () => {
             </span>
             <span>Channels</span>
           </button>
-          <button>
+          <button onClick={e => setSearchType(e, "people")}>
             <span className="icon">
               <svg data-g7q="true" aria-hidden="true" viewBox="0 0 20 20">
                 <path

@@ -7,10 +7,7 @@
     "type": "git",
     "url": "https://github.com/zurichat/zc_main"
   },
-  "engines": {
-    "npm": ">=8.0.0 <9.0.0",
-    "node": ">=16.0.0 <17.0.0"
-  },
+  
   "bugs": {
     "url": "https://github.com/zurichat/zc_main/issues"
   },

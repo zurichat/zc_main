@@ -2,6 +2,7 @@
   "name": "@zuri/utilities",
   "version": "1.0.0",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",
@@ -46,6 +47,7 @@
   "dependencies": {
     "axios": "^0.23.0",
     "centrifuge": "^2.8.3",
+    "find-up": "^6.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "single-spa-react": "^4.3.1"
