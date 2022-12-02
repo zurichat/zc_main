@@ -37,13 +37,10 @@ const Downloads = () => {
       <section className={styles.section}>
         <div className={styles.intro}>
           <div className={styles.introText}>
-            <h2>Zuri Download</h2>
-            <p>Communicate and collaborate from wherever you are</p>
-            <span>
-              Invite your team to your workspace. Stay connected ,stay in sync,
-              and explore ideas together from anywhere
-            </span>
-            <button type="button">Download</button>
+            <h2>{t("downloads_zuri")}</h2>
+            <p>{t("downloads_communicate")}</p>
+            <span>{t("downloads_invite")}</span>
+            <button type="button">{t("downloads.button")}</button>
           </div>
           <div className={styles.introImg}>
             <img src={zuri} alt="Zuri chat img" />
@@ -51,31 +48,31 @@ const Downloads = () => {
         </div>
         <ul className={styles.downloads}>
           <li className={styles.downloadList}>
-            <h2>Desktop App(MacOS)</h2>
-            <a href="/download-app">Desktop app for masOS</a>
-            <a href="/download-app">Desktop app for masOS</a>
+            <h2>{t("downloads_desktopapp.mac")}</h2>
+            <a href="/download-app">{t("downloads_desktopapp.mac.text")}</a>
+            <a href="/download-app">{t("downloads_desktopapp.mac.text")}</a>
           </li>
           <li className={styles.downloadList}>
-            <h2>Mobile App</h2>
-            <a href="/download-app">Zuri app for i0S</a>
+            <h2>{t("downloads_mobileapp")}</h2>
+            <a href="/download-app">{t("downloads_mobileapp.ios")}</a>
             <a
               href="https://play.google.com/store/apps/details?id=com.zurichat.app"
               download={exe.name}
             >
-              Zuri app for Android
+              {t("downloads_mobileapp.android")}
             </a>
           </li>
           <li className={styles.downloadList}>
-            <h2>Desktop App(Windows)</h2>
+            <h2>{t("downloads_desktopapp.windows")}</h2>
             <a
               href={`https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing`}
             >
-              Desktop app windows
+              {t("downloads_desktopapp.windows.text")}
             </a>
             <a
               href={`https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing`}
             >
-              Desktop app windows
+              {t("downloads_desktopapp.windows.text")}
             </a>
           </li>
         </ul>
@@ -84,12 +81,9 @@ const Downloads = () => {
             <img src={chat} alt="zuri chat img" />
           </div>
           <div className={styles.advertText}>
-            <h2>Collaborate from wherever you are</h2>
-            <span>
-              Invite your team to your workspace. Stay connected,stay in sync,
-              and explore ideas together from anywhere.
-            </span>
-            <button type="button">Download</button>
+            <h2>{t("downloads.collabo")}</h2>
+            <span>{t("downloads_invite")}</span>
+            <button type="button">{t("downloads.button")}</button>
           </div>
         </div>
         <div className={styles.cards}>
@@ -97,31 +91,22 @@ const Downloads = () => {
             <div>
               <img src={brush} alt="" />
             </div>
-            <h3>Create</h3>
-            <p>
-              Zuri is a communication tool that offers several creative benefits
-              and skills.
-            </p>
+            <h3>{t("downloads_create")}</h3>
+            <p>{t("downloads_create.text")}</p>
           </div>
           <div className={styles.card}>
             <div>
               <img src={people} alt="" />
             </div>
-            <h3>Collaborate</h3>
-            <p>
-              Zuri is a platform that in collaboration, team work and great
-              communication
-            </p>
+            <h3>{t("downloads_collaborate")}</h3>
+            <p>{t("downloads_collaborate.text")}</p>
           </div>
           <div className={styles.card}>
             <div>
               <img src={copy} alt="" />
             </div>
-            <h3>Connect</h3>
-            <p>
-              Zuri chat helps you connect and work with different people from
-              different part of the world.
-            </p>
+            <h3>{t("downloads_connect")}</h3>
+            <p>{t("downloads_connect.text")}</p>
           </div>
         </div>
       </section>
