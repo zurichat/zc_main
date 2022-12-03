@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unknown-property */
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router-dom";
@@ -276,6 +275,18 @@ export default function TopNavigationBar() {
               >
                 <span className={`${TopNavigationBarStyles.item}`}>
                   {t("nav_contact")}
+                </span>
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/contact-us"
+                className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
+                role="button"
+                aria-expanded="false"
+              >
+                <span className={`${TopNavigationBarStyles.item}`}>
+                  Contact
                 </span>
               </NavLink>
             </li>
