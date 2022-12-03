@@ -56,7 +56,6 @@ const ContactMainBoard = () => {
   };
 
   const submitForm = async data => {
-    console.log(data);
     setFormValues({ ...formValues, loading: true });
     let contactData = new FormData();
     formValues.name && contactData.append("name", formValues.name);
@@ -68,7 +67,6 @@ const ContactMainBoard = () => {
     axios
       .post(`${BASE_API_URL}/contact`, contactData)
       .then(({ data }) => {
-        console.log({ data });
         setFormValues(formValues => ({
           ...formValues,
           name: "",
@@ -88,7 +86,6 @@ const ContactMainBoard = () => {
         }, 1000);
       })
       .catch(e => {
-        console.log({ e });
         setFormValues(formValues => ({
           ...formValues,
           errorMessage: "Error sending details pls try again",
@@ -164,6 +161,7 @@ const ContactMainBoard = () => {
             />
             <small>{formValues.errors?.email}</small>
           </div>
+
           <div className={contactStyle.inputGroup}>
             <label htmlFor="phoneNumber">Phone Number</label>
             <input
@@ -208,6 +206,9 @@ const ContactMainBoard = () => {
             </button>
           </div>
         </form>
+        <div className={contactStyle.privacyPolicy}>
+          <a href="/privacy">Privacy Policy</a>
+        </div>
       </div>
     </div>
   );
