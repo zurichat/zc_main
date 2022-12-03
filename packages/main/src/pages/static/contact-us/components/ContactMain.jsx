@@ -2,7 +2,7 @@ import React from "react";
 import contactStyle from "./ContactMain.module.css";
 import ContactMainBoard from "./ContactMainBoard";
 
-const contactTitle = () => {
+const ContactMain = () => {
   return (
     <div className={`${contactStyle.contactPageContainer}`}>
       <div className={`${contactStyle.contactHead}`}>
@@ -14,4 +14,4 @@ const contactTitle = () => {
   );
 };
 
-export default contactTitle;
+export default ContactMain;

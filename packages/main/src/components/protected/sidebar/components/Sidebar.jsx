@@ -218,11 +218,21 @@ const Sidebar = props => {
               <SingleRoom
                 name="Video Chat"
                 image={dmIcon}
-                link={`/workspace/${currentWorkspace}/video-chat`}
+                link={`/workspace/${currentWorkspaceShort}/video-chat`}
               />
               <SingleRoom
                 name={`${t("workspace_chat.drafts")}`}
                 image={draftIcon}
+              />
+              <SingleRoom
+                name="LiveBroadcast"
+                image={liveicon}
+                link={`/workspace/${currentWorkspaceShort}/LiveBroadcast`}
+              />
+              <SingleRoom
+                name="Voice Call"
+                image={phoneicon}
+                link={`/workspace/${currentWorkspaceShort}/voice-call`}
               />
 
               <Starred starredRooms={starredRooms} />
