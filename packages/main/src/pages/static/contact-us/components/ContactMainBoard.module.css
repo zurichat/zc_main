@@ -8,23 +8,27 @@
   margin: auto;
   padding: 0.5rem 0;
 }
+
 .contactMainBoardTitleContainer h1 {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 0;
 }
+
 .contactFormContainer {
   margin-top: 2rem;
 }
+
 .inputGroup {
   display: flex;
   flex-direction: column;
   margin-bottom: 1.5rem;
 }
+
 .inputGroup label {
-  font-size: 13px;
   font-weight: 600;
 }
+
 .inputGroup input,
 .inputGroup textarea {
   padding: 12px;
@@ -50,6 +54,7 @@
   display: flex;
   margin-bottom: 1.5rem;
 }
+
 .inputGroupCheckBox label {
   font-size: 13px;
   margin-left: 8px;
@@ -63,16 +68,19 @@
   font-weight: 500;
   border-radius: 4px;
 }
+
 .privacyPolicy {
   font-size: 14px;
   padding: 1rem 0;
   color: #0D6EFD;
   transition: ease-in-out cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
 .privacyPolicy a:hover {
   color: #0d56c4 !important;
   text-decoration: underline;
 }
+
 @media only screen and (max-width: 900px) {
   .contactMainBoardInnerContainer {
     width: 80%;
@@ -80,6 +88,7 @@
     padding: 2rem 0;
   }
 }
+
 @media only screen and (max-width: 500px) {
   .contactMainBoardInnerContainer {
     width: 90%;
