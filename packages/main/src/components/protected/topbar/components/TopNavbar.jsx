@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import ReactTooltip from "react-tooltip";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -146,17 +146,22 @@ const TopNavbar = ({ toggleSidebar }) => {
     getOrganizations();
   }, [setOrgId, user.image_url, setUser]);
 
-  const getProfileImage = async e => {
-    try {
-      const res = await authAxios.get(
-        `/organizations/${getRealUrl()}/members/${userdef.id}`
-      );
-      setUserProfileImage(res.data.data.image_url);
-    } catch (err) {
-      console.error("Error", err);
-    }
-  };
-  getProfileImage();
+  const getProfileImage = useCallback(() => {
+    return async () => {
+      try {
+        const res = await authAxios.get(
+          `/organizations/${orgId}/members/${user._id}`
+        );
+        setUserProfileImage(res.data.data.image_url);
+      } catch (err) {
+        console.error("Error", err);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    getProfileImage();
+  }, []);
 
   let toggleStatus = null;
 
@@ -249,7 +254,7 @@ const TopNavbar = ({ toggleSidebar }) => {
     navigateToUrl("/search");
   };
   return (
-    <TopbarWrapper>
+    <TopbarWrapper id="topBarWrapper">
       {
         <div
           className={`${toggleSidebar && styles["mobile__sidebar__open"]} ${
