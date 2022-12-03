@@ -31,18 +31,18 @@ export default function TopNavigationBar() {
   const { t } = useTranslation();
 
   const lang = [
-    { id: 1, value: "en", src: uk, title: "English (UK)"},
-    { id: 2, value: "en-us", src: us, title: "English (US)"},
-    { id: 3, value: "fr", src: fr, title: "French"},
-    { id: 4, value: "de", src: de, title: "Deutch"},
-    { id: 5, value: "ar", src: ar, title: "Arabic"},
-    { id: 6, value: "iw", src: he, title: "Hebrew"},
-    { id: 7, value: "es", src: es, title: "Spanish"},
-    { id: 8, value: "it", src: it, title: "Italian"},
-    { id: 9, value: "zh", src: zh, title: "Chinese"},
-    { id: 10, value: "pt", src: pt, title: "Portugese"},
-    { id: 11, value: "nl", src: nl, title: "Dutch"}
-  ]
+    { id: 1, value: "en", src: uk, title: "English (UK)" },
+    { id: 2, value: "en-us", src: us, title: "English (US)" },
+    { id: 3, value: "fr", src: fr, title: "French" },
+    { id: 4, value: "de", src: de, title: "Deutch" },
+    { id: 5, value: "ar", src: ar, title: "Arabic" },
+    { id: 6, value: "iw", src: he, title: "Hebrew" },
+    { id: 7, value: "es", src: es, title: "Spanish" },
+    { id: 8, value: "it", src: it, title: "Italian" },
+    { id: 9, value: "zh", src: zh, title: "Chinese" },
+    { id: 10, value: "pt", src: pt, title: "Portugese" },
+    { id: 11, value: "nl", src: nl, title: "Dutch" }
+  ];
 
   const saveLang = lang => {
     localStorage.setItem("myLanguage", lang);
@@ -122,26 +122,24 @@ export default function TopNavigationBar() {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body className={TopNavigationBarStyles.country}>
-            {
-                lang.map(element => {
-                  return (
-                    <button
+              {lang.map(element => {
+                return (
+                  <button
                     key={element.id}
-                      value={element.value}
-                      onClick={() => saveLang(element.value)}
-                      className={`btn ${TopNavigationBarStyles.select}`}
-                    >
-                      <img
-                        className={TopNavigationBarStyles.country_logo}
-                        src={element.src}
-                        alt={element.title}
-                        title={element.title}
-                      />{" "}
-                      <span>{element.title}</span>
-                    </button>
-                  )
-                })
-              }
+                    value={element.value}
+                    onClick={() => saveLang(element.value)}
+                    className={`btn ${TopNavigationBarStyles.select}`}
+                  >
+                    <img
+                      className={TopNavigationBarStyles.country_logo}
+                      src={element.src}
+                      alt={element.title}
+                      title={element.title}
+                    />{" "}
+                    <span>{element.title}</span>
+                  </button>
+                );
+              })}
             </Modal.Body>
           </Modal>
         </div>
@@ -173,7 +171,7 @@ export default function TopNavigationBar() {
           id="navbarText"
         >
           <ul
-            className={`navbar-nav d-flex mx-auto ${TopNavigationBarStyles.navbarNav}`}
+            className={`navbar-nav d-flex justify-content-center align-items-center mx-auto ${TopNavigationBarStyles.navbarNav}`}
           >
             <li className="nav-item">
               <NavLink
@@ -181,7 +179,7 @@ export default function TopNavigationBar() {
                 className={`nav-link ${TopNavigationBarStyles.navLinkFeatures}`}
                 aria-current="page"
               >
-                <span className={`px-2 ${TopNavigationBarStyles.item}`}>
+                <span className={`${TopNavigationBarStyles.item}`}>
                   {t("nav_downloads")}
                 </span>
               </NavLink>
@@ -193,7 +191,7 @@ export default function TopNavigationBar() {
                 role="button"
                 aria-expanded="false"
               >
-                <span className={`px-2${TopNavigationBarStyles.item}`}>
+                <span className={`${TopNavigationBarStyles.item}`}>
                   {t("nav_documentation")}
                 </span>
               </NavLink>
@@ -205,13 +203,13 @@ export default function TopNavigationBar() {
                 role="button"
                 aria-expanded="false"
               >
-                <span className={`px-2 ${TopNavigationBarStyles.item}`}>
+                <span className={`${TopNavigationBarStyles.item}`}>
                   {t("nav_contact")}
                 </span>
               </NavLink>
             </li>
           </ul>
-          {isUserLoggedIn && (
+          {isUserLoggedIn ? (
             <div className={TopNavigationBarStyles.notification}>
               <NovuProvider
                 backendUrl={"http://139.144.17.179:3000"}
@@ -226,21 +224,21 @@ export default function TopNavigationBar() {
                 </PopoverNotificationCenter>
               </NovuProvider>
             </div>
-          )}
+          ) : null}
           <ul
             className={`d-lg-none navbar-nav-scroll ${TopNavigationBarStyles.signs}`}
           >
             <li className="nav-item" data-cy="top_navigation_bar_signup_button">
-              <Link to="/login" className={`btn nav-link`}>
+              <Link to="/signup" className={`btn nav-link`}>
                 <span className={`${TopNavigationBarStyles.signU}`}>
-                  {t("nav_login")}
+                  {t("nav_signup")}
                 </span>
               </Link>
             </li>
             <li className="nav-item" data-cy="top_navigation_bar_login_button">
-              <Link to="/signup" className={`btn nav-link`} role="button">
+              <Link to="/login" className={`btn nav-link`} role="button">
                 <span className={`${TopNavigationBarStyles.signIn}`}>
-                  {t("nav_signup")}
+                  {t("nav_login")}
                 </span>
               </Link>
             </li>
@@ -260,6 +258,32 @@ export default function TopNavigationBar() {
               title="Choose your Language"
             />{" "}
           </button>
+          {!isUserLoggedIn ? (
+            <>
+              <li>
+                <Link to="/signup" className={`nav-link`}>
+                  <span className={`${TopNavigationBarStyles.signU}`}>
+                    {t("nav_signup")}
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/login" className={`nav-link`}>
+                  <span className={`${TopNavigationBarStyles.signIn}`}>
+                    {t("nav_login")}
+                  </span>
+                </Link>
+              </li>
+            </>
+          ) : (
+            <li>
+              <Link to="/signout" className={`nav-link`}>
+                <span className={`${TopNavigationBarStyles.signOut}`}>
+                  {t("nav_signout")}
+                </span>
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </header>

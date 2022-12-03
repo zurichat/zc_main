@@ -115,14 +115,17 @@
   color: #00b87c;
   font-weight: 400;
   font-size: 18px;
-  padding-top: 20px;
-  padding-bottom: 0;
+  padding: 7px 15px;
+  border-radius: 4px;
+  border: 1px solid #00b87c;
 }
 
 .signU:hover {
-  padding-bottom: 6px;
-  border-bottom: 0.2rem solid #00b87c;
+  background-color: #156349;
+  color: white;
+  border: 1px solid transparent;
 }
+
 .signIn {
   background-color: #00b87c;
   color: white;
@@ -131,10 +134,12 @@
   padding: 8px 20px;
   border-radius: 4px;
 }
+
 .signIn:hover {
   background-color: #156349;
   color: white;
 }
+
 .signOut {
   background-color: #b83a00;
   color: white;
@@ -143,6 +148,7 @@
   padding: 8px 20px;
   border-radius: 4px;
 }
+
 .signOut:hover {
   background-color: #b83a00;
   color: white;
@@ -168,8 +174,7 @@
   padding-bottom: 0;
 }
 
-.navbarNav
- li span:hover {
+.navbarNav li span:hover {
   padding-bottom: 2px;
   border-bottom: 0.2rem solid #00b87c;
 }
@@ -179,9 +184,10 @@
   margin-left: 8px;
 }
 
-/*@media only screen and (max-width: 1200px) {*/
-.navbarNav {
-  flex-basis: 80%;
+@media only screen and (max-width: 1200px) {
+  .navbarNav {
+    flex-basis: 80%;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -193,7 +199,6 @@
     text-align: center;
     justify-content: center;
   }
-
   .navbarNav li {
     padding: 5px 0;
   }
@@ -202,6 +207,21 @@
     display: grid;
     padding: 10px 0;
     margin: 0;
+  }
+
+  .signU {
+    color: #00b87c;
+    font-weight: 400;
+    font-size: 18px;
+    padding: 7px 15px;
+    border-radius: 4px;
+    border: 1px solid #00b87c;
+  }
+
+  .signU:hover {
+    background-color: #156349;
+    color: white;
+    border-bottom: 0.2rem solid #00b87c;
   }
 
   .signs li {
@@ -214,11 +234,13 @@
   .signs li a span {
     width: 100%;
   }
+
   .signs a {
     width: 100%;
     text-align: center;
     display: flex;
   }
+
   .signIn,
   .signU {
     width: 100%;
@@ -247,7 +269,7 @@
   .navbar {
     padding: 0.5rem;
   }
-  
+
   .language {
     left: 80vw;
   }
@@ -281,6 +303,7 @@
     padding-bottom: 0;
   }
 }
+
 @media only screen and (max-width: 680px) {
   .language {
     left: 78vw;
@@ -305,6 +328,7 @@
   .navbarBrand {
     padding-left: 0;
   }
+
   .search_wrapper2 {
     margin-right: -10%;
   }
