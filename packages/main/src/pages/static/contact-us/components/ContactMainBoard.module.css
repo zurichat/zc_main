@@ -4,23 +4,14 @@
 
 .contactMainBoardInnerContainer {
   width: 70%;
+  max-width: 880px;
   margin: auto;
-  padding: 2.5rem 0;
-}
-.contactMainBoardTitleContainer {
-  text-align: center;
+  padding: 0.5rem 0;
 }
 .contactMainBoardTitleContainer h1 {
-  font-size: 1.3rem;
+  font-size: 2rem;
   font-weight: 600;
   margin-bottom: 0;
-}
-.contactMainBoardTitleContainer p {
-  font-size: 13px;
-  margin-top: -10px;
-  max-width: 100%;
-  text-align: center;
-
 }
 .contactFormContainer {
   margin-top: 2rem;
@@ -72,23 +63,27 @@
   font-weight: 500;
   border-radius: 4px;
 }
-
+.privacyPolicy {
+  font-size: 14px;
+  padding: 1rem 0;
+  color: #0D6EFD;
+  transition: ease-in-out cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.privacyPolicy a:hover {
+  color: #0d56c4 !important;
+  text-decoration: underline;
+}
 @media only screen and (max-width: 900px) {
   .contactMainBoardInnerContainer {
     width: 80%;
     margin: auto;
-    padding: 2.5rem 0;
+    padding: 2rem 0;
   }
 }
 @media only screen and (max-width: 500px) {
   .contactMainBoardInnerContainer {
     width: 90%;
     margin: auto;
-    padding: 2.5rem 0;
-  }
-  .contactMainBoardTitleContainer p {
-    max-width: 100%;
-    width: 80%;
-    margin: auto;
+    padding: 2rem 0;
   }
 }

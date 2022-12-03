@@ -22,6 +22,7 @@
 .navbar_toggle_icon span {
   line-height: 1;
   width: 30px;
+  height: 5px;
   margin: 5px 0;
   text-align: center;
   justify-content: center;
@@ -186,9 +187,10 @@ justify-content:space-between
   border-bottom: 0.2rem solid #00b87c;
 }
 
-/* .toggle {
-    _margin-right: 12px;
-  } */
+.toggle {
+  margin-right: 28px;
+  margin-left: 8px;
+}
 
 /*@media only screen and (max-width: 1200px) {*/
 .navbarNav {
@@ -251,7 +253,12 @@ justify-content:space-between
     margin-top: 0;
     /* margin-bottom: 5px; */
   }
-
+  .world img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-top: 0;
+  }
   .select {
     font-size: 14px;
     display: inline-flex;
