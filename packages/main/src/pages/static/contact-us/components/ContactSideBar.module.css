@@ -3,6 +3,7 @@
   color: white;
   padding: 40px 32px;
 }
+
 .topTitleContainer {
   text-align: center;
 }
@@ -12,6 +13,7 @@
   font-weight: 600;
   margin-bottom: 0;
 }
+
 .topTitleContainer p {
   font-size: 13px;
   margin-top: -10px;
@@ -20,38 +22,45 @@
 .contactMenuDataContainer {
   margin-top: 32px;
 }
+
 .contactDataGroup {
   display: flex;
   align-items: start;
   gap: 12px;
   margin-bottom: 2rem;
 }
+
 .contactDataIcon {
   display: flex;
   align-items: flex-start;
 }
+
 .contactData {
   margin-top: -4px;
-  display: flex;
   flex-direction: column;
-  gap: 1;
 }
+
 .contactDataTitle {
   font-weight: 500;
   font-size: 1rem;
 }
-.contactDataDesc {
-  font-size: 90% ;
+
+.contactDataDesc,
+.contactDataAttachment {
+  margin-bottom: 10px;
+  font-size: 12px;
 }
+
 .contactDataAttachment {
   font-weight: 500;
-  font-size: 0.8rem ;
 }
+
 .socialGroup {
   margin-top: 2rem;
   display: flex;
   flex-direction: row;
 }
+
 .socialGroup svg {
   margin: 0 0.5rem;
   font-size: 1rem;

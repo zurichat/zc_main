@@ -7,16 +7,18 @@
   margin: auto;
   padding: 2.5rem 0;
 }
+
 .contactMainBoardTitleContainer {
   text-align: center;
 }
+
 .contactMainBoardTitleContainer h1 {
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 0;
 }
+
 .contactMainBoardTitleContainer p {
-  font-size: 13px;
   margin-top: -10px;
   max-width: 100%;
   text-align: center;
@@ -25,15 +27,17 @@
 .contactFormContainer {
   margin-top: 2rem;
 }
+
 .inputGroup {
   display: flex;
   flex-direction: column;
   margin-bottom: 1.5rem;
 }
+
 .inputGroup label {
-  font-size: 13px;
   font-weight: 600;
 }
+
 .inputGroup input,
 .inputGroup textarea {
   padding: 12px;
@@ -59,6 +63,7 @@
   display: flex;
   margin-bottom: 1.5rem;
 }
+
 .inputGroupCheckBox label {
   font-size: 13px;
   margin-left: 8px;
@@ -80,12 +85,14 @@
     padding: 2.5rem 0;
   }
 }
+
 @media only screen and (max-width: 500px) {
   .contactMainBoardInnerContainer {
     width: 90%;
     margin: auto;
     padding: 2.5rem 0;
   }
+  
   .contactMainBoardTitleContainer p {
     max-width: 100%;
     width: 80%;
