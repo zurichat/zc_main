@@ -1,9 +1,8 @@
 import React from "react";
-import { TopNavigationBar } from "../../components";
-import TheFooter from "./TheFooter/TheFooter";
+import { TopNavigationBar, Footer } from "../../components";
 import plug from "./assets/errorpic.svg";
 import oops_error from "./assets/OOPS.svg";
-import style from "./errorPage.module.css";
+import style from "./ErrorPage.module.css";
 import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
@@ -14,7 +13,7 @@ const ErrorPage = () => {
         <div className={style.left_content}>
           <img src={oops_error} alt="" className={style.left_image} />
           <p>
-            This page you are looking for might be removed or temporary
+            This page you are looking for might be removed or is temporary
             unavailable. The requested url was not found on this server. Check
             with your ISP or reload again.
           </p>
@@ -31,7 +30,7 @@ const ErrorPage = () => {
           <img src={plug} alt=""></img>
         </div>
       </div>
-      <TheFooter />
+      <Footer />
     </div>
   );
 };

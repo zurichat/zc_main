@@ -278,18 +278,6 @@ export default function TopNavigationBar() {
                 </span>
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink
-                to="/contact-us"
-                className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
-                role="button"
-                aria-expanded="false"
-              >
-                <span className={`${TopNavigationBarStyles.item}`}>
-                  Contact
-                </span>
-              </NavLink>
-            </li>
           </ul>
           {isUserLoggedIn && (
             <div className={TopNavigationBarStyles.notification}>

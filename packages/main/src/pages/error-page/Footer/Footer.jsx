@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import TheStyle from "./TheFooter.module.css";
+import footerStyles from "./Footer.module.css";
 import footerLogo from "../assets/Zuri Chat Logo.svg";
 export default function footer() {
   const myStyle = {
@@ -9,10 +9,10 @@ export default function footer() {
     marginBottom: "1.5rem"
   };
   return (
-    <footer className={TheStyle.mainFooter}>
-      <div className={TheStyle.cFooter}>
+    <footer className={footerStyles.mainFooter}>
+      <div className={footerStyles.cFooter}>
         <img
-          className={TheStyle.footer_logo}
+          className={footerStyles.footer_logo}
           src={footerLogo}
           alt="zuri chat logo"
         />
@@ -58,7 +58,7 @@ export default function footer() {
           </Link>
         </div>
       </div>
-      <div className={TheStyle.dFooter}>
+      <div className={footerStyles.dFooter}>
         <p>&copy; 2022 Zuri Chat. All Rights Reserved</p>
         <p>Version - 1.0.0</p>
       </div>
