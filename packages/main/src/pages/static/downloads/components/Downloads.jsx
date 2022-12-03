@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./downloads.module.css";
-import { zuri, chat, brush, people, copy } from "../assets";
+import { chat } from "../assets";
 import { isMacOs, isIOS } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import { TopNavigationBar, Footer } from "../../../../components";
