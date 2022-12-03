@@ -1,36 +1,37 @@
-import { useState, useEffect } from "react";
-import {
-  Switch,
-  Route,
-  useParams,
-  useHistory,
-  useRouteMatch,
-  useLocation,
-  Link
-} from "react-router-dom";
-import {
-  TopBarWrapperStyle,
-  SidebarWrapperStyle,
-  WorkspaceWrapperStyle,
-  GlobalWorkSpaceStyle,
-  WorkspaceSidebarStyle
-} from "./Workspace.style";
-import styles from "./Workspace.module.css";
+import { BASE_API_URL } from "@zuri/utilities";
 import axios from "axios";
 import { setupCache } from "axios-cache-adapter";
+import { useEffect, useState } from "react";
+import {
+  Link,
+  Route,
+  Switch,
+  useHistory,
+  useLocation,
+  useRouteMatch
+} from "react-router-dom";
+import LiveBroadcast from "../../../components/media-chat/LiveBroadcast";
+import useParamHook from "./useParamHook";
+import styles from "./Workspace.module.css";
+import {
+  GlobalWorkSpaceStyle,
+  SidebarWrapperStyle,
+  TopBarWrapperStyle,
+  WorkspaceWrapperStyle
+} from "./Workspace.style";
 
 // import { GeneralLoading } from "../../../components";
 
-import { Sidebar, TopBar } from "../../../components/protected";
-import {
-  BsPlusCircle,
-  BsGearFill,
-  BsFillQuestionCircleFill,
-  BsFillCaretDownFill,
-  BsWindowSidebar
-} from "react-icons/bs";
 import { useMediaQuery } from "@chakra-ui/react";
+import {
+  BsFillCaretDownFill,
+  BsFillQuestionCircleFill,
+  BsGearFill,
+  BsPlusCircle
+} from "react-icons/bs";
 import VideoChat from "../../../components/media-chat/VideoChat";
+import VoiceCall from "../../../components/media-chat/VoiceCall/VoiceCall";
+import { Sidebar, TopBar } from "../../../components/protected";
 
 const cache = setupCache({
   // check if response header has a specification for caching
@@ -46,11 +47,17 @@ const instance = axios.create({
 });
 
 export default function Index() {
+  // const { workspaceId } = useParams();
+  const {
+    workspaceId: { workspaceId, short_id }
+  } = useParamHook({ workspaceId: "workspaceId" });
+
   const [tablet] = useMediaQuery("(max-width: 769px");
-  const { workspaceId } = useParams();
+
   const location = useLocation();
+  // console.log(location)
   const history = useHistory();
-  const match = useRouteMatch(`/workspace/${workspaceId}`);
+  const match = useRouteMatch(`/workspace/${short_id}`);
   const pluginsName = ["plugin-music"];
   const [workspaces, setWorkspaces] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -58,6 +65,7 @@ export default function Index() {
   const switchWorkspace = id => {
     console.log(id);
     window.location.href = `/workspace/${id}/plugin-chat/all-dms`;
+    history.replace(`/workspace/${id}/plugin-chat/`);
   };
 
   const getAcronymn = sentence => {
@@ -68,9 +76,10 @@ export default function Index() {
 
   const fetchUserWorkspacesResponse = async () => {
     let userData = JSON.parse(sessionStorage.getItem("user"));
+
     if (userData) {
       let response = await instance.get(
-        `https://api.zuri.chat/users/${userData.email}/organizations`,
+        `${BASE_API_URL}/users/${userData.email}/organizations`,
         {
           headers: {
             Authorization: `Bearer ${userData.token}`
@@ -78,19 +87,31 @@ export default function Index() {
         }
       );
 
-      let userSpace = response.data.data;
-      setWorkspaces(userSpace);
+      const userSpace = response.data.data;
+      const urlsTracker = JSON.parse(localStorage.getItem("urlsTracker"));
+
+      const newUserSpace = [];
+      userSpace.forEach(spaceUser => {
+        const current = urlsTracker.workspaceIds.filter(
+          urlId => urlId.real_id === spaceUser.id
+        );
+        spaceUser["short_id"] = current[0].short_id;
+        newUserSpace.push(spaceUser);
+      });
+
+      setWorkspaces(newUserSpace);
     }
   };
 
   useEffect(() => {
     window.dispatchEvent(new Event("zuri-plugin-load"));
-    match.isExact &&
-      history.replace(`/workspace/${workspaceId}/plugin-chat/all-dms`);
+    match?.isExact &&
+      history.replace(`/workspace/${short_id}/plugin-chat/all-dms`);
   }, []);
   // Temporary
   useEffect(() => {
     localStorage.setItem("currentWorkspace", workspaceId);
+    localStorage.setItem("currentWorkspaceShort", short_id);
   }, [workspaceId]);
   useEffect(() => {
     window.localStorage.setItem("lastLocation", location.pathname);
@@ -119,7 +140,10 @@ export default function Index() {
         <TopBar toggleSidebar={toggleSidebar} />
       </TopBarWrapperStyle>
 
-      <div style={{ display: "flex", height: "calc(100vh - 48px)" }}>
+      <div
+        style={{ display: "flex", height: "calc(100vh - 48px)" }}
+        id="workspace-all"
+      >
         {/* only show extra side bar if (workspaces.length > 1) */}
         {workspaces && workspaces.length > 1 && (
           <div
@@ -140,12 +164,13 @@ export default function Index() {
                 >
                   <div
                     className={`${
-                      window.location.pathname.includes(workSpace.id)
+                      window.location.pathname.includes(workSpace.short_id)
                         ? styles.currentWorkspace
                         : styles.workspaceAvatar
                     }`}
                     role="button"
-                    onClick={() => switchWorkspace(workSpace.id)}
+                    // onClick={() => switchWorkspace(short_id)}
+                    onClick={() => switchWorkspace(workSpace.short_id)}
                     title={workSpace.name}
                   >
                     <div className={`${styles.workspaceAvatarM}`}>
@@ -208,9 +233,15 @@ export default function Index() {
             <Route exact path="/workspace/:workspaceId">
               <h1>Welcome to your Workspace</h1>
             </Route>
+            <Route path="/workspace/:workspaceId/LiveBroadcast">
+              <LiveBroadcast />
+            </Route>
 
             <Route path="/workspace/:workspaceId/video-chat">
               <VideoChat />
+            </Route>
+            <Route path="/workspace/:workspaceId/voice-call">
+              <VoiceCall />
             </Route>
 
             {/* <Route

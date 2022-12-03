@@ -1,4 +1,5 @@
 import { authAxios } from "./api";
+import useParamHook from "../../../../pages/protected/workspace/useParamHook"; //my import
 
 // return the token from the session storage
 export const getToken = () => {
@@ -12,7 +13,21 @@ export const getUser = () => {
 
 // get Current Workspace
 export const getCurrentWorkspace = () => {
-  const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+  //I added this code
+  const {
+    workspaceId: { workspaceId, short_id }
+  } = useParamHook({ workspaceId: "workspaceId" });
+
+  const userData = JSON.parse(localStorage.getItem("userData"));
+
+  localStorage.setItem(
+    "currentWorkspace",
+    userData?.currentWorkspace ?? workspaceId
+  );
+  localStorage.setItem("currentWorkspaceShort", short_id);
+
+  let currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+
   return currentWorkspace;
 };
 

@@ -47,11 +47,12 @@ export default function Footer() {
         </div>
 
         <div className={styles.menu}>
+
           <div>
-            <h5>{t("footer_company")}</h5>
+            <h5>{t("footer_know_us")}</h5>
             <ul>
               <li>
-                <Link to="/whyzurichat">{t("footer_why_zuri_chat")}</Link>
+                <Link to="/contact-us">{t("footer_contact")}</Link>
               </li>
             </ul>
           </div>
@@ -67,28 +68,13 @@ export default function Footer() {
                   {t("footer_documentation")}
                 </a>
               </li>
-              <li>
-                <Link to="/plugins">{t("footer_plugin")}</Link>
-              </li>
             </ul>
           </div>
 
-          <div>
-            <h5>{t("footer_know_us")}</h5>
-            <ul>
-              <li>
-                <Link to="/about">{t("footer_about")}</Link>
-              </li>
-              <li>
-                <Link to="/contact-us">{t("footer_contact")}</Link>
-              </li>
-            </ul>
-          </div>
 
           <div className={styles.social}>
             <h5>{t("footer_social_media")}</h5>
             <ul>
-              <div>
                 <li>
                   <a
                     href="https://www.facebook.com/Zuri-Chat-101278805666628"
@@ -103,7 +89,6 @@ export default function Footer() {
                     />
                   </a>
                 </li>
-                <br />
                 <li>
                   <a
                     href="https://instagram.com/zurichathq"
@@ -118,8 +103,6 @@ export default function Footer() {
                     />
                   </a>
                 </li>
-              </div>
-              <div>
                 <li>
                   <a
                     href="https://twitter.com/zurichat"
@@ -134,7 +117,6 @@ export default function Footer() {
                     />
                   </a>
                 </li>
-                <br />
                 <li>
                   <a href="https://www.linkedin.com/company/zuri-chat/">
                     <img
@@ -145,7 +127,6 @@ export default function Footer() {
                     />
                   </a>
                 </li>
-              </div>
             </ul>
           </div>
         </div>
