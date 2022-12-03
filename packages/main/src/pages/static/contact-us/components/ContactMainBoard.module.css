@@ -1,0 +1,107 @@
+.contactMainBoardContainer {
+  flex: 1 1 0%;
+}
+
+.contactMainBoardInnerContainer {
+  width: 40%;
+  max-width: 680px;
+  margin: auto;
+  padding: 0.5rem 0;
+}
+.contactTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+.messageContainer{
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  width: 100%;
+  font-size: 70%;
+  text-align: center;
+}
+
+.errorMessage{
+  color: white;
+  background-color: red;
+  padding: .5rem 3rem;
+}
+
+.successMessage{
+  color: white;
+  background-color: #00B87C;
+  padding: .5rem 3rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .8rem;
+}
+
+.inputGroup label {
+  font-weight: 600;
+  font-size: 80%;
+}
+.inputGroup small {
+  color: red;
+  margin-top: 5px;
+}
+.inputGroup input,
+.inputGroup textarea {
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #999899;
+  color: #151517;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-top: 6px;
+  outline: none;
+}
+
+.inputGroup textarea {
+  height: 190px;
+}
+
+.inputGroup input::placeholder {
+  color: #999899;
+}
+
+.contactBtn {
+  padding: 0.75rem 2rem;
+  border: 1px solid #00B87C;
+  background-color: #00B87C;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 80%;
+}
+
+.privacyPolicy {
+  font-size: 14px;
+  padding: 1rem 0;
+  color: #0D6EFD;
+  transition: ease-in-out cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.privacyPolicy a:hover {
+  color: #0d56c4 !important;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 900px) {
+  .contactMainBoardInnerContainer {
+    width: 70%;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .contactMainBoardInnerContainer {
+    width: 90%;
+    margin: auto;
+  }
+}

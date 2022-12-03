@@ -26,6 +26,6 @@ jobs:
             git reset --hard origin/main
             git stash
             git pull origin main
-            yarn install
+            yarn install --ignore-engines
             yarn build
             pm2 restart zuri-main
