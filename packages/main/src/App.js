@@ -103,7 +103,6 @@ const App = () => (
           <Route path="/whyzurichat" component={WhyZuriChat} />
           <Route path="/privacy" component={PrivacyPage} />
           <Route path="/terms" component={TermsOfService} />
-          <Route path="*" component={ErrorPage} />
 
           <ProtectFromAuthRoute exact path="/login">
             <Login />
@@ -138,11 +137,12 @@ const App = () => (
           <ProtectedRoute path="/workspace/:workspaceId">
             {withSuspense(Workspace)}
           </ProtectedRoute>
-          <Route
+          {/* <Route
             component={() => (
               <GeneralLoading text="404 - (Refactoring in Progress)" />
             )}
-          />
+          /> */}
+          <Route path="*" component={ErrorPage} />
         </Switch>
       </Suspense>
     </GeneralErrorBoundary>
