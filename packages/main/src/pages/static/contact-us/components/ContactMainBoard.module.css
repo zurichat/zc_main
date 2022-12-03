@@ -9,6 +9,9 @@
 }
 .contactMainBoardTitleContainer {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .contactMainBoardTitleContainer h1 {
   font-size: 1.3rem;
@@ -22,6 +25,27 @@
   text-align: center;
 
 }
+
+.messageContainer{
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  width: 100%;
+  align-items: center;
+}
+
+.errorMessage{
+  color: white;
+  background-color: red;
+  padding: 1rem 3rem;
+}
+
+.successMessage{
+  color: white;
+  background-color: #009967;
+  padding: 1rem 3rem;
+}
+
 .contactFormContainer {
   margin-top: 2rem;
 }
@@ -33,6 +57,10 @@
 .inputGroup label {
   font-size: 13px;
   font-weight: 600;
+}
+.inputGroup small {
+  color: red;
+  margin-top: 5px;
 }
 .inputGroup input,
 .inputGroup textarea {

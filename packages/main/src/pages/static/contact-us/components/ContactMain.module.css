@@ -15,7 +15,7 @@ p{
 
 .contactHead {
   width: 100%;
-  margin-top: 100px;
+  margin-top: 75px;
   text-align: left;
 }
 
@@ -32,7 +32,7 @@ p{
 
   .boardContainer{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     height: 100%;
     width: 100%;
   }
