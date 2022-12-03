@@ -173,6 +173,13 @@
 
   /* padding: 8px 5px; */
 }
+.notification{
+display:flex;
+
+justify-content:space-between
+
+}
+
 .navbarNav span {
   padding-bottom: 0;
 }
@@ -229,6 +236,9 @@
   }
   .signs a {
     padding: 5px 0;
+  }
+  .notification{
+    display:none;
   }
 
   .search_wrapper2 {

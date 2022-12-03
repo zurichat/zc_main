@@ -31,7 +31,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
   };
 
   return (
-    <div>
+    <>
       <div className={styles.wrapper}>
         <div className={styles.email}>
           {user ? (
@@ -97,6 +97,6 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
