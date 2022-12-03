@@ -3,6 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
+import { FaBars } from "react-icons/fa";
 
 import TopNavigationBarStyles from "./TopNavigationBar.module.css";
 import ZuriChatLogo from "../../assets/zuri-chat-logo/logo.svg";
@@ -22,6 +23,20 @@ import world from "./assets/language/world.png";
 
 export default function TopNavigationBar() {
   const { t } = useTranslation();
+
+  const lang = [
+    { id: 1, value: "en", src: uk, title: "English (UK)"},
+    { id: 2, value: "en-us", src: us, title: "English (US)"},
+    { id: 3, value: "fr", src: fr, title: "French"},
+    { id: 4, value: "de", src: de, title: "Deutch"},
+    { id: 5, value: "ar", src: ar, title: "Arabic"},
+    { id: 6, value: "iw", src: he, title: "Hebrew"},
+    { id: 7, value: "es", src: es, title: "Spanish"},
+    { id: 8, value: "it", src: it, title: "Italian"},
+    { id: 9, value: "zh", src: zh, title: "Chinese"},
+    { id: 10, value: "pt", src: pt, title: "Portugese"},
+    { id: 11, value: "nl", src: nl, title: "Dutch"}
+  ]
 
   const saveLang = lang => {
     localStorage.setItem("myLanguage", lang);
@@ -217,9 +232,7 @@ export default function TopNavigationBar() {
           aria-label="Toggle navigation"
         >
           <span className={TopNavigationBarStyles.navbar_toggle_icon}>
-            <span></span>
-            <span></span>
-            <span></span>
+              <FaBars />
           </span>
         </button>
         <div
