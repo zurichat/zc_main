@@ -157,7 +157,7 @@ export default function TopNavigationBar() {
           id="navbarText"
         >
           <ul
-            className={`navbar-nav d-flex justify-content-center align-items-center mx-auto ${TopNavigationBarStyles.navbarNav}`}
+            className={`navbar-nav d-flex mx-auto ${TopNavigationBarStyles.navbarNav}`}
           >
             <li className="nav-item">
               <NavLink
@@ -165,31 +165,31 @@ export default function TopNavigationBar() {
                 className={`nav-link ${TopNavigationBarStyles.navLinkFeatures}`}
                 aria-current="page"
               >
-                <span className={`${TopNavigationBarStyles.item}`}>
+                <span className={`px-2 ${TopNavigationBarStyles.item}`}>
                   {t("nav_downloads")}
                 </span>
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
-                to="/documentation"
+                to="/docs.zuri.chat"
                 className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
                 role="button"
                 aria-expanded="false"
               >
-                <span className={`${TopNavigationBarStyles.item}`}>
+                <span className={`px-2 ${TopNavigationBarStyles.item}`}>
                   Documentation
                 </span>
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
-                to="/contact"
+                to="/contact-us"
                 className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
                 role="button"
                 aria-expanded="false"
               >
-                <span className={`${TopNavigationBarStyles.item}`}>
+                <span className={`px-2 ${TopNavigationBarStyles.item}`}>
                   {t("nav_contact")}
                 </span>
               </NavLink>
@@ -200,16 +200,16 @@ export default function TopNavigationBar() {
             className={`d-lg-none navbar-nav-scroll ${TopNavigationBarStyles.signs}`}
           >
             <li className="nav-item" data-cy="top_navigation_bar_signup_button">
-              <Link to="/signup" className={`btn nav-link`}>
+              <Link to="/login" className={`btn nav-link`}>
                 <span className={`${TopNavigationBarStyles.signU}`}>
-                  {t("nav_signup")}
+                  {t("nav_login")}
                 </span>
               </Link>
             </li>
             <li className="nav-item" data-cy="top_navigation_bar_login_button">
-              <Link to="/login" className={`btn nav-link`} role="button">
+              <Link to="/signup" className={`btn nav-link`} role="button">
                 <span className={`${TopNavigationBarStyles.signIn}`}>
-                  {t("nav_login")}
+                  {t("nav_signup")}
                 </span>
               </Link>
             </li>
@@ -232,16 +232,16 @@ export default function TopNavigationBar() {
           {!isUserLoggedIn ? (
             <>
               <li>
-                <Link to="/signup" className={`nav-link`}>
+                <Link to="/login" className={`nav-link`}>
                   <span className={`${TopNavigationBarStyles.signU}`}>
-                    {t("nav_signup")}
+                    {t("nav_login")}
                   </span>
                 </Link>
               </li>
               <li>
-                <Link to="/login" className={`nav-link`}>
+                <Link to="/signup" className={`nav-link`}>
                   <span className={`${TopNavigationBarStyles.signIn}`}>
-                    {t("nav_login")}
+                    {t("nav_signup")}
                   </span>
                 </Link>
               </li>
