@@ -1,9 +1,10 @@
 import { AGORA_APP_ID, AGORA_TOKEN } from "@zuri/utilities";
 import AgoraUIKit from "agora-react-uikit";
 import { useState } from "react";
+import styles from "./VideoChat.module.css";
 
 const VideoChat = () => {
-  const [videoCall, setVideoCall] = useState(true);
+  const [videoCall, setVideoCall] = useState(false);
 
   const rtcProps = {
     appId: AGORA_APP_ID,
@@ -20,7 +21,13 @@ const VideoChat = () => {
       <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />
     </div>
   ) : (
-    <h3 onClick={() => setVideoCall(true)}>Join</h3>
+    <button
+      colorScheme="blue"
+      onClick={() => setVideoCall(true)}
+      className={styles.joinBtn}
+    >
+      Join Video Chat
+    </button>
   );
 };
 
