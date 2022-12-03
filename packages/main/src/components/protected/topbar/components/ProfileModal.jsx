@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ProfileContext } from "../context/profile-modal.context";
 import styles from "../styles/ProfileModal.module.css";
 
-const ProfileModal = ({ title, children, full, ...rest }) => {
+const ProfileModal = ({ title, children, full, scroll, ...rest }) => {
   const { modal, toggleModalState } = useContext(ProfileContext);
 
   const mql = window.matchMedia("(max-width: 768px)");
@@ -18,7 +18,15 @@ const ProfileModal = ({ title, children, full, ...rest }) => {
         className={full ? styles.overlayGreen : styles.overlay}
         onClick={toggleModalState}
       ></div>
-      <div className={full ? styles.modalFull : styles.modalContent}>
+      <div
+        className={
+          full
+            ? scroll
+              ? styles.modalFullScroll
+              : styles.modalFull
+            : styles.modalContent
+        }
+      >
         <div className={`${styles.modalHeader}`}>
           {title}
           {mobileView ? (

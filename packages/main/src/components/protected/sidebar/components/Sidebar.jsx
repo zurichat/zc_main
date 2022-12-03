@@ -224,19 +224,6 @@ const Sidebar = props => {
                 name={`${t("workspace_chat.drafts")}`}
                 image={draftIcon}
               />
-              <SingleRoom
-                name="LiveBroadcast"
-                image={liveicon}
-                link={`/workspace/${currentWorkspace}/LiveBroadcast`}
-              />
-              <SingleRoom
-                name="Voice Call"
-                image={phoneicon}
-                link={`/workspace/${currentWorkspace}/voice-call`}
-              />
-
-              <hr color="#d4d4d4" />
-              <hr color="#d4d4d4" />
 
               <Starred starredRooms={starredRooms} />
               {singleItems}

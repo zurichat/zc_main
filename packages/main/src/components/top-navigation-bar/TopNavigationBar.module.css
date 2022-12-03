@@ -171,6 +171,13 @@
 
   /* padding: 8px 5px; */
 }
+.notification{
+display:flex;
+
+justify-content:space-between
+
+}
+
 .navbarNav span {
   padding-bottom: 0;
 }
@@ -213,6 +220,9 @@
     margin: 0.9rem 0;
     list-style: none;
     padding: 0;
+  }
+  .notification{
+    display:none;
   }
 
   .search_wrapper2 {
