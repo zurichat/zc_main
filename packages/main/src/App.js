@@ -25,7 +25,8 @@ import {
   ResetPassword,
   ChangePassword,
   WhyZuriChat,
-  PrivacyPage
+  PrivacyPage,
+  ErrorPage
 } from "./pages";
 import TermsOfService from "../src-old/pages/termsOfService/index";
 import { useAuth } from "./auth/use-auth";
@@ -143,11 +144,12 @@ const App = () => (
           <ProtectedRoute path="/workspace/:workspaceId">
             {withSuspense(Workspace)}
           </ProtectedRoute>
-          <Route
+          {/* <Route
             component={() => (
               <GeneralLoading text="404 - (Refactoring in Progress)" />
             )}
-          />
+          /> */}
+          <Route path="*" component={ErrorPage} />
         </Switch>
       </Suspense>
     </GeneralErrorBoundary>

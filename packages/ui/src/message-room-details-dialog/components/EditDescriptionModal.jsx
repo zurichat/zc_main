@@ -23,9 +23,10 @@ const EditDescriptionModal = ({
 
   // to update data
   const handleDesc = () => {
-    const org_id = roomData.data.org_id;
-    const member_id = roomData.data.created_by;
-    const room_id = roomData.data._id;
+    const organization = JSON.parse(localStorage.getItem("description"));
+    const org_id = organization.org_id;
+    const member_id = organization.member_id;
+    const room_id = organization.room_id;
 
     const newDescription = {
       room_name: roomData.data.room_name,

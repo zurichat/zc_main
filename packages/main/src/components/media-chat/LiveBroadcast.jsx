@@ -1,15 +1,16 @@
-import React, { useState } from "react";
-import AgoraUIKit, { layout } from "agora-react-uikit";
+import { AGORA_APP_ID, AGORA_TOKEN } from "@zuri/utilities";
+import AgoraUIKit from "agora-react-uikit";
 import "agora-react-uikit/dist/index.css";
+import React, { useState } from "react";
 
 const LiveBroadcast = () => {
   const [videocall, setVideocall] = useState(true);
   const [isHost, setHost] = useState(true);
 
   const rtcProps = {
-    appId: process.env.REACT_APP_AGORA_APP_ID,
+    appId: AGORA_APP_ID,
     channel: "plug",
-    token: process.env.REACT_APP_AGORA_TOKEN,
+    token: AGORA_TOKEN,
     role: isHost ? "host" : "audience"
   };
 
