@@ -50,7 +50,7 @@ body {
 .desktop a {
   font-weight: 700;
   font-size: 14px;
-  color: #00B87C;
+  color: #FFFFFF;
 }
 
 .buttons .mobile {
@@ -63,9 +63,16 @@ body {
 .buttons .desktop {
   text-align: center;
   padding: 10px 24px;
-  border: 1px solid #00B87C;
-  background: #fff;
+  background: #00B87C;
   border-radius: 4px;
+}
+
+.buttons .mobile:hover {
+  background: #00b87bab;
+}
+
+.buttons .desktop:hover {
+  background: #00b87bab;
 }
 
 .introImg img {
