@@ -134,6 +134,13 @@
   font-size: 18px;
   font-weight: 400;
 }
+.notification{
+display:flex;
+
+justify-content:space-between
+
+}
+
 .navbarNav span {
   padding-bottom: 0;
 }
@@ -169,6 +176,15 @@
     list-style: none;
     padding: 0;
   }
+
+  .notification{
+    display:none;
+  }
+
+  .search_wrapper2 {
+    margin-right: -20%;
+  }
+
   .language {
     position: absolute;
     display: flex;
