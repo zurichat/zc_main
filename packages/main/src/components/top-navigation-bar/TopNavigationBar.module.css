@@ -13,7 +13,6 @@
   background-color: white;
   width: 100%;
   position: relative;
-  margin: 0 15px;
 }
 
 .navbar_toggle_icon {
@@ -28,19 +27,6 @@
   background: rgb(85, 83, 83);
   border-radius: 4px;
 }
-/*
- .navLinkFeatures {
-    _margin-right: 30px;
-  }
-  
-  .navLinkPricing {
-    _margin-right: 30px;
-  }
-  
-  .navLinkComms {
-    _margin-right: 30px;
-  } */
-
 .modal_header button {
   font-size: 2rem;
   padding-right: 0.5rem;
@@ -77,7 +63,6 @@
   padding: 5px;
   background-color: white;
   border: 0;
-  margin-top: -1rem;
 }
 .world:hover {
   opacity: 0.8;
@@ -96,7 +81,6 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  margin-top: 2.2vh;
 }
 .country_logo {
   width: 25px;
@@ -127,13 +111,10 @@
   color: #00b87c;
   font-weight: 400;
   font-size: 18px;
-  padding-top: 20px;
-  padding-bottom: 0;
-}
-
-.signU:hover {
-  padding-bottom: 6px;
-  border-bottom: 0.2rem solid #00b87c;
+  padding: 7px 20px;
+  margin: 10px;
+  border: 1px solid #00b87c;
+  border-radius: 4px;
 }
 
 .signIn {
