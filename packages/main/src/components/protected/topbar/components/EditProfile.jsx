@@ -153,7 +153,7 @@ const EditProfile = () => {
     }
   };
   return (
-    <ProfileModal full title="Edit profile">
+    <ProfileModal scroll full title="Edit profile">
       <>
         <StyledProfileWrapper style={{ backgroundColor: "var(--bg-color)" }}>
           <div className="grid-container">

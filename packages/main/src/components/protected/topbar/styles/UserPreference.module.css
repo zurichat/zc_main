@@ -2,7 +2,7 @@
   padding: 30px 20px;
   background-color: var(--bg-color);
   display: block;
-  height: 100%;
+  height: min-content;
 }
 
 .hrLine {
