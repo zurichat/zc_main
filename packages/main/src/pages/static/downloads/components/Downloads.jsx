@@ -43,10 +43,18 @@ const Downloads = () => {
             <h2>Download Zuri Chat</h2>
             <div className={styles.buttons}>
               <button type="button" className={styles.mobile}>
-                <a href="">Download for Mobile</a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.zurichat.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download for Mobile
+                </a>
               </button>
               <button type="button" className={styles.desktop}>
-                <a href="#">Download for Desktop</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  Download for Desktop
+                </a>
               </button>
             </div>
           </div>
