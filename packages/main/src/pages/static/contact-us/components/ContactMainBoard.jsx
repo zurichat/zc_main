@@ -6,16 +6,12 @@ import axios from "axios";
 
 const ContactMainBoard = () => {
   const [formValues, setFormValues] = useState({
-    name: "",
     email: "",
-    phoneNo: "",
     message: "",
     subject: "Subject",
     content: "Content",
     errors: {
-      name: "",
       email: "",
-      phoneNo: "",
       message: ""
     },
     loading: false,
@@ -25,10 +21,6 @@ const ContactMainBoard = () => {
 
   const formLogic = values => {
     let error = {};
-    if (!values.name) {
-      error.name = "Please type in your full name";
-    }
-
     if (!values.email) {
       error.email = "Please type in an email";
     } else if (
@@ -37,10 +29,6 @@ const ContactMainBoard = () => {
       )
     ) {
       error.email = "Email is invalid.";
-    }
-
-    if (!values.phoneNo) {
-      error.phoneNo = "Please type in a phone number";
     }
 
     if (!values.message) {
@@ -58,20 +46,16 @@ const ContactMainBoard = () => {
   const submitForm = async data => {
     setFormValues({ ...formValues, loading: true });
     let contactData = new FormData();
-    formValues.name && contactData.append("name", formValues.name);
     formValues.email && contactData.append("email", formValues.email);
-    formValues.phoneNo && contactData.append("phoneNo", formValues.phoneNo);
     formValues.message && contactData.append("message", formValues.message);
     formValues.subject && contactData.append("subject", formValues.subject);
     formValues.content && contactData.append("content", formValues.content);
     axios
       .post(`${BASE_API_URL}/contact`, contactData)
-      .then(({ data }) => {
+      .then(() => {
         setFormValues(formValues => ({
           ...formValues,
-          name: "",
           email: "",
-          phoneNo: "",
           message: "",
           errorMessage: "",
           successMessage: "Contact information sent successfully",
@@ -111,43 +95,23 @@ const ContactMainBoard = () => {
   return (
     <div className={contactStyle.contactMainBoardContainer}>
       <div className={contactStyle.contactMainBoardInnerContainer}>
-        <div className={contactStyle.contactMainBoardTitleContainer}>
-          <h1>Contact Us</h1>
-          <p>
-            Let us know how we can help. We will respond as soon as possible!
-          </p>
-          <div className={contactStyle.messageContainer}>
-            {formValues.errorMessage ? (
-              <span className={contactStyle.errorMessage}>
-                {formValues.errorMessage}
-              </span>
-            ) : null}
-            {formValues.successMessage ? (
-              <span className={contactStyle.successMessage}>
-                {formValues.successMessage}
-              </span>
-            ) : null}
-          </div>
+        <p className={contactStyle.contactTitle}>Contact Us</p>
+        <div className={contactStyle.messageContainer}>
+          {formValues.errorMessage ? (
+            <span className={contactStyle.errorMessage}>
+              {formValues.errorMessage}
+            </span>
+          ) : null}
+          {formValues.successMessage ? (
+            <span className={contactStyle.successMessage}>
+              {formValues.successMessage}
+            </span>
+          ) : null}
         </div>
 
         <form className={contactStyle.contactFormContainer}>
           <div className={contactStyle.inputGroup}>
-            <label htmlFor="fullName">Full Name</label>
-            <input
-              required
-              name="name"
-              id="fullName"
-              type="text"
-              onChange={e =>
-                setFormValues({ ...formValues, name: e.target.value })
-              }
-              value={formValues.name}
-              placeholder="Enter your First and Last Name"
-            />
-            <small>{formValues.errors?.name}</small>
-          </div>
-          <div className={contactStyle.inputGroup}>
-            <label htmlFor="email">Email Address</label>
+            <label htmlFor="email">Your Email Address</label>
             <input
               required
               name="email"
@@ -157,28 +121,13 @@ const ContactMainBoard = () => {
                 setFormValues({ ...formValues, email: e.target.value })
               }
               value={formValues.email}
-              placeholder="Type your email here"
+              placeholder="You@example.com"
             />
             <small>{formValues.errors?.email}</small>
           </div>
 
           <div className={contactStyle.inputGroup}>
-            <label htmlFor="phoneNumber">Phone Number</label>
-            <input
-              required
-              name="phoneNo"
-              id="phoneNumber"
-              type="phone"
-              onChange={e =>
-                setFormValues({ ...formValues, phoneNo: e.target.value })
-              }
-              value={formValues.phoneNo}
-              placeholder="Type your phone number here"
-            />
-            <small>{formValues.errors?.phoneNo}</small>
-          </div>
-          <div className={contactStyle.inputGroup}>
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message">Tell us what you need help with:</label>
             <textarea
               required
               name="message"
@@ -187,22 +136,17 @@ const ContactMainBoard = () => {
                 setFormValues({ ...formValues, message: e.target.value })
               }
               value={formValues.message}
-              placeholder="Type your message here"
+              placeholder="Enter any topic"
             />
             <small>{formValues.errors?.message}</small>
           </div>
-          <div className={contactStyle.inputGroupCheckBox}>
-            <input required id="checkbox" type="checkbox" />
-            <label htmlFor="checkbox">I will like to recieve your news</label>
-          </div>
-
           <div>
             <button
               type="submit"
               onClick={handleSubmit}
               className={contactStyle.contactBtn}
             >
-              {formValues.loading ? "Loading..." : "Send"}
+              {formValues.loading ? "Loading..." : "GET HELP"}
             </button>
           </div>
         </form>

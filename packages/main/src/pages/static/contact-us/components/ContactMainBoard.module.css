@@ -3,55 +3,47 @@
 }
 
 .contactMainBoardInnerContainer {
-  width: 70%;
-  max-width: 880px;
+  width: 40%;
+  max-width: 680px;
   margin: auto;
   padding: 0.5rem 0;
 }
-.contactMainBoardTitleContainer {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.contactMainBoardTitleContainer h1 {
+.contactTitle {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 800;
   margin-bottom: 0;
 }
 
 .messageContainer{
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  margin: 1rem 0;
   width: 100%;
-  align-items: center;
+  font-size: 70%;
+  text-align: center;
 }
 
 .errorMessage{
   color: white;
   background-color: red;
-  padding: 1rem 3rem;
+  padding: .5rem 3rem;
 }
 
 .successMessage{
   color: white;
-  background-color: #009967;
-  padding: 1rem 3rem;
-}
-
-.contactFormContainer {
-  margin-top: 2rem;
+  background-color: #00B87C;
+  padding: .5rem 3rem;
 }
 
 .inputGroup {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.5rem;
+  margin-bottom: .8rem;
 }
 
 .inputGroup label {
   font-weight: 600;
+  font-size: 80%;
 }
 .inputGroup small {
   color: red;
@@ -66,7 +58,7 @@
   font-weight: 500;
   border-radius: 4px;
   font-size: 12px;
-  margin-top: 12px;
+  margin-top: 6px;
   outline: none;
 }
 
@@ -78,23 +70,14 @@
   color: #999899;
 }
 
-.inputGroupCheckBox {
-  display: flex;
-  margin-bottom: 1.5rem;
-}
-
-.inputGroupCheckBox label {
-  font-size: 13px;
-  margin-left: 8px;
-}
-
 .contactBtn {
   padding: 0.75rem 2rem;
-  border: 1px solid #009967;
-  background-color: #009967;
+  border: 1px solid #00B87C;
+  background-color: #00B87C;
   color: white;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: 4px;
+  font-size: 80%;
 }
 
 .privacyPolicy {
@@ -111,9 +94,8 @@
 
 @media only screen and (max-width: 900px) {
   .contactMainBoardInnerContainer {
-    width: 80%;
+    width: 70%;
     margin: auto;
-    padding: 2rem 0;
   }
 }
 
@@ -121,6 +103,5 @@
   .contactMainBoardInnerContainer {
     width: 90%;
     margin: auto;
-    padding: 2rem 0;
   }
 }
