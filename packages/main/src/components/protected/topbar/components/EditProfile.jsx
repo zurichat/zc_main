@@ -9,8 +9,10 @@ import Loader from "react-loader-spinner";
 import toast, { Toaster } from "react-hot-toast";
 import { data } from "../utils/country-code";
 import { StyledProfileWrapper } from "../styles/StyledEditProfile.styled";
+import { useTranslation } from "react-i18next";
 const EditProfile = () => {
   // const imageRef = useRef(null)
+  const { t } = useTranslation();
   const avatarRef = useRef(null);
   const {
     user,
@@ -151,7 +153,7 @@ const EditProfile = () => {
     }
   };
   return (
-    <ProfileModal full title="Edit profile">
+    <ProfileModal scroll full title="Edit profile">
       <>
         <StyledProfileWrapper style={{ backgroundColor: "var(--bg-color)" }}>
           <div className="grid-container">
@@ -174,7 +176,7 @@ const EditProfile = () => {
                     className="inputLabel"
                     style={{ color: "var(--text-color-bold)" }}
                   >
-                    First Name
+                    {t("Edit_profile_firstName")}
                   </label>
                   <input
                     type="text"
@@ -193,7 +195,7 @@ const EditProfile = () => {
                     className="inputLabel"
                     style={{ color: "var(--text-color-bold)" }}
                   >
-                    Last Name
+                    {t("Edit_profile_lastName")}
                   </label>
                   <input
                     type="text"
@@ -214,7 +216,7 @@ const EditProfile = () => {
                     className="inputLabel"
                     style={{ color: "var(--text-color-bold)" }}
                   >
-                    Choose a Display Name
+                    {t("Edit_profile_chooseDisplayName")}
                   </label>
                   <input
                     type="text"
@@ -230,8 +232,7 @@ const EditProfile = () => {
                     className="para"
                     style={{ color: "var(--text-color-gray)" }}
                   >
-                    Please use a unique and permanent display name. If someone
-                    uses your exact name, you should change it!
+                    {t("Edit_profile_uniqueNameWarning")}
                   </p>
                 </div>
               </div>
@@ -241,7 +242,7 @@ const EditProfile = () => {
                   className="inputLabel"
                   style={{ color: "var(--text-color-bold)" }}
                 >
-                  What you do
+                  {t("Edit_profile_profession")}
                 </label>
                 <input
                   type="text"
@@ -252,7 +253,7 @@ const EditProfile = () => {
                   name="bio"
                 />
                 <p className="para" style={{ color: "var(--text-color-gray)" }}>
-                  Let people know what you do at <b>ZURI</b>
+                  {t("Edit_profile_professionExplain")} <b>ZURI</b>
                 </p>
               </div>
 
@@ -261,7 +262,7 @@ const EditProfile = () => {
                   className="inputLabel"
                   style={{ color: "var(--text-color-bold)" }}
                 >
-                  Phone Number
+                  {t("Edit_profile_phoneNumber")}
                 </label>
                 <div className="phone-container">
                   <select
@@ -294,7 +295,7 @@ const EditProfile = () => {
                   className="inputLabel"
                   style={{ color: "var(--text-color-bold)" }}
                 >
-                  Time Zone
+                  {t("Edit_profile_timeZone")}
                 </label>
                 <div className="time-container">
                   <select
@@ -380,7 +381,9 @@ const EditProfile = () => {
                     />
                   ) : (
                     <div className="profile__img-wrapper">
-                      <span className="pictureHeading">Profile photo</span>
+                      <span className="pictureHeading">
+                        {t("Edit_profile_profilePhoto")}
+                      </span>
                       <img className="img" src={image} alt="profile-pic" />
                     </div>
                   )}
@@ -403,7 +406,7 @@ const EditProfile = () => {
                       width={40}
                     />
                   ) : ( */}
-                  Upload an Image
+                  {t("Edit_profile_uploadImage")}
                   {/* ) */}
                 </label>
                 <div
@@ -411,7 +414,7 @@ const EditProfile = () => {
                   className="rmvBtn"
                   onClick={handleImageDelete}
                 >
-                  Remove photo
+                  {t("Edit_profile_removeImage")}
                 </div>
               </div>
             </div>
@@ -425,7 +428,7 @@ const EditProfile = () => {
           </div>
           <div className="button-wrapper">
             <button className="btns cncBtn" onClick={toggleModalState}>
-              Cancel
+              {t("Edit_profile_cancel")}
             </button>
             <button onClick={handleFormSubmit} className="btns saveBtn">
               {state.loading ? (

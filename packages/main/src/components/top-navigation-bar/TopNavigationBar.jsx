@@ -188,7 +188,7 @@ export default function TopNavigationBar() {
             </li>
             <li className="nav-item">
               <NavLink
-                to="/documentt"
+                to="/documentation"
                 className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
                 role="button"
                 aria-expanded="false"

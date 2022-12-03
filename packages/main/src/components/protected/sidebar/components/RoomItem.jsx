@@ -10,15 +10,18 @@ import { useRouteMatch } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const RoomItem = ({ room, baseUrl, pluginId }) => {
+  const currentWorkspaceShort = localStorage.getItem("currentWorkspaceShort");
+
   const { t } = useTranslation();
-  let currentWorkspace = localStorage.getItem("currentWorkspace");
   const [click, isClicked] = useClick();
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const pluginIdPath = `plugin-${pluginId.replace(".zuri.chat", "")}`;
   const pluginRoomId = room.room_id || "";
+  const pluginRoomId_short = room.room_short || "";
   const match = useRouteMatch(
-    `/workspace/${currentWorkspace}/${pluginIdPath}/${pluginRoomId}`
+    `/workspace/${currentWorkspaceShort}/${pluginIdPath}/${pluginRoomId_short}`
   );
+
   function useClick() {
     const [value, setValue] = useState(false);
     const ref = useRef(null);
@@ -63,7 +66,7 @@ const RoomItem = ({ room, baseUrl, pluginId }) => {
       }}
     >
       <a
-        href={`/workspace/${currentWorkspace}/${pluginIdPath}/${pluginRoomId}`}
+        href={`/workspace/${currentWorkspaceShort}/${pluginIdPath}/${pluginRoomId_short}`}
         className={`row ${styles.item_name}`}
         style={{ textDecoration: "none" }}
         onClick={navigateToUrl}
