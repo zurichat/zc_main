@@ -14,7 +14,7 @@ export const MessageBoardContainer = styled.section`
     flex-direction: column;
     overflow: hidden scroll;
     box-sizing: border-box;
-    padding-top: 2rem;
+    padding-top: 3rem;
 
     .msg-container {
       margin: 8px 10px;

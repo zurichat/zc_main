@@ -45,5 +45,6 @@ export const WorkspaceWrapperStyle = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
   }
 `;
