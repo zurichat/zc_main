@@ -234,7 +234,7 @@ const Sidebar = props => {
                 image={phoneicon}
                 link={`/workspace/${currentWorkspaceShort}/voice-call`}
               />
-
+              <div className={styles.sb__divider} />
               <Starred starredRooms={starredRooms} />
               {singleItems}
               {categorizedItems}
