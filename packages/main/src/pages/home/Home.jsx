@@ -76,42 +76,36 @@ export default function Index() {
       <div className={`${styles.homepage}`} style={textAlign()}>
         {/* HERO */}
         <div className={`${styles.hero_wrap}`}>
-          <div className={`hero ${styles.hero}`}>
-            <div className={`${styles.hero_left}`}>
-              <div className={`${styles.hero_left_texts}`}>
-                <p className={`${styles.hero_text_one}`}>
-                  {t("landing_hero_pre_headline")}
-                </p>
-                <h1 className={`${styles.hero_heading}`}>
-                  {t("landing_hero_headline")}
-                </h1>
-                <p className={`${styles.hero_p}`}>
-                  {t("landing_hero_post_headline")}
-                </p>
-              </div>
-              <div className={styles.hero_btn}>
-                <Link to="/signup">
-                  <button className={`${styles.hero_left_btn}`}>
-                    {t("landing_hero_call_to_action")}
-                  </button>
-                </Link>
-              </div>
+        <div className={`hero ${styles.hero}`}>
+          <div className={`${styles.hero_left}`}>
+            <div className={`${styles.hero_left_texts}`}>
+              <h1 className={`${styles.hero_heading}`}>
+                {t("landing_hero_headline")}
+              </h1>
             </div>
-            <div className={`${styles.hero_right}`}>
-              <img
-                src={MacBookAirWithZuriChatPreview}
-                className={`${styles.hero_img}`}
-                alt="mac"
-              />
+            <div className={styles.hero_btn}>
+              <Link to="/signup">
+                <button className={`${styles.hero_left_btn}`}>
+                  {t("landing_hero_call_to_action")}
+                </button>
+              </Link>
             </div>
           </div>
+          <div className={`${styles.hero_right}`}>
+            <img
+              src={MacBookAirWithZuriChatPreview}
+              className={`${styles.hero_img}`}
+              alt="mac"
+            />
+          </div>
         </div>
+      </div>
 
         {/* { COOKIES BANNER} */}
         <div>{showCookies ? "" : <CookiesNotification />}</div>
 
         {/* FEATURES */}
-        <div className={`${styles.features_wrap}`}>
+        {/* <div className={`${styles.features_wrap}`}>
           <div className={`${styles.features}`}>
             <FeatureRow
               src={SeamlessCommunicationPreview}
@@ -157,10 +151,10 @@ export default function Index() {
               rowOrder={styles.ft_row_reverse}
             />
           </div>
-        </div>
+        </div> */}
 
         {/* SIGN UP NOW CTA */}
-        <div className={`${styles.sign_up_banner_wrap}`}>
+        {/* <div className={`${styles.sign_up_banner_wrap}`}>
           <div className={`${styles.sign_up_banner}`}>
             <div className={`${styles.sign_up_left}`}>
               <p className={`${styles.sign_up_left_p}`}>
@@ -180,12 +174,12 @@ export default function Index() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
-      <SubscribeToNewsletter />
+      {/* <SubscribeToNewsletter /> */}
       {/* COMPANIES */}
-      <div className={`${styles.company_banner_wrap}`}>
+      {/* <div className={`${styles.company_banner_wrap}`}>
         <div className={`${styles.company_banner}`}>
           <p className={`${styles.cbp}`}>
             {t("landing_hero_trusted_companies")}
@@ -197,7 +191,7 @@ export default function Index() {
             <img src={ZuriInternshipLogo} alt="" className={`${styles.logo}`} />
           </div>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </div>
   );
