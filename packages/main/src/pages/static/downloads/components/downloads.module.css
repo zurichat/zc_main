@@ -4,10 +4,6 @@ body {
   font-family: "Lato", sans-serif !important;
 }
 
-.section {
-  padding-top: 70px;
-}
-
 .intro {
   background: #CCF1E5;
   display: flex;
