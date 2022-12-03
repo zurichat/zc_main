@@ -54,7 +54,7 @@ const ToolbarBottom = props => {
   } = props;
   const [focus, setFocus] = useState(false);
   const toggleFocus = () => setFocus(!false);
-  const [attachedFile, setAttachedFile] = useState(null);
+  const [attachedFile, setAttachedFile] = useState([]);
   const [inputKey, setInputKey] = useState("any-key-press");
   const [showAttachInputBox, setshowAttachInputBox] = useState(false);
   //const [preview, setPreview] = useState('')
@@ -81,13 +81,12 @@ const ToolbarBottom = props => {
   //Handles sending of attachedfile
   const handleAttachMedia = e => {
     {
-      e.preventDefault();
+      // e.preventDefault();
       //Post request is sent here
-      sendMessageHandler(attachedFile);
-
+      sendAttachedFileHandler(attachedFile);
       //Then this is to clear the file from the state
-      props.sentAttachedFile(null);
-      clearAttached();
+      // props.sentAttachedFile(null);
+      // clearAttached();
     }
   };
 
@@ -96,9 +95,10 @@ const ToolbarBottom = props => {
   };
 
   const handleSelectMedia = e => {
-    setAttachedFile(e.target.files);
-    props.sentAttachedFile(e.target.files);
+    setAttachedFile([e.target.files[0], ...attachedFile]);
+    props.sentAttachedFile([e.target.files[0], ...attachedFile]);
     setshowAttachInputBox(false);
+    handleAttachMedia();
   };
 
   // on click clear attached file
@@ -222,7 +222,7 @@ const ToolbarBottom = props => {
           </span>
         </FormatContainer>
         <SendContainer>
-          <UnstyledButton onClick={handleClickSendMessage || handleAttachMedia}>
+          <UnstyledButton onClick={handleClickSendMessage}>
             <SendIcon />
           </UnstyledButton>
         </SendContainer>
