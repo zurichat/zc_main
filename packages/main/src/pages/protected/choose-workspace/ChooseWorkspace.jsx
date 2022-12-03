@@ -35,10 +35,9 @@ export default function Index() {
     }
   }, []);
   const history = useHistory();
-  
 
   return (
-    <div >
+    <div>
       {/* <TopNavigationBar /> */}
 
       <div style={{ paddingTop: "5em" }} />
