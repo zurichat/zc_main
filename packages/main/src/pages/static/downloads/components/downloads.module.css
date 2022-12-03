@@ -21,11 +21,11 @@ body {
 }
 
 .introText h2 {
-    font-weight: 700;
-    font-size: 35px;
-    color: #090809;
-    text-align: center;
-    line-height: 45px;
+  font-weight: 700;
+  font-size: 35px;
+  color: #090809;
+  text-align: center;
+  line-height: 45px;
 }
 
 .buttons {
@@ -94,8 +94,8 @@ body {
 }
 
 .introText h2 {
-    font-size: 48px;
-    text-align: left;
+  font-size: 48px;
+  text-align: left;
 }
 
 .buttons {
