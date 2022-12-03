@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unknown-property */
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router-dom";
@@ -20,6 +19,13 @@ import he from "./assets/language/he.png";
 import nl from "./assets/language/nl.png";
 import pt from "./assets/language/pt.png";
 import world from "./assets/language/world.png";
+
+import {
+  NovuProvider,
+  PopoverNotificationCenter,
+  NotificationBell,
+  IMessage
+} from "@novu/notification-center";
 
 export default function TopNavigationBar() {
   const { t } = useTranslation();
@@ -45,11 +51,13 @@ export default function TopNavigationBar() {
 
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isUserLoggedIn, setUserLoggedIn] = React.useState(false);
+  const [user, setUser] = React.useState("");
 
   const checkIfUserIsLogged = () => {
     let user = JSON.parse(sessionStorage.getItem("user"));
     let token = sessionStorage.getItem("token");
     setUserLoggedIn(user && token);
+    setUser(user);
   };
 
   React.useEffect(() => {
@@ -148,7 +156,15 @@ export default function TopNavigationBar() {
           aria-label="Toggle navigation"
         >
           <span className={TopNavigationBarStyles.navbar_toggle_icon}>
-              <FaBars />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" />
+            </svg>
           </span>
         </button>
 
@@ -172,13 +188,13 @@ export default function TopNavigationBar() {
             </li>
             <li className="nav-item">
               <NavLink
-                to="/docs.zuri.chat"
+                to="/documentt"
                 className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
                 role="button"
                 aria-expanded="false"
               >
-                <span className={`px-2 ${TopNavigationBarStyles.item}`}>
-                  Documentation
+                <span className={`px-2${TopNavigationBarStyles.item}`}>
+                  {t("nav_documentation")}
                 </span>
               </NavLink>
             </li>
@@ -195,7 +211,22 @@ export default function TopNavigationBar() {
               </NavLink>
             </li>
           </ul>
-
+          {isUserLoggedIn && (
+            <div className={TopNavigationBarStyles.notification}>
+              <NovuProvider
+                backendUrl={"http://139.144.17.179:3000"}
+                socketUrl={"http://139.144.17.179:3002"}
+                subscriberId={user.id}
+                applicationIdentifier={"JJef8vc6vtAj"}
+              >
+                <PopoverNotificationCenter>
+                  {({ unseenCount }) => (
+                    <NotificationBell unseenCount={unseenCount} />
+                  )}
+                </PopoverNotificationCenter>
+              </NovuProvider>
+            </div>
+          )}
           <ul
             className={`d-lg-none navbar-nav-scroll ${TopNavigationBarStyles.signs}`}
           >
@@ -229,32 +260,6 @@ export default function TopNavigationBar() {
               title="Choose your Language"
             />{" "}
           </button>
-          {!isUserLoggedIn ? (
-            <>
-              <li>
-                <Link to="/login" className={`nav-link`}>
-                  <span className={`${TopNavigationBarStyles.signU}`}>
-                    {t("nav_login")}
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/signup" className={`nav-link`}>
-                  <span className={`${TopNavigationBarStyles.signIn}`}>
-                    {t("nav_signup")}
-                  </span>
-                </Link>
-              </li>
-            </>
-          ) : (
-            <li>
-              <Link to="/signout" className={`nav-link`}>
-                <span className={`${TopNavigationBarStyles.signOut}`}>
-                  {t("nav_signout")}
-                </span>
-              </Link>
-            </li>
-          )}
         </ul>
       </nav>
     </header>
