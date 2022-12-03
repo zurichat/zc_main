@@ -10,6 +10,7 @@
   background-color: white;
   width: 100%;
   position: relative;
+  margin: 0 15px;
 }
 
 .navbar_toggle_icon span {
@@ -65,7 +66,6 @@
   padding: 5px;
   background-color: white;
   border: 0;
-  margin-top: -1rem;
 }
 
 .world:hover {
@@ -86,7 +86,6 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  margin-top: 2.2vh;
 }
 
 .country_logo {
@@ -116,14 +115,13 @@
   color: #00b87c;
   font-weight: 400;
   font-size: 18px;
-  padding: 7px 15px;
-  border-radius: 4px;
-  border: 1px solid #00b87c;
+  padding-top: 20px;
+  padding-bottom: 0;
 }
+
 .signU:hover {
-  background-color: #156349;
-  color: white;
-  border: 1px solid transparent;
+  padding-bottom: 6px;
+  border-bottom: 0.2rem solid #00b87c;
 }
 .signIn {
   background-color: #00b87c;
@@ -181,10 +179,9 @@
   margin-left: 8px;
 }
 
-@media only screen and (max-width: 1200px) {
-  .navbarNav {
-    flex-basis: 80%;
-  }
+/*@media only screen and (max-width: 1200px) {*/
+.navbarNav {
+  flex-basis: 80%;
 }
 
 @media only screen and (max-width: 992px) {
@@ -192,26 +189,42 @@
     display: none;
   }
 
-  .signU {
-    color: #00b87c;
-    font-weight: 400;
-    font-size: 18px;
-    padding: 7px 15px;
-    border-radius: 4px;
-    border: 1px solid #00b87c;
+  .navbarNav {
+    text-align: center;
+    justify-content: center;
   }
 
-  .signU:hover {
-    background-color: #156349;
-    color: white;
-    border-bottom: 0.2rem solid #00b87c;
+  .navbarNav li {
+    padding: 5px 0;
+  }
+
+  .signs {
+    display: grid;
+    padding: 10px 0;
+    margin: 0;
   }
 
   .signs li {
-    display: block;
     margin: 0.9rem 0;
     list-style: none;
+    width: 100%;
+    margin: 0;
     padding: 0;
+  }
+  .signs li a span {
+    width: 100%;
+  }
+  .signs a {
+    width: 100%;
+    text-align: center;
+    display: flex;
+  }
+  .signIn,
+  .signU {
+    width: 100%;
+    border: 1px solid #e8e7e7;
+    padding: 12px;
+    margin: 0;
   }
 
   .notification {
@@ -292,7 +305,6 @@
   .navbarBrand {
     padding-left: 0;
   }
-
   .search_wrapper2 {
     margin-right: -10%;
   }
