@@ -6,9 +6,7 @@ const ContactMain = () => {
   return (
     <div className={`${contactStyle.contactPageContainer}`}>
       <div className={`${contactStyle.contactHead}`}>
-        <div className={contactStyle.boardContainer}>
-          <ContactMainBoard />
-        </div>
+        <ContactMainBoard />
       </div>
     </div>
   );
