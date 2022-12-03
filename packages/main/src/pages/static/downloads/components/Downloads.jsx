@@ -41,7 +41,14 @@ const Downloads = () => {
           </div>
           <div className={styles.introText}>
             <h2>Download Zuri Chat</h2>
-            <button type="button">{t("downloads.button")}</button>
+            <div className={styles.buttons}>
+              <button type="button" className={styles.mobile}>
+                <a href="">Download for Mobile</a>
+              </button>
+              <button type="button" className={styles.desktop}>
+                <a href="#">Download for Desktop</a>
+              </button>
+            </div>
           </div>
         </div>
       </section>

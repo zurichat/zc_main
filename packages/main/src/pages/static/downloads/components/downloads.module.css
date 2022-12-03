@@ -28,14 +28,44 @@ body {
     line-height: 45px;
 }
 
-.introText button {
+.buttons {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.mobile a,
+.desktop a {
+  text-decoration: none;
+}
+
+.mobile a {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.desktop a {
+  font-weight: 700;
+  font-size: 14px;
+  color: #00B87C;
+}
+
+.buttons .mobile {
   text-align: center;
   padding: 10px 24px;
   background: #00B87C;
   border-radius: 4px;
-  font-weight: 700;
-  font-size: 14px;
-  color: #FFFFFF;
+}
+
+.buttons .desktop {
+  text-align: center;
+  padding: 10px 24px;
+  border: 1px solid #00B87C;
+  background: #fff;
+  border-radius: 4px;
 }
 
 .introImg img {
@@ -66,5 +96,9 @@ body {
 .introText h2 {
     font-size: 48px;
     text-align: left;
+}
+
+.buttons {
+  flex-direction: row;
 }
 }
