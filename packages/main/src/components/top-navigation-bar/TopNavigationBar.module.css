@@ -1,9 +1,6 @@
 .pageHeader {
   box-shadow: 0 0.5rem 1rem rgba(187, 186, 231, 0.15);
   background-color: white;
-  /* top: 0;
-  z-index: 100;
-  position: fixed; */
   font-family: "Lato";
   width: 100%;
 }
@@ -15,6 +12,13 @@
 }
 .navbar_toggle_icon span {
   padding: 0.1rem 0.3rem;
+  line-height: 1;
+  width: 30px;
+  height: 5px;
+  margin: 5px 0;
+  text-align: center;
+  justify-content: center;
+  background: rgb(85, 83, 83);
   border-radius: 4px;
 }
 .modal_header button {
@@ -148,6 +152,12 @@ justify-content:space-between
   padding-bottom: 2px;
   border-bottom: 0.2rem solid #00b87c;
 }
+.toggle {
+  margin-right: 28px;
+  margin-left: 8px;
+}
+
+/*@media only screen and (max-width: 1200px) {
 .navbarNav {
   flex-basis: 80%;
 }
