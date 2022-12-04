@@ -1,7 +1,7 @@
 .dropDown,
 .dropdown_active {
   cursor: pointer;
-  padding: 4px 20px;
+  padding: 1px 20px;
 }
 
 .dropDown:hover,
@@ -147,7 +147,9 @@
 .item__image,
 .item__imageBlack,
 .item__imageWhite {
-  width: 20px;
+  width: 15px;
+  margin-right: 4px;
+  object-fit: cover;
 }
 
 .optionsContainer {
