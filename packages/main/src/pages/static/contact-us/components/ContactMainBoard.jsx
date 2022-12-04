@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import contactStyle from "./ContactMainBoard.module.css";
-
+import { useTranslation } from "react-i18next";
 import { BASE_API_URL } from "@zuri/utilities";
 import axios from "axios";
 
 const ContactMainBoard = () => {
+  const { t } = useTranslation();
   const [formValues, setFormValues] = useState({
     email: "",
     message: "",
@@ -22,17 +23,17 @@ const ContactMainBoard = () => {
   const formLogic = values => {
     let error = {};
     if (!values.email) {
-      error.email = "Please type in an email";
+      error.email = `${t("contact_blankEmail")}`;
     } else if (
       !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
         values.email
       )
     ) {
-      error.email = "Email is invalid.";
+      error.email = `${t("Contact_invalidEmail")}`;
     }
 
     if (!values.message) {
-      error.message = "Please type in a message";
+      error.message = `${t("contact_blankMessage")}`;
     }
 
     return error;
@@ -58,7 +59,7 @@ const ContactMainBoard = () => {
           email: "",
           message: "",
           errorMessage: "",
-          successMessage: "Contact information sent successfully",
+          successMessage: `${t("contact_successfulmessage")}`,
           loading: false
         }));
         setTimeout(() => {
@@ -72,7 +73,7 @@ const ContactMainBoard = () => {
       .catch(e => {
         setFormValues(formValues => ({
           ...formValues,
-          errorMessage: "Error sending details pls try again",
+          errorMessage: `${t("Contact_messageAsk")}`,
           successMessage: "",
           loading: false
         }));
@@ -95,7 +96,7 @@ const ContactMainBoard = () => {
   return (
     <div className={contactStyle.contactMainBoardContainer}>
       <div className={contactStyle.contactMainBoardInnerContainer}>
-        <p className={contactStyle.contactTitle}>Contact Us</p>
+        <p className={contactStyle.contactTitle}>{t("contactHead")}</p>
         <div className={contactStyle.messageContainer}>
           {formValues.errorMessage ? (
             <span className={contactStyle.errorMessage}>
@@ -111,7 +112,7 @@ const ContactMainBoard = () => {
 
         <form className={contactStyle.contactFormContainer}>
           <div className={contactStyle.inputGroup}>
-            <label htmlFor="email">Your Email Address</label>
+            <label htmlFor="email">{t("formEmail")}</label>
             <input
               required
               name="email"
@@ -121,13 +122,13 @@ const ContactMainBoard = () => {
                 setFormValues({ ...formValues, email: e.target.value })
               }
               value={formValues.email}
-              placeholder="You@example.com"
+              placeholder={t("Contact_emailExample")}
             />
             <small>{formValues.errors?.email}</small>
           </div>
 
           <div className={contactStyle.inputGroup}>
-            <label htmlFor="message">Tell us what you need help with:</label>
+            <label htmlFor="message">{t("Contact_messageAsk")}</label>
             <textarea
               required
               name="message"
@@ -136,7 +137,7 @@ const ContactMainBoard = () => {
                 setFormValues({ ...formValues, message: e.target.value })
               }
               value={formValues.message}
-              placeholder="Enter any topic"
+              placeholder={t("anyTopic")}
             />
             <small>{formValues.errors?.message}</small>
           </div>
@@ -146,12 +147,14 @@ const ContactMainBoard = () => {
               onClick={handleSubmit}
               className={contactStyle.contactBtn}
             >
-              {formValues.loading ? "Loading..." : "GET HELP"}
+              {formValues.loading
+                ? `${t("Contact_loadingText")}`
+                : `${t("getHelp")}`}
             </button>
           </div>
         </form>
         <div className={contactStyle.privacyPolicy}>
-          <a href="/privacy">Privacy Policy</a>
+          <a href="/privacy">{t("privacy")}</a>
         </div>
       </div>
     </div>
