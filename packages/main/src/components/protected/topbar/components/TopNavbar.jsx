@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import ReactTooltip from "react-tooltip";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -10,7 +10,7 @@ import { TopbarContext } from "../context/topbar.context";
 
 import { authAxios } from "../utils/api";
 import { getUserInfo, subscribeToChannel } from "@zuri/utilities";
-
+import { useLocation } from "react-router-dom";
 import Profile from "./Profile";
 import { BigModal } from "./BigModal";
 import TopBarSearchModal from "./TopBarSearchModal";
@@ -33,11 +33,29 @@ const TopNavbar = ({ toggleSidebar }) => {
 
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext);
-  const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
-    useContext(ProfileContext);
+  const {
+    setUser,
+    user,
+    userProfileImage,
+    setOrgId,
+    orgId,
+    setUserProfileImage
+  } = useContext(ProfileContext);
 
   const state = useContext(TopbarContext);
   const [showModal] = state.show;
+  const location = useLocation();
+  const urlsList = JSON.parse(localStorage.getItem("urlsTracker"));
+
+  const getRealUrl = () => {
+    const visibleUrl = location?.pathname?.split("/")[2];
+    if (visibleUrl.length > 8) return visibleUrl;
+    if (urlsList) {
+      return urlsList.workspaceIds?.find(url => url.short_id === visibleUrl)
+        ?.real_id;
+    }
+    return visibleUrl;
+  };
 
   const [organizations, setOrganizations] = useState([]);
 
@@ -46,6 +64,7 @@ const TopNavbar = ({ toggleSidebar }) => {
   const [messages, setMessages] = useState("");
   const [isSearchOpen, setOpenSearch] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const userdef = JSON.parse(sessionStorage.getItem("user"));
 
   const onSearchSubmit = e => {
     if (e.keyCode === 13 && searchValue.length >= 1) {
@@ -80,7 +99,8 @@ const TopNavbar = ({ toggleSidebar }) => {
         event.event === "UpdateOrganizationMemberPresence"
       ) {
         if (event.id === session_user["id"]) {
-          UpdateInfo();
+          // UpdateInfo();
+          getProfileImage();
         } else return;
       } else return;
     });
@@ -97,16 +117,11 @@ const TopNavbar = ({ toggleSidebar }) => {
   //       .then(response => {
   //         setMessages(response.data.results)
   //       })
-  //       .catch(err => {
-  //         console.error(err)
-  //       })
   //   }
   //   searchFunction()
   // }, [search])
 
   useEffect(() => {
-    const userdef = JSON.parse(sessionStorage.getItem("user"));
-
     async function getOrganizations() {
       await authAxios
         .get(`/users/${userdef.email}/organizations`)
@@ -124,29 +139,29 @@ const TopNavbar = ({ toggleSidebar }) => {
               return response.data.data.find(
                 member => member.email === userdef.email
               );
-            })
-            .catch(err => {
-              console.error(err.response.data);
             });
-        })
-        .catch(err => {
-          console.error(err);
         });
     }
 
     getOrganizations();
   }, [setOrgId, user.image_url, setUser]);
 
-  useEffect(() => {
-    UpdateInfo();
-  }, [userProfileImage]);
+  const getProfileImage = useCallback(() => {
+    return async () => {
+      try {
+        const res = await authAxios.get(
+          `/organizations/${orgId}/members/${user._id}`
+        );
+        setUserProfileImage(res.data.data.image_url);
+      } catch (err) {
+        console.error("Error", err);
+      }
+    };
+  }, []);
 
-  const UpdateInfo = () => {
-    getUserInfo().then(res => {
-      setUserProfileImage(res?.user.image_url);
-      setUser(res.user);
-    });
-  };
+  useEffect(() => {
+    getProfileImage();
+  }, []);
 
   let toggleStatus = null;
 
@@ -239,7 +254,7 @@ const TopNavbar = ({ toggleSidebar }) => {
     navigateToUrl("/search");
   };
   return (
-    <TopbarWrapper>
+    <TopbarWrapper id="topBarWrapper">
       {
         <div
           className={`${toggleSidebar && styles["mobile__sidebar__open"]} ${

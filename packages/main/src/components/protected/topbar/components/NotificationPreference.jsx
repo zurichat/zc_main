@@ -67,23 +67,12 @@ const NotificationPreference = () => {
   // })
 
   const setData = notification => {
-    authAxios
-      .patch(
-        `/organizations/${user.org_id}/members/${user._id}/settings/notification`,
-        notification
-      )
-      .then(res => {
-        // console.log("save data res =>", res.data)
-        // setState({ loading: false })
-      })
-      .catch(err => {
-        // console.error(err?.response?.data)
-        // setState({ loading: false })
-      });
+    authAxios.patch(
+      `/organizations/${user.org_id}/members/${user._id}/settings/notification`,
+      notification
+    );
   };
 
-  // console.log("show user =>", user)
-  // console.log("notify =>", notificationSettings)
   const handleKeywordChange = e => {
     setKeywordInput(e.target.value);
     let newKeyword = keywordInput;
@@ -252,7 +241,7 @@ const NotificationPreference = () => {
   };
 
   return (
-    <div className={styles.notifications}>
+    <>
       {/*  THE SECTION OF THE CONTENT */}
       <div className={standardStyles.modalContent}>
         <div className={styles.itemTitle1}>
@@ -556,7 +545,7 @@ const NotificationPreference = () => {
           </label>
         </div> */}
       </div>
-    </div>
+    </>
   );
 };
 

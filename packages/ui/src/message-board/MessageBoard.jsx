@@ -20,6 +20,7 @@ function MessageBoard({
   onSendMessage,
   onSendAttachedFile,
   onReact,
+  height,
   onHandleScroll
 }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false);
@@ -85,7 +86,7 @@ function MessageBoard({
 
   return (
     <>
-      <MessageBoardContainer>
+      <MessageBoardContainer height={height}>
         <div className="MsgBoard" onScroll={onHandleScroll}>
           {Array.from(new Set(messages.map(a => a._id)))
             .map(id => {
@@ -103,7 +104,6 @@ function MessageBoard({
             ))}
           <div ref={messagesEndRef} />
         </div>
-
         {isLoadingMessages && (
           <div className="text-center">
             <div
@@ -115,7 +115,6 @@ function MessageBoard({
             </div>
           </div>
         )}
-
         <div className="input-text">
           <MessagePaneInput
             onSendMessage={handleSendMessage}
@@ -143,7 +142,6 @@ function MessageBoard({
     </>
   );
 }
-
 MessageBoard.propTypes = {
   currentUserId: PropTypes.string,
   messages: PropTypes.array.isRequired,

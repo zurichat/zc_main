@@ -36,8 +36,9 @@
 }
 .hero {
   display: flex;
-  padding: 7.5rem var(--page-pad-desk);
+  padding: 10rem var(--page-pad-desk);
   padding-bottom: 2rem;
+  background-color: #CCF1E5;
 }
 .hero_left,
 .hero_right {
@@ -46,7 +47,7 @@
 .hero_left {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
 }
 .hero_text_one {
@@ -56,7 +57,7 @@
   font-weight: bolder;
 }
 .hero_heading {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1;
   margin: 2rem 0 1rem 0;
@@ -67,7 +68,7 @@
   line-height: 2;
 }
 .hero_btn {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .hero_left_btn {
   padding: 1rem 1.5rem;
@@ -284,12 +285,19 @@
 
   /* * HERO ----------------------------- */
   .hero {
-    flex-direction: column;
-    padding: 7.5rem var(--page-pad-mid);
+    flex-direction: column-reverse;
+    padding: 10rem var(--page-pad-mid);
+    padding-bottom: 0;
   }
 
   .hero_left {
     margin-bottom: 5rem;
+    text-align: center;
+  }
+  .hero_left_texts {
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
   }
   .hero_text_one {
     font-size: 0.875rem;
@@ -382,10 +390,14 @@
 
   /* * HERO ----------------------------- */
   .hero {
-    padding: 7.5rem var(--page-pad-mob);
+    padding: 7.5rem var(--page-pad-mob);   
+    padding-bottom: 0;
   }
   .hero_left {
     margin-bottom: 5rem;
+  }
+  .hero_left_texts {
+    width: 95%;
   }
   .hero_text_one {
     font-size: 0.875rem;
