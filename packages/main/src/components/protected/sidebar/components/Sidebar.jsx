@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
 import liveicon from "../assets/icons/newlive.svg";
+import phoneicon from "../assets/icons/phone.svg";
 import draftIcon from "../assets/icons/draft-icon.svg";
 import { subscribeToChannel } from "@zuri/utilities";
 import { ACTIONS } from "../reducers/sidebar.reducer";
@@ -18,7 +19,10 @@ import { storeSideBarInfo } from "../../../../utils/cache-sidebar";
 const categories = [];
 
 const Sidebar = props => {
-  let currentWorkspace = localStorage.getItem("currentWorkspace");
+  let currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+  let currentWorkspaceShort =
+    localStorage.getItem("currentWorkspaceShort") || null;
+
   const { t } = useTranslation();
 
   const [nullValue, setnullValue] = useState(0);
@@ -204,32 +208,33 @@ const Sidebar = props => {
               <SingleRoom
                 name={`${t("workspace_chat.threads")}`}
                 image={threadIcon}
-                link={`/workspace/${currentWorkspace}/plugin-chat/threads`}
+                link={`/workspace/${currentWorkspaceShort}/plugin-chat/threads`}
               />
               <SingleRoom
                 name={`${t("workspace_chat.alldms")}`}
                 image={dmIcon}
-                link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
+                link={`/workspace/${currentWorkspaceShort}/plugin-chat/all-dms`}
               />
               <SingleRoom
                 name="Video Chat"
                 image={dmIcon}
-                link={`/workspace/${currentWorkspace}/video-chat`}
+                link={`/workspace/${currentWorkspaceShort}/video-chat`}
               />
               <SingleRoom
                 name={`${t("workspace_chat.drafts")}`}
                 image={draftIcon}
               />
-
               <SingleRoom
                 name="LiveBroadcast"
                 image={liveicon}
-                link={`/workspace/${currentWorkspace}/LiveBroadcast`}
+                link={`/workspace/${currentWorkspaceShort}/LiveBroadcast`}
               />
-
-              <hr color="#d4d4d4" />
-              <hr color="#d4d4d4" />
-
+              <SingleRoom
+                name="Voice Call"
+                image={phoneicon}
+                link={`/workspace/${currentWorkspaceShort}/voice-call`}
+              />
+              <div className={styles.sb__divider} />
               <Starred starredRooms={starredRooms} />
               {singleItems}
               {categorizedItems}

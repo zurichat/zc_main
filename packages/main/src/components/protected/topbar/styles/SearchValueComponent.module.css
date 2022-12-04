@@ -1,7 +1,5 @@
 .card_cont {
   display: flex;
-  align-items: flex-start;
-  margin: 0.5em 0;
   cursor: pointer;
 }
 
@@ -9,7 +7,6 @@
   border: 1px solid #1d1c1d21;
   border-radius: 0.6em;
   padding: 0.5em 1em;
-  margin: 0.5em 0;
 }
 
 .resultCard:hover {
@@ -24,7 +21,6 @@
 
 .card_desc {
   padding: 0 0.8em;
-  max-width: 500px;
 }
 
 .created_date {
@@ -51,5 +47,20 @@
 }
 
 .result_card_desc {
-  font-size: 1.1em;
+  font-size: 0.8em;
+}
+
+.card_img img {
+  height: 50px;
+  width: 50px;
+  border-radius: 4px;
+  max-width: 50px;
+}
+
+.card_desc button :hover {
+  color: #00b87c;
+}
+
+.card_desc p {
+  display: inline;
 }
