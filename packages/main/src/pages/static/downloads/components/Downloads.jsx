@@ -40,7 +40,7 @@ const Downloads = () => {
             <img src={chat} alt="zuri chat img" />
           </div>
           <div className={styles.introText}>
-            <h2>Download Zuri Chat</h2>
+            <h2>{t("downloads_chat")}</h2>
             <div className={styles.buttons}>
               <button type="button" className={styles.mobile}>
                 <a
@@ -48,12 +48,12 @@ const Downloads = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Download for Mobile
+                  {t("downloads_mobile")}
                 </a>
               </button>
               <button type="button" className={styles.desktop}>
                 <a href="#" target="_blank" rel="noopener noreferrer">
-                  Download for Desktop
+                  {t("downloads_desktop")}
                 </a>
               </button>
             </div>
