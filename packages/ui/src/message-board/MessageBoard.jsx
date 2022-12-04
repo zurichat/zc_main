@@ -19,7 +19,8 @@ function MessageBoard({
   messages = [],
   onSendMessage,
   onSendAttachedFile,
-  onReact
+  onReact,
+  onHandleScroll
 }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [showEmoji, setShowEmoji] = useState(false);
@@ -85,7 +86,7 @@ function MessageBoard({
   return (
     <>
       <MessageBoardContainer>
-        <div className="MsgBoard">
+        <div className="MsgBoard" onScroll={onHandleScroll}>
           {Array.from(new Set(messages.map(a => a._id)))
             .map(id => {
               return messages.find(a => a._id === id);
