@@ -88,9 +88,7 @@ const ToolbarBottom = props => {
   const handleAttachMedia = () => {
     {
       //Post request is sent here
-      // sendMessageHandler(attachedFile);
-      // Function to upload files
-
+      
       //Then this is to clear the file from the state
       props.sentAttachedFile(null);
       clearAttached();
