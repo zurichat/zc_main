@@ -365,7 +365,7 @@ export default function TopNavigationBar() {
                 aria-expanded="false"
               >
                 <span className={`${TopNavigationBarStyles.item}`}>
-                  {t("nav_about")}
+                  {t("nav_aboutff")}
                 </span>
               </NavLink>
             </li>
