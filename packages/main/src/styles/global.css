@@ -189,6 +189,25 @@ h6 {
     left: 0px;
   } */
 
+[data-test-id="layout-wrapper"]{
+  background-color: white !important ;
+}
+[data-test-id="notifications-header-title"]{
+ color:#1E1E26   !important ;
+}
+[data-test-id="notification-list-item"]{
+ color:#1E1E26 !important  ;
+  background-color: #f5f3f3  !important ;
+}
+ [data-test-id="notification-bell"]{
+  margin-top:10px;
+ }
+ [data-test-id="user-preference-cog"] {
+  display:none;
+}
+ 
+
+
 /* Customize the label (the container) */
 .container {
   display: block;

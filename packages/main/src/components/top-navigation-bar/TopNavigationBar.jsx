@@ -37,13 +37,11 @@ export default function TopNavigationBar() {
 
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isUserLoggedIn, setUserLoggedIn] = React.useState(false);
-  const [user, setUser] = React.useState("");
 
   const checkIfUserIsLogged = () => {
     let user = JSON.parse(sessionStorage.getItem("user"));
     let token = sessionStorage.getItem("token");
     setUserLoggedIn(user && token);
-    setUser(user);
   };
 
   React.useEffect(() => {
