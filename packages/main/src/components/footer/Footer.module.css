@@ -89,7 +89,7 @@
 }
 
 .social ul {
-  display: inline-flex;
+  display: flex;
 }
 
 .social li {

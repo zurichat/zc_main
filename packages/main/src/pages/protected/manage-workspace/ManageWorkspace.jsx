@@ -179,7 +179,7 @@ const adminSettings = () => {
                 </span>
               </div>
               <div className={styles.settingsright}>
-                <Link to="/admin/name">
+                <Link to="/admin/settings/ManageWorkspace/ChangeWorkspaceName">
                   {" "}
                   <button> Set workspace name & URL </button>
                 </Link>

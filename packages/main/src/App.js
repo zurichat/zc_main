@@ -5,6 +5,7 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 // All components imported here
 import { GeneralErrorBoundary, GeneralLoading } from "./components";
 import ManageMembers from "./components/manage-members/ManageMembers";
+import ChangeWorkspaceName from "./components/change-workspace-name/ChangeWorkspaceName";
 
 // All utilities imported here
 import { withSuspense } from "./utils";
@@ -24,7 +25,8 @@ import {
   ResetPassword,
   ChangePassword,
   WhyZuriChat,
-  PrivacyPage
+  PrivacyPage,
+  ErrorPage
 } from "./pages";
 import TermsOfService from "../src-old/pages/termsOfService/index";
 import { useAuth } from "./auth/use-auth";
@@ -121,6 +123,12 @@ const App = () => (
           <ProtectedRoute exact path="/admin/settings/ManageWorkspace">
             <ManageWorkspace />
           </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/ManageWorkspace/ChangeWorkspaceName"
+          >
+            <ChangeWorkspaceName />
+          </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/managemembers">
             <ManageMembers />
           </ProtectedRoute>
@@ -136,11 +144,12 @@ const App = () => (
           <ProtectedRoute path="/workspace/:workspaceId">
             {withSuspense(Workspace)}
           </ProtectedRoute>
-          <Route
+          {/* <Route
             component={() => (
               <GeneralLoading text="404 - (Refactoring in Progress)" />
             )}
-          />
+          /> */}
+          <Route path="*" component={ErrorPage} />
         </Switch>
       </Suspense>
     </GeneralErrorBoundary>

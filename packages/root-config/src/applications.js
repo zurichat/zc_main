@@ -26,6 +26,11 @@ export const allPlugins = [
     title: "music",
     name: `${PluginImportPathPre}music`,
     pluginPath: `${PluginAppPathPre}music`
+  },
+  {
+    title: "taskManager",
+    name: `${PluginImportPathPre}task-manager`,
+    pluginPath: `${PluginAppPathPre}task-manager`
   }
   // { title: "deadlines", name: `${PluginImportPathPre}deadlines` },
   // { title: "goals", name: `${PluginImportPathPre}company-goals` },

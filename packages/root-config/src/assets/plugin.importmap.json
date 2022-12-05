@@ -14,6 +14,7 @@
     "@zuri/zuri-plugin-tools": "https://externaltools.zuri.chat/zuri-zuri-plugin-tools.js",
     "@zuri/zuri-plugin-channels": "https://channels.zuri.chat/static/main/dist/zuri-zuri-plugin-channels.js",
     "@zuri/zuri-plugin-contributions": "https://ct.zuri.chat/js/app.js",
-    "@zuri/zuri-plugin-messaging": "http://localhost:5013/zuri-messaging.js"
+    "@zuri/zuri-plugin-messaging": "http://localhost:5013/zuri-messaging.js",
+    "@zuri/zuri-plugin-task-manager": "http://task.zuri.chat/zuri-zuri-plugin-task-manager.js"
   }
 }

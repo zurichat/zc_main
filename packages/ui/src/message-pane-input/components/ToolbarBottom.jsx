@@ -88,12 +88,6 @@ const ToolbarBottom = props => {
   const handleAttachMedia = () => {
     {
       //Post request is sent here
-      if (attachedFile != null) {
-        sendAttachedFileHandler(attachedFile);
-      } else {
-        console.log("No attached files");
-      }
-      // Function to upload files
 
       //Then this is to clear the file from the state
       props.sentAttachedFile(null);
