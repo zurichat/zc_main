@@ -171,6 +171,15 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
     }
   };
 
+  const sendFile = contentState => {
+    // if (
+    //   contentState.hasText() &&
+    //   contentState.getPlainText().trim().length > 0
+    // ) {
+    onAttachFile(contentState);
+    clearEditor();
+    // }
+  };
   const handleKeyCommand = (command, editorState) => {
     const newState = RichUtils.handleKeyCommand(editorState, command);
     if (!newState) {
@@ -293,7 +302,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
             editorState={editorState}
             setEditorState={setEditorState}
             emojiSelect={<EmojiSelect />}
-            sendMessageHandler={sendMessage}
+            // sendMessageHandler={sendMessage}
             sendAttachedFileHandler={onAttachFile}
             sentAttachedFile={sentAttachedFile =>
               setSentAttachedFile(sentAttachedFile)
@@ -313,7 +322,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
           setEditorState={setEditorState}
           emojiSelect={<EmojiSelect />}
           sendMessageHandler={sendMessage}
-          sendAttachedFileHandler={onAttachFile}
+          sendAttachedFileHandler={sendFile}
           sentAttachedFile={sentAttachedFile =>
             setSentAttachedFile(sentAttachedFile)
           }
