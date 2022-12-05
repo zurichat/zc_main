@@ -9,6 +9,7 @@ import Workspace from "./pages/Workspace";
 import UserOrganizationsListing from "./components/UserOrganizationsListing";
 import TopBarModal from "./components/TopBarModal";
 import Preferences from "./components/Preferences";
+import EditWorkspace from "./components/EditWorkspace";
 
 import Subscribe from "./pages/Subscribe";
 import whyzurichat from "./pages/whyzurichat";
@@ -59,6 +60,7 @@ const Translations = [
   ...UserOrganizationsListing,
   ...Profile,
   ...TopBarModal,
+  ...EditWorkspace,
 
   ...DownloadDesktop,
   ...DownloadMobile,
