@@ -21,10 +21,11 @@ function MessageBoard({
   onSendAttachedFile,
   onReact,
   height,
-  onHandleScroll
+  onHandleScroll,
+  showEmoji,
+  setShowEmoji
 }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false);
-  const [showEmoji, setShowEmoji] = useState(false);
   const [shouldScrollToBottom, setScrollToBottom] = useState(true);
 
   const [top, setTop] = useState(null);
@@ -88,20 +89,16 @@ function MessageBoard({
     <>
       <MessageBoardContainer height={height}>
         <div className="MsgBoard" onScroll={onHandleScroll}>
-          {Array.from(new Set(messages.map(a => a._id)))
-            .map(id => {
-              return messages.find(a => a._id === id);
-            })
-            .map((message, i) => (
-              <MessagePane
-                key={`message-item-${i}`}
-                onShowMoreOptions={handleShowMoreOptions}
-                onShowEmoji={handleShowEmoji}
-                onEmojiClicked={handleEmojiClicked}
-                message={message}
-                currentUserId={currentUserId}
-              />
-            ))}
+          {messages.map((message, i) => (
+            <MessagePane
+              key={`message-item-${i}`}
+              onShowMoreOptions={handleShowMoreOptions}
+              onShowEmoji={handleShowEmoji}
+              onEmojiClicked={handleEmojiClicked}
+              message={message}
+              currentUserId={currentUserId}
+            />
+          ))}
           <div ref={messagesEndRef} />
         </div>
         {isLoadingMessages && (
