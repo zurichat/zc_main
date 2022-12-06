@@ -108,9 +108,10 @@ const TopNavbar = ({ toggleSidebar }) => {
     });
   }, []);
 
+  //This will update user's image everytime user details changes
   useEffect(() => {
-    console.log("after calling getUserInfo", user);
-  }, []);
+    setUserProfileImage(user.image_url);
+  }, [user]);
 
   // useEffect(() => {
   //   const searchFunction = async () => {
