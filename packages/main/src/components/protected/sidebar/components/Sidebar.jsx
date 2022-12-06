@@ -29,7 +29,7 @@ const Sidebar = props => {
 
   const sidebarRef = useRef(null);
   const [isResizing, setIsResizing] = useState(false);
-  const [sidebarWidth, setSidebarWidth] = useState(260);
+  const [sidebarWidth, setSidebarWidth] = useState(400);
 
   const startResizing = useCallback(() => {
     setIsResizing(true);
@@ -198,7 +198,7 @@ const Sidebar = props => {
       ref={sidebarRef}
       style={{ width: sidebarWidth }}
       onMouseDown={e => e.preventDefault()}
-      className={`container-fluid ${styles.sb__container}`}
+      className={`${styles.sb__container}`}
     >
       {sidebarWidth > 0 && (
         <div className={styles.sb__content}>
