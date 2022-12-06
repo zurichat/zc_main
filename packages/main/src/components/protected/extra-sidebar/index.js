@@ -7,12 +7,17 @@ import {
   BsGearFill,
   BsPlusCircle
 } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function ExtraSidebar() {
+  const { pathname } = useLocation();
   const [workspaces, setWorkspaces] = useState([]);
-  console.log("Got to render this");
+  const currentPlugin = localStorage.getItem("currentPlugin") || "plugin-chat";
+  const currentPluginRoom = localStorage.getItem("currentRoom") || "";
+  const defaultPluginRoom = `${currentPlugin}/${currentPluginRoom}`;
+
+  const isActive = id => pathname.includes(id);
 
   useEffect(() => {
     let mounting = true;
@@ -28,8 +33,6 @@ export default function ExtraSidebar() {
     };
   }, []);
 
-  console.log("workspaces length", workspaces.length);
-
   return workspaces.length ? (
     <>
       <div className="x-sb_workspaceBox">
@@ -40,21 +43,21 @@ export default function ExtraSidebar() {
             key={index}
             title={workSpace.name}
           >
-            <div
+            <Link
+              to={`/workspace/${workSpace.short_id}/${defaultPluginRoom}`}
               className={`${
-                window.location.pathname.includes(workSpace.short_id)
+                isActive(workSpace.short_id)
                   ? "x-sb_currentWorkspace"
                   : "x-sb_workspaceAvatar"
               }`}
               role="button"
-              // onClick={() => switchWorkspace(short_id)}
-              onClick={() => switchWorkspace(workSpace.short_id)}
+              // onClick={() => switchWorkspace(workSpace.short_id)}
               title={workSpace.name}
             >
               <div className="x-sb_workspaceAvatarM">
                 {getAcronymn(workSpace.name)}
               </div>
-            </div>
+            </Link>
             <div className="x-sb_workspaceInfo">
               <div>
                 <h3 className="x-sb_workspaceName">{workSpace.name}</h3>
@@ -120,18 +123,20 @@ async function getWorkspaces() {
       }
     );
 
+    let parsedWorkspaces = [];
     const workspaces = response.data.data;
     sessionStorage.setItem("organisations", JSON.stringify(workspaces));
 
-    addShortIds(workspaces);
-    return workspaces;
+    parsedWorkspaces = addShortIds(workspaces);
+    return parsedWorkspaces;
   }
 }
 
 function addShortIds(workspaces) {
+  let parsedWorkspaces = [];
   const urlsTracker = { workspaceIds: [] };
 
-  workspaces.map(workspace => {
+  parsedWorkspaces = workspaces.map(workspace => {
     urlsTracker.workspaceIds.push({
       real_id: workspace.id,
       short_id: `${workspace.id.slice(4, 6)}${workspace.id.slice(
@@ -147,6 +152,8 @@ function addShortIds(workspaces) {
     )[0]?.short_id;
     return workspace;
   });
+
+  return parsedWorkspaces;
 }
 
 const getAcronymn = sentence => {
@@ -155,8 +162,11 @@ const getAcronymn = sentence => {
   return acronym;
 };
 
-const switchWorkspace = id => {
-  console.log(id);
-  window.location.href = `/workspace/${id}/plugin-chat/all-dms`;
-  history.replace(`/workspace/${id}/plugin-chat/`);
-};
+// const switchWorkspace = id => {
+//   const currentPlugin = localStorage.getItem("currentPlugin") || "plugin-chat";
+//   const currentPluginRoom = localStorage.getItem("currentRoom") || "";
+//   const defaultPluginRoom = `${currentPlugin}/${currentPluginRoom}`;
+
+//   window.location.href = `/workspace/${id}/${defaultPluginRoom}`;
+//   history.replace(`/workspace/${id}/plugin-chat/`);
+// };
