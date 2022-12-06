@@ -54,7 +54,8 @@
 
 .menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
+  gap: 6em;
   margin-top: 0;
 }
 
@@ -116,11 +117,18 @@
   .footer {
     max-width: 940px;
   }
+  .menu {
+    gap: 4em;
+    margin-top: 0;
+  }
 }
 
 @media screen and (max-width: 940px) {
   .footer {
     max-width: 720px;
+  }
+  .menu {
+    gap: 3em;
   }
 }
 
