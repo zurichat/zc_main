@@ -24,7 +24,6 @@ export default function ExtraSidebar() {
 
     if (mounting)
       getWorkspaces().then(response => {
-        console.log("response here", response);
         setWorkspaces(() => response);
       });
 
@@ -161,12 +160,3 @@ const getAcronymn = sentence => {
   let acronym = matches.join("");
   return acronym;
 };
-
-// const switchWorkspace = id => {
-//   const currentPlugin = localStorage.getItem("currentPlugin") || "plugin-chat";
-//   const currentPluginRoom = localStorage.getItem("currentRoom") || "";
-//   const defaultPluginRoom = `${currentPlugin}/${currentPluginRoom}`;
-
-//   window.location.href = `/workspace/${id}/${defaultPluginRoom}`;
-//   history.replace(`/workspace/${id}/plugin-chat/`);
-// };
