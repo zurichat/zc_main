@@ -81,6 +81,8 @@ const TopNavbar = ({ toggleSidebar }) => {
       const userInfo = await getUserInfo();
       //Check if user id is valid and get user organization
       if (userInfo.user._id !== "") {
+        //updating user's profile image immediately the page loads
+        setUserProfileImage(userInfo.user.image_url);
         setUser(userInfo);
       }
     } catch (error) {
@@ -104,6 +106,10 @@ const TopNavbar = ({ toggleSidebar }) => {
         } else return;
       } else return;
     });
+  }, []);
+
+  useEffect(() => {
+    console.log("after calling getUserInfo", user);
   }, []);
 
   // useEffect(() => {
