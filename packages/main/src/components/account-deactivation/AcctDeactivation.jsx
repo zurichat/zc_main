@@ -1,6 +1,6 @@
 import { useHistory, Link } from "react-router-dom";
 import styles from "../account-deactivation/AcctDeactivation.module.css";
-import SettingsNav from "./SettingsNav";
+import SettingsNav from "../../components/settings-nav/SettingsNav";
 import alertTriangle from "../account-deactivation/assets/alertTriangle.svg";
 
 const AcctDeactivation = () => {
