@@ -40,12 +40,12 @@ const AcctDeactivation = () => {
           </p>
 
           <div>
-            <Link to="/confirm-deactivation">
+            <Link to="/admin/settings/accountsProfile/acct-deactivation/acct-deactivated">
               <button className={styles.deactivateButton}>
                 Yes, deactivate my account
               </button>
             </Link>
-            <Link to="/settings">
+            <Link to="/admin/settings/accountsProfile">
               <button className={styles.cancelButton}>Cancel</button>
             </Link>
           </div>
