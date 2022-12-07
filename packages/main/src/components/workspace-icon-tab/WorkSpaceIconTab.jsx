@@ -22,7 +22,7 @@ import {
   CropButtons,
   CancelButton,
   Logo
-} from "./workSpaceIconChange.js";
+} from "../workspace-icon-change/WorkSpaceIconChange";
 
 const WorkSpaceIconTab = () => {
   const imgRef = useRef(null);
@@ -143,13 +143,6 @@ const WorkSpaceIconTab = () => {
               <WorkSpaceDescription>
                 This icon will be used to identify your workspace in Zuri Chat.
               </WorkSpaceDescription>
-              {/* <Button onClick={handleLogoDelete}>
-                {loader.removeLoader ? (
-                  <Loader type="Oval" color="#fff" height={24} width={80} />
-                ) : (
-                  "Remove"
-                )}
-              </Button> */}
             </WorkSpaceDetail>
           </WorkSpaceDetailContainer>
           <GuidelinesContainer>
