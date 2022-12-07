@@ -10,6 +10,7 @@
   background-color: white;
   width: 100%;
   position: relative;
+  margin: 0 15px;
 }
 
 .navbar_toggle_icon span {
@@ -65,7 +66,6 @@
   padding: 5px;
   background-color: white;
   border: 0;
-  margin-top: -1rem;
 }
 
 .world:hover {
@@ -86,7 +86,6 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  margin-top: 2.2vh;
 }
 
 .country_logo {
@@ -120,11 +119,13 @@
   border-radius: 4px;
   border: 1px solid #00b87c;
 }
+
 .signU:hover {
   background-color: #156349;
   color: white;
   border: 1px solid transparent;
 }
+
 .signIn {
   background-color: #00b87c;
   color: white;
@@ -133,10 +134,12 @@
   padding: 8px 20px;
   border-radius: 4px;
 }
+
 .signIn:hover {
   background-color: #156349;
   color: white;
 }
+
 .signOut {
   background-color: #b83a00;
   color: white;
@@ -145,6 +148,7 @@
   padding: 8px 20px;
   border-radius: 4px;
 }
+
 .signOut:hover {
   background-color: #b83a00;
   color: white;
@@ -170,8 +174,7 @@
   padding-bottom: 0;
 }
 
-.navbarNav
- li span:hover {
+.navbarNav li span:hover {
   padding-bottom: 2px;
   border-bottom: 0.2rem solid #00b87c;
 }
@@ -192,6 +195,20 @@
     display: none;
   }
 
+  .navbarNav {
+    text-align: center;
+    justify-content: center;
+  }
+  .navbarNav li {
+    padding: 5px 0;
+  }
+
+  .signs {
+    display: grid;
+    padding: 10px 0;
+    margin: 0;
+  }
+
   .signU {
     color: #00b87c;
     font-weight: 400;
@@ -208,10 +225,28 @@
   }
 
   .signs li {
-    display: block;
     margin: 0.9rem 0;
     list-style: none;
+    width: 100%;
+    margin: 0;
     padding: 0;
+  }
+  .signs li a span {
+    width: 100%;
+  }
+
+  .signs a {
+    width: 100%;
+    text-align: center;
+    display: flex;
+  }
+
+  .signIn,
+  .signU {
+    width: 100%;
+    border: 1px solid #e8e7e7;
+    padding: 12px;
+    margin: 0;
   }
 
   .notification {
@@ -234,7 +269,7 @@
   .navbar {
     padding: 0.5rem;
   }
-  
+
   .language {
     left: 80vw;
   }
@@ -268,6 +303,7 @@
     padding-bottom: 0;
   }
 }
+
 @media only screen and (max-width: 680px) {
   .language {
     left: 78vw;

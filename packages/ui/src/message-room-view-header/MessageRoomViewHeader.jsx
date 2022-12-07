@@ -10,7 +10,13 @@ export default function MessageRoomViewHeader(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [tabIndex, setTabIndex] = useState(0);
   return (
-    <div>
+    <div
+      style={{
+        zIndex: "1",
+        position: "absolute",
+        width: "100%"
+      }}
+    >
       {showDialog && (
         <ChatRoomDetailsDialog
           showDialog={showDialog}

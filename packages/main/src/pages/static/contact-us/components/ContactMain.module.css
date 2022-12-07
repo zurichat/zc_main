@@ -1,5 +1,5 @@
 .contactPageContainer {
-  padding: 0;
+  padding: 5vh 0 0 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
@@ -9,7 +9,7 @@
 
 .contactHead {
   width: 100%;
-  margin-top: 75px;
+  margin-top: 20px;
   text-align: left;
 }
 
@@ -17,17 +17,4 @@
   display: flex;
   height: 100%;
   width: 100%;
-}
-
-@media only screen and (max-width: 600px) {
-  .contactHead p {
-    max-width: 300px;
-  }
-
-  .boardContainer{
-    display: flex;
-    flex-direction: column-reverse;
-    height: 100%;
-    width: 100%;
-  }
 }

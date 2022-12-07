@@ -29,7 +29,7 @@ const Sidebar = props => {
 
   const sidebarRef = useRef(null);
   const [isResizing, setIsResizing] = useState(false);
-  const [sidebarWidth, setSidebarWidth] = useState(260);
+  const [sidebarWidth, setSidebarWidth] = useState(250);
 
   const startResizing = useCallback(() => {
     setIsResizing(true);
@@ -55,7 +55,7 @@ const Sidebar = props => {
         document.querySelector("body").style.cursor = "col-resize";
 
         // collapse the sidebar on further minimization
-        if (newWidth <= 195) setSidebarWidth(0);
+        if (newWidth <= 230) setSidebarWidth(0);
       }
     },
     [isResizing]
@@ -198,7 +198,7 @@ const Sidebar = props => {
       ref={sidebarRef}
       style={{ width: sidebarWidth }}
       onMouseDown={e => e.preventDefault()}
-      className={`container-fluid ${styles.sb__container}`}
+      className={`${styles.sb__container}`}
     >
       {sidebarWidth > 0 && (
         <div className={styles.sb__content}>
@@ -234,7 +234,7 @@ const Sidebar = props => {
                 image={phoneicon}
                 link={`/workspace/${currentWorkspaceShort}/voice-call`}
               />
-
+              <div className={styles.sb__divider} />
               <Starred starredRooms={starredRooms} />
               {singleItems}
               {categorizedItems}

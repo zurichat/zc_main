@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router-dom";
@@ -19,13 +20,6 @@ import nl from "./assets/language/nl.png";
 import pt from "./assets/language/pt.png";
 import world from "./assets/language/world.png";
 
-import {
-  NovuProvider,
-  PopoverNotificationCenter,
-  NotificationBell,
-  IMessage
-} from "@novu/notification-center";
-
 export default function TopNavigationBar() {
   const { t } = useTranslation();
 
@@ -36,13 +30,11 @@ export default function TopNavigationBar() {
 
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isUserLoggedIn, setUserLoggedIn] = React.useState(false);
-  const [user, setUser] = React.useState("");
 
   const checkIfUserIsLogged = () => {
     let user = JSON.parse(sessionStorage.getItem("user"));
     let token = sessionStorage.getItem("token");
     setUserLoggedIn(user && token);
-    setUser(user);
   };
 
   React.useEffect(() => {
@@ -148,6 +140,19 @@ export default function TopNavigationBar() {
               </button>
               <button
                 className={`btn ${TopNavigationBarStyles.select}`}
+                value="zh"
+                onClick={() => saveLang("zh")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={zh}
+                  alt="Chinese"
+                  title="Chinese"
+                />{" "}
+                <span>Chinese</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
                 value="de"
                 onClick={() => saveLang("de")}
               >
@@ -158,6 +163,19 @@ export default function TopNavigationBar() {
                   title="Deutch"
                 />{" "}
                 <span>Deutch</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="ar"
+                onClick={() => saveLang("ar")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={ar}
+                  alt="Arabic"
+                  title="Arabic"
+                />{" "}
+                <span>Arabic</span>
               </button>
               <button
                 value="en"
@@ -210,6 +228,97 @@ export default function TopNavigationBar() {
                   title="Deutch"
                 />{" "}
                 <span>Deutch</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="ar"
+                onClick={() => saveLang("ar")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={ar}
+                  alt="Arabic"
+                  title="Arabic"
+                />{" "}
+                <span>Arabic</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="iw"
+                onClick={() => saveLang("iw")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={he}
+                  alt="Hebrew"
+                  title="Hebrew"
+                />{" "}
+                <span>Hebrew</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="es"
+                onClick={() => saveLang("es")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={es}
+                  alt="Spanish"
+                  title="Spanish"
+                />{" "}
+                <span>Spanish</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="it"
+                onClick={() => saveLang("it")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={it}
+                  alt="Italian"
+                  title="Italian"
+                />{" "}
+                <span>Italian</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="zh"
+                onClick={() => saveLang("zh")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={zh}
+                  alt="Chinese"
+                  title="Chinese"
+                />{" "}
+                <span>Chinese</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="pt"
+                onClick={() => saveLang("pt")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={pt}
+                  alt="Portuguese"
+                  title="Portguese"
+                />{" "}
+                <span>Portuguese</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="nl"
+                onClick={() => saveLang("nl")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={nl}
+                  alt="Dutch"
+                  title="Dutch"
+                />{" "}
+                <span>Dutch</span>
               </button>
             </Modal.Body>
           </Modal>
@@ -279,22 +388,7 @@ export default function TopNavigationBar() {
               </NavLink>
             </li>
           </ul>
-          {isUserLoggedIn && (
-            <div className={TopNavigationBarStyles.notification}>
-              <NovuProvider
-                backendUrl={"http://139.144.17.179:3000"}
-                socketUrl={"http://139.144.17.179:3002"}
-                subscriberId={user.id}
-                applicationIdentifier={"JJef8vc6vtAj"}
-              >
-                <PopoverNotificationCenter>
-                  {({ unseenCount }) => (
-                    <NotificationBell unseenCount={unseenCount} />
-                  )}
-                </PopoverNotificationCenter>
-              </NovuProvider>
-            </div>
-          )}
+
           <ul
             className={`d-lg-none navbar-nav-scroll ${TopNavigationBarStyles.signs}`}
           >
@@ -391,10 +485,10 @@ export default function TopNavigationBar() {
                 <img
                   className={TopNavigationBarStyles.country_logo}
                   src={de}
-                  alt="Deutsch"
-                  title="Deutsch"
+                  alt="Deutch"
+                  title="Deutch"
                 />{" "}
-                <span>Deutsch</span>
+                <span>Deutch</span>
               </button>
             </Modal.Body>
 
