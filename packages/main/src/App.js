@@ -9,6 +9,7 @@ import ChangeWorkspaceName from "./components/change-workspace-name/ChangeWorksp
 import DeleteWorkspace from "./components/delete-workspace/DeleteWorkspace";
 import AcctDeactivation from "./components/account-deactivation/AcctDeactivation";
 import AccDeactivated from "./components/account-deactivated/AccDeactivated";
+import ChangeEmail from "./components/change-email/ChangeEmail";
 
 // All utilities imported here
 import { withSuspense } from "./utils";
@@ -122,6 +123,12 @@ const App = () => (
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/accountsProfile">
             <AccountProfile />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/ChangeEmail"
+          >
+            <ChangeEmail />
           </ProtectedRoute>
           <ProtectedRoute
             exact
