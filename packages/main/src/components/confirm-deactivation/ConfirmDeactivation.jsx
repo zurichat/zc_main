@@ -52,7 +52,6 @@ const ConfirmDeactivation = () => {
             }
           }
         );
-        // console.log(res)
 
         removeUserSession();
         history.push("/account-deactivated");
