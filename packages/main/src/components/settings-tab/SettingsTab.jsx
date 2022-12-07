@@ -94,15 +94,18 @@ const SettingsTab = () => {
           </span>
           <br />
           <span>
-            <strong> Note:</strong> Don’t deactivate your account if you just
+            <strong> Note:</strong> Don't deactivate your account if you just
             want to{" "}
-            <NavLink to="/" className={styles.emailLink}>
+            <NavLink
+              to="/admin/settings/accountsProfile/ChangeEmail"
+              className={styles.emailLink}
+            >
               change your email address.
             </NavLink>
           </span>
         </div>
         <div className={styles.settingsright}>
-          <Link to="/settings/confirm-password">
+          <Link to="/admin/settings/accountsProfile/account-deactivation">
             <button className={styles.delete}>Deactivate your account</button>
           </Link>
         </div>

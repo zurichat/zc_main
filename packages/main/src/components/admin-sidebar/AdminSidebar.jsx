@@ -94,7 +94,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/home"
+            to="/"
           >
             <FiCornerUpLeft className={styles.icon} />
             Back to Zuri Chat
@@ -104,7 +104,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
             activeClassName={styles.sidebarLinkActive}
-            to="/admin/settings/home"
+            to="/"
           >
             <FiHome className={styles.icon} />
             Home
