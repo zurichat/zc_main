@@ -94,7 +94,7 @@ const SettingsTab = () => {
           </span>
           <br />
           <span>
-            <strong> Note:</strong> Don’t deactivate your account if you just
+            <strong> Note:</strong> Don't deactivate your account if you just
             want to{" "}
             <NavLink to="/" className={styles.emailLink}>
               change your email address.

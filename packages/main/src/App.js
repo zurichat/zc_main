@@ -32,6 +32,7 @@ import TermsOfService from "../src-old/pages/termsOfService/index";
 import { useAuth } from "./auth/use-auth";
 import SettingsHome from "../src/pages/protected/settings-home/SettingsHome";
 import AccountProfile from "./pages/protected/account-profile/AccountProfile";
+import AcctDeactivation from "./pages/protected/account-profile/AccountProfile/account-deactivation";
 import ManageWorkspace from "./pages/protected/manage-workspace/ManageWorkspace";
 import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
 import Help from "./pages/static/help";
@@ -119,6 +120,12 @@ const App = () => (
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/accountsProfile">
             <AccountProfile />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/account-deactivation"
+          >
+            <AcctDeactivation />
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/ManageWorkspace">
             <ManageWorkspace />
