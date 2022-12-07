@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AdminSettings from "../..";
+import AdminSettings from "../../pages/protected/admin-settings/AdminSettings";
 import { FiMenu } from "react-icons/fi";
 import classes from "../../components/content-wrapper/ContentWrapper.module.css";
 
