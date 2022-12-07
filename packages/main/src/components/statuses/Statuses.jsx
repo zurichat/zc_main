@@ -3,44 +3,7 @@ import styles from "../statuses/Statuses.module.css";
 import ClearTime from "../clear-time/ClearTIme";
 import Picker from "emoji-picker-react";
 
-//
-
 const Statuses = () => {
-  // const [emoji, setEmoji] = useState(...defaultStatus.emoji);
-
-  // const [defaultStatus, setDefaultStatus] = useState([
-  //   {
-  //     id: 1,
-  //     emoji: " ",
-  //     status: " ",
-  //     clearStatusTime: "30 minutes "
-  //   },
-  //   {
-  //     id: 2,
-  //     emoji: " ",
-  //     status: " ",
-  //     clearStatusTime: " "
-  //   },
-  //   {
-  //     id: 3,
-  //     emoji: " ",
-  //     status: " ",
-  //     clearStatusTime: " "
-  //   },
-  //   {
-  //     id: 4,
-  //     emoji: " ",
-  //     status: " ",
-  //     clearStatusTime: " "
-  //   },
-  //   {
-  //     id: 5,
-  //     emoji: " ",
-  //     status: " ",
-  //     clearStatusTime: " "
-  //   },
-  // ]);
-
   const [isOpen, setIsOpen] = useState(false);
   const [emojiMode, setEmojiMode] = useState(null);
   const [emojiOne, setEmojiOne] = useState("\u{1f4c6}");
@@ -48,8 +11,6 @@ const Statuses = () => {
   const [emojiThree, setEmojiThree] = useState("\u{1f912}");
   const [emojiFour, setEmojiFour] = useState("\u{1f334}");
   const [emojiFive, setEmojiFive] = useState("\u{1f3e1}");
-
-  // const findButtonStatus = showButton || checkSaveButtton();
 
   const [renderButton, setRenderButton] = useState(
     <button className={styles.btn_save_status}>Save</button>
