@@ -39,6 +39,8 @@ const EditProfile = () => {
     loading: false,
     imageLoading: false
   });
+  //users info in the localstorage to be updated later on
+  const userLocalDetails = JSON.parse(localStorage.getItem("userData"));
   const [image, setimage] = useState(defaultAvatar);
   const addList = () => {
     if (links.length < 5) {
@@ -82,6 +84,10 @@ const EditProfile = () => {
         .then(res => {
           const newUploadedImage = res.data.data;
           setUserProfileImage(newUploadedImage);
+          const newUserDetails = { ...user, image_url: newUploadedImage };
+          const newLocalStorage = { ...userLocalDetails, user: newUserDetails };
+          //updating the local storage with user's newly updated image
+          localStorage.setItem("userData", JSON.stringify(newLocalStorage));
           setState({ ...state, imageLoading: false });
           toast.success("User Image Updated Successfully", {
             position: "top-center"
@@ -133,12 +139,24 @@ const EditProfile = () => {
       bio: state.bio,
       time_zone: state.timezone
     };
+
     try {
       const res = await authAxios.patch(
         `/organizations/${orgId}/members/${user._id}/profile`,
         data
       );
-
+      //updating local storage
+      const newUserDetails = {
+        ...user,
+        first_name: data.first_name,
+        last_name: data.last_name,
+        display_name: data.display_name,
+        phone: data.phone,
+        bio: data.bio,
+        time_zone: data.time_zone
+      };
+      const newLocalStorage = { ...userLocalDetails, user: newUserDetails };
+      localStorage.setItem("userData", JSON.stringify(newLocalStorage));
       // setState({ loading: false });
       setState(prev => ({ ...prev, loading: false }));
       toast.success("User Profile Updated Successfully", {
@@ -153,7 +171,7 @@ const EditProfile = () => {
     }
   };
   return (
-    <ProfileModal full title="Edit profile">
+    <ProfileModal scroll full title="Edit profile">
       <>
         <StyledProfileWrapper style={{ backgroundColor: "var(--bg-color)" }}>
           <div className="grid-container">

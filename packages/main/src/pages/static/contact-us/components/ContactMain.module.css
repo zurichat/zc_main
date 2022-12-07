@@ -1,21 +1,15 @@
-* {
-  padding: 0;
+.contactPageContainer {
+  padding: 5vh 0 0 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
-  font-size: 12px;
-
   --type-scale: 1;
   --height-scale: 1;
 }
 
-p{
-  margin-bottom: 0;
-}
-
 .contactHead {
   width: 100%;
-  margin-top: 100px;
+  margin-top: 20px;
   text-align: left;
 }
 
@@ -23,17 +17,4 @@ p{
   display: flex;
   height: 100%;
   width: 100%;
-}
-
-@media only screen and (max-width: 600px) {
-  .contactHead p {
-    max-width: 300px;
-  }
-
-  .boardContainer{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-  }
 }

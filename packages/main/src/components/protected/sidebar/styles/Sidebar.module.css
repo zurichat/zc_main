@@ -9,7 +9,7 @@
   padding: 0;
   display: flex;
   min-width: 6px;
-  max-width: 300px;
+  max-width: 400px;
   overflow-y: scroll;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
@@ -41,6 +41,12 @@
   background: #7ed5af;
 }
 
+.sb__divider {
+  width: 100%;
+  border: 0.05px solid rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+}
+
 .subCon1 {
   top: 0;
   position: sticky;
@@ -50,9 +56,6 @@
 .subCon2 {
   height: 100%;
   width: unset;
-  /* overflow-y:inherit;
-  -ms-overflow-style: none;
-  scrollbar-width: none; */
 }
 
 .subCon2::-webkit-scrollbar {
@@ -113,7 +116,6 @@
 .sb__item {
   cursor: pointer;
   margin-top: 30px;
-  /* margin: 0.5em 0; */
 }
 
 .sb__item:hover,
@@ -129,7 +131,6 @@
 
 .item__img {
   width: 18px;
-  /* margin-inline-end: 0.5rem; */
 }
 
 .item_p {
@@ -148,124 +149,6 @@
 .icon {
   width: 24px;
 }
-/* .addButton {
-  width: 1.3em;
-  margin-inline-start: auto;
-} */
-
-/* .orgHeader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* .newMessage { */
-
-/* border-radius: 50%; */
-
-/* width: auto; */
-
-/* background-color: #ffffff; */
-
-/* align-self: center; */
-
-/* margin-left: 6.6875em;
-  margin-right: 1.25em; */
-
-/* display: flex;
-  align-items: center;
-  justify-content: center; */
-
-/* } */
-
-/* .newMsgIcon { */
-
-/* height: 100%;
-  width: 4em; */
-
-/* z-index: 100; */
-
-/* } */
-
-/* .container ul {
-  list-style: none;
-  color: #000;
-}
-.container a {
-  text-decoration: none;
-  color: #000;
-} */
-
-/* .container::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  background-color: #fff;
-} */
-
-/* .container::-webkit-scrollbar {
-  width: 12px;
-  background: #fff;
-} */
-
-/* .container::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #f6f6f6;
-} */
-
-/* .zuriLogo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 1.875em;
-  margin-top: 1.5625em;
-  margin-bottom: 0.639375em;
-} */
-
-/* .zuriLogo p {
-  color: #393939;
-  font-family: 'Lato', sans-serif;
-  font-weight: 900;
-  font-size: 1.4425em;
-  padding: 0;
-  margin: 0;
-  margin-left: 0.38em;
-} */
-
-/* .orgInfo {
-  background-color: #00b87c;
-  /* height: 3.125em; *
-  height: 7vh;
-  /* display: flex; */
-
-/* flex-direction: row; *
-} */
-
-/* .orgName {
-  height: inherit;
-  width: inherit;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  /* margin-left: 1.875em;
-  align-items: center;
-  height: 3.125em; *
-} */
-
-/* .orgInfo .orgName p {
-  color: #ffffff;
-  font-family: 'Lato', sans-serif;
-  font-weight: 900;
-  font-size: 1.5rem;
-  /* font-size: 1.125em; *
-} */
-
-/* .orgInfo .orgName img {
-  margin: 1em 0 1em 0.65625em;
-} */
 
 .channelsContainer {
   margin-top: 0.5em;
@@ -310,53 +193,6 @@
 .channelNames p > span {
   margin-right: 0.5em;
 }
-
-/*
-.messagesContainer {
-  margin-top: 0.5em;
-}
-
-.messageHeader {
-  display: flex;
-  flex-direction: row;
-  margin-left: 1.875em;
-  align-items: center;
-  height: 2em;
-}
-
-.messageHeader p {
-   font: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 18px;
-  color: #999999;
-} */
-
-/*
-.messageDropdownIcon {
-  margin: 1em 1em 1em 0;
-}
-
-.messageAddBtn {
-  margin-left: 6em;
-  margin-right: 1.25em;
-}
-
-.messageNames {
-  margin-left: 3.5em;
-  font: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 18px;
-  color: #999999;
-} */
-
-/*
-.messageNames p > span {
-  margin-right: 0.5em;
-} */
 
 .messagesContainer {
   margin-top: 0.5em;
@@ -430,9 +266,3 @@
   display: block;
 }
 
-/* MEDIA QUERIES */
-/* @media (max-width: 768px) {
-  .orgTitle {
-    display: none;
-  }
-} */
