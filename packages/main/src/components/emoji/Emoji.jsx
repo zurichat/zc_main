@@ -1,13 +1,10 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import { authAxios } from "../../Utils/Api";
-// import { ProfileContext } from "../../../../../../topbar/src/context/ProfileModal"
+import { authAxios } from "../../components/emoji/utils/Api";
 import toast from "react-hot-toast";
 import Picker from "emoji-picker-react";
-// import ForwardIcon from "../../../resources/assets/ForwardIcon.svg"
-import classes from "../styles/EmojiTab.module.css";
+import classes from "../emoji/EmojiTab.module.css";
 
 const Emoji = () => {
-  // const { orgId, user } = useContext(ProfileContext)
   const imageRef = useRef(null);
   const avatarRef = useRef(null);
   const _avatarRef = useRef(null);
@@ -238,7 +235,6 @@ const Emoji = () => {
       })
       .then(res => {
         const uploadedImageData = res.data.data;
-        // console.log(res, uploadedImageData)
         toast.success("User Image Updated Successfully", {
           position: "top-center"
         });
@@ -349,7 +345,6 @@ const Emoji = () => {
               <button>{emojiIcon}</button>
               <button>{commentIcon}</button>
               <button>
-                {/* <img src={ForwardIcon} alt="" /> */}
                 <img src={forwardIcon} alt="" />
               </button>
               <button>{bookmarkIcon}</button>
@@ -458,7 +453,6 @@ const Emoji = () => {
                               id="image"
                             />
                             <label htmlFor="image">Upload an Image</label>
-                            {/* <button>Upload an Image</button> */}
                           </div>
                         </div>
                       </li>
