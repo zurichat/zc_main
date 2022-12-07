@@ -272,22 +272,6 @@ export default function TopNavigationBar() {
               </NavLink>
             </li>
           </ul>
-          {isUserLoggedIn && (
-            <div className={TopNavigationBarStyles.notification}>
-              <NovuProvider
-                backendUrl={"http://139.144.17.179:3000"}
-                socketUrl={"http://139.144.17.179:3002"}
-                subscriberId={user.id}
-                applicationIdentifier={"JJef8vc6vtAj"}
-              >
-                <PopoverNotificationCenter>
-                  {({ unseenCount }) => (
-                    <NotificationBell unseenCount={unseenCount} />
-                  )}
-                </PopoverNotificationCenter>
-              </NovuProvider>
-            </div>
-          )}
           <ul
             className={`d-lg-none navbar-nav-scroll ${TopNavigationBarStyles.signs}`}
           >
