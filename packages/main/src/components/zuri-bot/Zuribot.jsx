@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
-import styles from "../styles/zuribot.module.css";
-import { authAxios } from "../../Utils/Api";
-import { getToken, getCurrentWorkspace, getUser } from "../../Utils/Common";
+import styles from "../zuri-bot/zuribot.module.css";
+import { authAxios } from "../zuri-bot/utils/Api";
+import {
+  getToken,
+  getCurrentWorkspace,
+  getUser
+} from "../zuri-bot/utils/Common";
 import { AiOutlinePlus, AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { BsPersonBoundingBox } from "react-icons/bs";
 
