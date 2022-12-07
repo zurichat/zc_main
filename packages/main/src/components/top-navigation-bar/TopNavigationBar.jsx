@@ -365,7 +365,8 @@ export default function TopNavigationBar() {
             </li>
             <li className="nav-item">
               <NavLink
-                to="/documentation"
+                to={{ pathname: "https://docs.zuri.chat/" }}
+                target="_blank"
                 className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
                 role="button"
                 aria-expanded="false"
