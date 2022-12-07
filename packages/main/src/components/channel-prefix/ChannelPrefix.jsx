@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import styles from "../../styles/ChannelPrefixes.module.css";
+import styles from "../../components/channel-prefix/ChannelPrefixes.module.css";
 
 const ChannelPrefix = ({ prefix, description, creator, onDelete }) => {
   return (
