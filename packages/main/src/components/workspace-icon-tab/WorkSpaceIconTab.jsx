@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { authAxios } from "../../Utils/Api";
+import { authAxios } from "../../components/workspace-icon-tab/utils/Api";
 import Loader from "react-loader-spinner";
 import ReactCrop from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
-import LogoCrop from "./LogoCrop";
-import LogoAlert from "./LogoAlert";
-import defaultAvatar from "../../assets/HNG-icon.svg";
+import LogoAlert from "../logo-alert/LogoAlert";
+import defaultAvatar from "../../components/workspace-icon-tab/assets/HNG-icon.svg";
 import {
   WorkSPaceLogoContainer,
   WorkSpaceDetailContainer,
