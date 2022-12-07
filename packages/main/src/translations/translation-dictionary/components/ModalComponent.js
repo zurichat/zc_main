@@ -9,7 +9,7 @@ export default [
     ar: "ادعُ الناس إلى",
     es: "invitar a la gente a",
     it: "Invita le persone a",
-    he: "הזמן אנשים",
+    iw: "הזמן אנשים",
     pt: "Convidar pessoas para"
   },
   {
@@ -22,7 +22,7 @@ export default [
     ar: "قم بإنشاء مساحة عمل جديدة",
     es: "Crear un nuevo espacio de trabajo",
     it: "Crea un nuovo spazio di lavoro",
-    he: "צור סביבת עבודה חדשה",
+    iw: "צור סביבת עבודה חדשה",
     pt: "Criar um novo espaço de trabalho"
   },
   {
@@ -35,7 +35,7 @@ export default [
     ar: "التفضيلات",
     es: "preferencias",
     it: "Preferenze",
-    he: "העדפות",
+    iw: "העדפות",
     pt: "Preferências"
   },
   {
@@ -48,7 +48,7 @@ export default [
     ar: "يعدل أو يكيف",
     es: "personalizar",
     it: "personalizzare",
-    he: "התאמה אישית",
+    iw: "התאמה אישית",
     pt: "Customizar"
   },
   {
@@ -61,7 +61,7 @@ export default [
     ar: "إعدادات مساحة العمل",
     es: "Configuración del espacio de trabajo",
     it: "Impostazioni dell'area di lavoro",
-    he: "הגדרות סביבת עבודה",
+    iw: "הגדרות סביבת עבודה",
     pt: "Configurações do espaço de trabalho"
   },
   {
@@ -74,7 +74,7 @@ export default [
     ar: "أدوات",
     es: "Instrumentos",
     it: "Strumenti",
-    he: "כלים",
+    iw: "כלים",
     pt: "Ferramentas"
   },
   {
@@ -87,7 +87,7 @@ export default [
     ar: "خروج",
     es: "Desconectar",
     it: "Disconnessione",
-    he: "התנתק",
+    iw: "התנתק",
     pt: "Sair"
   },
   {
@@ -100,7 +100,7 @@ export default [
     ar: "خروج",
     es: "Desconectar",
     it: "Disconnessione",
-    he: "התנתק",
+    iw: "התנתק",
     pt: "Sair"
   },
   {
@@ -113,7 +113,7 @@ export default [
     ar: "تبديل مساحة العمل",
     es: "Cambiar espacio de trabajo",
     it: "Cambia spazio di lavoro",
-    he: "החלף סביבת עבודה",
+    iw: "החלף סביבת עבודה",
     pt: "Alternar área de trabalho"
   },
   {
@@ -126,7 +126,7 @@ export default [
     ar: "افتح تطبيق Zuri Chat",
     es: "Abra la aplicación de chat Zuri",
     it: "Apri l'app Zuri Chat",
-    he: "פתח את אפליקציית הצ'אט צורי",
+    iw: "פתח את אפליקציית הצ'אט צורי",
     pt: "Abra o aplicativo de bate-papo Zuri"
   },
   {
@@ -139,7 +139,7 @@ export default [
     ar: "تحليلات",
     es: "Analítica",
     it: "Analitica",
-    he: "ניתוח",
+    iw: "ניתוח",
     pt: "Análise"
   }
 ];

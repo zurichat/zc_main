@@ -224,26 +224,25 @@
   display: flex;
 }
 .modalContent,
-.modalFull {
+.modalFull,
+.modalFullScroll {
   width: 80%;
   max-width: 885px;
   background: #fff;
   border-radius: 4px;
   overflow: hidden;
-  padding-bottom: 20px;
-  height: 90vh;
 }
-
+.modalFullScroll {
+  overflow: auto;
+}
 @media only screen and (min-width: 1080px) {
   .modalContent {
-    width: 65%;
+    width: 70%;
   }
 }
 
 .modalCont {
   overflow-y: auto;
-  height: 100%;
-  /* max-height: 83vh; */
 }
 .modalHeader,
 .modalHeaderMobile {

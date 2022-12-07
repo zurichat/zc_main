@@ -29,7 +29,7 @@ const Sidebar = props => {
 
   const sidebarRef = useRef(null);
   const [isResizing, setIsResizing] = useState(false);
-  const [sidebarWidth, setSidebarWidth] = useState(260);
+  const [sidebarWidth, setSidebarWidth] = useState(250);
 
   const startResizing = useCallback(() => {
     setIsResizing(true);
@@ -55,7 +55,7 @@ const Sidebar = props => {
         document.querySelector("body").style.cursor = "col-resize";
 
         // collapse the sidebar on further minimization
-        if (newWidth <= 195) setSidebarWidth(0);
+        if (newWidth <= 230) setSidebarWidth(0);
       }
     },
     [isResizing]
@@ -198,7 +198,7 @@ const Sidebar = props => {
       ref={sidebarRef}
       style={{ width: sidebarWidth }}
       onMouseDown={e => e.preventDefault()}
-      className={`container-fluid ${styles.sb__container}`}
+      className={`${styles.sb__container}`}
     >
       {sidebarWidth > 0 && (
         <div className={styles.sb__content}>
@@ -218,7 +218,7 @@ const Sidebar = props => {
               <SingleRoom
                 name="Video Chat"
                 image={dmIcon}
-                link={`/workspace/${currentWorkspace}/video-chat`}
+                link={`/workspace/${currentWorkspaceShort}/video-chat`}
               />
               <SingleRoom
                 name={`${t("workspace_chat.drafts")}`}
@@ -227,17 +227,14 @@ const Sidebar = props => {
               <SingleRoom
                 name="LiveBroadcast"
                 image={liveicon}
-                link={`/workspace/${currentWorkspace}/LiveBroadcast`}
+                link={`/workspace/${currentWorkspaceShort}/LiveBroadcast`}
               />
               <SingleRoom
                 name="Voice Call"
                 image={phoneicon}
-                link={`/workspace/${currentWorkspace}/voice-call`}
+                link={`/workspace/${currentWorkspaceShort}/voice-call`}
               />
-
-              <hr color="#d4d4d4" />
-              <hr color="#d4d4d4" />
-
+              <div className={styles.sb__divider} />
               <Starred starredRooms={starredRooms} />
               {singleItems}
               {categorizedItems}
