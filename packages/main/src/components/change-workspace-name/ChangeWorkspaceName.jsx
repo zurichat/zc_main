@@ -37,6 +37,11 @@ const ChangeWorkspaceName = () => {
         }
       )
       .then(res => {
+        // Clears User Extracted Details from LS during Registration
+
+        // setOrgId(res.data.data.organization_id)
+
+        // Automatic Org Name Renaming From Default to new Org Name
         setTimeout(() => {
           axios.patch(
             `https://api.zuri.chat/organizations/${currentWorkspace}/url`,
@@ -49,6 +54,7 @@ const ChangeWorkspaceName = () => {
               }
             }
           );
+          // .then(res => console.log(res))
         }, 500);
       })
       .catch(err => {
