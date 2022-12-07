@@ -1,4 +1,4 @@
-import classes from "../delete-workspace/DeleteWorkspace.module.css";
+import classes from "../delete-workspace/deleteWorkspace.module.css";
 import del from "../delete-workspace/assets/delete.svg";
 import { Link } from "react-router-dom";
 const DeleteWorkspace = () => {
@@ -17,7 +17,7 @@ const DeleteWorkspace = () => {
           <div className="px-3">
             <h4 style={{ fontWeight: "700" }}>Important Note!</h4>
             <p style={{ fontWeight: "700" }}>
-              If you just want to change your workspace's name or URL, you can
+              If you just want to change your workspace’s name or URL, you can
               do that from{" "}
               <Link to="/admin/settings/home">
                 <span className={classes.Span}>your Settings page.</span>
