@@ -6,6 +6,7 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { GeneralErrorBoundary, GeneralLoading } from "./components";
 import ManageMembers from "./components/manage-members/ManageMembers";
 import ChangeWorkspaceName from "./components/change-workspace-name/ChangeWorkspaceName";
+import AcctDeactivation from "./components/account-deactivation/AcctDeactivation";
 
 // All utilities imported here
 import { withSuspense } from "./utils";
@@ -32,7 +33,6 @@ import TermsOfService from "../src-old/pages/termsOfService/index";
 import { useAuth } from "./auth/use-auth";
 import SettingsHome from "../src/pages/protected/settings-home/SettingsHome";
 import AccountProfile from "./pages/protected/account-profile/AccountProfile";
-import AcctDeactivation from "./pages/protected/account-profile/AccountProfile/account-deactivation";
 import ManageWorkspace from "./pages/protected/manage-workspace/ManageWorkspace";
 import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
 import Help from "./pages/static/help";
