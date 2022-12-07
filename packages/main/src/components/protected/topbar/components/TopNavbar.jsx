@@ -62,7 +62,7 @@ const TopNavbar = ({ toggleSidebar }) => {
     }
     return visibleUrl;
   };
-  console.log(user);
+
   const [organizations, setOrganizations] = useState([]);
 
   const [search, setSearch] = useState("");
@@ -332,7 +332,7 @@ const TopNavbar = ({ toggleSidebar }) => {
           />
         ) : null}
       </div>
-      <div>
+      <div className={styles.notification_modal}>
         <NovuProvider
           backendUrl={"http://139.144.17.179:3000"}
           socketUrl={"http://139.144.17.179:3002"}
