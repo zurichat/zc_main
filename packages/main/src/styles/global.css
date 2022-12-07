@@ -188,6 +188,25 @@ h6 {
     background-color: var(--bg-2);
     left: 0px;
   } */
+/* notification modal customise styles */
+[data-test-id="layout-wrapper"]{
+  background-color: white !important ;
+}
+[data-test-id="notifications-header-title"]{
+ color:#1E1E26   !important ;
+}
+[data-test-id="notification-list-item"]{
+ color:#1E1E26 !important  ;
+  background-color: #f5f3f3  !important ;
+}
+ [data-test-id="notification-bell"]{
+  margin-top:10px;
+ }
+ [data-test-id="user-preference-cog"] {
+  display:none;
+}
+ /* ends here */
+
 
 /* Customize the label (the container) */
 .container {
