@@ -1,7 +1,7 @@
 import { useHistory, Link } from "react-router-dom";
-import styles from "../styles/AcctDeactivation.module.css";
+import styles from "../account-deactivation/AcctDeactivation.module.css";
 import SettingsNav from "./SettingsNav";
-import alertTriangle from "../assets/alertTriangle.svg";
+import alertTriangle from "../account-deactivation/assets/alertTriangle.svg";
 
 const AcctDeactivation = () => {
   const history = useHistory();
