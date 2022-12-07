@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/ChannelPrefixes.module.css";
+import styles from "../../components/prefix-added/ChannelPrefixes.module.css";
 
 const PrefixAdded = ({ text, closePopup }) => {
   return (
