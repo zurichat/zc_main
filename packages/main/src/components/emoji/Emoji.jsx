@@ -432,7 +432,6 @@ const Emoji = () => {
                             </div>
                             <div>
                               <img ref={avatarRef} src="" alt="sticker pic" />{" "}
-                              {/*add default backgoground before image uploads*/}
                             </div>
                           </div>
                           <div>

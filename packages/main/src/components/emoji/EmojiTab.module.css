@@ -93,10 +93,6 @@
   transition: all 0.2s;
 }
 
-.messageActions button:nth-child(6) svg {
-  /* width: 13px; */
-}
-
 .messageActions > button:hover svg {
   fill: #1d1c1d;
 }
@@ -266,7 +262,6 @@
   font-weight: 700;
   color: #616061;
   margin-top: -20px;
-  /* margin-bottom: -15px; */
   border-bottom: 1px solid #ddd;
 }
 
@@ -388,7 +383,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 450px;
-  /* min-height: 550px; */
   background-color: white;
   border-radius: 9px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
@@ -409,7 +403,6 @@
   color: rgba(29, 28, 29, 0.7);
   font-weight: 400;
   z-index: 10;
-  /* padding: 8px; */
   transition: all 0.2s;
 }
 
@@ -449,7 +442,6 @@
 
 .overflow {
   max-height: 360px;
-  /* overflow-y: scroll; */
 }
 
 .list ol {
@@ -459,7 +451,6 @@
 
 .list li {
   margin-top: 20px;
-  /* border-bottom: .1px solid #6a6a6a; */
 }
 
 .list li *:not(:first-child) {
