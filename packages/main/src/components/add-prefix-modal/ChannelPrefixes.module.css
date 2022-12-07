@@ -1,0 +1,248 @@
+.prefixContainer {
+  margin: 1.5rem auto;
+}
+
+.prefix {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-width: 1px;
+  border-bottom-style: solid;
+  padding: 12px 12px 12px 4px;
+  border-color: rgba(29, 28, 29, 0.13);
+}
+
+.prefix .prefixStrong {
+  font-size: 15px;
+  line-height: 1.46;
+  color: #1d1c1d;
+}
+
+.prefix .prefixP,
+.prefixRight p {
+  color: rgba(29, 28, 29, 0.7);
+  word-break: break-all;
+  font-size: 15px;
+  line-height: 1.46;
+  font-weight: 400;
+}
+
+.prefix p {
+  margin: 0;
+}
+
+.prefixRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prefixRight p {
+  margin: 0;
+}
+
+.icon {
+  min-width: 20px;
+  min-height: 20px;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: red;
+}
+
+.prefix:first-child {
+  border-width: 1px;
+  border-style: solid none;
+  border-color: rgba(29, 28, 29, 0.13);
+}
+
+.addPrefixBtn {
+  margin-top: 10px;
+  font-size: 15px;
+  height: 36px;
+  min-width: 80px;
+  padding: 0 12px 1px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid rgba(29, 28, 29, 0.3);
+  background-clip: padding-box;
+  color: #1d1c1d;
+  font-weight: 700;
+}
+
+.addPrefixBtn:hover {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 8%);
+  background: #f8f8f8;
+}
+
+.Container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.modalContainer {
+  top: 0;
+  left: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: fixed;
+  transition: opacity 80ms linear;
+  width: 100%;
+  z-index: 1012;
+}
+
+.modal {
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  width: 32.5rem;
+  box-shadow: 0 0 0 1px rgb(29 28 29 / 13%), 0 18px 48px 0 rgb(0 0 0 / 35%);
+  max-width: calc(100% - 32px);
+  height: 50%;
+
+  /* @media only screen and (max-height: 656px)
+      .c-dialog__content {
+      max-height: 96%;
+      } */
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1.3rem;
+}
+
+.modalHeader h2 {
+  font-size: 22px;
+  line-height: 1.36363636;
+  color: #1d1c1d;
+  font-weight: 900;
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.closeBtn {
+  color: rgba(29, 28, 29, 0.7);
+  height: 36px;
+  width: 36px;
+  font-size: 25px;
+  background: none;
+  border-radius: 4px;
+  border: 0;
+}
+
+.cancelBtn:hover {
+  background: gray;
+  color: #1d1c1d;
+  border: gray;
+}
+
+.subContainer {
+  width: 95%;
+}
+
+.prefixStrong {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1.46;
+}
+
+.prefixText {
+  color: rgba(29, 28, 29, 0.7);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.46;
+}
+
+.inputField {
+  border: 1px solid rgba(29, 28, 29, 0.7);
+  border-radius: 4px;
+  width: 100%;
+  padding: 0.35rem;
+}
+
+.inputField:focus,
+input[type="text"].inputField:focus {
+  box-shadow: 0 0 0 1px #00b87c, 0 0 0 5px rgb(29 155 209 / 30%);
+  outline: 0;
+  /* border-color:#00b87c */
+}
+
+.formGroup {
+  padding-bottom: 0.9rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.cancelBtn,
+.saveBtn {
+  font-size: 15px;
+  height: 36px;
+  min-width: 80px;
+  padding: 0 12px 1px;
+  border-radius: 4px;
+}
+
+.cancelBtn {
+  transition: all 80ms linear;
+  border: 1px solid rgba(29, 28, 29, 0.3);
+  color: #1d1c1d;
+  font-weight: 700;
+}
+
+.cancelBtn:hover {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 8%);
+  background: #f8f8f8;
+}
+
+.saveBtn {
+  color: #1d1c1d;
+  font-weight: 700;
+}
+
+.saveBtn:enabled {
+  background-color: #00b87c;
+}
+
+.PrefixAdded,
+.PrefixRemoved {
+  position: fixed;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  bottom: 0;
+  right: 2rem;
+  border: 0;
+  color: #fff;
+  background: #1d1c1d;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  /* display: inline-flex; */
+  row-gap: 2rem;
+}
+
+.PrefixAdded p {
+  margin-bottom: 0;
+}
+
+.PrefixAddedBtn {
+  background: none;
+  color: #fff;
+  opacity: 0;
+}
+
+.PrefixAddedBtn:hover {
+  opacity: 5;
+}
