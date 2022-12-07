@@ -21,6 +21,12 @@ import TopbarModal from "./TopbarModal";
 import styles from "../styles/TopNavBar.module.css";
 import LanguageIcon from "../../../top-navigation-bar/LanguageIcon";
 
+import {
+  NovuProvider,
+  PopoverNotificationCenter,
+  NotificationBell
+} from "@novu/notification-center";
+
 const TopNavbar = ({ toggleSidebar }) => {
   const theme = localStorage.getItem("theme");
   // if (theme !== null || theme !== "") {
@@ -338,7 +344,20 @@ const TopNavbar = ({ toggleSidebar }) => {
           />
         ) : null}
       </div>
-
+      <div className={styles.notification_modal}>
+        <NovuProvider
+          backendUrl={"http://139.144.17.179:3000"}
+          socketUrl={"http://139.144.17.179:3002"}
+          subscriberId={user._id}
+          applicationIdentifier={"JJef8vc6vtAj"}
+        >
+          <PopoverNotificationCenter>
+            {({ unseenCount }) => (
+              <NotificationBell unseenCount={unseenCount} />
+            )}
+          </PopoverNotificationCenter>
+        </NovuProvider>
+      </div>
       <LanguageIcon style={{ marginRight: "2.2em" }} />
 
       <ProfileImageContainer className="d-flex justify-content-end">
