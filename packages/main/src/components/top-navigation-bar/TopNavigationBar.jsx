@@ -389,7 +389,6 @@ export default function TopNavigationBar() {
               </NavLink>
             </li>
           </ul>
-
           <ul
             className={`d-lg-none navbar-nav-scroll ${TopNavigationBarStyles.signs}`}
           >
