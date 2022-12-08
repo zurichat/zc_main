@@ -133,6 +133,7 @@ export default [
     engb: " Save",
     fr: "Sauvez",
     zh: "拯救",
+    ar: "أَنقِذ",
     es: "Guardar",
     it: "Risparmiare",
     iw: "להציל",

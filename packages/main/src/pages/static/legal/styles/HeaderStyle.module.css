@@ -7,7 +7,6 @@
   width: 100%;
   font-family: "Lato";
 }
-
 .navbar {
   padding: 0.5rem 1rem;
   background-color: white;
@@ -18,11 +17,13 @@
 
 .navbar_toggle_icon {
   padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
 }
 .navbar_toggle_icon span {
   line-height: 1;
   width: 30px;
-  margin: 5px 0;
+  margin: 2px 0;
   text-align: center;
   justify-content: center;
   background: rgb(85, 83, 83);
