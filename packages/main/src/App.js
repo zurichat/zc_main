@@ -34,7 +34,6 @@ import SettingsHome from "../src/pages/protected/settings-home/SettingsHome";
 import AccountProfile from "./pages/protected/account-profile/AccountProfile";
 import ManageWorkspace from "./pages/protected/manage-workspace/ManageWorkspace";
 import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
-import Customize from "./pages/protected/customize/Customize";
 import Help from "./pages/static/help";
 import TermsCondition from "./pages/static/legal";
 
@@ -117,9 +116,6 @@ const App = () => (
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings">
             <SettingsHome />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/admin/settings/customize">
-            <Customize />
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/accountsProfile">
             <AccountProfile />
