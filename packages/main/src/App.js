@@ -6,10 +6,6 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { GeneralErrorBoundary, GeneralLoading } from "./components";
 import ManageMembers from "./components/manage-members/ManageMembers";
 import ChangeWorkspaceName from "./components/change-workspace-name/ChangeWorkspaceName";
-import DeleteWorkspace from "./components/delete-workspace/DeleteWorkspace";
-import AcctDeactivation from "./components/account-deactivation/AcctDeactivation";
-import AccDeactivated from "./components/account-deactivated/AccDeactivated";
-import ChangeEmail from "./components/change-email/ChangeEmail";
 
 // All utilities imported here
 import { withSuspense } from "./utils";
@@ -128,24 +124,6 @@ const App = () => (
           <ProtectedRoute exact path="/admin/settings/accountsProfile">
             <AccountProfile />
           </ProtectedRoute>
-          <ProtectedRoute
-            exact
-            path="/admin/settings/accountsProfile/ChangeEmail"
-          >
-            <ChangeEmail />
-          </ProtectedRoute>
-          <ProtectedRoute
-            exact
-            path="/admin/settings/accountsProfile/account-deactivation"
-          >
-            <AcctDeactivation />
-          </ProtectedRoute>
-          <ProtectedRoute
-            exact
-            path="/admin/settings/accountsProfile/acct-deactivation/acct-deactivated"
-          >
-            <AccDeactivated />
-          </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/ManageWorkspace">
             <ManageWorkspace />
           </ProtectedRoute>
@@ -155,14 +133,6 @@ const App = () => (
           >
             <ChangeWorkspaceName />
           </ProtectedRoute>
-
-          <ProtectedRoute
-            exact
-            path="/admin/settings/ManageWorkspace/DeleteWorkspace"
-          >
-            <DeleteWorkspace />
-          </ProtectedRoute>
-
           <ProtectedRoute exact path="/admin/settings/managemembers">
             <ManageMembers />
           </ProtectedRoute>
