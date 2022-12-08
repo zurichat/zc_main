@@ -17,13 +17,13 @@ export default [
     key: "nav_downloads",
     en: "Downloads ",
     de: "Downloads",
-    nl: "downloaden",
+    nl: "Downloaden",
     engb: "Downloads ",
-    fr: "téléchargements",
+    fr: "Téléchargements",
     zh: "下載",
     ar: "التحميلات",
-    es: "descargas",
-    it: "download",
+    es: "Descargas",
+    it: "Download",
     iw: "הורדות",
     pt: "Transferências"
   },
@@ -36,10 +36,10 @@ export default [
     fr: "Contactez",
     zh: "接觸",
     ar: "اتصل",
-    es: "contacto",
-    it: "contatto",
+    es: "Contacto",
+    it: "Contatto",
     iw: "איש קשר",
-    pt: "contato"
+    pt: "Contato"
   },
   {
     key: "nav_signup",

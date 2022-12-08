@@ -38,6 +38,7 @@ import DownloadDesktopSectionTwo from "./pages/DownloadDesktopSectionTwo";
 import DownloadMobileSectionTwo from "./pages/DownloadMobileSectionTwo";
 import ProfileMore from "./pages/ProfileMore";
 import EditProfile from "./components/EditProfile";
+import Help from "./pages/Help";
 
 const resources = {};
 
@@ -68,6 +69,7 @@ const Translations = [
   ...DownloadIos,
   ...DownloadWindows,
   ...ModalComponent,
+  ...Help,
 
   ...Pricing,
   ...PrivacyPage,

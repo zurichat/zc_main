@@ -334,9 +334,15 @@ export default function TopNavigationBar() {
           aria-label="Toggle navigation"
         >
           <span className={TopNavigationBarStyles.navbar_toggle_icon}>
-            <span></span>
-            <span></span>
-            <span></span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" />
+            </svg>
           </span>
         </button>
         <div
@@ -348,41 +354,41 @@ export default function TopNavigationBar() {
           >
             <li className="nav-item">
               <NavLink
-                to="/pricing"
+                to="/downloads"
                 className={`nav-link ${TopNavigationBarStyles.navLinkFeatures}`}
                 aria-current="page"
               >
                 <span className={`${TopNavigationBarStyles.item}`}>
-                  {t("nav_pricing")}
+                  {t("nav_downloads")}
                 </span>
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
-                to="/about"
+                to={{ pathname: "https://docs.zuri.chat/" }}
+                target="_blank"
                 className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
                 role="button"
                 aria-expanded="false"
               >
                 <span className={`${TopNavigationBarStyles.item}`}>
-                  {t("nav_about")}
+                  {t("nav_documentation")}
                 </span>
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
-                to="/downloads"
+                to="/contact-us"
                 className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
                 role="button"
                 aria-expanded="false"
               >
                 <span className={`${TopNavigationBarStyles.item}`}>
-                  Downloads
+                  {t("nav_contact")}
                 </span>
               </NavLink>
             </li>
           </ul>
-
           <ul
             className={`d-lg-none navbar-nav-scroll ${TopNavigationBarStyles.signs}`}
           >
