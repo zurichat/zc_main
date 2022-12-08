@@ -33,7 +33,9 @@ export default function MessageBox({ message }) {
             </span>
           </div>
           <div className="message">
-            <RichTextRenderer richUiMessageConfig={message.richUiData} />
+            {Object.keys(message.richUiData).length !== 0 && (
+              <RichTextRenderer richUiMessageConfig={message.richUiData} />
+            )}
           </div>
         </div>
       )}
