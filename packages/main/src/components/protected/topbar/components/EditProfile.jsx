@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect, useContext } from "react";
 import ProfileModal from "./ProfileModal";
+import TimeZones from "../constants/time-zone";
 import { authAxios } from "../utils/api";
 import { AiFillCamera } from "react-icons/ai";
 import defaultAvatar from "../assets/images/avatar_vct.svg";
@@ -8,8 +9,10 @@ import Loader from "react-loader-spinner";
 import toast, { Toaster } from "react-hot-toast";
 import { data } from "../utils/country-code";
 import { StyledProfileWrapper } from "../styles/StyledEditProfile.styled";
+import { useTranslation } from "react-i18next";
 const EditProfile = () => {
   // const imageRef = useRef(null)
+  const { t } = useTranslation();
   const avatarRef = useRef(null);
   const {
     user,
@@ -22,20 +25,22 @@ const EditProfile = () => {
   const [selectedTimezone, setSelectedTimezone] = useState({});
   const [links, setLinks] = useState([""]);
   const [state, setState] = useState({
-    name: user.name,
+    first_name: user.first_name,
+    last_name: user.last_name,
     display_name: user.display_name,
     role: user.role,
     image_url: user.image_url,
-    bio: "",
+    bio: user.bio,
     phone: user.phone,
     prefix: "",
-    timezone: "",
+    timezone: user.time_zone,
     twitter: "",
     facebook: "",
     loading: false,
     imageLoading: false
   });
-
+  //users info in the localstorage to be updated later on
+  const userLocalDetails = JSON.parse(localStorage.getItem("userData"));
   const [image, setimage] = useState(defaultAvatar);
   const addList = () => {
     if (links.length < 5) {
@@ -77,9 +82,12 @@ const EditProfile = () => {
           formData
         )
         .then(res => {
-          console.log(res);
           const newUploadedImage = res.data.data;
           setUserProfileImage(newUploadedImage);
+          const newUserDetails = { ...user, image_url: newUploadedImage };
+          const newLocalStorage = { ...userLocalDetails, user: newUserDetails };
+          //updating the local storage with user's newly updated image
+          localStorage.setItem("userData", JSON.stringify(newLocalStorage));
           setState({ ...state, imageLoading: false });
           toast.success("User Image Updated Successfully", {
             position: "top-center"
@@ -120,47 +128,50 @@ const EditProfile = () => {
     setUserProfileImage(user.image_url);
   }, [user]);
   // This will handle the profile form submission
-  const handleFormSubmit = e => {
+  const handleFormSubmit = async e => {
     e.preventDefault();
-    setState({ ...state, loading: true });
+    setState(prev => ({ ...prev, loading: true }));
     const data = {
-      name: state.name,
+      first_name: state.first_name,
+      last_name: state.last_name,
       display_name: state.display_name,
       phone: state.phone,
       bio: state.bio,
-      timeZone: state.timezone
-      // socials: [
-      //   {
-      //     "title": "twitter",
-      //     "url": state.twitter
-      //   },
-      //   {
-      //     "title": "facebook",
-      //     "url": state.facebook
-      //   },
-      // ],
+      time_zone: state.timezone
     };
-    authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/profile`, data)
-      .then(res => {
-        // console.log(res)
-        setState({ loading: false });
-        toast.success("User Profile Updated Successfully", {
-          position: "top-center"
-        });
-      })
-      .catch(err => {
-        console.error(err);
-        setState({ loading: false });
-        toast.error(err?.message, {
-          position: "top-center"
-        });
-      });
-  };
 
-  console.log(userProfileImage);
+    try {
+      const res = await authAxios.patch(
+        `/organizations/${orgId}/members/${user._id}/profile`,
+        data
+      );
+      //updating local storage
+      const newUserDetails = {
+        ...user,
+        first_name: data.first_name,
+        last_name: data.last_name,
+        display_name: data.display_name,
+        phone: data.phone,
+        bio: data.bio,
+        time_zone: data.time_zone
+      };
+      const newLocalStorage = { ...userLocalDetails, user: newUserDetails };
+      localStorage.setItem("userData", JSON.stringify(newLocalStorage));
+      // setState({ loading: false });
+      setState(prev => ({ ...prev, loading: false }));
+      toast.success("User Profile Updated Successfully", {
+        position: "top-center"
+      });
+    } catch (err) {
+      // setState({ loading: false });
+      setState(prev => ({ ...prev, loading: false }));
+      toast.error(err?.message, {
+        position: "top-center"
+      });
+    }
+  };
   return (
-    <ProfileModal full title="Edit profile">
+    <ProfileModal scroll full title="Edit profile">
       <>
         <StyledProfileWrapper style={{ backgroundColor: "var(--bg-color)" }}>
           <div className="grid-container">
@@ -179,19 +190,40 @@ const EditProfile = () => {
                 </div>
                 <div className="input-group mal-4">
                   <label
-                    htmlFor="name"
+                    htmlFor="first_name"
                     className="inputLabel"
                     style={{ color: "var(--text-color-bold)" }}
                   >
-                    Full Name
+                    {t("Edit_profile_firstName")}
                   </label>
                   <input
                     type="text"
                     className="input"
-                    id="name"
-                    defaultValue={state.name}
-                    onChange={e => setState({ name: e.target.value })}
-                    name="name"
+                    id="first_name"
+                    defaultValue={state.first_name}
+                    onChange={e =>
+                      setState({ ...state, first_name: e.target.value })
+                    }
+                    name="first_name"
+                  />
+                </div>
+                <div className="input-group mal-4">
+                  <label
+                    htmlFor="last_name"
+                    className="inputLabel"
+                    style={{ color: "var(--text-color-bold)" }}
+                  >
+                    {t("Edit_profile_lastName")}
+                  </label>
+                  <input
+                    type="text"
+                    className="input"
+                    id="last_name"
+                    defaultValue={state.last_name}
+                    onChange={e =>
+                      setState({ ...state, last_name: e.target.value })
+                    }
+                    name="last_name"
                   />
                 </div>
               </div>
@@ -202,63 +234,53 @@ const EditProfile = () => {
                     className="inputLabel"
                     style={{ color: "var(--text-color-bold)" }}
                   >
-                    Choose a Display Name
+                    {t("Edit_profile_chooseDisplayName")}
                   </label>
                   <input
                     type="text"
                     className="input"
                     id="dname"
                     defaultValue={state.display_name}
-                    onClick={e => setState({ display_name: e.target.value })}
+                    onChange={e =>
+                      setState({ ...state, display_name: e.target.value })
+                    }
                     name="dname"
                   />
                   <p
                     className="para"
                     style={{ color: "var(--text-color-gray)" }}
                   >
-                    Please use a unique and permanent display name. If someone
-                    uses your exact name, you should change it!
+                    {t("Edit_profile_uniqueNameWarning")}
                   </p>
                 </div>
               </div>
               <div className="input-group mb-0">
                 <label
-                  htmlFor="what"
+                  htmlFor="bio"
                   className="inputLabel"
                   style={{ color: "var(--text-color-bold)" }}
                 >
-                  What you do
+                  {t("Edit_profile_profession")}
                 </label>
                 <input
                   type="text"
-                  onClick={e => setState({ what: e.target.value })}
-                  defaultValue={state.what}
+                  onChange={e => setState({ ...state, bio: e.target.value })}
+                  defaultValue={state.bio}
                   className="input"
-                  id="what"
-                  name="what"
+                  id="bio"
+                  name="bio"
                 />
                 <p className="para" style={{ color: "var(--text-color-gray)" }}>
-                  Let people know what you do at <b>ZURI</b>
+                  {t("Edit_profile_professionExplain")} <b>ZURI</b>
                 </p>
               </div>
-              {/* <div className="input-group">
-                <label htmlFor="bio" className="inputLabel">
-                  Bio
-                </label>
-                <textarea
-                  onClick={e => setState({ bio: e.target.value })}
-                  defaultValue={state.bio}
-                  className="textarea"
-                  name="bio"
-                  id="bio"
-                ></textarea>
-              </div> */}
+
               <div className="input-group phone">
                 <label
                   className="inputLabel"
                   style={{ color: "var(--text-color-bold)" }}
                 >
-                  Phone Number
+                  {t("Edit_profile_phoneNumber")}
                 </label>
                 <div className="phone-container">
                   <select
@@ -282,21 +304,34 @@ const EditProfile = () => {
                     }
                     className="phoneInput"
                     type="number"
+                    defaultValue={state.phone}
                   />
                 </div>
               </div>
-              <div className="input-group">
+              <div className="input-group timezone">
                 <label
-                  className="inputLabel col-12"
+                  className="inputLabel"
                   style={{ color: "var(--text-color-bold)" }}
                 >
-                  Time Zone
+                  {t("Edit_profile_timeZone")}
                 </label>
-                {/* <TimezoneSelect
-                  value={selectedTimezone}
-                  onChange={setSelectedTimezone}
-                  className="col-12"
-                /> */}
+                <div className="time-container">
+                  <select
+                    className="time-select"
+                    defaultValue={state.timezone}
+                    onChange={e =>
+                      setState({ ...state, timezone: e.target.value })
+                    }
+                  >
+                    {TimeZones.map((item, index) => {
+                      return (
+                        <option key={index} value={item}>
+                          {item}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
               </div>
               {/* <div className="input-group">
                 <label htmlFor="twitter" className="inputLabel">
@@ -331,7 +366,7 @@ const EditProfile = () => {
                 {links?.map((list, index) => (
                   <input type="text" className="input mb-3" key={index} />
                 ))}
-               
+
 18:51
 {links.length !== 5 && (
                   <p className="warning" onClick={addList}>
@@ -364,7 +399,9 @@ const EditProfile = () => {
                     />
                   ) : (
                     <div className="profile__img-wrapper">
-                      <span className="pictureHeading">Profile photo</span>
+                      <span className="pictureHeading">
+                        {t("Edit_profile_profilePhoto")}
+                      </span>
                       <img className="img" src={image} alt="profile-pic" />
                     </div>
                   )}
@@ -387,7 +424,7 @@ const EditProfile = () => {
                       width={40}
                     />
                   ) : ( */}
-                  Upload an Image
+                  {t("Edit_profile_uploadImage")}
                   {/* ) */}
                 </label>
                 <div
@@ -395,7 +432,7 @@ const EditProfile = () => {
                   className="rmvBtn"
                   onClick={handleImageDelete}
                 >
-                  Remove photo
+                  {t("Edit_profile_removeImage")}
                 </div>
               </div>
             </div>
@@ -409,7 +446,7 @@ const EditProfile = () => {
           </div>
           <div className="button-wrapper">
             <button className="btns cncBtn" onClick={toggleModalState}>
-              Cancel
+              {t("Edit_profile_cancel")}
             </button>
             <button onClick={handleFormSubmit} className="btns saveBtn">
               {state.loading ? (

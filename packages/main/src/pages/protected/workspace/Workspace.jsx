@@ -1,38 +1,53 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
-  Switch,
   Route,
-  useParams,
+  Switch,
   useHistory,
-  useRouteMatch,
-  useLocation
+  useLocation,
+  useRouteMatch
 } from "react-router-dom";
+import LiveBroadcast from "../../../components/media-chat/LiveBroadcast";
+import useParamHook from "./useParamHook";
 import {
-  TopBarWrapperStyle,
+  ExtraSidebarWrapperStyle,
+  GlobalWorkSpaceStyle,
   SidebarWrapperStyle,
-  WorkspaceWrapperStyle,
-  GlobalWorkSpaceStyle
+  TopBarWrapperStyle,
+  WorkspaceWrapperStyle
 } from "./Workspace.style";
 
 // import { GeneralLoading } from "../../../components";
 
+import VideoChat from "../../../components/media-chat/VideoChat";
+import VoiceCall from "../../../components/media-chat/VoiceCall/VoiceCall";
 import { Sidebar, TopBar } from "../../../components/protected";
+import ExtraSidebar from "../../../components/protected/extra-sidebar";
 
 export default function Index() {
-  const { workspaceId } = useParams();
+  // const { workspaceId } = useParams();
+  const {
+    workspaceId: { workspaceId, short_id }
+  } = useParamHook({ workspaceId: "workspaceId" });
+
   const location = useLocation();
+  // console.log(location)
   const history = useHistory();
-  const match = useRouteMatch(`/workspace/${workspaceId}`);
+  const match = useRouteMatch(`/workspace/${short_id}`);
   const pluginsName = ["plugin-music"];
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   useEffect(() => {
     window.dispatchEvent(new Event("zuri-plugin-load"));
-    match.isExact &&
-      history.replace(`/workspace/${workspaceId}/plugin-chat/all-dms`);
+    match?.isExact &&
+      history.replace(`/workspace/${short_id}/plugin-chat/all-dms`);
   }, []);
+
   // Temporary
   useEffect(() => {
     localStorage.setItem("currentWorkspace", workspaceId);
+    localStorage.setItem("currentWorkspaceShort", short_id);
   }, [workspaceId]);
+
   useEffect(() => {
     window.localStorage.setItem("lastLocation", location.pathname);
     const activePlugin = pluginsName.find(plugin =>
@@ -46,22 +61,45 @@ export default function Index() {
     }
   }, [location.pathname]);
 
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
     <>
       <GlobalWorkSpaceStyle />
       <TopBarWrapperStyle>
-        <TopBar />
+        <TopBar toggleSidebar={toggleSidebar} />
       </TopBarWrapperStyle>
 
-      <div style={{ display: "flex", height: "calc(100vh - 48px)" }}>
-        <SidebarWrapperStyle>
-          <Sidebar />
-        </SidebarWrapperStyle>
+      <div
+        style={{ display: "flex", height: "calc(100vh - 48px)" }}
+        id="workspace-all"
+      >
+        <>
+          <ExtraSidebarWrapperStyle open={sidebarOpen}>
+            <ExtraSidebar />
+          </ExtraSidebarWrapperStyle>
+          <SidebarWrapperStyle>
+            <Sidebar />
+          </SidebarWrapperStyle>
+        </>
+
         <WorkspaceWrapperStyle>
           <div id="zuri-plugin-load-section"></div>
           <Switch>
             <Route exact path="/workspace/:workspaceId">
               <h1>Welcome to your Workspace</h1>
+            </Route>
+            <Route path="/workspace/:workspaceId/LiveBroadcast">
+              <LiveBroadcast />
+            </Route>
+
+            <Route path="/workspace/:workspaceId/video-chat">
+              <VideoChat />
+            </Route>
+            <Route path="/workspace/:workspaceId/voice-call">
+              <VoiceCall />
             </Route>
 
             {/* <Route

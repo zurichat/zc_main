@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 
-import styles from "../about-workspace-tabs/aboutWorkspaceTab.module.css";
-
-// components
-import RetentionAndExports from "../retention-and-exports/RetentionAndExports";
+import styles from "../about-workspace-tabs/AboutWorkspaceTab.module.css";
+import RetentionAndExports from "../retention-exports/RetentionAndExports";
 import AdminOwners from "../admin-owners/AdminOwners";
 import OverviewWorkspace from "../overview-workspace/OverviewWorkspace";
-
-// icons
 import { FiMenu } from "react-icons/fi";
-import { CardProvider } from "../../../../marketplace/src/context/CardContext";
+import { CardProvider } from "../context/CardContext";
 
 const AboutWorkSpaceTabs = ({
   organizationDetails,

@@ -11,7 +11,6 @@ const PreferenceWrapper = ({ title, text, btnText, timeZone, children }) => {
         <div layout className={styles.settingleft}>
           {title} <br />
           <span>{text}</span>
-          {/* {timeZone} */}
         </div>
         <div className={styles.settingsright}>
           <button onClick={() => setShowContent(prev => !prev)}>

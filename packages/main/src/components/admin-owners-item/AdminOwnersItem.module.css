@@ -24,22 +24,6 @@
   display: inline-block;
   outline: none;
 }
-/* .imgAvatar {
-  background-size: 100%;
-  background-repeat: no-repeat;
-  display: inline-block;
-  height: 36px;
-  width: 36px;
-  background-color: rgba(29, 28, 29, 0.13);
-  position: relative;
-  border-radius: 4px;
-  color: #1d1c1d;
-  flex-shrink: 0;
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle;
-  border: 0;
-} */
 .imgAvatar {
   height: 36px;
   width: 36px;
@@ -59,7 +43,6 @@
   max-width: 50%;
 }
 .adminName {
-  /* display: block; */
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;

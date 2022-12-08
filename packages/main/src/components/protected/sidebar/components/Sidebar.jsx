@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import styles from "../styles/Sidebar.module.css";
 import { useTranslation } from "react-i18next";
 
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
+import liveicon from "../assets/icons/newlive.svg";
+import phoneicon from "../assets/icons/phone.svg";
 import draftIcon from "../assets/icons/draft-icon.svg";
-
 import { subscribeToChannel } from "@zuri/utilities";
 import { ACTIONS } from "../reducers/sidebar.reducer";
 import Header from "./Header";
@@ -13,18 +14,106 @@ import Room from "./Room";
 import SingleRoom from "./SingleRoom";
 import Category from "./Category";
 import Starred from "./Starred";
+import { storeSideBarInfo } from "../../../../utils/cache-sidebar";
 
 const categories = [];
 
 const Sidebar = props => {
-  let currentWorkspace = localStorage.getItem("currentWorkspace");
+  let currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+  let currentWorkspaceShort =
+    localStorage.getItem("currentWorkspaceShort") || null;
+
   const { t } = useTranslation();
 
   const [nullValue, setnullValue] = useState(0);
 
+  const sidebarRef = useRef(null);
+  const [isResizing, setIsResizing] = useState(false);
+  const [sidebarWidth, setSidebarWidth] = useState(250);
+
+  const startResizing = useCallback(() => {
+    setIsResizing(true);
+  }, []);
+
+  const stopResizing = useCallback(() => {
+    setIsResizing(false);
+
+    // use the default cursor on the UI when not resizing
+    document.querySelector("body").style.cursor = "default";
+  }, []);
+
+  const resize = useCallback(
+    mouseMoveEvent => {
+      if (isResizing) {
+        const newWidth =
+          mouseMoveEvent.clientX -
+          sidebarRef.current.getBoundingClientRect().left;
+
+        setSidebarWidth(() => newWidth);
+
+        // use the col-resize cursor on the UI while resizing
+        document.querySelector("body").style.cursor = "col-resize";
+
+        // collapse the sidebar on further minimization
+        if (newWidth <= 230) setSidebarWidth(0);
+      }
+    },
+    [isResizing]
+  );
+
+  useEffect(() => {
+    window.addEventListener("mousemove", resize);
+    window.addEventListener("mouseup", stopResizing);
+
+    return () => {
+      window.removeEventListener("mousemove", resize);
+      window.removeEventListener("mouseup", stopResizing);
+    };
+  }, [resize, stopResizing]);
+
   useEffect(() => {
     setnullValue(1);
   }, []);
+
+  // Update the local storage sidebar information anytime there's a change
+  useEffect(() => {
+    if (
+      props.state.user?.user?.email &&
+      props.state.sidebar &&
+      props.state.organization_info
+    ) {
+      storeSideBarInfo(props.state.user?.user?.email, {
+        sidebar: props.state.sidebar,
+        organization_info: props.state.organization_info
+      });
+    }
+  }, [
+    props.state.user?.user?.email,
+    props.state.sidebar,
+    props.state.organization_info,
+    storeSideBarInfo
+  ]);
+
+  function customFilter(objList, public_rooms, joined_rooms) {
+    let newObject = {};
+    const keys = Object.keys(objList);
+    keys.map(key => {
+      if (key === "channels") {
+        let objKey = Object.keys(objList[key]);
+        newObject = {
+          ...objList,
+          [key]: { ...objList[key][objKey], public_rooms, joined_rooms }
+        };
+      } else
+        newObject = {
+          ...newObject
+        };
+    });
+    return {
+      channel: newObject.channels,
+      direct_messages: newObject["direct messages"]["chat.zuri.chat_1"]
+    };
+  }
 
   {
     //Listening for sidebar update
@@ -34,13 +123,19 @@ const Sidebar = props => {
         `${currentWorkspace}_${props.state.user.user._id}_sidebar`,
         ctx => {
           const websocket = ctx.data;
-          // console.log("websocket", websocket)
           if (websocket.event === "sidebar_update") {
-            let sidebar_update = { [websocket.plugin_id]: websocket.data };
             //Update sidebar with recent changes
+            let sidebar_update = customFilter(
+              props.state.sidebar,
+              websocket.data.public_rooms,
+              websocket.data.joined_rooms
+            );
             props.dispatch({
               type: ACTIONS.UPDATE_PLUGINS,
-              payload: sidebar_update
+              payload: [
+                { ...sidebar_update.channel },
+                { ...sidebar_update.direct_messages }
+              ]
             });
           }
         }
@@ -84,9 +179,9 @@ const Sidebar = props => {
           return (
             <SingleRoom
               key={`${data.name}${idx}`}
-              name={data.joined_rooms[0].room_name}
-              image={data.joined_rooms[0].room_image}
-              link={data.joined_rooms[0].room_url}
+              name={data.joined_rooms?.[0].room_name}
+              image={data.joined_rooms?.[0].room_image}
+              link={data.joined_rooms?.[0].room_url}
             />
           );
         });
@@ -126,30 +221,55 @@ const Sidebar = props => {
     });
 
   return (
-    <div className={`container-fluid ${styles.sb__container}`}>
-      <Header state={props.state} />
-      <div className={`${styles.subCon2}`}>
-        <>
-          <SingleRoom
-            name={`${t("workspace_chat.threads")}`}
-            image={threadIcon}
-            link={`/workspace/${currentWorkspace}/plugin-chat/threads`}
-          />
-          <SingleRoom
-            name={`${t("workspace_chat.alldms")}`}
-            image={dmIcon}
-            link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
-          />
-          <SingleRoom
-            name={`${t("workspace_chat.drafts")}`}
-            image={draftIcon}
-          />
-
-          <Starred starredRooms={starredRooms} />
-          {singleItems}
-          {categorizedItems}
-        </>
-      </div>
+    <div
+      ref={sidebarRef}
+      style={{ width: sidebarWidth }}
+      //   onMouseDown={e => e.preventDefault()}
+      className={`${styles.sb__container}`}
+    >
+      {sidebarWidth > 0 && (
+        <div className={styles.sb__content}>
+          <Header state={props.state} />
+          <div className={`${styles.subCon2}`}>
+            <>
+              <SingleRoom
+                name={`${t("workspace_chat.threads")}`}
+                image={threadIcon}
+                link={`/workspace/${currentWorkspaceShort}/plugin-chat/threads`}
+              />
+              <SingleRoom
+                name={`${t("workspace_chat.alldms")}`}
+                image={dmIcon}
+                link={`/workspace/${currentWorkspaceShort}/plugin-chat/all-dms`}
+              />
+              <SingleRoom
+                name="Video Chat"
+                image={dmIcon}
+                link={`/workspace/${currentWorkspaceShort}/video-chat`}
+              />
+              <SingleRoom
+                name={`${t("workspace_chat.drafts")}`}
+                image={draftIcon}
+              />
+              <SingleRoom
+                name="LiveBroadcast"
+                image={liveicon}
+                link={`/workspace/${currentWorkspaceShort}/LiveBroadcast`}
+              />
+              <SingleRoom
+                name="Voice Call"
+                image={phoneicon}
+                link={`/workspace/${currentWorkspaceShort}/voice-call`}
+              />
+              <div className={styles.sb__divider} />
+              <Starred starredRooms={starredRooms} />
+              {singleItems}
+              {categorizedItems}
+            </>
+          </div>
+        </div>
+      )}
+      <div className={styles.sb__resizer} onMouseDown={startResizing} />
     </div>
   );
 };

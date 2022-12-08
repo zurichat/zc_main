@@ -7,7 +7,7 @@ const TwoFactor = () => {
     <div className={styles.two_factor}>
       <p>
         Protect your Zurichat account with an extra layer of security by
-        requiring access to your phone. Once configured, you'll be required to
+        requiring access to your phone. Once configured, you’ll be required to
         enter both your password and an authentication code from your mobile
         phone in order to sign into your Zuri Chat account.
       </p>

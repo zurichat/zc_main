@@ -11,6 +11,13 @@ import uk from "./assets/language/uk.png";
 import de from "./assets/language/de.png";
 import fr from "./assets/language/fr.png";
 import us from "./assets/language/us.png";
+import ar from "./assets/language/ar.png";
+import es from "./assets/language/es.png";
+import it from "./assets/language/it.png";
+import zh from "./assets/language/zh.png";
+import he from "./assets/language/he.png";
+import nl from "./assets/language/nl.png";
+import pt from "./assets/language/pt.png";
 import world from "./assets/language/world.png";
 
 export default function TopNavigationBar() {
@@ -34,8 +41,19 @@ export default function TopNavigationBar() {
     checkIfUserIsLogged();
   }, []);
 
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
+
   return (
-    <header className={TopNavigationBarStyles.pageHeader}>
+    <header className={TopNavigationBarStyles.pageHeader} style={textAlign()}>
       <nav
         className={`navbar navbar-expand-lg navbar-light ${TopNavigationBarStyles.navbar}`}
       >
@@ -49,10 +67,7 @@ export default function TopNavigationBar() {
             className={`d-inline-block align-top ${TopNavigationBarStyles.image}`}
             width={40}
           />
-          <span
-            translate="no"
-            className={`mb-2 ${TopNavigationBarStyles.zuriChat}`}
-          >
+          <span translate="no" className={`${TopNavigationBarStyles.zuriChat}`}>
             Zuri Chat
           </span>
         </Link>
@@ -118,6 +133,84 @@ export default function TopNavigationBar() {
                 <img
                   className={TopNavigationBarStyles.country_logo}
                   src={fr}
+                  alt="Dutch"
+                  title="French"
+                />{" "}
+                <span>French</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="zh"
+                onClick={() => saveLang("zh")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={zh}
+                  alt="Chinese"
+                  title="Chinese"
+                />{" "}
+                <span>Chinese</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="de"
+                onClick={() => saveLang("de")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={de}
+                  alt="Deutch"
+                  title="Deutch"
+                />{" "}
+                <span>Deutch</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="ar"
+                onClick={() => saveLang("ar")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={ar}
+                  alt="Arabic"
+                  title="Arabic"
+                />{" "}
+                <span>Arabic</span>
+              </button>
+              <button
+                value="en"
+                onClick={() => saveLang("en")}
+                className={`btn ${TopNavigationBarStyles.select}`}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={uk}
+                  alt="English (UK)"
+                  title="English (UK)"
+                />{" "}
+                <span>English (UK)</span>
+              </button>
+              <button
+                value="en-us"
+                onClick={() => saveLang("en-us")}
+                className={`btn ${TopNavigationBarStyles.select}`}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={us}
+                  alt="English (US)"
+                  title="English (US)"
+                />{" "}
+                <span>English (US)</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="fr"
+                onClick={() => saveLang("fr")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={fr}
                   alt="French"
                   title="French"
                 />{" "}
@@ -136,6 +229,97 @@ export default function TopNavigationBar() {
                 />{" "}
                 <span>Deutch</span>
               </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="ar"
+                onClick={() => saveLang("ar")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={ar}
+                  alt="Arabic"
+                  title="Arabic"
+                />{" "}
+                <span>Arabic</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="iw"
+                onClick={() => saveLang("iw")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={he}
+                  alt="Hebrew"
+                  title="Hebrew"
+                />{" "}
+                <span>Hebrew</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="es"
+                onClick={() => saveLang("es")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={es}
+                  alt="Spanish"
+                  title="Spanish"
+                />{" "}
+                <span>Spanish</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="it"
+                onClick={() => saveLang("it")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={it}
+                  alt="Italian"
+                  title="Italian"
+                />{" "}
+                <span>Italian</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="zh"
+                onClick={() => saveLang("zh")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={zh}
+                  alt="Chinese"
+                  title="Chinese"
+                />{" "}
+                <span>Chinese</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="pt"
+                onClick={() => saveLang("pt")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={pt}
+                  alt="Portuguese"
+                  title="Portguese"
+                />{" "}
+                <span>Portuguese</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="nl"
+                onClick={() => saveLang("nl")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={nl}
+                  alt="Dutch"
+                  title="Dutch"
+                />{" "}
+                <span>Dutch</span>
+              </button>
             </Modal.Body>
           </Modal>
         </div>
@@ -150,9 +334,15 @@ export default function TopNavigationBar() {
           aria-label="Toggle navigation"
         >
           <span className={TopNavigationBarStyles.navbar_toggle_icon}>
-            <span></span>
-            <span></span>
-            <span></span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" />
+            </svg>
           </span>
         </button>
         <div
@@ -164,29 +354,41 @@ export default function TopNavigationBar() {
           >
             <li className="nav-item">
               <NavLink
-                to="/pricing"
+                to="/downloads"
                 className={`nav-link ${TopNavigationBarStyles.navLinkFeatures}`}
                 aria-current="page"
               >
                 <span className={`${TopNavigationBarStyles.item}`}>
-                  {t("nav_pricing")}
+                  {t("nav_downloads")}
                 </span>
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
-                to="/about"
+                to={{ pathname: "https://docs.zuri.chat/" }}
+                target="_blank"
                 className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
                 role="button"
                 aria-expanded="false"
               >
                 <span className={`${TopNavigationBarStyles.item}`}>
-                  {t("nav_about")}
+                  {t("nav_documentation")}
+                </span>
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/contact-us"
+                className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
+                role="button"
+                aria-expanded="false"
+              >
+                <span className={`${TopNavigationBarStyles.item}`}>
+                  {t("nav_contact")}
                 </span>
               </NavLink>
             </li>
           </ul>
-
           <ul
             className={`d-lg-none navbar-nav-scroll ${TopNavigationBarStyles.signs}`}
           >
@@ -287,6 +489,103 @@ export default function TopNavigationBar() {
                   title="Deutch"
                 />{" "}
                 <span>Deutch</span>
+              </button>
+            </Modal.Body>
+
+            <Modal.Body className={TopNavigationBarStyles.country}>
+              <button
+                value="ar"
+                onClick={() => saveLang("ar")}
+                className={`btn ${TopNavigationBarStyles.select}`}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={ar}
+                  alt="Arabic"
+                  title="Arabic"
+                />{" "}
+                <span>Arabic</span>
+              </button>
+              <button
+                value="iw"
+                onClick={() => saveLang("iw")}
+                className={`btn ${TopNavigationBarStyles.select}`}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={he}
+                  alt="Hebrew"
+                  title="Hebrew"
+                />{" "}
+                <span>Hebrew</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="es"
+                onClick={() => saveLang("es")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={es}
+                  alt="Spanish"
+                  title="Spanish"
+                />{" "}
+                <span>Spanish</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="it"
+                onClick={() => saveLang("it")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={it}
+                  alt="Italian"
+                  title="Italian"
+                />{" "}
+                <span>Italian</span>
+              </button>
+            </Modal.Body>
+
+            <Modal.Body className={TopNavigationBarStyles.country}>
+              <button
+                value="zh"
+                onClick={() => saveLang("zh")}
+                className={`btn ${TopNavigationBarStyles.select}`}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={zh}
+                  alt="Chinese"
+                  title="Chinese"
+                />{" "}
+                <span>Chinese</span>
+              </button>
+              <button
+                value="pt"
+                onClick={() => saveLang("pt")}
+                className={`btn ${TopNavigationBarStyles.select}`}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={pt}
+                  alt="Portuguese"
+                  title="Portuguese"
+                />{" "}
+                <span>Portuguese</span>
+              </button>
+              <button
+                className={`btn ${TopNavigationBarStyles.select}`}
+                value="nl"
+                onClick={() => saveLang("nl")}
+              >
+                <img
+                  className={TopNavigationBarStyles.country_logo}
+                  src={nl}
+                  alt="Dutch"
+                  title="Dutch"
+                />{" "}
+                <span>Dutch</span>
               </button>
             </Modal.Body>
           </Modal>

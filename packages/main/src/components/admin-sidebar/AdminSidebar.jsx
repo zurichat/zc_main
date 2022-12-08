@@ -1,12 +1,7 @@
 import React, { useEffect } from "react";
-import styles from "../admin-sidebar/adminSidebar.module.css";
+import styles from "../admin-sidebar/AdminSidebar.module.css";
 import { Link, NavLink } from "react-router-dom";
-
-// image
 import avatar from "../admin-sidebar/assets/avatar.svg";
-
-// icons
-
 import zuriLogo from "../admin-sidebar/assets/zuriLogo.svg";
 import grid from "../admin-sidebar/assets/grid.svg";
 import bouy from "../admin-sidebar/assets/bouy.svg";
@@ -172,53 +167,11 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/admin/settings/managemembers "
+            to="/admin/settings/managemembers"
           >
             <FiBook className={styles.icon} />
             Manage members
           </Link>
-          {/* <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/admin/settings/usergroups"
-          >
-            <FiUsers className={styles.icon} />
-            User groups
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/admin/invites"
-          >
-            <FiUserPlus className={styles.icon} />
-            Invitations
-          </Link>
-          <NavLink
-            exact
-            onClick={() => setModal(!openModal)}
-            activeClassName={styles.sidebarLinkActive}
-            className={styles.sidebarLink}
-            to="/admin/settings/billings"
-          >
-            <FiCreditCard className={styles.icon} />
-            Billings
-          </NavLink>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/"
-          >
-            <FiScissors className={styles.icon} />
-            Authentication
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/admin/settings/deprecation"
-          >
-            <FiScissors className={styles.icon} />
-            Deprecation
-          </Link> */}
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
@@ -227,71 +180,38 @@ const AdminSidebar = ({ setModal, openModal }) => {
             <FiCheckSquare className={styles.icon} />
             About this workspace
           </Link>
-          {/* <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/"
-          >
-            <FiAlertCircle className={styles.icon} />
-            Support for Transport layer security
-          </Link> */}
         </div>
       </div>
       <div className={styles.sidebarMenu}>
         <h6 className={styles.sidebarHeading}>OTHERS</h6>
         <div className={styles.sidebarMenuItems}>
           <Link
-            onClick={() => setModal(!openModal)}
+            onClick={() => setModal(prev => !prev)}
             className={styles.sidebarLink}
-            to="/"
-          >
-            Tour
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/admin/settings/managemembers "
+            to="/admin/settings/managemembers"
           >
             Manage members
           </Link>
           <Link
-            onClick={() => setModal(!openModal)}
+            onClick={() => setModal(prev => !prev)}
             className={styles.sidebarLink}
-            to="/"
+            to="/legal"
           >
             Brand guidelines
           </Link>
           <Link
-            onClick={() => setModal(!openModal)}
+            onClick={() => setModal(prev => !prev)}
             className={styles.sidebarLink}
             to="/help"
           >
             Help
           </Link>
           <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/"
-          >
-            API
-            <FiExternalLink className={styles.iconRight} />
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/components/gateways"
-          >
-            Gateways
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
+            onClick={() => setModal(prev => !prev)}
             className={styles.sidebarLink}
             to="/pricing"
           >
             Pricing
-          </Link>
-          <Link className={styles.sidebarLink} to="/blog">
-            Our blog
           </Link>
           <Link className={styles.sidebarLink} to="/signout">
             Sign out

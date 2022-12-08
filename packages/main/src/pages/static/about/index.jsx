@@ -21,6 +21,7 @@ import { useTranslation } from "react-i18next";
 // end of image import
 const About = () => {
   const { t } = useTranslation();
+
   return (
     <div>
       <TopNavigationBar />
@@ -186,12 +187,12 @@ const About = () => {
         <div className={`${styles.zurichat_section}`}>
           <div className={`${styles.signup_cta}`}>
             <h3 className={`${styles.zurichat_text}`}>
-              Zuri Chat is a modern world platform that makes communicating with
-              your team or organization faster, easier and more fun. Want to
-              explore?
+              {t("about.explore.title")}
             </h3>
             <Link to="/signup">
-              <button className={` ${styles.btn_sale}`}>GET STARTED</button>
+              <button className={` ${styles.btn_sale}`}>
+                {t("about.explore.button")}
+              </button>
             </Link>
           </div>
         </div>

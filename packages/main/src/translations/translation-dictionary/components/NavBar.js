@@ -1,63 +1,86 @@
 export default [
   {
-    key: "nav_pricing",
-    en: "Pricing",
-    de: "Preisgestaltung",
-    engb: "Pricing",
-    fr: "Tarification"
-  },
-  {
-    key: "nav_about",
-    en: "About",
-    de: "Über",
-    engb: "About",
-    fr: "Sur"
-  },
-  {
-    key: "nav_plugin",
-    en: "Plugin",
-    de: "Plugin",
-    engb: "Plugin",
-    fr: "Brancher"
+    key: "nav_documentation",
+    en: "Documentation",
+    de: "Beurkundung",
+    nl: "Dokumentasjon",
+    engb: "Documentation",
+    fr: "Documentation",
+    zh: "文檔",
+    ar: "توثيق",
+    es: "Documentación",
+    it: "Documentazione",
+    iw: "על אודות",
+    pt: "cerca de"
   },
   {
     key: "nav_downloads",
     en: "Downloads ",
     de: "Downloads",
-    engb: "Downloads "
+    nl: "Downloaden",
+    engb: "Downloads ",
+    fr: "Téléchargements",
+    zh: "下載",
+    ar: "التحميلات",
+    es: "Descargas",
+    it: "Download",
+    iw: "הורדות",
+    pt: "Transferências"
   },
   {
     key: "nav_contact",
     en: "Contact",
     de: "Kontakt",
+    nl: "contact",
     engb: "Contact",
-    fr: "Contact"
+    fr: "Contactez",
+    zh: "接觸",
+    ar: "اتصل",
+    es: "Contacto",
+    it: "Contatto",
+    iw: "איש קשר",
+    pt: "Contato"
   },
   {
     key: "nav_signup",
     en: "Sign Up",
-    de: "Anmeldung",
+    de: "Anmelden",
+    nl: "aanmelden",
     engb: "Sign Up",
-    fr: "S'inscrire"
+    fr: "S'inscrire",
+    zh: "報名",
+    ar: "اشتراك",
+    es: "inscribirse",
+    it: "iscrizione",
+    iw: "הירשם",
+    pt: "inscrever-se"
   },
   {
     key: "nav_login",
     en: "Login",
     de: "Anmeldung",
+    nl: "Log in",
     engb: "Login",
-    fr: "Connexion"
+    fr: "connexion",
+    zh: "登錄",
+    ar: "تسجيل الدخول",
+    es: "acceso",
+    it: "Accedere",
+    iw: "התחברות",
+    pt: "Conecte-se"
   },
   {
     key: "nav_signout",
     en: "Sign Out",
-    de: "Austragen",
+    de: "austragen",
+    nl: "afmelden",
     engb: "Sign Out",
-    fr: "Se déconnecter"
-  },
-  {
-    key: "search.placeholder",
-    en: "Search Here",
-    fr: "Cherche ici",
-    de: "Suche hier"
+    fr: "se déconnecter",
+    zh: "登出",
+    ar: "خروج",
+    es: "desconectar",
+    it: "disconnessione",
+    iw: "התנתק",
+    pt: "sair"
   }
 ];

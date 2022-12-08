@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap");
+
+body {
+  font-family: "Lato", sans-serif !important;
+}
+
+.intro {
+  background: #CCF1E5;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 30px 20px;
+}
+
+.introText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 27px;
+  flex-direction: column;
+}
+
+.introText h2 {
+  font-weight: 700;
+  font-size: 35px;
+  color: #090809;
+  text-align: center;
+  line-height: 45px;
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.mobile a,
+.desktop a {
+  text-decoration: none;
+}
+
+.mobile a {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.desktop a {
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+.buttons .mobile {
+  text-align: center;
+  padding: 10px 24px;
+  background: #00B87C;
+  border-radius: 4px;
+}
+
+.buttons .desktop {
+  text-align: center;
+  padding: 10px 24px;
+  background: #00B87C;
+  border-radius: 4px;
+}
+
+.buttons .mobile:hover {
+  background: #00b87bab;
+}
+
+.buttons .desktop:hover {
+  background: #00b87bab;
+}
+
+.introImg img {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (min-width:768px){
+  .intro {
+    padding: 127px 80px;
+    gap: 44px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.introImg {
+  order: 1;
+}
+
+.introText {
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 27px;
+  order: 0;
+}
+
+.introText h2 {
+  font-size: 48px;
+  text-align: left;
+}
+
+.buttons {
+  flex-direction: row;
+}
+}

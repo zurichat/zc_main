@@ -1,7 +1,7 @@
 import React from "react";
 import AdminSettings from "../admin-settings/AdminSettings";
 import AccountProfileTab from "../../../components/account-profile-tabs/AccountProfileTabs";
-import styles from "../../protected/account-profile/aboutWorkspace.module.css";
+import styles from "../account-profile/AboutWorkspace.module.css";
 import { AiOutlineUser } from "react-icons/ai";
 
 const AccountProfile = () => {

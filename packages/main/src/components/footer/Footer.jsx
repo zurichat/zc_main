@@ -18,8 +18,19 @@ export default function Footer() {
     return new Date().getFullYear();
   };
 
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
+
   return (
-    <div className={styles.footer}>
+    <div className={styles.footer} style={textAlign()}>
       <div className={styles.top_footer}>
         <div className={styles.logo}>
           <Link to="/" className={`me-0 me-md-2 ${styles.link}`}>
@@ -37,10 +48,10 @@ export default function Footer() {
 
         <div className={styles.menu}>
           <div>
-            <h5>{t("footer_company")}</h5>
+            <h5>{t("footer_know_us")}</h5>
             <ul>
               <li>
-                <Link to="/whyzurichat">{t("footer_why_zuri_chat")}</Link>
+                <Link to="/contact-us">{t("footer_contact")}</Link>
               </li>
             </ul>
           </div>
@@ -56,85 +67,64 @@ export default function Footer() {
                   {t("footer_documentation")}
                 </a>
               </li>
-              <li>
-                <Link to="/plugins">{t("nav_plugin")}</Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h5>{t("footer_know_us")}</h5>
-            <ul>
-              <li>
-                <Link to="/about">{t("footer_about")}</Link>
-              </li>
-              <li>
-                <Link to="/contact-us">{t("footer_contact")}</Link>
-              </li>
             </ul>
           </div>
 
           <div className={styles.social}>
             <h5>{t("footer_social_media")}</h5>
             <ul>
-              <div>
-                <li>
-                  <a
-                    href="https://www.facebook.com/Zuri-Chat-101278805666628"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={facebook}
-                      alt="Facebook"
-                      width={24}
-                      title="Connect with us on Facebook"
-                    />
-                  </a>
-                </li>
-                <br />
-                <li>
-                  <a
-                    href="https://instagram.com/zurichathq"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={instagram}
-                      alt="Instagram"
-                      width={21}
-                      title="Connect with us on Instagram"
-                    />
-                  </a>
-                </li>
-              </div>
-              <div>
-                <li>
-                  <a
-                    href="https://twitter.com/zurichat"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={twitter}
-                      alt="Twitter"
-                      width={24}
-                      title="Connect with us on Twitter"
-                    />
-                  </a>
-                </li>
-                <br />
-                <li>
-                  <a href="https://www.linkedin.com/company/zuri-chat/">
-                    <img
-                      src={linkedin}
-                      alt="Linkedin"
-                      width={24}
-                      title="Connect with us on Linkedin"
-                    />
-                  </a>
-                </li>
-              </div>
+              <li>
+                <a
+                  href="https://www.facebook.com/Zuri-Chat-101278805666628"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={facebook}
+                    alt="Facebook"
+                    width={24}
+                    title="Connect with us on Facebook"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/zurichathq"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={instagram}
+                    alt="Instagram"
+                    width={21}
+                    title="Connect with us on Instagram"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com/zurichat"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={twitter}
+                    alt="Twitter"
+                    width={24}
+                    title="Connect with us on Twitter"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/zuri-chat/">
+                  <img
+                    src={linkedin}
+                    alt="Linkedin"
+                    width={24}
+                    title="Connect with us on Linkedin"
+                  />
+                </a>
+              </li>
             </ul>
           </div>
         </div>

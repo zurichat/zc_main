@@ -6,12 +6,14 @@ export default function SingleRoom({ image, name, link }) {
   const match = useRouteMatch(link);
   return (
     <div
-      className={`row p-0 pl-2 text-decoration-none ${
+      className={`row text-decoration-none ${
         match?.isExact ? styles.dropdown_active : styles.dropDown
       } `}
     >
       <div
-        onClick={() => navigateToUrl(link)}
+        onClick={() => {
+          navigateToUrl(link);
+        }}
         className={`col-12 d-flex align-items-center ${styles.plugin__title}`}
       >
         <div className={`d-flex align-items-center`}>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import styles from "./SettingsTab.module.css";
+import styles from "../settings-tab/SettingsTab.module.css";
 import TimeZone from "../time-zone/TimeZone";
 import PreferenceWrapper from "../preference-wrapper/PreferenceWrapper";
 import { AnimateSharedLayout } from "framer-motion";
@@ -9,10 +9,9 @@ import TwoFactor from "../two-factor/TwoFactor";
 import ChangeEmail from "../change-email/ChangeEmail";
 import Language from "../language/Language";
 import UserName from "../user-name/UserName";
-import { getUser } from "../../utils/Common";
+import { getUser } from "../settings-tab/utils/Common";
 
 const SettingsTab = () => {
-  // const showTime = show ? <TimeZone /> : null
   const userData = getUser();
   return (
     <>

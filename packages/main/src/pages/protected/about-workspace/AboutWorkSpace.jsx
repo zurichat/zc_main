@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import AdminSettings from "../admin-settings/AdminSettings";
 import AboutWorkSpaceTabs from "../../../components/about-workspace-tabs/AboutWorkSpaceTabs";
-import styles from "../about-workspace/aboutWorkspace.module.css";
+import styles from "../about-workspace/AboutWorkspace.module.css";
 import { FiAlertOctagon } from "react-icons/fi";
-import { authAxios } from "../about-workspace/util/Api";
+import { authAxios } from "../about-workspace/utils/Api";
 
 const AboutWorkSpace = () => {
   const [orgDetails, setOrgdetails] = useState({});
@@ -52,7 +52,6 @@ const AboutWorkSpace = () => {
   useEffect(() => {
     getOrgDetails();
     workspaceuser();
-    //eslint-disable-next-line
   }, []);
 
   return (
