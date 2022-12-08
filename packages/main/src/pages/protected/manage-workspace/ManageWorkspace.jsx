@@ -209,7 +209,7 @@ const adminSettings = () => {
                 </div>
               </div>
               <div className={classes.floatright}>
-                <Link to="/admin/delete">
+                <Link to="/admin/settings/ManageWorkspace/delete-workspace">
                   <button>Delete Workspace</button>
                 </Link>
               </div>
