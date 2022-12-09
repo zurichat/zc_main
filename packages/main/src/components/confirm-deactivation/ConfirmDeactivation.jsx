@@ -2,9 +2,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { FaCheck } from "react-icons/fa";
 import { Link, useHistory } from "react-router-dom";
-import styles from "../styles/ConfirmDeactivation.module.css";
-import SettingsNav from "./SettingsNav";
-import { getToken, getUser, removeUserSession } from "../Utils/Common";
+import styles from "../confirm-deactivation/ConfirmDeactivation.module.css";
+import SettingsNav from "../settings-nav/SettingsNav";
+import {
+  getToken,
+  getUser,
+  removeUserSession
+} from "../confirm-deactivation/utils/Common";
 
 const ConfirmDeactivation = () => {
   const [deactivate, setDeactivate] = useState(false);
@@ -124,7 +128,10 @@ const ConfirmDeactivation = () => {
               Deactivate my Account
             </button>
 
-            <Link to="/settings" className={styles.cancel}>
+            <Link
+              to="/admin/settings/accountsProfile/account-deactivation"
+              className={styles.cancel}
+            >
               Cancel
             </Link>
           </div>
