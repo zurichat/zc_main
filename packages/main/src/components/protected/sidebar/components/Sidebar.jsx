@@ -29,7 +29,7 @@ const Sidebar = props => {
 
   const sidebarRef = useRef(null);
   const [isResizing, setIsResizing] = useState(false);
-  const [sidebarWidth, setSidebarWidth] = useState(260);
+  const [sidebarWidth, setSidebarWidth] = useState(250);
 
   const startResizing = useCallback(() => {
     setIsResizing(true);
@@ -55,7 +55,7 @@ const Sidebar = props => {
         document.querySelector("body").style.cursor = "col-resize";
 
         // collapse the sidebar on further minimization
-        if (newWidth <= 195) setSidebarWidth(0);
+        if (newWidth <= 230) setSidebarWidth(0);
       }
     },
     [isResizing]
@@ -94,6 +94,27 @@ const Sidebar = props => {
     storeSideBarInfo
   ]);
 
+  function customFilter(objList, public_rooms, joined_rooms) {
+    let newObject = {};
+    const keys = Object.keys(objList);
+    keys.map(key => {
+      if (key === "channels") {
+        let objKey = Object.keys(objList[key]);
+        newObject = {
+          ...objList,
+          [key]: { ...objList[key][objKey], public_rooms, joined_rooms }
+        };
+      } else
+        newObject = {
+          ...newObject
+        };
+    });
+    return {
+      channel: newObject.channels,
+      direct_messages: newObject["direct messages"]["chat.zuri.chat_1"]
+    };
+  }
+
   {
     //Listening for sidebar update
     nullValue === 1 &&
@@ -102,13 +123,19 @@ const Sidebar = props => {
         `${currentWorkspace}_${props.state.user.user._id}_sidebar`,
         ctx => {
           const websocket = ctx.data;
-          // console.log("websocket", websocket)
           if (websocket.event === "sidebar_update") {
-            let sidebar_update = { [websocket.plugin_id]: websocket.data };
             //Update sidebar with recent changes
+            let sidebar_update = customFilter(
+              props.state.sidebar,
+              websocket.data.public_rooms,
+              websocket.data.joined_rooms
+            );
             props.dispatch({
               type: ACTIONS.UPDATE_PLUGINS,
-              payload: sidebar_update
+              payload: [
+                { ...sidebar_update.channel },
+                { ...sidebar_update.direct_messages }
+              ]
             });
           }
         }
@@ -152,9 +179,9 @@ const Sidebar = props => {
           return (
             <SingleRoom
               key={`${data.name}${idx}`}
-              name={data.joined_rooms[0].room_name}
-              image={data.joined_rooms[0].room_image}
-              link={data.joined_rooms[0].room_url}
+              name={data.joined_rooms?.[0].room_name}
+              image={data.joined_rooms?.[0].room_image}
+              link={data.joined_rooms?.[0].room_url}
             />
           );
         });
@@ -197,8 +224,8 @@ const Sidebar = props => {
     <div
       ref={sidebarRef}
       style={{ width: sidebarWidth }}
-      onMouseDown={e => e.preventDefault()}
-      className={`container-fluid ${styles.sb__container}`}
+      //   onMouseDown={e => e.preventDefault()}
+      className={`${styles.sb__container}`}
     >
       {sidebarWidth > 0 && (
         <div className={styles.sb__content}>

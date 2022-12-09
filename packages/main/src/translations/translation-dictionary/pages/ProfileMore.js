@@ -1,0 +1,72 @@
+export default [
+  {
+    key: "profilemore_preferences",
+    en: "View preferences",
+    de: "Einstellungen anzeigen",
+    nl: "Voorkeuren weergeven",
+    engb: "View preferences",
+    fr: "Afficher les préférences",
+    zh: "阅首选项",
+    ar: "عرض التفضيلات",
+    es: "Ver preferencias",
+    it: "Visualizza preferenze",
+    iw: "הצגת העדפות",
+    pt: "Ver preferências"
+  },
+  {
+    key: "profile_view_files",
+    en: "View your files",
+    de: "Anzeigen Ihrer Dateien",
+    nl: "Bekijk uw bestanden",
+    engb: "View your files",
+    fr: "Afficher vos fichiers",
+    zh: "省君文",
+    ar: "عرض ملفاتك",
+    es: "Ver los archivos",
+    it: "Visualizza i tuoi file",
+    iw: "הצגת הקבצים שלך",
+    pt: "Ver os seus ficheiros"
+  },
+  {
+    key: "profile_set_yourself",
+    en: "Set yourself",
+    de: "Setze dich selbst",
+    nl: "Stel jezelf in",
+    engb: "Set yourself",
+    fr: "Définissez-vous",
+    zh: "自置",
+    ar: "ضع نفسك",
+    es: "Prepárate",
+    it: "Preparati",
+    iw: "הגדר את עצמך",
+    pt: "Estabeleça-se"
+  },
+  {
+    key: "profile_copy_member",
+    en: "Copy member ID",
+    de: "Mitglieds-ID kopieren",
+    nl: "Lid-ID kopiëren",
+    engb: "Copy member ID",
+    fr: "Copier l’ID du membre",
+    zh: "复制员 ID",
+    ar: "نسخة من بطاقة هوية العضو",
+    es: "Copiar ID de miembro",
+    it: "Copia l'ID membro",
+    iw: "העתקת מזהה חבר",
+    pt: "ID do membro da cópia"
+  },
+  {
+    key: "profile_account_settings",
+    en: "Account settings",
+    de: "Kontoeinstellungen",
+    nl: "Accountinstellingen",
+    engb: "Account settings",
+    fr: "Paramètres du compte",
+    zh: "帐户置",
+    ar: "إعدادات الحساب",
+    es: "Configuración de la cuenta",
+    it: "Impostazioni account",
+    iw: "הגדרות חשבון",
+    pt: "Definições de conta"
+  }
+];
