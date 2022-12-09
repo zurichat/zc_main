@@ -39,7 +39,7 @@ export default function MessageBox({ message }) {
             )}
           </div>
           <div>
-            {message.files.map((e, i) => {
+            {message?.files?.map((e, i) => {
               return (
                 <div key={i} className={styles.fileWrapper}>
                   <span className="file-name">Media</span>
