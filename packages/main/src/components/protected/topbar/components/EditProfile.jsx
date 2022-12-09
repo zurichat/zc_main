@@ -89,7 +89,6 @@ const EditProfile = () => {
           deleteAllUtilitiesCache();
           const newUploadedImage = res.data.data;
           setUserProfileImage(newUploadedImage);
-          getUserInfo();
 
           const newUserDetails = { ...user, image_url: newUploadedImage };
           setUser(newUserDetails);
