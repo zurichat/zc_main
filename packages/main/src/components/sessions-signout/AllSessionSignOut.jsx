@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import styles from "../styles/AllSessionSignOut.module.css";
-import SignOutActionList from "./SignOutActionList";
-import SettingsNav from "./SettingsNav";
-import FormMessage from "./FormMessage";
-import boxArrow from "./../box-arrow-right.svg";
-import errorIcon from "../../../component-assets/icons/bx-error.svg";
+import styles from "../sessions-signout/AllSessionSignOut.module.css";
+import SignOutActionList from "../signout-actionlist/SignOutActionList";
+import SettingsNav from "../settings-nav/SettingsNav";
+import FormMessage from "../form-message/FormMessage";
+import boxArrow from "../sessions-signout/assets/box-arrow-right.svg";
+import errorIcon from "../sessions-signout/assets/bx-error.svg";
 import axios from "axios";
 
 function AllSessionSignOut() {
