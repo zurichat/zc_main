@@ -316,20 +316,3 @@ input[type="text"]:focus {
 .checkbox:checked + .label .switch {
   right: 0px;
 }
-
-.selectList {
-  height: 200px;
-  width: 100%;
-  overflow-y: scroll;
-  margin-bottom: 10px;
-}
-
-.selectItem {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-}
-
-.selectItem:hover {
-  background-color: #00b87c;
-}

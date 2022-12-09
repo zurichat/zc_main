@@ -13,7 +13,6 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
   const [roomId, setRoomId] = useState(false);
   const [options, setOptions] = useState(false);
   const [newRoom, setNewRoom] = useState(false);
-  const [popUpData, setPopUpData] = useState({ inEffect: false, caller: "" });
   const popup = () => setOptions(!options);
   const room = () => setNewRoom(!newRoom);
   const { t } = useTranslation();
@@ -22,17 +21,7 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
     <div
       className={`row ${styles.dropDown} align-items-center text-decoration-none `}
     >
-      {popUpData.inEffect ? (
-        <DropRoom
-          trigger={newRoom}
-          data={popUpData}
-          setData={setPopUpData}
-          setTrigger={setNewRoom}
-          name={categoryName}
-        />
-      ) : (
-        ""
-      )}
+      {newRoom ? <DropRoom trigger={newRoom} setTrigger={setNewRoom} /> : ""}
 
       <div
         className={`col-12 w-100 d-flex align-items-center justify-content-between ${styles.plugin__title}`}
@@ -54,19 +43,9 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
             <>
               <div className={`${styles.dropdown__menu}`}>
                 <a href={button_url} onClick={navigateToUrl}>
-                  <p>Browse {categoryName}</p>
+                  <p>Browse Channels</p>
                 </a>
-                <p
-                  onClick={() =>
-                    setPopUpData({
-                      inEffect: true,
-                      caller: categoryName
-                    })
-                  }
-                >
-                  Create a {categoryName}
-                </p>
-                {/* <p onClick={room}>Create a {categoryName}</p> */}
+                <p onClick={room}>Create a Channel</p>
               </div>
             </>
           ) : (
