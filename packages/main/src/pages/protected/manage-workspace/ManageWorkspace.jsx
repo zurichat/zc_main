@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from "react";
 import { AnimateSharedLayout, motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import PreferenceWrapper from "../preference-wrapper/PreferenceWrapper";
 
-import JoinWorkspace from "../../../components/join-workspace/JoinWorkspace";
-import WorkspaceLanguage from "../../../components/workspace-language/WorkspaceLanguage";
-import Guidelines from "../../../components/guidelines/Guidelines";
-import DisplayName from "../../../components/display-name/DisplayName";
-import JoinChannel from "../../../components/join-channel/JoinChannel";
-import NotifyUsers from "../../../components/notify-user/NotifyUsers";
 import Calls from "../../../components/calls/Calls";
-import DisplayPronoun from "../../../components/display-pronoun/DisplayPronoun";
-import MessageRetention from "../../../components/message-retention/MessageRetention";
-import FileRetention from "../../../components/file-retention/FileRetention";
-import DisplayEmail from "../../../components/display-email/DisplayEmail";
 import DefaultChannels from "../../../components/default-channel/DefaultChannel";
+import DisplayEmail from "../../../components/display-email/DisplayEmail";
+import DisplayName from "../../../components/display-name/DisplayName";
+import DisplayPronoun from "../../../components/display-pronoun/DisplayPronoun";
+import FileRetention from "../../../components/file-retention/FileRetention";
+import Guidelines from "../../../components/guidelines/Guidelines";
+import JoinChannel from "../../../components/join-channel/JoinChannel";
+import JoinWorkspace from "../../../components/join-workspace/JoinWorkspace";
+import MessageRetention from "../../../components/message-retention/MessageRetention";
+import NotifyUsers from "../../../components/notify-user/NotifyUsers";
+import WorkspaceLanguage from "../../../components/workspace-language/WorkspaceLanguage";
 import { authAxios } from "../manage-workspace/utils/Api";
 import { getCurrentWorkspace } from "../manage-workspace/utils/Common";
 
+import { Link } from "react-router-dom";
 import classes from "../manage-workspace/ManageWorkspace.css";
 import styles from "../manage-workspace/preference.module.css";
-import { Link } from "react-router-dom";
 
 const adminSettings = () => {
   const [logoUrl, setLogoUrl] = useState({});
@@ -209,7 +209,7 @@ const adminSettings = () => {
                 </div>
               </div>
               <div className={classes.floatright}>
-                <Link to="/admin/delete">
+                <Link to="/admin/workspace/delete">
                   <button>Delete Workspace</button>
                 </Link>
               </div>

@@ -1,39 +1,40 @@
-import { lazily } from "react-lazily";
 import React, { Suspense } from "react";
+import { lazily } from "react-lazily";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 // All components imported here
 import { GeneralErrorBoundary, GeneralLoading } from "./components";
-import ManageMembers from "./components/manage-members/ManageMembers";
 import ChangeWorkspaceName from "./components/change-workspace-name/ChangeWorkspaceName";
+import ManageMembers from "./components/manage-members/ManageMembers";
 
 // All utilities imported here
 import { withSuspense } from "./utils";
 
 // All Pages imported here
+import TermsOfService from "../src-old/pages/termsOfService/index";
+import SettingsHome from "../src/pages/protected/settings-home/SettingsHome";
+import { useAuth } from "./auth/use-auth";
+import DeleteWorkspace from "./components/delete-workspace/deleteWorkspace";
 import {
-  HomePage,
-  Login,
-  SignUp,
-  NewSignOut,
   AboutPage,
+  ChangePassword,
   ContactUsPage,
   DownloadsPage,
+  ErrorPage,
+  HomePage,
+  InvitePage,
+  Login,
+  NewSignOut,
   PluginsPage,
   PricingPage,
-  InvitePage,
-  ResetPassword,
-  ChangePassword,
-  WhyZuriChat,
   PrivacyPage,
-  ErrorPage
+  ResetPassword,
+  SignUp,
+  WhyZuriChat
 } from "./pages";
-import TermsOfService from "../src-old/pages/termsOfService/index";
-import { useAuth } from "./auth/use-auth";
-import SettingsHome from "../src/pages/protected/settings-home/SettingsHome";
+import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
 import AccountProfile from "./pages/protected/account-profile/AccountProfile";
 import ManageWorkspace from "./pages/protected/manage-workspace/ManageWorkspace";
-import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
 import Help from "./pages/static/help";
 import TermsCondition from "./pages/static/legal";
 
@@ -128,6 +129,9 @@ const App = () => (
             path="/admin/settings/ManageWorkspace/ChangeWorkspaceName"
           >
             <ChangeWorkspaceName />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/workspace/delete">
+            <DeleteWorkspace />
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/managemembers">
             <ManageMembers />
