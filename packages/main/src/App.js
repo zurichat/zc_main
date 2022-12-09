@@ -6,6 +6,7 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { GeneralErrorBoundary, GeneralLoading } from "./components";
 import ManageMembers from "./components/manage-members/ManageMembers";
 import ChangeWorkspaceName from "./components/change-workspace-name/ChangeWorkspaceName";
+import AllSessionSignOut from "./components/sessions-signout/AllSessionSignOut";
 
 // All utilities imported here
 import { withSuspense } from "./utils";
@@ -119,6 +120,12 @@ const App = () => (
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/accountsProfile">
             <AccountProfile />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/sessions-signout"
+          >
+            <AllSessionSignOut />
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/ManageWorkspace">
             <ManageWorkspace />
