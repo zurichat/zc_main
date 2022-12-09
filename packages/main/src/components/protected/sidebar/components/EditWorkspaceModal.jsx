@@ -4,13 +4,17 @@ import React, { useEffect, useState } from "react";
 import { IoMdClose as Close } from "react-icons/io";
 import styles from "../styles/EditWorkspaceModal.module.css";
 
+import { useTranslation } from "react-i18next";
+
 const EditWorkspaceModal = ({ workSpace, editDetails, setEditDetails }) => {
+  const { t } = useTranslation();
+  
   // getting current workspace id
   const currentWorkspace = localStorage.getItem("currentWorkspace");
   const orgs = JSON.parse(sessionStorage.getItem("organisations"));
   const orgsLength = orgs !== null ? orgs.length : 0;
   let workspaceURL = "";
-  const editName = `   Edit workspace details ${workSpace?.name}`;
+  const editName = `   ${t("edit_work_details")} ${workSpace?.name}`;
 
   useEffect(() => {
     const settingworkspace = () => {
@@ -82,7 +86,7 @@ const EditWorkspaceModal = ({ workSpace, editDetails, setEditDetails }) => {
     // <div className={`${editDetails ? "week" : styles.editWorkspaceWrapper}`}>
     <div>
       <div>
-        <p onClick={handleEditDetails}>Edit workspace details</p>
+        <p onClick={handleEditDetails}>{t("edit_work_details")}</p>
         <div
           onClick={handleEditDetails}
           className={` ${
@@ -107,13 +111,14 @@ const EditWorkspaceModal = ({ workSpace, editDetails, setEditDetails }) => {
               </div>
             </div>
             <p>
-              Add a name to represent your company or organization. This name
+              {t("edit_work_textA")} <br /> {t("edit_work_textB")}
+              {/* Add a name to represent your company or organization. This name
               will <br /> also be shown to other organizations that you work
-              with using Slack.
+              with using Slack. */}
             </p>
             <div>
               <label htmlFor="work_space_name" className=" font-semibold ">
-                Workspace name
+                {t("edit_work_name")}
               </label>
               <input
                 value={workspaceNameChange}
@@ -123,7 +128,7 @@ const EditWorkspaceModal = ({ workSpace, editDetails, setEditDetails }) => {
               />
             </div>
             <div>
-              <label htmlFor="work_space_url">URL</label>
+              <label htmlFor="work_space_url">{t("edit_work_url")}</label>
               <input
                 value={workspaceURLChange}
                 onChange={HandleWorkspaceURLChange}
@@ -132,26 +137,27 @@ const EditWorkspaceModal = ({ workSpace, editDetails, setEditDetails }) => {
               />
             </div>
             <p className={`${styles.editWorkshopP} `}>
-              Your workspace URL can only contain lowercase letters, numbers and
+              {t("edit_url_textA")} <br /> {t("edit_url_textB")}
+              {/* Your workspace URL can only contain lowercase letters, numbers and
               dashed. It <br /> must contain at least one letter. It may not
-              start or end with a dash.
+              start or end with a dash. */}
             </p>
             <div
               className={`d-flex align-items-center justify-content-between ${styles.editWorkshopBottomDiv}`}
             >
-              <p>Edit Workspace Icon</p>
+              <p>{t("edit_url_icon")}</p>
               <div>
                 <button
                   onClick={handleEditDetails}
                   className={`${styles.editWorkshopTopBotton}`}
                 >
-                  Cancel
+                  {t("edit_cancel")}
                 </button>
                 <button
                   onClick={ChangeNameApi}
                   className={`${styles.editWorkshopBtmBotton}`}
                 >
-                  Save
+                  {t("edit_save")}
                 </button>
               </div>
             </div>
