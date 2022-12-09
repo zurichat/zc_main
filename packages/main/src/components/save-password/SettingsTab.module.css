@@ -157,18 +157,6 @@
   width: 130%;
 }
 
-.error {
-  color: #f40101;
-}
-
-.success {
-  color: #13af7b;
-}
-
-.info {
-  color: #913945;
-}
-
 .loader {
   display: inline-block;
   border: 2px solid #f3f3f3;
