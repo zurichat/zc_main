@@ -53,10 +53,8 @@ const SavePassword = () => {
 
     checkPassword(data.current_password)
       .then(response => {
-        console.log(response);
         if (response === "OK") {
           /* TODO SEND REQUEST TO CHANGE USERS PASSWORD */
-          console.log(isLoading);
           toast.error("can't change password now try later", {
             position: "top-center"
           });
