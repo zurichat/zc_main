@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 const EditWorkspaceModal = ({ workSpace, editDetails, setEditDetails }) => {
   const { t } = useTranslation();
-  
+
   // getting current workspace id
   const currentWorkspace = localStorage.getItem("currentWorkspace");
   const orgs = JSON.parse(sessionStorage.getItem("organisations"));

@@ -22,7 +22,6 @@ const AdminOwners = ({ admins }) => {
 
   const handleChange = e => {
     filterAdmins(e.target.value);
-    // console.log(e);
   };
 
   const handleSort = role => {
@@ -34,7 +33,6 @@ const AdminOwners = ({ admins }) => {
         let nameB = b.first_name.toLowerCase();
         return nameA < nameB ? -1 : nameA > nameB ? 1 : 0;
       });
-      // console.log(adminObj);
     }
 
     if (selectValue === "name") {
@@ -43,7 +41,6 @@ const AdminOwners = ({ admins }) => {
         let roleB = b.role.toLowerCase();
         return roleA < roleB ? 1 : roleA > roleB ? -1 : 0;
       });
-      // console.log(adminObj);
     }
   };
   return (
@@ -60,7 +57,6 @@ const AdminOwners = ({ admins }) => {
               <option value="FullName">FullName</option>
             </select>
           </label>
-
           <div className={styles.search}>
             <div className={styles.searchContainer}>
               <FiSearch className={styles.icon} />

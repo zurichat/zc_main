@@ -2,7 +2,6 @@ import React from "react";
 import styles from "../overview-workspace/OverviewWorkspace.module.css";
 import avatar from "../overview-workspace/assets/avatar.svg";
 import { Link } from "react-router-dom";
-
 const OverviewWorkspace = ({ organizationDetails, currentWorkspace }) => {
   if (!organizationDetails) {
     return "Loading...";

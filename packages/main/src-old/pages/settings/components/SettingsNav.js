@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import { TopbarContext } from "../../../context/Topbar";
 
 import styles from "../styles/settingsNav.module.css";
 import { BiMenuAltRight } from "react-icons/bi";

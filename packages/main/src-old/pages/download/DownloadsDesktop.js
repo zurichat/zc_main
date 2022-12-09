@@ -13,7 +13,9 @@ import android from "./assets/android.svg";
 import infolaptop from "./assets/infolaptop.svg";
 import windows from "./assets/windows.svg";
 import { isMacOs } from "react-device-detect";
-import "../../i18n";
+{
+  /*import "../../i18n";*/
+}
 import { useTranslation } from "react-i18next";
 
 const DownloadsDesktop = () => {
