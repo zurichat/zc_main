@@ -10,7 +10,6 @@ import toast, { Toaster } from "react-hot-toast";
 import { data } from "../utils/country-code";
 import { StyledProfileWrapper } from "../styles/StyledEditProfile.styled";
 import { useTranslation } from "react-i18next";
-import { getUserInfo } from "@zuri/utilities";
 import { deleteAllUtilitiesCache } from "../../../../../../utilities/src/helpers";
 
 const EditProfile = () => {
@@ -43,8 +42,6 @@ const EditProfile = () => {
     loading: false,
     imageLoading: false
   });
-  //users info in the localstorage to be updated later on
-  // const userLocalDetails = JSON.parse(localStorage.getItem("userData"));
   const [image, setimage] = useState(defaultAvatar);
   const addList = () => {
     if (links.length < 5) {
