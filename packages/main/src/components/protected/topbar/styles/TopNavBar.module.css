@@ -37,6 +37,9 @@
   transition: transform 0.5s;
 }
 
+.notification_modal{
+  display:none;
+}
 .mobile__sidebar__open {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -50,6 +53,9 @@
   .mobile__sidebar__open,
   .mobile__sidebar {
     display: none;
+  }
+  .notification_modal{
+    display:block;
   }
 }
 
