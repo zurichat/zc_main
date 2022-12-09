@@ -1,10 +1,12 @@
 import React, { useState, useRef } from "react";
 import css from "./ThankYouModal.module.css";
 import modal_img1 from "./assets/modal-email-icon.svg";
+import { useTranslation } from "react-i18next";
 // import axios from 'axios'
 
 const ThankYouModal = ({ displayModal, setDisplayModal }) => {
   const modalRef = useRef();
+  const { t } = useTranslation();
 
   const closeModal = event => {
     if (modalRef.current === event.target) {
@@ -34,11 +36,11 @@ const ThankYouModal = ({ displayModal, setDisplayModal }) => {
                     />
                   </div>
                   <h3 className={`text-center my-4 ${css.modalHeading}`}>
-                    Thank you for subscribing!
+                    {t("thank_you")}
                   </h3>
                   <p className={`text-center ${css.modalText}`}>
-                    Now, you'll be the first to receive plugin updates <br />{" "}
-                    and unique offers from the <br /> Zuri Chat team.
+                    {t("modal_text1")} <br /> {t("modal_text2")} <br />{" "}
+                    {t("modal_text3")}
                   </p>
                 </div>
               </div>
