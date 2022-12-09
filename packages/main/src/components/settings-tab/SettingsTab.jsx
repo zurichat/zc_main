@@ -77,9 +77,11 @@ const SettingsTab = () => {
           </span>
         </div>
         <div className={styles.settingsright}>
-          <button onClick={handleSignOut} className={styles.signout}>
-            Sign out of all othe sessions
-          </button>
+          <Link to="/admin/settings/accountsProfile/sessions-signout">
+            <button onClick={handleSignOut} className={styles.signout}>
+              Sign out of all othe sessions
+            </button>
+          </Link>
         </div>
       </div>
 
