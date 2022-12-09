@@ -9,6 +9,12 @@ import { BASE_API_URL } from "./constants";
  * @description uses the email to get the user's info in the workspace from the local cache or the server
  */
 
+// export const tabsOnCurrentUser = () => {
+//   const { user } = useContext(ProfileContext);
+//   console.log(user)
+//   return { user }
+// }
+
 export const getWorkspaceUser = async (userEmail, workspaceName, token) => {
   if (!userEmail) return new Error("No workspace user identifier provided");
 

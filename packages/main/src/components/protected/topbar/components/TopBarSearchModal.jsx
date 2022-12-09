@@ -43,6 +43,7 @@ const TopBarSearchModal = () => {
   };
 
   const onSearchSubmit = async e => {
+    console.log("filters", filters);
     if (e.keyCode === 13 && value.length >= 1) {
       setOpenSearch(true);
       const getDummmData = async () => {
