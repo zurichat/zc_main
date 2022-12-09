@@ -119,6 +119,9 @@
 
 #p_section button {
   width: 30% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #p_section p {
@@ -153,6 +156,36 @@
   color: #8c8c8c;
   width: 130%;
 }
+
+.error {
+  color: #f40101;
+}
+
+.success {
+  color: #13af7b;
+}
+
+.info {
+  color: #913945;
+}
+
+.loader {
+  display: inline-block;
+  border: 2px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 2px solid #13af7b;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  animation: spin 2s linear infinite;
+  align-self: center;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 /* THE SECTION OF THE TWO FACTOR */
 
