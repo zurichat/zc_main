@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "../user-name/SettingsTab.module.css";
+import { useTranslation } from "react-i18next";
 
 const UserName = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.passwordsection}>
       <form className="row d-flex flex-column">
@@ -9,13 +12,9 @@ const UserName = () => {
           <input type="text" className="form-control" required />
         </div>
         <div className="col-md-4 mb-3 mt-3">
-          <button className="btn">Save</button>
+          <button className="btn"> {t("Save_username")}</button>
         </div>
-        <p>
-          Usernames are not part of your profile and are only required by
-          Zurichat for technical reasons. Your username is mostly invisible to
-          others but you can change it if you want to.
-        </p>
+        <p>{t("profile _username")}</p>
       </form>
     </div>
   );

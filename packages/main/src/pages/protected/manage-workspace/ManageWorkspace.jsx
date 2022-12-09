@@ -20,6 +20,7 @@ import { getCurrentWorkspace } from "../manage-workspace/utils/Common";
 import classes from "../manage-workspace/ManageWorkspace.css";
 import styles from "../manage-workspace/preference.module.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const adminSettings = () => {
   const [logoUrl, setLogoUrl] = useState({});
@@ -39,130 +40,131 @@ const adminSettings = () => {
     }
   }, [logoUrl]);
 
+  const { t } = useTranslation();
+
   return (
     <>
       <div className={classes.overall}>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title="Joining this workspace"
-            text="Choose how people join your workspace by accepting an email invitation or signing up with an email from an approved domain. If you enable the setting to let people with an email address on an approved domain join automatically. Zuri chat will generate a link that anyone with an approved email address can use to confirm their email and sign up"
-            btnText="expand"
+            title={t("join_manager")}
+            text={t("choose_manage")}
+            btnText={t("expand_manage")}
           >
             <JoinWorkspace />
           </PreferenceWrapper>
         </AnimateSharedLayout>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title="Workspace language"
-            text="Set the language for your workspace. This affects system notifications, Zurichat messages and sign up emails. Your workspace language is currently English (US)"
-            btnText="expand"
+            title={t("lang_manage")}
+            text={t("set_manage")}
+            btnText={t("expand_manage")}
           >
             <WorkspaceLanguage />
           </PreferenceWrapper>
         </AnimateSharedLayout>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title="Default channels"
-            text="Choose the channels new members will automatically be added to in addition to #general"
-            btnText="expand"
+            title={t("default_manage")}
+            text={t("channel_manage")}
+            btnText={t("expand_manage")}
           >
             <DefaultChannels />
           </PreferenceWrapper>
         </AnimateSharedLayout>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title="Display new guidelines"
-            text="Explain the guidelines you want memebers to follow when they say display names"
-            btnText="expand"
+            title={t("display_manage")}
+            text={t("guidelines_manage")}
+            btnText={t("expand_manage")}
           >
             <Guidelines />
           </PreferenceWrapper>
         </AnimateSharedLayout>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title="Name display"
-            text="If you’d like, Zuri chat can show your members full name instead of their shorter display names."
-            btnText="expand"
+            title={t("name_manage")}
+            text={t("members_manage")}
+            btnText={t("expand_manage")}
           >
             <DisplayName />
           </PreferenceWrapper>
         </AnimateSharedLayout>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title="Email display"
-            text="Choose whether to display members email address in profile"
-            btnText="expand"
+            title={t("email_manage")}
+            text={t("display_manage")}
+            btnText={t("expand_manage")}
           >
             <DisplayEmail />
           </PreferenceWrapper>
         </AnimateSharedLayout>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title="Pronouns display"
-            text="Choose whether to display members pronouns (ex: they/them/theirs) in their zurichat profiles"
-            btnText="expand"
+            title={t("pronouns_manage")}
+            text={t("membersPronoun_manage")}
+            btnText={t("expand_manage")}
           >
             <DisplayPronoun />
           </PreferenceWrapper>
         </AnimateSharedLayout>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title="Do not disturb"
-            text="Set default Do Not Disturb hours for members of your workspace."
-            btnText="expand"
+            title={t("DNB_manage")}
+            text={t("dnbdefault_manage")}
+            btnText={t("expand_manage")}
           ></PreferenceWrapper>
         </AnimateSharedLayout>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title="Channel join & Leave messages"
-            text="If you’d like, Zurichat can let everyone in the channel know when someone leaves"
-            btnText="expand"
+            title={t("join_manage")}
+            text={t("know_manage")}
+            btnText={t("expand_manage")}
           >
             <JoinChannel />
           </PreferenceWrapper>
         </AnimateSharedLayout>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title="Notify of new users"
-            text="Choose whether your members are notified when new users come in"
-            btnText="expand"
+            title={t("notify_manage")}
+            text={t("users_manage")}
+            btnText={t("expand_manage")}
           >
             <NotifyUsers />
           </PreferenceWrapper>
         </AnimateSharedLayout>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title="Calls"
-            text="Choose how members make calls in ZuriChat. You can use Zuri Chat itself or a third-party calling app"
-            btnText="expand"
+            title={t("calls_manage")}
+            text={t("third_manage")}
+            btnText={t("expand_manage")}
           >
             <Calls />
           </PreferenceWrapper>
         </AnimateSharedLayout>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title="Message Retention & Deletion"
-            text="By default, Zuri chat keeps all your messages for your lifetime of your wworkspace. If you’d like, you can have them delted after a selt amount of time. You can also configure this for specifiv channels.
-                In channels shared with other organisations, your retentionsettings will only apply to messages from members of your organisation. Learn more about retention in shared channels."
-            btnText="expand"
+            title={t("message_manage")}
+            text={t("lifetime_manage")}
+            btnText={t("expand_manage")}
           >
             <MessageRetention />
           </PreferenceWrapper>
         </AnimateSharedLayout>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title="File Retention & Deletion"
-            text="By default, Zuri chat keeps all your messages for your lifetime of your workspace. If you’d like, you can have them deleted after a set amount of time.Note that this affects all files - including images, docs, Zuri chat posts and more"
-            btnText="expand"
+            title={t("file_manage")}
+            text={t("posts_manage")}
+            btnText={t("expand_manage")}
           >
             <FileRetention />
           </PreferenceWrapper>
         </AnimateSharedLayout>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title="Workspace icon"
-            text="Your workspace icon is used in the desktop an mobile apps, where it’s useful in helping you quickily identiy this workspace"
-            btnText="Set Workspace Icon"
+            title={t("icon_manage")}
+            text={t("desktop_manage")}
+            btnText={t("seticon_manage")}
             imgsource={logoUrl}
           ></PreferenceWrapper>
         </AnimateSharedLayout>
@@ -171,17 +173,13 @@ const adminSettings = () => {
           <motion.div layout className={`${styles.settings_wrapper}`}>
             <motion.div layout className={styles.settingsTab}>
               <div layout className={styles.settingleft}>
-                {"Workspace name & URL"}
-                <span>
-                  {
-                    "Your workspace name is Zuri Chat and your URL is https://zuri.zuriChat.com"
-                  }
-                </span>
+                {t("url_manage")}
+                <span>{t("link_manage")}</span>
               </div>
               <div className={styles.settingsright}>
                 <Link to="/admin/settings/ManageWorkspace/ChangeWorkspaceName">
                   {" "}
-                  <button> Set workspace name & URL </button>
+                  <button> {t("setname_manage")} </button>
                 </Link>
               </div>
             </motion.div>
@@ -192,25 +190,22 @@ const adminSettings = () => {
           <div className={classes.deleteContainer}>
             <div className={classes.deleteContainerTab}>
               <div className={classes.floatleft}>
-                <div>Delete workspace</div>
+                <div>{t("delete_manage")}</div>
                 <div>
                   <span>
-                    Deleting a Zuri Chat workspace can't be undone. All messages
-                    and files will irretrievable. Please use caution and
-                    consider exporting your data
+                    {t("delZuri_manage")}
                     <br />
-                    before deletion.
-                    <br /> <br /> Note: Don’t delete your workspace if you just
-                    want to change your
+                    {t("before_manage")}
+                    <br /> <br /> {t("note_manage")}
                     <br />
-                    worskspace’s URL or name. You also might want to export data
-                    <br /> before deleting workspace
+                    {t("urlSpace_manage")}
+                    <br /> {t("beforedelete_manage")}
                   </span>
                 </div>
               </div>
               <div className={classes.floatright}>
                 <Link to="/admin/delete">
-                  <button>Delete Workspace</button>
+                  <button>{t("delWork_manage")}</button>
                 </Link>
               </div>
             </div>

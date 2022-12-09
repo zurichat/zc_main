@@ -2,21 +2,24 @@ import React from "react";
 import styles from "../table/Members.module.css";
 import AvatarIcon from "../table/assets/avatar.png";
 import ToolTipMenu from "../tool-tip-menu/ToolTipMenu";
+import { useTranslation } from "react-i18next";
 
 const imageShot = AvatarIcon;
 
 const Table = props => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.table}>
       <table className={styles.tableWrap}>
         <thead className={styles.tableHead}>
           <tr className={styles.tableRow}>
             <th className={styles.heading} style={{ color: "blue" }}>
-              Name
+              {t("name_Table")}
             </th>
-            <th className={styles.heading}>Account type</th>
-            <th className={styles.heading}>Billing status</th>
-            <th className={styles.heading}>Authentication</th>
+            <th className={styles.heading}>{t("acc_Table")}</th>
+            <th className={styles.heading}>{t("bill_Table")}</th>
+            <th className={styles.heading}>{t("auth_Table")}</th>
             <th></th>
           </tr>
         </thead>
@@ -51,7 +54,7 @@ const Table = props => {
           ) : (
             <>
               <td className={styles.emptySearch} colSpan="5">
-                No results to display
+                {t("result_Table")}
               </td>
             </>
           )}

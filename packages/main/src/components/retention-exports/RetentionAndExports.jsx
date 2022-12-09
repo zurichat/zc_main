@@ -2,51 +2,47 @@ import React, { useEffect } from "react";
 import styles from "../retention-exports/Retention.module.css";
 import { Link } from "react-router-dom";
 import { FiAlertTriangle, FiAlertCircle } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 const RetentionAndExports = () => {
+  const { t } = useTranslation();
   return (
     <div className={styles.retention}>
-      <h3 className={styles.h3}>How long is conversation history kept?</h3>
+      <h3 className={styles.h3}>{t("convo_R&E")}</h3>
       <div className={`${styles.upgrade} ${styles.upgradeDisplay}`}>
         <FiAlertTriangle className={styles.triangle} />
         <p className={styles.upgradeText}>
-          Your team is not on a paid tier and therefore cannot customize
-          retention policies.{" "}
+          {t("team_R&E")}{" "}
           <Link
             to="/pricing"
             rel="noreferrer"
             target="_blank"
             className={styles.link}
           >
-            Upgrade Today
+            {t("upgrade_R&E")}
           </Link>
         </p>
       </div>
       <div className={`${styles.faq} ${styles.faqDisplay}`}>
         <FiAlertCircle className={styles.circle} />
         <p className={styles.faqText}>
-          By default, Zuri Chat will save your message data for the lifetime of
-          your workspace. With this setting, Zuri Chat will not keep logs of
-          users’ message edits and deletions. Please{" "}
+          {t("default_R&E")}{" "}
           <Link
             to="/pricing"
             rel="noreferrer"
             target="_blank"
             className={styles.link}
           >
-            see our FAQ
+            {t("faq_R&E")}
           </Link>{" "}
-          for questions about the specific retention policy types.
+          {t("quest_R&E")}
         </p>
       </div>
       <div className={styles.borderBottom}></div>
-      <h3 className={styles.h3}>What data can my admins access?</h3>
+      <h3 className={styles.h3}> {t("data_R&E")}</h3>
       <div className={styles.adminAccessContent}>
-        <h4 className={styles.h4}>Public data can be exported</h4>
-        <p className={styles.adminAccessContentText}>
-          Workspace Owners and Admins can export messages and files from public
-          channels.
-        </p>
+        <h4 className={styles.h4}>{t("public_R&E")}</h4>
+        <p className={styles.adminAccessContentText}>{t("workspace_R&E")}</p>
       </div>
     </div>
   );

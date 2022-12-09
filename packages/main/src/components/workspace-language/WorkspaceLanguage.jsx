@@ -1,6 +1,7 @@
 import { BASE_API_URL } from "@zuri/utilities";
 import axios from "axios";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const myStyle = {
   inputfield: {
@@ -30,12 +31,14 @@ const modifyOrganizationSettings = () => {
 };
 
 const WorkspaceLanguage = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <select className="form-select" style={myStyle.inputfield}>
-        <option selected>English(US)</option>
-        <option value="1">Enlish(UK)</option>
-        <option value="2">French</option>
+        <option selected>{t("English(US)_Lang")}</option>
+        <option value="1">{t("English(UK)")}</option>
+        <option value="2">{t("French_Lang")}</option>
       </select>
       <button
         type="button"
@@ -43,7 +46,7 @@ const WorkspaceLanguage = () => {
         style={myStyle.btn}
         onClick={modifyOrganizationSettings}
       >
-        Save
+        {t("Save_Lang")}
       </button>
     </>
   );
