@@ -7,6 +7,7 @@ import { GeneralErrorBoundary, GeneralLoading } from "./components";
 import ManageMembers from "./components/manage-members/ManageMembers";
 import ChangeWorkspaceName from "./components/change-workspace-name/ChangeWorkspaceName";
 import AcctDeactivation from "./components/account-deactivation/AcctDeactivation";
+import ConfirmDeactivation from "./components/confirm-deactivation/ConfirmDeactivation";
 
 // All utilities imported here
 import { withSuspense } from "./utils";
@@ -126,6 +127,12 @@ const App = () => (
             path="/admin/settings/accountsProfile/account-deactivation"
           >
             <AcctDeactivation />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/account-deactivation/confirm-deactivate"
+          >
+            <ConfirmDeactivation />
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/ManageWorkspace">
             <ManageWorkspace />
