@@ -86,10 +86,13 @@ export const StyledProfileWrapper = styled.section`
               width: 100%;
             }
             .pref {
-              width: 50%;
+              width: auto;
               font-size: 15px;
               margin-right: 5px;
               color: #696969;
+            }
+            .pref option {
+              text-align: center;
             }
           }
           .time-select {
