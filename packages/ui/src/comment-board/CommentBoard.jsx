@@ -18,7 +18,6 @@ const CommentBoard = ({
   parent = [],
   isLoadingMessages,
   onSendMessage,
-  // onReact,
   currentUserId
 }) => {
   const [displayCommentBoard, setDisplayCommentBoard] = useState(
