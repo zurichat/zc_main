@@ -39,6 +39,7 @@ import ManageWorkspace from "./pages/protected/manage-workspace/ManageWorkspace"
 import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
 import Help from "./pages/static/help";
 import TermsCondition from "./pages/static/legal";
+import Invitation from "./pages/protected/invitations/Invitation";
 
 const { Workspace, CreateWorkspace, ChooseWorkspace } = lazily(() =>
   import("./pages/protected")
@@ -152,6 +153,9 @@ const App = () => (
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/managemembers">
             <ManageMembers />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/invitation">
+            <Invitation />
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/aboutworkspace">
             <AboutWorkSpace />
