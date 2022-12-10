@@ -1,0 +1,72 @@
+export default [
+  {
+    key: "name_table",
+    en: "Name",
+    de: "Name",
+    nl: "Naam",
+    engb: "Name",
+    fr: "Nom",
+    zh: "命名",
+    ar: "اسم",
+    es: "Nombre",
+    it: "Nome",
+    iw: "שם",
+    pt: "Nome"
+  },
+  {
+    key: "acc_table",
+    en: "Account type",
+    de: "Konto-Typ",
+    nl: "Type rekening",
+    engb: "Account type",
+    fr: "Type de compte",
+    zh: "账户类型",
+    ar: "نوع حساب",
+    es: "Tipo de cuenta",
+    it: "Tipo di conto",
+    iw: "סוג חשבון",
+    pt: "Tipo de conta"
+  },
+  {
+    key: "bill_table",
+    en: "Billing status",
+    de: "Status der Abrechnung",
+    nl: "Factuurstatus",
+    engb: "Billing status",
+    fr: "Statut de la facturation",
+    zh: "账单状态",
+    ar: "حالة الفواتير",
+    es: "Estado de facturación",
+    it: "Stato di fatturazione",
+    iw: "מצב חיוב",
+    pt: "Estado da facturação"
+  },
+  {
+    key: "auth_table",
+    en: "Authentication",
+    de: "Authentifizierung",
+    nl: "Authenticatie",
+    engb: "Authentication",
+    fr: "Authentification",
+    zh: "认证",
+    ar: "مصادقة",
+    es: "Autenticación",
+    it: "Autenticazione",
+    iw: "אימות",
+    pt: "Autenticação"
+  },
+  {
+    key: "result_table",
+    en: "No results to display",
+    de: "Keine Ergebnisse zu sehen",
+    nl: "Geen resultaten weer te geven",
+    engb: "No results to display",
+    fr: "Aucun résultat à afficher",
+    zh: "没有显示结果",
+    ar: "لا توجد نتائج لعرضها",
+    es: "No se muestran resultados",
+    it: "Nessun risultato da visualizzare",
+    iw: "אין תוצאות להצגה",
+    pt: "Sem resultados para mostrar"
+  }
+];

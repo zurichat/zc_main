@@ -8,6 +8,8 @@ import AccDeactivated from "./components/account-deactivated/AccDeactivated";
 import AcctDeactivation from "./components/account-deactivation/AcctDeactivation";
 import ChangeWorkspaceName from "./components/change-workspace-name/ChangeWorkspaceName";
 import ConfirmDeactivation from "./components/confirm-deactivation/ConfirmDeactivation";
+import ManageMembers from "./components/manage-members/ManageMembers";
+import AllSessionSignOut from "./components/sessions-signout/AllSessionSignOut";
 
 // All utilities imported here
 import { withSuspense } from "./utils";
@@ -17,7 +19,6 @@ import TermsOfService from "../src-old/pages/termsOfService/index";
 import SettingsHome from "../src/pages/protected/settings-home/SettingsHome";
 import { useAuth } from "./auth/use-auth";
 import DeleteWorkspace from "./components/delete-workspace/deleteWorkspace";
-import ManageMembers from "./components/manage-members/ManageMembers";
 import {
   AboutPage,
   ChangePassword,
@@ -124,6 +125,12 @@ const App = () => (
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/accountsProfile">
             <AccountProfile />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/sessions-signout"
+          >
+            <AllSessionSignOut />
           </ProtectedRoute>
           <ProtectedRoute
             exact
