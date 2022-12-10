@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import styles from "../../styles/ChannelPrefixes.module.css";
-import ChannelPrefix from "./ChannelPrefix";
-import AddPrefixModal from "./AddPrefixModal";
-import PrefixAdded from "./PrefixAdded";
+import styles from "../channel-prefixes/ChannelPrefixes.module.css";
+import ChannelPrefix from "../channel-prefix/ChannelPrefix";
+import AddPrefixModal from "../add-prefix-modal/AddPrefixModal";
+import PrefixAdded from "../prefix-add/PrefixAdded";
 
 const prefixData = [
   {
