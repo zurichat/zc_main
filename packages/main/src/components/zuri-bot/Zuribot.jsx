@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from "react";
-import toast, { Toaster } from "react-hot-toast";
-import Loader from "react-loader-spinner";
+// import toast, { Toaster } from "react-hot-toast";
+// import Loader from "react-loader-spinner";
 
-import styles from "../styles/zuribot.module.css";
-import { authAxios } from "../../Utils/Api";
+import styles from "../zuri-bot/Zuribot.module.css";
+import { authAxios } from "../zuri-bot/utils/Api";
 
-import { getToken, getCurrentWorkspace, getUser } from "../../Utils/Common";
+import {
+  getToken,
+  getCurrentWorkspace,
+  getUser
+} from "../zuri-bot/utils/Common";
 
 // icons
 import { AiOutlinePlus, AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { BsPersonBoundingBox } from "react-icons/bs";
-import { FiCheck } from "react-icons/fi";
-import { CardContext } from "../../../../context/CardContext";
+// import { FiCheck } from "react-icons/fi";
+// import { CardContext } from "../../../../context/CardContext";
 
 // let //Zuribotdata =
 //   [
