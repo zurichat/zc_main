@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-// import { TopbarContext } from "../../../context/Topbar";
 
 import styles from "../settings-nav/SettingsNav.module.css";
 import { BiMenuAltRight } from "react-icons/bi";
@@ -9,8 +8,6 @@ import navImage from "../settings-nav/assets/navImage.png";
 
 const SettingsNav = () => {
   const [menu, setMenu] = useState(false);
-  // const state = useContext(TopbarContext)
-  // const [active] = state.presence
 
   return (
     <div className={styles.containers}>
@@ -37,11 +34,6 @@ const SettingsNav = () => {
       <div className={styles.rightnav}>
         <div className={styles.pImage}>
           <img src={navImage} alt="Profile" className={styles.profileImg} />
-          {/* {active ? (
-            <div className={styles.circles}></div>
-          ) : (
-            <div className={styles.circleAway}></div>
-          )} */}
         </div>
       </div>
     </div>

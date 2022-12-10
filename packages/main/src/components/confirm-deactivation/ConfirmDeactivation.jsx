@@ -13,8 +13,6 @@ import {
 const ConfirmDeactivation = () => {
   const [deactivate, setDeactivate] = useState(false);
   const history = useHistory();
-  // const [id, setId] = useState(null)
-  // const [org, setOrg] = useState(null)
   const user = getUser();
   const token = getToken();
 
@@ -32,9 +30,6 @@ const ConfirmDeactivation = () => {
               }
             }
           );
-          // console.log(res.data)
-          // setId(res.data.data._id)
-          // setOrg(res.data.data.Organizations[0])
         } catch (error) {
           console.error(error);
         }
@@ -57,7 +52,6 @@ const ConfirmDeactivation = () => {
             }
           }
         );
-        // console.log(res)
 
         removeUserSession();
         history.push("/account-deactivated");
@@ -66,30 +60,6 @@ const ConfirmDeactivation = () => {
       }
     }
   };
-
-  // THE SECTION OF THE DELETE FUNCTION
-  // const handleDelete = async (id, org) => {
-  //   if (token) {
-  //     try {
-  //       const res = await axios.delete(
-  //         `https://api.zuri.chat/organizations/${org}/members/${id}`,
-  //         {
-  //           headers: {
-  //             Authorization: `Bearer ${token}`,
-  //             Accept: 'application/json',
-  //             'Content-Type': 'application/json'
-  //           }
-  //         }
-  //       )
-  //       console.log(res)
-
-  //       removeUserSession()
-  //       history.push('/account-deactivated')
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   }
-  // }
 
   return (
     <>
