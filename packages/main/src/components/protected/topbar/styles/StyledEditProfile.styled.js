@@ -86,7 +86,7 @@ export const StyledProfileWrapper = styled.section`
               width: 100%;
             }
             .pref {
-              width: 72px;
+              width: 60%;
               font-size: 15px;
             }
           }
