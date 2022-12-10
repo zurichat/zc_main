@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import UnstyledButton from "~/shared/button/Button";
 import {
   CommentBoardWrapper,
@@ -52,10 +53,12 @@ const CommentBoard = ({
   useEffect(async () => {
     try {
       const data = await getRoomMessagesHandler();
-      console.log(data);
       // setMessages(data)
     } catch (err) {
       console.log(err);
+      toast.error(err?.message, {
+        position: "top-center"
+      });
     }
   }, []);
 

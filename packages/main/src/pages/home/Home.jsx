@@ -76,30 +76,30 @@ export default function Index() {
       <div className={`${styles.homepage}`} style={textAlign()}>
         {/* HERO */}
         <div className={`${styles.hero_wrap}`}>
-        <div className={`hero ${styles.hero}`}>
-          <div className={`${styles.hero_left}`}>
-            <div className={`${styles.hero_left_texts}`}>
-              <h1 className={`${styles.hero_heading}`}>
-                {t("landing_hero_headline")}
-              </h1>
+          <div className={`hero ${styles.hero}`}>
+            <div className={`${styles.hero_left}`}>
+              <div className={`${styles.hero_left_texts}`}>
+                <h1 className={`${styles.hero_heading}`}>
+                  {t("landing_hero_headline")}
+                </h1>
+              </div>
+              <div className={styles.hero_btn}>
+                <Link to="/signup">
+                  <button className={`${styles.hero_left_btn}`}>
+                    {t("landing_hero_call_to_action")}
+                  </button>
+                </Link>
+              </div>
             </div>
-            <div className={styles.hero_btn}>
-              <Link to="/signup">
-                <button className={`${styles.hero_left_btn}`}>
-                  {t("landing_hero_call_to_action")}
-                </button>
-              </Link>
+            <div className={`${styles.hero_right}`}>
+              <img
+                src={MacBookAirWithZuriChatPreview}
+                className={`${styles.hero_img}`}
+                alt="mac"
+              />
             </div>
-          </div>
-          <div className={`${styles.hero_right}`}>
-            <img
-              src={MacBookAirWithZuriChatPreview}
-              className={`${styles.hero_img}`}
-              alt="mac"
-            />
           </div>
         </div>
-      </div>
 
         {/* { COOKIES BANNER} */}
         <div>{showCookies ? "" : <CookiesNotification />}</div>

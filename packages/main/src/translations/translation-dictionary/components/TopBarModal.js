@@ -9,7 +9,7 @@ export default [
     ar: "ضع نفسك بعيدًا",
     es: "Ponte como lejos",
     it: "Mettiti come lontano",
-    he: "הגדר את עצמך במרחק",
+    iw: "הגדר את עצמך במרחק",
     pt: "Defina-se como afastado"
   },
   {
@@ -22,7 +22,7 @@ export default [
     ar: "نشيط",
     es: "Activo",
     it: "Attivo",
-    he: "פָּעִיל",
+    iw: "פָּעִיל",
     pt: "Ativo"
   },
   {
@@ -35,7 +35,7 @@ export default [
     ar: "بعيد",
     es: "Lejos",
     it: "Lontano",
-    he: "רָחוֹק",
+    iw: "רָחוֹק",
     pt: "Um jeito"
   },
   {
@@ -48,7 +48,7 @@ export default [
     ar: "اجعل نفسك نشيطًا",
     es: "Ponte a ti mismo como activo",
     it: "Imposta te stesso come attivo",
-    he: "הגדר את עצמך כפעיל",
+    iw: "הגדר את עצמך כפעיל",
     pt: "Defina-se como ativo"
   },
   {
@@ -61,7 +61,7 @@ export default [
     ar: "مجهول",
     es: "Anónimo",
     it: "Anonimo",
-    he: "בעילום שם",
+    iw: "בעילום שם",
     pt: "Anônimo"
   },
   {
@@ -74,7 +74,7 @@ export default [
     ar: "حدث حالتك",
     es: "actualiza tu estatus",
     it: "aggiorna il tuo stato",
-    he: "עדכן את הסטטוס שלך",
+    iw: "עדכן את הסטטוס שלך",
     pt: "atualize seu status"
   },
   {
@@ -87,7 +87,7 @@ export default [
     ar: "حالة واضحة",
     es: "Borrar estado",
     it: "Cancella stato",
-    he: "סטטוס ברור",
+    iw: "סטטוס ברור",
     pt: "Limpar status"
   },
   {
@@ -100,7 +100,7 @@ export default [
     ar: "تعديل الملف الشخصي",
     es: "Editar perfil",
     it: "Modifica Profilo",
-    he: "ערוך פרופיל",
+    iw: "ערוך פרופיל",
     pt: "Editar Perfil"
   },
   {
@@ -113,7 +113,7 @@ export default [
     ar: "عرض الصفحة الشخصية",
     es: "Ver perfil",
     it: "Visualizza profilo",
-    he: "צפה בפרופיל",
+    iw: "צפה בפרופיל",
     pt: "Ver perfil"
   },
   {
@@ -126,7 +126,7 @@ export default [
     ar: "التفضيلات",
     es: "Preferencias",
     it: "Preferenze",
-    he: "העדפות",
+    iw: "העדפות",
     pt: "Preferências"
   },
   {
@@ -139,7 +139,7 @@ export default [
     ar: "التحميلات",
     es: "Descargas",
     it: "Download",
-    he: "הורדות",
+    iw: "הורדות",
     pt: "Transferências"
   },
   {
@@ -152,7 +152,7 @@ export default [
     ar: "خروج",
     es: "Desconectar",
     it: "Disconnessione",
-    he: "התנתק",
+    iw: "התנתק",
     pt: "Sair"
   }
 ];
