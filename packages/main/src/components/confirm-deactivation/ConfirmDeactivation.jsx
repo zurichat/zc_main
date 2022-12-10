@@ -90,13 +90,15 @@ const ConfirmDeactivation = () => {
           </div>
 
           <div className={styles.buttonContainer}>
-            <button
-              className={deactivate ? styles.danger1 : styles.danger2}
-              onClick={() => handleDelete()}
-              disabled={!deactivate ? true : false}
-            >
-              Deactivate my Account
-            </button>
+            <Link to="/admin/settings/accountsProfile/account-deactivation/confirm-deactivate/acct-deactivated">
+              <button
+                className={deactivate ? styles.danger1 : styles.danger2}
+                onClick={() => handleDelete()}
+                disabled={!deactivate ? true : false}
+              >
+                Deactivate my Account
+              </button>
+            </Link>
 
             <Link
               to="/admin/settings/accountsProfile/account-deactivation"
