@@ -32,6 +32,7 @@ import {
 import Staging from "../../../components/media-chat/VideoCall/Staging";
 // import VideoChat from "../../../components/media-chat/VideoChat";
 import VoiceCall from "../../../components/media-chat/VoiceCall/VoiceCall";
+import VideoRoom from "../../../components/media-chat/video/VideoRoom";
 import { Sidebar, TopBar } from "../../../components/protected";
 
 const cache = setupCache({
@@ -239,7 +240,7 @@ export default function Index() {
               </Route>
 
               <Route path="/workspace/:workspaceId/video-chat">
-                <Staging workspaceId={workspaceId} />
+                <VideoRoom workspaceId={workspaceId} />
               </Route>
               <Route path="/workspace/:workspaceId/voice-call">
                 <VoiceCall />
