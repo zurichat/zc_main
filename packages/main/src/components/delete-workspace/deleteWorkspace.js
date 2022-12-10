@@ -16,25 +16,20 @@ const DeleteWorkspace = () => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`
     };
-    await axios
-      .delete(
-        `https://staging.api.zuri.chat/organizations/${currentWorkspace}`,
-        {
-          headers
-        }
-      )
-      .then(res => {
-        if (res.status === 200) {
-          console.log("Workspace deleted successfully");
-          localStorage.removeItem(currentWorkspaceShort);
-          localStorage.removeItem(orgName);
-          localStorage.removeItem(currentWorkspace);
-          window.location.href = "/create-workspace";
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    const res = await axios.delete(
+      `https://api.zuri.chat/organizations/${currentWorkspace}`,
+      {
+        headers
+      }
+    );
+
+    if (res.status === 200) {
+      console.log("Workspace deleted successfully");
+      localStorage.removeItem(currentWorkspaceShort);
+      localStorage.removeItem(orgName);
+      localStorage.removeItem(currentWorkspace);
+      history.push("/create-workspace");
+    }
   };
 
   return (
