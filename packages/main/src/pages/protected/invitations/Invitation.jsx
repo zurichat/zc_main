@@ -25,9 +25,6 @@ const Invitation = () => {
   return (
     <AdminSettings>
       <div className={styles.inviteContainer}>
-        {/* <div className={styles.contentWrapper}> */}
-        {/* <h5 className={styles.contentHeading}>Invitations</h5> */}
-        {/* <AdminTab /> */}
         <div className={styles.adminInvitesContent}>
           <div className={styles.invitesHeader}>
             <div className={styles.invitesHeaderContent}>
@@ -89,7 +86,6 @@ const Invitation = () => {
             </div>
           </div>
         </div>
-        {/* </div> */}
       </div>
     </AdminSettings>
   );
