@@ -14,6 +14,7 @@ const WorkspaceLoading = ({ text }) => {
             height="150"
             className={styles.rotate}
             src={ZuriChatLogo}
+            alt="zuri chat loader"
           />
         </div>
 

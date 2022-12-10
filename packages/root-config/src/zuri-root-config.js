@@ -47,8 +47,6 @@ window.addEventListener("zuri-plugin-load", () => {
           customProps: {
             domElement: document.getElementById("zuri-plugin-load-section"),
             baseName: `/workspace/${currentWorkspace}/${plugin.pluginPath}`
-            // baseName: `/workspace/${localStorage.getItem("currentWorkspace")}/${
-            //   plugin.pluginPath
           }
         });
       });

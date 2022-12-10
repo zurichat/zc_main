@@ -5,7 +5,6 @@
 }
 
 .loadingContainer {
-    /* position: fixed; */
     background: #fff;
     top: 0;
     left: 0;
@@ -15,7 +14,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* z-index: 999999999; */
 }
 
 .loaderContainer {
