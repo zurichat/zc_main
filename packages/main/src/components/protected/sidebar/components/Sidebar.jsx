@@ -231,7 +231,7 @@ const Sidebar = props => {
         <div className={styles.sb__content}>
           <Header state={props.state} />
           <div className={`${styles.subCon2}`}>
-            <>
+            <div>
               <SingleRoom
                 name={`${t("workspace_chat.threads")}`}
                 image={threadIcon}
@@ -241,11 +241,6 @@ const Sidebar = props => {
                 name={`${t("workspace_chat.alldms")}`}
                 image={dmIcon}
                 link={`/workspace/${currentWorkspaceShort}/plugin-chat/all-dms`}
-              />
-              <SingleRoom
-                name="Video Chat"
-                image={videoIcon}
-                link={`/workspace/${currentWorkspace}/video-chat`}
               />
               <SingleRoom
                 name={`${t("workspace_chat.drafts")}`}
@@ -265,7 +260,16 @@ const Sidebar = props => {
               <Starred starredRooms={starredRooms} />
               {singleItems}
               {categorizedItems}
-            </>
+            </div>
+            <div>
+              <div className={styles.videoCall}>
+                <SingleRoom
+                  name="Video Chat"
+                  image={videoIcon}
+                  link={`/workspace/${currentWorkspace}/video-chat`}
+                />
+              </div>
+            </div>
           </div>
         </div>
       )}
