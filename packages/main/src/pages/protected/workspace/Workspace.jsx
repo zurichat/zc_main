@@ -6,7 +6,6 @@ import {
   useLocation,
   useRouteMatch
 } from "react-router-dom";
-import LiveBroadcast from "../../../components/media-chat/LiveBroadcast";
 import useParamHook from "./useParamHook";
 import {
   ExtraSidebarWrapperStyle,
@@ -25,7 +24,6 @@ import {
   BsGearFill,
   BsPlusCircle
 } from "react-icons/bs";
-import VoiceCall from "../../../components/media-chat/VoiceCall/VoiceCall";
 import VideoRoom from "../../../components/media-chat/video/VideoRoom";
 import { Sidebar, TopBar } from "../../../components/protected";
 import ExtraSidebar from "../../../components/protected/extra-sidebar";
@@ -98,15 +96,8 @@ export default function Index() {
               <Route exact path="/workspace/:workspaceId">
                 <h1>Welcome to your Workspace</h1>
               </Route>
-              <Route path="/workspace/:workspaceId/LiveBroadcast">
-                <LiveBroadcast />
-              </Route>
-
               <Route path="/workspace/:workspaceId/video-chat">
                 <VideoRoom workspaceId={workspaceId} />
-              </Route>
-              <Route path="/workspace/:workspaceId/voice-call">
-                <VoiceCall />
               </Route>
 
               {/* <Route

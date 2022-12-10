@@ -4,13 +4,10 @@ import { useTranslation } from "react-i18next";
 import videoIcon from "../assets/icons/videos.svg";
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
-import liveicon from "../assets/icons/newlive.svg";
-import phoneicon from "../assets/icons/phone.svg";
 import draftIcon from "../assets/icons/draft-icon.svg";
 import { subscribeToChannel } from "@zuri/utilities";
 import { ACTIONS } from "../reducers/sidebar.reducer";
 import Header from "./Header";
-import Room from "./Room";
 import SingleRoom from "./SingleRoom";
 import Category from "./Category";
 import Starred from "./Starred";
@@ -245,16 +242,6 @@ const Sidebar = props => {
               <SingleRoom
                 name={`${t("workspace_chat.drafts")}`}
                 image={draftIcon}
-              />
-              <SingleRoom
-                name="LiveBroadcast"
-                image={liveicon}
-                link={`/workspace/${currentWorkspaceShort}/LiveBroadcast`}
-              />
-              <SingleRoom
-                name="Voice Call"
-                image={phoneicon}
-                link={`/workspace/${currentWorkspaceShort}/voice-call`}
               />
               <div className={styles.sb__divider} />
               <Starred starredRooms={starredRooms} />

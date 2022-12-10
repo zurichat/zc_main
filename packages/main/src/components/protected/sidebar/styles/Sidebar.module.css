@@ -282,6 +282,10 @@
   width: 100%;
 }
 
+.videoCall img {
+  width: 24px;
+}
+
 .videoCall > div > div {
   display: flex;
   justify-content: space-between;
