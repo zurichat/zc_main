@@ -6,6 +6,7 @@ import zuriLogo from "../admin-sidebar/assets/zuriLogo.svg";
 import grid from "../admin-sidebar/assets/grid.svg";
 import bouy from "../admin-sidebar/assets/bouy.svg";
 import la_rocket from "../admin-sidebar/assets/la_rocket.svg";
+import { useTranslation } from "react-i18next";
 
 import {
   FiAlertCircle,
@@ -31,7 +32,7 @@ import { getUser } from "../admin-sidebar/utils/Common";
 
 const AdminSidebar = ({ setModal, openModal }) => {
   const user = getUser();
-
+  const { t } = useTranslation();
   return (
     <div
       className={
@@ -45,7 +46,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
       <div className={styles.userDetails}>
         <img className={styles.avatar} src={avatar} alt="avatar icon" />
         <div className={styles.user}>
-          <h4 className={styles.info}>SIGNED IN AS</h4>
+          <h4 className={styles.info}>{t("admin_side_bar_signed")}</h4>
           <p className={styles.name}>
             {user.email.slice(0, 15)}
             {user.email.length > 16 ? "..." : ""}
@@ -60,7 +61,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           to="/"
         >
           <img className={styles.menuImg} src={la_rocket} alt="rocket icon" />
-          Plans
+          {t("admin_side_bar_plans")}
         </Link>
         <Link
           onClick={() => setModal(!openModal)}
@@ -68,7 +69,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           to="/"
         >
           <img className={styles.menuImg} src={grid} alt="grid icon" />
-          Workspaces
+          {t("admin_side_bar_wworkspaces")}
         </Link>
         <Link
           onClick={() => setModal(!openModal)}
@@ -76,7 +77,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           to="/"
         >
           <img className={styles.menuImg} src={bouy} alt="bouy icon" />
-          Help
+          {t("admin_side_bar_help")}
         </Link>
         <Link
           onClick={() => setModal(!openModal)}
@@ -84,7 +85,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           to="/"
         >
           <img className={styles.menuImg} src={zuriLogo} alt="zuri icon" />
-          Launch
+          {t("admin_side_bar_launch")}
         </Link>
       </div>
 
@@ -97,7 +98,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
             to="/home"
           >
             <FiCornerUpLeft className={styles.icon} />
-            Back to Zuri Chat
+            {t("admin_side_bar_back")}
           </Link>
           <NavLink
             exact
@@ -107,7 +108,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
             to="/admin/settings/home"
           >
             <FiHome className={styles.icon} />
-            Home
+            {t("admin_side_bar_home")}
           </NavLink>
           <Link
             onClick={() => setModal(!openModal)}
@@ -115,7 +116,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
             to="/admin/settings/accountsProfile"
           >
             <FiUser className={styles.icon} />
-            Account & Profile
+            {t("admin_side_bar_account")}
           </Link>
           <Link
             onClick={() => setModal(!openModal)}
@@ -123,7 +124,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
             to="/"
           >
             <FiCloudLightning className={styles.icon} />
-            Configure Apps
+            {t("admin_side_bar_configure")}
           </Link>
           <Link
             onClick={() => setModal(!openModal)}
@@ -131,7 +132,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
             to="/admin/stats"
           >
             <FiPieChart className={styles.icon} />
-            Analytics
+            {t("admin_side_bar_analytics")}
           </Link>
           <Link
             onClick={() => setModal(!openModal)}
@@ -139,7 +140,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
             to="/admin/settings/customize"
           >
             <FiScissors className={styles.icon} />
-            Customize
+            {t("admin_side_bar_customize")}
           </Link>
           <Link
             onClick={() => setModal(!openModal)}
@@ -147,12 +148,12 @@ const AdminSidebar = ({ setModal, openModal }) => {
             to="/admin/settings/aboutworkspace"
           >
             <FiAlertOctagon className={styles.icon} />
-            About this workspace
+            {t("admin_side_bar_about")}
           </Link>
         </div>
       </div>
       <div className={styles.sidebarMenu}>
-        <h6 className={styles.sidebarHeading}>ADMINISTRATION</h6>
+        <h6 className={styles.sidebarHeading}>{t("admin_side_bar_admin")}</h6>
         <div className={styles.sidebarMenuItems}>
           <NavLink
             exact
@@ -162,7 +163,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
             to="/admin/settings"
           >
             <FiSettings className={styles.icon} />
-            Settings & permission
+            {t("admin_side_bar_settings")}
           </NavLink>
           <Link
             onClick={() => setModal(!openModal)}
@@ -170,7 +171,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
             to="/admin/settings/managemembers"
           >
             <FiBook className={styles.icon} />
-            Manage members
+            {t("admin_side_bar_manage")}
           </Link>
           <Link
             onClick={() => setModal(!openModal)}
@@ -178,51 +179,52 @@ const AdminSidebar = ({ setModal, openModal }) => {
             to="/admin/settings/aboutworkspace"
           >
             <FiCheckSquare className={styles.icon} />
-            About this workspace
+            {t("admin_side_bar_about")}
           </Link>
         </div>
       </div>
       <div className={styles.sidebarMenu}>
-        <h6 className={styles.sidebarHeading}>OTHERS</h6>
+        <h6 className={styles.sidebarHeading}>{t("admin_side_bar_others")}</h6>
         <div className={styles.sidebarMenuItems}>
           <Link
             onClick={() => setModal(prev => !prev)}
             className={styles.sidebarLink}
             to="/admin/settings/managemembers"
           >
-            Manage members
+            {t("admin_side_bar_manage_mem")}
           </Link>
           <Link
             onClick={() => setModal(prev => !prev)}
             className={styles.sidebarLink}
             to="/legal"
           >
-            Brand guidelines
+            {t("admin_side_bar_brand")}
           </Link>
           <Link
             onClick={() => setModal(prev => !prev)}
             className={styles.sidebarLink}
             to="/help"
           >
-            Help
+            {t("admin_side_bar_help")}
           </Link>
           <Link
             onClick={() => setModal(prev => !prev)}
             className={styles.sidebarLink}
             to="/pricing"
           >
-            Pricing
+            {t("admin_side_bar_pricing")}
           </Link>
           <Link className={styles.sidebarLink} to="/signout">
-            Sign out
+            {t("admin_side_bar_sign_out")}
             <FiLogOut className={styles.iconRight} />
           </Link>
         </div>
       </div>
 
       <div className={styles.sidebarFooter}>
-        Made with &nbsp;
-        <BsFillHeartFill className={styles.heartIcon} /> &nbsp; by zuri chat
+        {t("admin_side_bar_made_with")}&nbsp;
+        <BsFillHeartFill className={styles.heartIcon} /> &nbsp;{" "}
+        {t("admin_side_bar_zurichat")}
       </div>
     </div>
   );
