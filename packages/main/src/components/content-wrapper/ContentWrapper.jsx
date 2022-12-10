@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AdminSettings from "../..";
 import { FiMenu } from "react-icons/fi";
-import classes from "../styles/ContentWrapper.module.css";
+import classes from "../content-wrapper/ContentWrapper.module.css";
 
 const ContentWrapper = ({
   title,
