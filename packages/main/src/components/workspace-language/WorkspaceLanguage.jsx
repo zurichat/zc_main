@@ -36,9 +36,9 @@ const WorkspaceLanguage = () => {
   return (
     <>
       <select className="form-select" style={myStyle.inputfield}>
-        <option selected>{t("English(US)_Lang")}</option>
-        <option value="1">{t("English(UK)")}</option>
-        <option value="2">{t("French_Lang")}</option>
+        <option selected>{t("english(US)_lang")}</option>
+        <option value="1">{t("english(UK)")}</option>
+        <option value="2">{t("french_lang")}</option>
       </select>
       <button
         type="button"
@@ -46,7 +46,7 @@ const WorkspaceLanguage = () => {
         style={myStyle.btn}
         onClick={modifyOrganizationSettings}
       >
-        {t("Save_Lang")}
+        {t("save_lang")}
       </button>
     </>
   );

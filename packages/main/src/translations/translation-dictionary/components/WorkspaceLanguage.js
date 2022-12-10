@@ -1,6 +1,6 @@
 export default [
   {
-    key: "English(US)_Lang",
+    key: "english(US)_lang",
     en: "English(US)",
     de: "Englisch(US)",
     nl: "Engels (US)",
@@ -14,7 +14,7 @@ export default [
     pt: "Inglês(US)"
   },
   {
-    key: "English(UK)",
+    key: "english(UK)",
     en: "English(UK)",
     de: "Englisch(UK)",
     nl: "Engels (UK)",
@@ -28,7 +28,7 @@ export default [
     pt: "Inglês(UK)"
   },
   {
-    key: "French_Lang",
+    key: "french_lang",
     en: "French",
     de: "Französisch",
     nl: "Frans",
@@ -42,7 +42,7 @@ export default [
     pt: "Francês"
   },
   {
-    key: "Save_Lang",
+    key: "save_lang",
     en: "Save",
     de: "Speichern Sie",
     nl: "Sla",

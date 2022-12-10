@@ -19,9 +19,9 @@ const SettingsTab = () => {
     <>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title={t("Password_SettingsTab")}
+          title={t("password_settings_tab")}
           text=""
-          btnText={t("expand_SettingsTab")}
+          btnText={t("expand_settings_tab")}
         >
           {/* Password input goes uunder here */}
           <SavePassword />
@@ -30,9 +30,9 @@ const SettingsTab = () => {
 
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title={t("twofactor_SettingsTab")}
-          text={t("active_SettingsTab")}
-          btnText={t("expand_SettingsTab")}
+          title={t("twofactor_settings_tab")}
+          text={t("active_settings_tab")}
+          btnText={t("expand_settings_tab")}
         >
           {/* Two factor authentication input field goes under here */}
           <TwoFactor />
@@ -41,9 +41,9 @@ const SettingsTab = () => {
 
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title={t("email_SettingsTab")}
-          text={`${t("mail_SettingsTab")} ${userData.email}`}
-          btnText={t("expand_SettingsTab")}
+          title={t("email_settings_tab")}
+          text={`${t("mail_settings_tab")} ${userData.email}`}
+          btnText={t("expand_settings_tab")}
         >
           {/* Email address input field goes under here */}
           <ChangeEmail />
@@ -52,9 +52,9 @@ const SettingsTab = () => {
 
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title={t("zone_SettingsTab")}
-          text={`${t("time_SettingsTab")} ${userData.time_zone}.`}
-          btnText={t("expand_SettingsTab")}
+          title={t("zone_settings_tab")}
+          text={`${t("time_settings_tab")} ${userData.time_zone}.`}
+          btnText={t("expand_settings_tab")}
         >
           {/* TimeZone input field goes under here */}
           <TimeZone />
@@ -63,9 +63,9 @@ const SettingsTab = () => {
 
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title={t("lang_SettingsTab")}
-          text={t("chooselang_SettingsTab")}
-          btnText={t("expand_SettingsTab")}
+          title={t("lang_settings_tab")}
+          text={t("chooselang_settings_tab")}
+          btnText={t("expand_settings_tab")}
         >
           {/* Language input field goes under here */}
           <Language />
@@ -74,13 +74,13 @@ const SettingsTab = () => {
 
       <div className={styles.settingsTab} id={styles.settingtab}>
         <div className={styles.settingleft} id={styles.settingleft}>
-          {t("sign_SettingsTab")} <br />
-          <span>{t("lost_SettingsTab")}</span>
+          {t("sign_settings_tab")} <br />
+          <span>{t("lost_settings_tab")}</span>
         </div>
         <div className={styles.settingsright}>
           <Link to="/session-signout">
             <button className={styles.signout}>
-              {t("signout_SettingsTab")}
+              {t("signout_settings_tab")}
             </button>
           </Link>
         </div>
@@ -88,20 +88,21 @@ const SettingsTab = () => {
 
       <div className={styles.settingsTab} id={styles.settingtab}>
         <div className={styles.settingleft} id={styles.settingleft}>
-          {t("acc_SettingsTab")} <br />
-          <span>{t("zuri_SettingsTab")}</span>
+          {t("acc_settings_tab")} <br />
+          <span>{t("zuri_settings_tab")}</span>
           <br />
           <span>
-            <strong> {t("note_SettingsTab")}</strong> {t("account_SettingsTab")}{" "}
+            <strong> {t("note_settings_tab")}</strong>{" "}
+            {t("account_settings_tab")}{" "}
             <NavLink to="/" className={styles.emailLink}>
-              {t("change_SettingsTab")}
+              {t("change_settings_tab")}
             </NavLink>
           </span>
         </div>
         <div className={styles.settingsright}>
           <Link to="/settings/confirm-password">
             <button className={styles.delete}>
-              {t("deactivate_SettingsTab")}
+              {t("deactivate_settings_tab")}
             </button>
           </Link>
         </div>
@@ -109,8 +110,8 @@ const SettingsTab = () => {
 
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title={t("user_SettingsTab")}
-          btnText={t("expand_SettingsTab")}
+          title={t("user_settings_tab")}
+          btnText={t("expand_settings_tab")}
         >
           {/* Username input field goes under here */}
           <UserName />

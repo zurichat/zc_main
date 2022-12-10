@@ -1,6 +1,6 @@
 export default [
   {
-    key: "Password_SettingsTab",
+    key: "password_settings_tab",
     en: "Password",
     de: "Passwort",
     nl: "Wachtwoord",
@@ -14,7 +14,7 @@ export default [
     pt: "Senha"
   },
   {
-    key: "expand_SettingsTab",
+    key: "expand_settings_tab",
     en: "expand",
     de: "erweitern.",
     nl: "uitbreiden",
@@ -28,7 +28,7 @@ export default [
     pt: "expandir"
   },
   {
-    key: "twofactor_SettingsTab",
+    key: "twofactor_settings_tab",
     en: "Two-Factor Authentication",
     de: "Zwei-Faktoren-Authentifizierung",
     nl: "Authenticatie met twee factoren",
@@ -42,7 +42,7 @@ export default [
     pt: "Autenticação de dois factores"
   },
   {
-    key: "active_SettingsTab",
+    key: "active_settings_tab",
     en: "Two factor authentication is active for your account",
     de: "Die Zwei-Faktor-Authentifizierung ist für Ihr Konto aktiv",
     nl: "Twee factor authenticatie is actief voor uw account",
@@ -56,7 +56,7 @@ export default [
     pt: "A autenticação de dois factores está activa para a sua conta"
   },
   {
-    key: "email_SettingsTab",
+    key: "email_settings_tab",
     en: "Email Address",
     de: "E-Mail Adresse",
     nl: "E-mailadres",
@@ -70,7 +70,7 @@ export default [
     pt: "Endereço de correio electrónico"
   },
   {
-    key: "mail_SettingsTab",
+    key: "mail_settings_tab",
     en: "Your email address is",
     de: "Ihre E-Mail Adresse lautet",
     nl: "Uw e-mailadres is",
@@ -84,7 +84,7 @@ export default [
     pt: "O seu endereço de correio electrónico é"
   },
   {
-    key: "zone_SettingsTab",
+    key: "zone_settings_tab",
     en: "Time zone",
     de: "Zeitzone",
     nl: "Tijdzone",
@@ -98,7 +98,7 @@ export default [
     pt: "Fuso horário"
   },
   {
-    key: "time_SettingsTab",
+    key: "time_settings_tab",
     en: "Zurichat uses your time zone to send summary and notification emails, for times in your activity feeds and for  reminders. Your time zone is currently set to: (UTC+01:00) West Central,",
     de: "Zurichat verwendet Ihre Zeitzone, um Zusammenfassungs- und Benachrichtigungs-E-Mails zu versenden, für Zeiten in Ihren Aktivitäts-Feeds und für Erinnerungen. Ihre Zeitzone ist derzeit eingestellt auf: (UTC+01:00) West Central,",
     nl: "Zurichat gebruikt uw tijdzone voor het versturen van overzichts- en notificatie e-mails, voor tijden in uw activiteiten feeds en voor herinneringen. Uw tijdzone is momenteel ingesteld op: (UTC+01:00) West Central,",
@@ -112,7 +112,7 @@ export default [
     pt: "A Zurichat utiliza o seu fuso horário para enviar emails de resumo e notificação, para as horas de alimentação das suas actividades e para lembretes. O seu fuso horário está actualmente definido para: (UTC+01:00) Central Oeste,"
   },
   {
-    key: "lang_SettingsTab",
+    key: "lang_settings_tab",
     en: "Language",
     de: "Sprache",
     nl: "Taal",
@@ -126,7 +126,7 @@ export default [
     pt: "Idioma"
   },
   {
-    key: "chooselang_SettingsTab",
+    key: "chooselang_settings_tab",
     en: "Choose the language you’d like to use with Zurichat. Your language is currently set to: English (Nigeria).",
     de: "Wählen Sie die Sprache, die Sie mit Zurichat verwenden möchten. Ihre Sprache ist derzeit eingestellt auf: Englisch (Nigeria).",
     nl: "Kies de taal die u wilt gebruiken met Zurichat. Uw taal is momenteel ingesteld op: Engels (Nigeria).",
@@ -140,7 +140,7 @@ export default [
     pt: "Escolha a língua que gostaria de utilizar com Zurichat. A sua língua está actualmente definida: Inglês (Nigéria)."
   },
   {
-    key: "sign_SettingsTab",
+    key: "sign_settings_tab",
     en: "Sign out all other sessions",
     de: "Alle anderen Sitzungen abmelden",
     nl: "Alle andere sessies afmelden",
@@ -154,7 +154,7 @@ export default [
     pt: "Assinar todas as outras sessões"
   },
   {
-    key: "lost_SettingsTab",
+    key: "lost_settings_tab",
     en: "Lost your phone? Left yourself logged in on a public computer? Need a way to sign out from everywhere except your current browser? Then this is for you",
     de: "Sie haben Ihr Telefon verloren? Sie haben sich an einem öffentlichen Computer abgemeldet? Brauchen Sie eine Möglichkeit, sich von überall aus abzumelden, außer von Ihrem aktuellen Browser? Dann ist dies das Richtige für Sie",
     nl: "Je telefoon verloren? Ben je ingelogd op een openbare computer? Heb je een manier nodig om je overal af te melden behalve bij je huidige browser? Dan is dit iets voor u",
@@ -168,7 +168,7 @@ export default [
     pt: "Perdeu o seu telefone? Deixou-se logar num computador público? Precisa de uma forma de sair de todo o lado excepto do seu browser actual? Então isto é para si"
   },
   {
-    key: "signout_SettingsTab",
+    key: "signout_settings_tab",
     en: "Sign out of all other sessions",
     de: "Abmeldung von allen anderen Sitzungen",
     nl: "Afmelden voor alle andere sessies",
@@ -182,7 +182,7 @@ export default [
     pt: "Sair de todas as outras sessões"
   },
   {
-    key: "acc_SettingsTab",
+    key: "acc_settings_tab",
     en: "Deactivate Account",
     de: "Konto deaktivieren",
     nl: "Account deactiveren",
@@ -196,7 +196,7 @@ export default [
     pt: "Desactivar conta"
   },
   {
-    key: "zuri_SettingsTab",
+    key: "zuri_settings_tab",
     en: "If you no longer need your account for the Zurichat, you can deactivate your account. Any other Zurichat workspaces you belong to will not be affected.",
     de: "Wenn Sie Ihr Konto nicht mehr für den Zurichat benötigen, können Sie es deaktivieren. Alle anderen Zurichat-Arbeitsbereiche, denen Sie angehören, sind davon nicht betroffen.",
     nl: "Als u uw account niet langer nodig heeft voor het Zurichat, kunt u uw account deactiveren. Alle andere Zurichat werkruimten waartoe u behoort zullen niet worden beïnvloed.",
@@ -210,7 +210,7 @@ export default [
     pt: "Se já não precisar da sua conta para o Zurichat, pode desactivar a sua conta. Qualquer outro espaço de trabalho Zurichat a que pertença não será afectado."
   },
   {
-    key: "note_SettingsTab",
+    key: "note_settings_tab",
     en: "Note:",
     de: "Anmerkung:",
     nl: "Let op:",
@@ -224,7 +224,7 @@ export default [
     pt: "Nota:"
   },
   {
-    key: "account_SettingsTab",
+    key: "account_settings_tab",
     en: "Don’t deactivate your account if you just want to",
     de: "Deaktivieren Sie Ihr Konto nicht, wenn Sie nur",
     nl: "Deactiveer uw account niet als u alleen wilt",
@@ -238,7 +238,7 @@ export default [
     pt: "Não desactive a sua conta se apenas quiser"
   },
   {
-    key: "change_SettingsTab",
+    key: "change_settings_tab",
     en: "change your email address.",
     de: "Ihre E-Mail-Adresse zu ändern.",
     nl: "verander je e-mailadres.",
@@ -252,7 +252,7 @@ export default [
     pt: "alterar o seu endereço de correio electrónico."
   },
   {
-    key: "deactivate_SettingsTab",
+    key: "deactivate_settings_tab",
     en: "Deactivate your account",
     de: "Deaktivieren Sie Ihr Konto",
     nl: "Uw account deactiveren",
@@ -266,7 +266,7 @@ export default [
     pt: "Desactive a sua conta"
   },
   {
-    key: "user_SettingsTab",
+    key: "user_settings_tab",
     en: "Username",
     de: "Benutzername",
     nl: "Gebruikersnaam",
