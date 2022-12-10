@@ -1,11 +1,10 @@
 import React from "react";
-import Emoji from "./Settings/components/Emoji.js";
-import Zuribot from "./Settings/components/Zuribot";
-import WorkSpaceIconTab from "./Settings/components/WorkSpaceIconTab";
-import Statuses from "./Settings/components/Statuses";
-import ChannelPrefixes from "./Settings/components/ChannelPrefixes";
-import ContentWrapper from "./Settings/components/ContentWrapper";
-import classes from "./styles/customizeWorkspace.module.css";
+import Emoji from "../../../components/emoji/Emoji";
+import Zuribot from "../../../components/zuri-bot/Zuribot";
+import WorkSpaceIconTab from "../../../components/workspace-icon-tab/WorkSpaceIconTab";
+import Statuses from "../../../components/statuses/Statuses";
+import ChannelPrefixes from "../../../components/channel-prefixes/ChannelPrefixes";
+import ContentWrapper from "../../../components/content-wrapper/ContentWrapper";
 
 function Customize() {
   return (
