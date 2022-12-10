@@ -176,6 +176,14 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
+            to="/admin/settings/invitation"
+          >
+            <FiUserPlus className={styles.icon} />
+            Invitations
+          </Link>
+          <Link
+            onClick={() => setModal(!openModal)}
+            className={styles.sidebarLink}
             to="/admin/settings/aboutworkspace"
           >
             <FiCheckSquare className={styles.icon} />
