@@ -1,32 +1,34 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 import UnstyledButton from "~/shared/button/Button";
 import {
   CommentBoardWrapper,
   CommentBoardHeader,
   CommentMessagesWrapper,
-  ParentMessage,
-  MessagePaneWrapper
+  ParentMessage
 } from "./CommentBoard.styled";
 
-import { getSampleMessages } from "~/utils/samples";
 import MessagePaneInput from "~/message-pane-input/MessagePaneInput";
-import RichTextRenderer from "~/rich-text-renderer/RichTextRenderer";
-import axios from "axios";
 import MessagePane from "../message-pane/MessagePane";
-
+import EmojiPicker from "../message-room-emoji-picker/MessageRoomEmojiPicker";
+import Overlay from "../message-board/components/overlay/Overlay";
 const CommentBoard = ({
   commentBoardConfig,
-  Messages = [],
-  onReact,
+  messages = [],
+  parent = [],
+  isLoadingMessages,
+  onSendMessage,
+  // onReact,
   currentUserId
 }) => {
   const [displayCommentBoard, setDisplayCommentBoard] = useState(
     commentBoardConfig.displayCommentBoard
   );
-  const [messages, setMessages] = useState([...getSampleMessages()]);
+  const [scroll, setScroll] = useState(true);
 
-  const addToMessages = message => {
-    setMessages(messages => [...messages, message]);
+  const handleSendMessage = message => {
+    const shouldScroll = onSendMessage && onSendMessage(message);
+    setScroll(shouldScroll);
   };
 
   let thread = window.location.pathname.split("/").at(-2);
@@ -34,32 +36,10 @@ const CommentBoard = ({
     setDisplayCommentBoard(false);
     window.history.back();
   };
-  const BASE_URL = "https://chat.zuri.chat/api/v1";
-  const getRoomMessagesHandler = async (orgId, roomId) => {
-    try {
-      if (orgId && roomId) {
-        const getRoomMessagesResponse = await axios.get(
-          `${BASE_URL}/org/${orgId}/rooms/${roomId}/messages`
-        );
-        return getRoomMessagesResponse.data;
-      }
-      throw new Error("Invalid arguments");
-    } catch (error) {
-      console.error("error getting room messages", error);
-    }
-  };
-
-  useEffect(async () => {
-    try {
-      const data = await getRoomMessagesHandler();
-      console.log(data);
-      // setMessages(data)
-    } catch (err) {
-      console.log(err);
-    }
-  }, []);
-
-  // Added
+  function handleOverlayClicked() {
+    setShowMoreOptions(false);
+    setShowEmoji(false);
+  }
 
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [showEmoji, setShowEmoji] = useState(false);
@@ -95,13 +75,11 @@ const CommentBoard = ({
     }
   };
 
-  // This
-
-  function handleEmojiClicked(event, emojiObject, messageId) {
-    const message_id = messageId || currentMessageId;
-    onReact && onReact(event, emojiObject, message_id);
-    setScrollToBottom(false);
-  }
+  // function handleEmojiClicked(event, emojiObject, messageId) {
+  //   const message_id = messageId || currentMessageId;
+  //   onReact && onReact(event, emojiObject, message_id);
+  //   setScrollToBottom(false);
+  // }
 
   return (
     <>
@@ -118,26 +96,56 @@ const CommentBoard = ({
               <UnstyledButton onClick={() => handleClose()}>X</UnstyledButton>
             </CommentBoardHeader>
 
-            <div className="msg__wrapper">
-              <ParentMessage>
-                <MessagePane message={messages[0]} />
-                <span style={{ display: "flex" }}>
-                  9 replies <hr />
-                </span>
-              </ParentMessage>
-
-              <CommentMessagesWrapper>
-                {messages.map((message, idx) => (
-                  <MessagePane key={idx} message={message} />
-                ))}
-              </CommentMessagesWrapper>
-              <MessagePaneWrapper>
-                <MessagePaneInput
-                  sendMessageHandler={commentBoardConfig.sendChatMessageHandler}
-                  addToMessages={addToMessages}
+            <ParentMessage>
+              {parent.map((message, idx) => (
+                <MessagePane
+                  key={idx + "p"}
+                  message={message}
+                  onShowEmoji={handleShowEmoji}
+                  currentUserId={currentUserId}
                 />
-              </MessagePaneWrapper>
+              ))}
+
+              {!isLoadingMessages && (
+                <span style={{ display: "flex" }}>
+                  {messages.length} replies <hr />{" "}
+                </span>
+              )}
+            </ParentMessage>
+
+            <CommentMessagesWrapper>
+              {messages.map((message, idx) => (
+                <MessagePane
+                  key={idx}
+                  message={message}
+                  onShowEmoji={handleShowEmoji}
+                  currentUserId={currentUserId}
+                />
+              ))}
+            </CommentMessagesWrapper>
+            {isLoadingMessages && (
+              <div className="text-center">
+                <div
+                  className="spinner-border"
+                  style={{ width: "3rem", height: "3rem", color: "#7ed5af" }}
+                  role="status"
+                >
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            )}
+            <div className="input-text">
+              <MessagePaneInput
+                onSendMessage={handleSendMessage}
+                onShowEmoji={handleShowEmoji}
+              />
             </div>
+            {showEmoji && (
+              <div>
+                <Overlay handleOverlayClicked={handleOverlayClicked} />
+                <EmojiPicker top={top} right={right} />
+              </div>
+            )}
           </CommentBoardWrapper>
         </div>
       ) : (
@@ -148,3 +156,8 @@ const CommentBoard = ({
 };
 
 export default CommentBoard;
+CommentBoard.propTypes = {
+  currentUserId: PropTypes.string,
+  messages: PropTypes.array.isRequired,
+  onSendMessage: PropTypes.func
+};
