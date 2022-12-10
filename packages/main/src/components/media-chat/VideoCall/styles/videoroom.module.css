@@ -35,16 +35,18 @@
 }
 
 .videoroomRooms {
-    height: 95%;
+    height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
-    height: 90%;
 }
 
 .videoContainer {
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

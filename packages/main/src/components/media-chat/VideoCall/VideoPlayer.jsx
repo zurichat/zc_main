@@ -14,11 +14,7 @@ const VideoPlayer = ({ user, localId }) => {
       user?.audioTrack.stop(ref.current);
     };
   }, []);
-  return (
-    <div className={`${styles.videoplayer}`}>
-      <div ref={ref} className={`${styles.video}`}></div>
-    </div>
-  );
+  return <div className={`${styles.videoplayer}`} ref={ref}></div>;
 };
 
 export default VideoPlayer;
