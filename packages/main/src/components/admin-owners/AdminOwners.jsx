@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import styles from "../admin-owners/AdminOwners.module.css";
 import { FiSearch } from "react-icons/fi";
 import AdminOwnersItem from "../admin-owners-item/AdminOwnersItem";
+import { useTranslation } from "react-i18next";
 
 const AdminOwners = ({ admins }) => {
   const [adminObj, setAdminObj] = useState(admins);
   const [filtered, setFiltered] = useState(null);
   const [selectValue, setSelectValue] = useState("role");
+  const { t } = useTranslation();
 
   const filterAdmins = text => {
     const filteredAdmins = adminObj.filter(eachObj => {
@@ -51,13 +53,13 @@ const AdminOwners = ({ admins }) => {
       <div className={styles.tabContainer}>
         <div className={styles.topContent}>
           <label>
-            <span className={styles.sortBy}>Sort By</span>
+            <span className={styles.sortBy}>{t("admin_owners_sort")}</span>
             <select
               defaultValue={selectValue}
               onChange={event => handleSort(event.target.value)}
             >
-              <option value="Role">Role</option>
-              <option value="FullName">FullName</option>
+              <option value="Role">{t("admin_owners_role")}</option>
+              <option value="FullName">{t("admin_owners_fullname")}</option>
             </select>
           </label>
 
@@ -66,7 +68,7 @@ const AdminOwners = ({ admins }) => {
               <FiSearch className={styles.icon} />
               <input
                 type="text"
-                placeholder="Search admins and owners"
+                placeholder={t("admin_owners_placeholder")}
                 className={styles.inputSearch}
                 onChange={handleChange}
               />
