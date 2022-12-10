@@ -41,9 +41,6 @@ import EditProfile from "./components/EditProfile";
 import Help from "./pages/Help";
 
 import SettingsHome from "./pages/SettingsHome";
-import FirstSection_WhyZuriChat from "./pages/FirstSection_WhyZuriChat";
-import SecondSection_WhyZuriChat from "./pages/SecondSection_WhyZuriChat";
-import ThirdSection_WhyZuriChat from "./pages/ThirdSection_WhyZuriChat";
 import ErrorPage from "./pages/ErrorPage";
 import WorkspaceLanguage from "./components/WorkspaceLanguage";
 import Username from "./components/Username";
@@ -92,9 +89,6 @@ const Translations = [
   ...ProfileMore,
 
   ...SettingsHome,
-  ...FirstSection_WhyZuriChat,
-  ...SecondSection_WhyZuriChat,
-  ...ThirdSection_WhyZuriChat,
   ...ErrorPage,
   ...ManageWorkspace,
 
