@@ -210,7 +210,7 @@ export default [
     pt: "Escolher se quer exibir os pronomes dos membros (ex: eles/eles/os) nos seus perfis de zurichat"
   },
   {
-    key: "DNB_manage",
+    key: "dnb_manage",
     en: "Do not disturb",
     de: "Bitte nicht stören",
     nl: "Niet storen",
@@ -476,7 +476,7 @@ export default [
     pt: "Apagar espaço de trabalho"
   },
   {
-    key: "delZuri_manage",
+    key: "delzuri_manage",
     en: "Deleting a Zuri Chat workspace can't be undone. All messages and files will irretrievable. Please use caution and consider exporting your data",
     de: "Das Löschen eines Zuri Chat-Arbeitsbereichs kann nicht rückgängig gemacht werden. Alle Nachrichten und Dateien können nicht wiederhergestellt werden. Bitte seien Sie vorsichtig und exportieren Sie Ihre Daten",
     nl: "Het verwijderen van een Zuri Chat werkruimte kan niet ongedaan worden gemaakt. Alle berichten en bestanden zijn onherstelbaar. Wees voorzichtig en overweeg het exporteren van uw gegevens.",
@@ -518,7 +518,7 @@ export default [
     pt: "Nota: Não elimine o seu espaço de trabalho se apenas quiser alterar o seu"
   },
   {
-    key: "urlSpace_manage",
+    key: "urlspace_manage",
     en: "workspace’s URL or name. You also might want to export data",
     de: "die URL oder den Namen des Arbeitsbereichs. Sie können auch Daten exportieren",
     nl: "de URL of naam van de werkruimte. U wilt misschien ook gegevens exporteren",
@@ -546,7 +546,7 @@ export default [
     pt: "antes de apagar o espaço de trabalho"
   },
   {
-    key: "delWork_manage",
+    key: "delwork_manage",
     en: "Delete Workspace",
     de: "Arbeitsbereich löschen",
     nl: "Werkruimte verwijderen",

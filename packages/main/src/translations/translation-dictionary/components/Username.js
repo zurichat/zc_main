@@ -1,6 +1,6 @@
 export default [
   {
-    key: "Save_username",
+    key: "save_username",
     en: "Save",
     de: "Speichern Sie",
     nl: "Sla",

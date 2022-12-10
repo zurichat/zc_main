@@ -15,11 +15,11 @@ const Table = props => {
         <thead className={styles.tableHead}>
           <tr className={styles.tableRow}>
             <th className={styles.heading} style={{ color: "blue" }}>
-              {t("name_Table")}
+              {t("name_table")}
             </th>
-            <th className={styles.heading}>{t("acc_Table")}</th>
-            <th className={styles.heading}>{t("bill_Table")}</th>
-            <th className={styles.heading}>{t("auth_Table")}</th>
+            <th className={styles.heading}>{t("acc_table")}</th>
+            <th className={styles.heading}>{t("bill_table")}</th>
+            <th className={styles.heading}>{t("auth_table")}</th>
             <th></th>
           </tr>
         </thead>
@@ -54,7 +54,7 @@ const Table = props => {
           ) : (
             <>
               <td className={styles.emptySearch} colSpan="5">
-                {t("result_Table")}
+                {t("result_table")}
               </td>
             </>
           )}

@@ -35,7 +35,7 @@ const SavePassword = () => {
       >
         <div className="col-md-5">
           <label htmlFor="current_password" className="form-label">
-            {t("Current_password")}
+            {t("current_password")}
           </label>
           <input type="password" className="form-control" required />
         </div>

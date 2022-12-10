@@ -59,9 +59,9 @@ const Home = () => {
                 }}
               >
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <h3>{t("Settings_home_settings")}</h3>
+                  <h3>{t("settings_settings_home")}</h3>
                   <span className={classes.span_text}>
-                    {t("Configure_home_setting")}
+                    {t("configure_settings_home")}
                   </span>
                 </div>
               </div>
@@ -93,9 +93,9 @@ const Home = () => {
                 }}
               >
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <h3>{t("Account_Settings_home")}</h3>
+                  <h3>{t("account_settings_home")}</h3>
                   <span className={classes.span_text}>
-                    {t("EditProfile_Settings_home")}
+                    {t("editprofile_settings_home")}
                   </span>
                 </div>
                 <div>
@@ -138,9 +138,9 @@ const Home = () => {
                 }}
               >
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <h3> {t("ManageWorkspace_Settings_home")} </h3>
+                  <h3> {t("manageworkspace_settings_home")} </h3>
                   <span className={classes.span_text}>
-                    {t("Invite_Settings_home")}
+                    {t("invite_settings_home")}
                   </span>
                 </div>
                 <div>
@@ -171,7 +171,7 @@ const Home = () => {
                 }}
               >
                 <Link to="/whyzurichat" target="_blank">
-                  {t("Blog_Settings_home")}
+                  {t("blog_settings_home")}
                 </Link>
               </li>
               <li
@@ -180,7 +180,7 @@ const Home = () => {
                   margin: "0.75rem"
                 }}
               >
-                <Link to="/downloads">{t("Downloads_Settings_home")}</Link>
+                <Link to="/downloads">{t("downloads_settings_home")}</Link>
               </li>
             </div>
             <div className={classes.footer_links}>
@@ -190,7 +190,7 @@ const Home = () => {
                   margin: "0.75rem"
                 }}
               >
-                <Link to="/help">{t("Help_Settings_home")}</Link>
+                <Link to="/help">{t("help_settings_home")}</Link>
               </li>
               <li
                 style={{
@@ -198,25 +198,7 @@ const Home = () => {
                   margin: "0.75rem"
                 }}
               >
-                <Link to="/legal">{t("BrandGuide_Settings_home")}</Link>
-              </li>
-            </div>
-            <div className={classes.footer_links}>
-              <li
-                style={{
-                  display: "inline-block",
-                  margin: "0.75rem"
-                }}
-              >
-                <Link to="/contact-us">{t("Contact_Settings_home")}</Link>
-              </li>
-              <li
-                style={{
-                  display: "inline-block",
-                  margin: "0.75rem"
-                }}
-              >
-                <Link to="/privacy">{t("Policy_Settings_home")}</Link>
+                <Link to="/legal">{t("brandguide_settings_home")}</Link>
               </li>
             </div>
             <div className={classes.footer_links}>
@@ -226,7 +208,7 @@ const Home = () => {
                   margin: "0.75rem"
                 }}
               >
-                <Link to="/pricing">{t("Pricing_Settings_home")}</Link>
+                <Link to="/contact-us">{t("contact_settings_home")}</Link>
               </li>
               <li
                 style={{
@@ -234,7 +216,25 @@ const Home = () => {
                   margin: "0.75rem"
                 }}
               >
-                <Link to="/signout">{t("SignOut_Settings_home")}</Link>
+                <Link to="/privacy">{t("policy_settings_home")}</Link>
+              </li>
+            </div>
+            <div className={classes.footer_links}>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/pricing">{t("pricing_settings_home")}</Link>
+              </li>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/signout">{t("signout_settings_home")}</Link>
               </li>
             </div>
           </ul>

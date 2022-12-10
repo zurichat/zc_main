@@ -1,6 +1,6 @@
 export default [
   {
-    key: "name_Table",
+    key: "name_table",
     en: "Name",
     de: "Name",
     nl: "Naam",
@@ -14,7 +14,7 @@ export default [
     pt: "Nome"
   },
   {
-    key: "acc_Table",
+    key: "acc_table",
     en: "Account type",
     de: "Konto-Typ",
     nl: "Type rekening",
@@ -28,7 +28,7 @@ export default [
     pt: "Tipo de conta"
   },
   {
-    key: "bill_Table",
+    key: "bill_table",
     en: "Billing status",
     de: "Status der Abrechnung",
     nl: "Factuurstatus",
@@ -42,7 +42,7 @@ export default [
     pt: "Estado da facturação"
   },
   {
-    key: "auth_Table",
+    key: "auth_table",
     en: "Authentication",
     de: "Authentifizierung",
     nl: "Authenticatie",
@@ -56,7 +56,7 @@ export default [
     pt: "Autenticação"
   },
   {
-    key: "result_Table",
+    key: "result_table",
     en: "No results to display",
     de: "Keine Ergebnisse zu sehen",
     nl: "Geen resultaten weer te geven",

@@ -12,7 +12,7 @@ const UserName = () => {
           <input type="text" className="form-control" required />
         </div>
         <div className="col-md-4 mb-3 mt-3">
-          <button className="btn"> {t("Save_username")}</button>
+          <button className="btn"> {t("save_username")}</button>
         </div>
         <p>{t("profile _username")}</p>
       </form>

@@ -1,6 +1,6 @@
 export default [
   {
-    key: "Settings_home_settings",
+    key: "settings_settings_home",
     en: "Settings & Permissions",
     de: "Einstellungen & Berechtigungen",
     nl: "Instellingen en machtigingen",
@@ -14,7 +14,7 @@ export default [
     pt: "Definições e permissões"
   },
   {
-    key: "Configure_home_setting",
+    key: "configure_settings_home",
     en: "Configure your workspace settings, permissions, and authentication preferences.",
     de: "Konfigurieren Sie Ihre Arbeitsbereichseinstellungen, Berechtigungen und Authentifizierungspräferenzen.",
     nl: "Configureer uw werkruimte-instellingen, machtigingen en verificatievoorkeuren.",
@@ -28,7 +28,7 @@ export default [
     pt: "Configure as suas definições de espaço de trabalho, permissões, e preferências de autenticação."
   },
   {
-    key: "Account_Settings_home",
+    key: "account_settings_home",
     en: "Account Settings ",
     de: "Kontoeinstellungen",
     nl: "Accountinstellingen",
@@ -42,7 +42,7 @@ export default [
     pt: "Definições de conta"
   },
   {
-    key: "EditProfile_Settings_home",
+    key: "editprofile_settings_home",
     en: "Edit your profile, update your username and password, and manage other account settings.",
     de: "Bearbeiten Sie Ihr Profil, aktualisieren Sie Ihren Benutzernamen und Ihr Passwort und verwalten Sie andere Kontoeinstellungen.",
     nl: "Bewerk uw profiel, werk uw gebruikersnaam en wachtwoord bij en beheer andere accountinstellingen.",
@@ -56,7 +56,7 @@ export default [
     pt: "Editar o seu perfil, actualizar o seu nome de utilizador e palavra-passe, e gerir outras definições de conta."
   },
   {
-    key: "ManageWorkspace_Settings_home",
+    key: "manageworkspace_settings_home",
     en: "Manage your workspace",
     de: "Verwalten Sie Ihren Arbeitsbereich",
     nl: "Beheer uw werkruimte",
@@ -70,7 +70,7 @@ export default [
     pt: "Gerir o seu espaço de trabalho"
   },
   {
-    key: "Invite_Settings_home",
+    key: "invite_settings_home",
     en: "Invite new members and manage user permissions",
     de: "Neue Mitglieder einladen und Benutzerberechtigungen verwalten",
     nl: "Nieuwe leden uitnodigen en gebruikersrechten beheren",
@@ -84,7 +84,7 @@ export default [
     pt: "Convidar novos membros e gerir as permissões dos utilizadores"
   },
   {
-    key: "Blog_Settings_home",
+    key: "blog_settings_home",
     en: "Our Blog",
     de: "Unser Blog",
     nl: "Onze Blog",
@@ -98,7 +98,7 @@ export default [
     pt: "O nosso Blog"
   },
   {
-    key: "Downloads_Settings_home",
+    key: "downloads_settings_home",
     en: "Download Apps",
     de: "Apps herunterladen",
     nl: "Apps downloaden",
@@ -112,7 +112,7 @@ export default [
     pt: "Descarregar aplicações"
   },
   {
-    key: "Help_Settings_home",
+    key: "help_settings_home",
     en: "Help",
     de: "Hilfe",
     nl: "Help",
@@ -126,7 +126,7 @@ export default [
     pt: "Ajuda"
   },
   {
-    key: "BrandGuide_Settings_home",
+    key: "brandguide_settings_home",
     en: "Brand Guidelines",
     de: "Markenrichtlinien",
     nl: "Merk Richtlijnen",
@@ -140,7 +140,7 @@ export default [
     pt: "Directrizes da marca"
   },
   {
-    key: "Contact_Settings_home",
+    key: "contact_settings_home",
     en: "Contact",
     de: "Kontakt",
     nl: "Neem contact op met",
@@ -154,7 +154,7 @@ export default [
     pt: "Contacto"
   },
   {
-    key: "Policy_Settings_home",
+    key: "policy_settings_home",
     en: "Policies",
     de: "Politiken",
     nl: "Beleid",
@@ -168,7 +168,7 @@ export default [
     pt: "Políticas"
   },
   {
-    key: "Pricing_Settings_home",
+    key: "pricing_settings_home",
     en: "Pricing",
     de: "Preisgestaltung",
     nl: "Prijzen",
@@ -182,7 +182,7 @@ export default [
     pt: "Fixação de preços"
   },
   {
-    key: "SignOut_Settings_home",
+    key: "signout_settings_home",
     en: "Sign Out",
     de: "Abmelden",
     nl: "Afmelden",

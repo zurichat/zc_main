@@ -1,6 +1,6 @@
 export default [
   {
-    key: "convo_R&E",
+    key: "convo_r&e",
     en: "How long is conversation history kept?",
     de: "Wie lange wird der Gesprächsverlauf aufbewahrt?",
     nl: "Hoe lang wordt de gespreksgeschiedenis bewaard?",
@@ -14,7 +14,7 @@ export default [
     pt: "Quanto tempo é mantido o histórico de conversas?"
   },
   {
-    key: "team_R&E",
+    key: "team_r&e",
     en: "Your team is not on a paid tier and therefore cannot customize retention policies.",
     de: "Ihr Team ist nicht auf einer kostenpflichtigen Stufe und kann daher keine Aufbewahrungsrichtlinien anpassen.",
     nl: "Uw team zit niet op een betaald niveau en kan daarom geen retentiebeleid aanpassen.",
@@ -28,7 +28,7 @@ export default [
     pt: "A sua equipa não está num nível pago e, portanto, não pode personalizar as políticas de retenção."
   },
   {
-    key: "upgrade_R&E",
+    key: "upgrade_r&e",
     en: "Upgrade Today",
     de: "Upgrade heute",
     nl: "Upgrade vandaag",
@@ -42,7 +42,7 @@ export default [
     pt: "Actualização Hoje"
   },
   {
-    key: "default_R&E",
+    key: "default_r&e",
     en: "By default, Zuri Chat will save your message data for the lifetime of your workspace. With this setting, Zuri Chat will not keep logs of users’ message edits and deletions. Please",
     de: "Standardmäßig speichert Zuri Chat Ihre Nachrichtendaten für die Dauer Ihres Arbeitsbereichs. Mit dieser Einstellung speichert Zuri Chat keine Protokolle über die Änderungen und Löschungen von Nachrichten durch Benutzer. Bitte",
     nl: "Standaard bewaart Zuri Chat uw berichtgegevens voor de levensduur van uw werkruimte. Met deze instelling zal Zuri Chat geen logs bijhouden van gebruikers' bericht bewerkingen en verwijderingen. Gelieve",
@@ -56,7 +56,7 @@ export default [
     pt: "Por defeito, o Zuri Chat guardará os dados da sua mensagem durante o tempo de vida útil do seu espaço de trabalho. Com esta configuração, Zuri Chat não guardará registos das edições e eliminações de mensagens dos utilizadores. Por favor"
   },
   {
-    key: "faq_R&E",
+    key: "faq_r&e",
     en: "see our FAQ",
     de: "siehe unsere FAQ",
     nl: "zie onze FAQ",
@@ -70,7 +70,7 @@ export default [
     pt: "ver as nossas FAQ"
   },
   {
-    key: "quest_R&E",
+    key: "quest_r&e",
     en: "for questions about the specific retention policy types.",
     de: "für Fragen zu den einzelnen Arten von Aufbewahrungsrichtlinien.",
     nl: "voor vragen over de specifieke typen bewaarbeleid.",
@@ -84,7 +84,7 @@ export default [
     pt: "para questões sobre os tipos específicos de política de retenção."
   },
   {
-    key: "data_R&E",
+    key: "data_r&e",
     en: "What data can my admins access?",
     de: "Auf welche Daten können meine Administratoren zugreifen?",
     nl: "Tot welke gegevens hebben mijn admins toegang?",
@@ -98,7 +98,7 @@ export default [
     pt: "Que dados podem os meus administradores aceder?"
   },
   {
-    key: "public_R&E",
+    key: "public_r&e",
     en: "Public data can be exported",
     de: "Öffentliche Daten können exportiert werden",
     nl: "Openbare gegevens kunnen worden geëxporteerd",
@@ -112,7 +112,7 @@ export default [
     pt: "Os dados públicos podem ser exportados"
   },
   {
-    key: "workspace_R&E",
+    key: "workspace_r&e",
     en: "Workspace Owners and Admins can export messages and files from public channels.",
     de: "Arbeitsbereichseigentümer und -administratoren können Nachrichten und Dateien aus öffentlichen Kanälen exportieren.",
     nl: "Werkruimte-eigenaren en -beheerders kunnen berichten en bestanden exporteren uit openbare kanalen.",

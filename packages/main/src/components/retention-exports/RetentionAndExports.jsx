@@ -8,41 +8,41 @@ const RetentionAndExports = () => {
   const { t } = useTranslation();
   return (
     <div className={styles.retention}>
-      <h3 className={styles.h3}>{t("convo_R&E")}</h3>
+      <h3 className={styles.h3}>{t("convo_r&e")}</h3>
       <div className={`${styles.upgrade} ${styles.upgradeDisplay}`}>
         <FiAlertTriangle className={styles.triangle} />
         <p className={styles.upgradeText}>
-          {t("team_R&E")}{" "}
+          {t("team_r&e")}{" "}
           <Link
             to="/pricing"
             rel="noreferrer"
             target="_blank"
             className={styles.link}
           >
-            {t("upgrade_R&E")}
+            {t("upgrade_r&e")}
           </Link>
         </p>
       </div>
       <div className={`${styles.faq} ${styles.faqDisplay}`}>
         <FiAlertCircle className={styles.circle} />
         <p className={styles.faqText}>
-          {t("default_R&E")}{" "}
+          {t("default_r&e")}{" "}
           <Link
             to="/pricing"
             rel="noreferrer"
             target="_blank"
             className={styles.link}
           >
-            {t("faq_R&E")}
+            {t("faq_r&e")}
           </Link>{" "}
-          {t("quest_R&E")}
+          {t("quest_r&e")}
         </p>
       </div>
       <div className={styles.borderBottom}></div>
-      <h3 className={styles.h3}> {t("data_R&E")}</h3>
+      <h3 className={styles.h3}> {t("data_r&e")}</h3>
       <div className={styles.adminAccessContent}>
-        <h4 className={styles.h4}>{t("public_R&E")}</h4>
-        <p className={styles.adminAccessContentText}>{t("workspace_R&E")}</p>
+        <h4 className={styles.h4}>{t("public_r&e")}</h4>
+        <p className={styles.adminAccessContentText}>{t("workspace_r&e")}</p>
       </div>
     </div>
   );

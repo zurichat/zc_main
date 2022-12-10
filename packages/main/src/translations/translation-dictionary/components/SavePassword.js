@@ -1,6 +1,6 @@
 export default [
   {
-    key: "Current_password",
+    key: "current_password",
     en: "Current password",
     de: "Aktuelles Passwort",
     nl: "Huidig wachtwoord",

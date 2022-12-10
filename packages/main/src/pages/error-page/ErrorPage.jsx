@@ -16,15 +16,15 @@ const ErrorPage = () => {
       <div className={style.error_page_container}>
         <div className={style.left_content}>
           <img src={oops_error} alt="" className={style.left_image} />
-          <p>{t("Content_Errorpage")}</p>
+          <p>{t("content_errorpage")}</p>
           <div className={style.btn_section}>
             <Link to="">
               <button className={style.back_home_button}>
-                {t("GoBack_Errorpage")}
+                {t("goback_errorpage")}
               </button>
             </Link>
             <span className={style.details}>
-              <p>{t("Details_Errorpage")}</p>
+              <p>{t("details_errorpage")}</p>
             </span>
           </div>
         </div>

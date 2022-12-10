@@ -7,16 +7,16 @@ const TwoFactor = () => {
   const { t } = useTranslation();
   return (
     <div className={styles.two_factor}>
-      <p>{t("Protect_Twofactor")}</p>
+      <p>{t("protect_twofactor")}</p>
       <p>
-        {t("learn_Twofactor")}
-        <Link to=""> {t("link_Twofactor")}</Link>
+        {t("learn_twofactor")}
+        <Link to=""> {t("link_twofactor")}</Link>
       </p>
 
       <div className="col-md-6 mb-1 mt-3">
-        <button className="btn py-2">{t("set_Twofactor")}</button>
+        <button className="btn py-2">{t("set_twofactor")}</button>
       </div>
-      <span>{t("note_Twofactor")}</span>
+      <span>{t("note_twofactor")}</span>
     </div>
   );
 };

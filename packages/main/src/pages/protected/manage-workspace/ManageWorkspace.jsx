@@ -110,7 +110,7 @@ const adminSettings = () => {
         </AnimateSharedLayout>
         <AnimateSharedLayout>
           <PreferenceWrapper
-            title={t("DNB_manage")}
+            title={t("dnb_manage")}
             text={t("dnbdefault_manage")}
             btnText={t("expand_manage")}
           ></PreferenceWrapper>
@@ -193,19 +193,19 @@ const adminSettings = () => {
                 <div>{t("delete_manage")}</div>
                 <div>
                   <span>
-                    {t("delZuri_manage")}
+                    {t("delzuri_manage")}
                     <br />
                     {t("before_manage")}
                     <br /> <br /> {t("note_manage")}
                     <br />
-                    {t("urlSpace_manage")}
+                    {t("urlspace_manage")}
                     <br /> {t("beforedelete_manage")}
                   </span>
                 </div>
               </div>
               <div className={classes.floatright}>
                 <Link to="/admin/delete">
-                  <button>{t("delWork_manage")}</button>
+                  <button>{t("delwork_manage")}</button>
                 </Link>
               </div>
             </div>

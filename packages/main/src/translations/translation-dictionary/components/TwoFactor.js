@@ -1,6 +1,6 @@
 export default [
   {
-    key: "Protect_Twofactor",
+    key: "protect_twofactor",
     en: "Protect your Zurichat account with an extra layer of security by requiring access to your phone. Once configured, you’ll be required to enter both your password and an authentication code from your mobile phone in order to sign into your Zuri Chat account.",
     de: "Schützen Sie Ihr Zurichat-Konto mit einer zusätzlichen Sicherheitsebene, indem Sie den Zugriff auf Ihr Telefon verlangen. Einmal konfiguriert, müssen Sie sowohl Ihr Passwort als auch einen Authentifizierungscode von Ihrem Mobiltelefon aus eingeben, um sich bei Ihrem Zuri Chat-Konto anzumelden.",
     nl: "Bescherm uw Zurichat-account met een extra beveiligingslaag door toegang tot uw telefoon te eisen. Eenmaal geconfigureerd, moet u zowel uw wachtwoord als een verificatiecode van uw mobiele telefoon invoeren om in te loggen op uw Zuri Chat-account.",
@@ -14,7 +14,7 @@ export default [
     pt: "Proteja a sua conta Zurichat com uma camada extra de segurança, exigindo o acesso ao seu telefone. Uma vez configurado, ser-lhe-á solicitado que introduza tanto a sua palavra-passe como um código de autenticação do seu telemóvel para iniciar sessão na sua conta Zuri Chat."
   },
   {
-    key: "learn_Twofactor",
+    key: "learn_twofactor",
     en: "Learn more at our",
     de: "Erfahren Sie mehr auf unserer",
     nl: "Kom meer te weten op onze",
@@ -28,7 +28,7 @@ export default [
     pt: "Saiba mais no nosso"
   },
   {
-    key: "link_Twofactor",
+    key: "link_twofactor",
     en: "two-factor authentication help page",
     de: "Hilfeseite zur Zwei-Faktor-Authentifizierung",
     nl: "twee-factor authenticatie help pagina",
@@ -42,7 +42,7 @@ export default [
     pt: "página de ajuda para autenticação de dois factores"
   },
   {
-    key: "set_Twofactor",
+    key: "set_twofactor",
     en: "Set up two-factor authentication page",
     de: "Seite für die Zwei-Faktor-Authentifizierung einrichten",
     nl: "Twee-factor authenticatie pagina instellen",
@@ -56,7 +56,7 @@ export default [
     pt: "Criar uma página de autenticação de dois factores"
   },
   {
-    key: "note_Twofactor",
+    key: "note_twofactor",
     en: "Note: Activating two-factor authentication will sign you out of all other rooms.",
     de: "Hinweis: Wenn Sie die Zwei-Faktor-Authentifizierung aktivieren, werden Sie von allen anderen Räumen abgemeldet.",
     nl: "Opmerking: Als u twee-factor-authenticatie activeert, wordt u afgemeld voor alle andere kamers.",
