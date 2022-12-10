@@ -22,6 +22,7 @@ import VideoChat from "../../../components/media-chat/VideoChat";
 import VoiceCall from "../../../components/media-chat/VoiceCall/VoiceCall";
 import { Sidebar, TopBar } from "../../../components/protected";
 import ExtraSidebar from "../../../components/protected/extra-sidebar";
+import WorkspaceLoading from "../../../components/general-loading/WorkspaceLoading";
 
 export default function Index() {
   // const { workspaceId } = useParams();
@@ -86,6 +87,9 @@ export default function Index() {
         </>
 
         <WorkspaceWrapperStyle>
+          <div id="single-spa-loader">
+            <WorkspaceLoading text="Initializing Workspace..." />
+          </div>
           <div id="zuri-plugin-load-section"></div>
           <Switch>
             <Route exact path="/workspace/:workspaceId">
