@@ -121,22 +121,6 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
-          >
-            <FiCloudLightning className={styles.icon} />
-            {t("admin_side_bar_configure")}
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/admin/stats"
-          >
-            <FiPieChart className={styles.icon} />
-            {t("admin_side_bar_analytics")}
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
             to="/admin/settings/customize"
           >
             <FiScissors className={styles.icon} />
