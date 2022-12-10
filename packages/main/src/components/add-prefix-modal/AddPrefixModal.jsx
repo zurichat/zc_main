@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import styles from "../../styles/ChannelPrefixes.module.css";
-import { getCurrentWorkspace } from "../../../admin/Utils/Common";
+import styles from "../add-prefix-modal/ChannelPrefixes.module.css";
+import { getCurrentWorkspace } from "../add-prefix-modal/utils/Common";
 import axios from "axios";
 
 const AddPrefixModal = ({ closeModal, onAdd }) => {
