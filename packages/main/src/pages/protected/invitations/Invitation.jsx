@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import AdminSettings from ".";
+import AdminSettings from "../../../../src/pages/protected/admin-settings/AdminSettings";
 import { FiSearch } from "react-icons/fi";
-import styles from "./styles/invitation.module.css";
-import InviteModal from "./InviteModal";
+import styles from "../invitations/Invitation.module.css";
+import InviteModal from "../invite-modal/InviteModal";
 import { GetUserInfo } from "@zuri/utilities";
 import axios from "axios";
 
