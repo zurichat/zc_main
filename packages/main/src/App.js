@@ -36,6 +36,7 @@ import ManageWorkspace from "./pages/protected/manage-workspace/ManageWorkspace"
 import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
 import Help from "./pages/static/help";
 import TermsCondition from "./pages/static/legal";
+import Customize from "./pages/protected/customize/Customize";
 
 const { Workspace, CreateWorkspace, ChooseWorkspace } = lazily(() =>
   import("./pages/protected")
@@ -119,6 +120,9 @@ const App = () => (
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/accountsProfile">
             <AccountProfile />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/customize">
+            <Customize />
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/ManageWorkspace">
             <ManageWorkspace />
