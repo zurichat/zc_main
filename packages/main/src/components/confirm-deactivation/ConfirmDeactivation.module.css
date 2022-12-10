@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.deactivationSection {
+  padding-top: 60px;
+  margin: 0 13%;
+}
+.confirmationHeader {
+  font-family: "Lato", sans-serif;
+  font-size: 22px;
+  line-height: 16px;
+  font-weight: 700;
+  color: #242424;
+}
+.confirmationBox {
+  width: 100%;
+  max-width: 1100px;
+  background: #ffffff;
+  border: 1px solid #bebebe;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 30px 50px;
+  margin-top: 20px;
+}
+.confirmationBox p {
+  font-family: "Lato", sans-serif;
+  font-size: 19px;
+  line-height: 20px;
+  color: #3a3a3a;
+}
+.confirmationQuestion {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  height: 20px;
+  margin: 15px 0;
+}
+.buttonContainer {
+  margin-top: 25px;
+}
+.danger1,
+.danger2,
+.cancel {
+  padding: 12px 40px;
+  font-size: 15px;
+  color: #3a3a3a;
+  border: none;
+  border-radius: 3px;
+}
+.danger1 {
+  margin-right: 10px;
+}
+.danger1 {
+  background: #ed2222;
+  color: white;
+}
+.danger2 {
+  background: #bebebe;
+  margin-right: 10px;
+}
+
+.cancel {
+  background-color: white;
+  border: 1px solid rgba(0, 184, 124, 0.5);
+  color: rgba(0, 184, 124, 0.5);
+}
+
+.checkBoxInactive {
+  display: inline-block;
+  margin-right: 10px;
+  height: 14px;
+  width: 14px;
+  background: #ffffff;
+  border: 1px solid #999999;
+  border-radius: 1px;
+  cursor: pointer;
+}
+.checkBoxActive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  height: 14px;
+  width: 14px;
+  font-size: 8px;
+  background: #11855f;
+  color: #ffffff;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .deactivationSection {
+    margin: 0 3%;
+  }
+  .confirmationBox {
+    padding: 15px 25px;
+  }
+  .danger1,
+  .danger2,
+  .cancel {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .confirmationBox p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .danger1,
+  .danger2,
+  .cancel {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  .confirmationBox {
+    padding: 15px 10px;
+  }
+}

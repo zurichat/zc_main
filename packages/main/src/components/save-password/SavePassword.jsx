@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import styles from "../save-password/SettingsTab.module.css";
 import { BASE_API_URL } from "@zuri/utilities";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -29,6 +30,9 @@ const SavePassword = () => {
       if (response.status === 200) {
         return response.statusText;
       }
+      ({
+        endpointUrl: FORM_ENDPOINT
+      });
     } catch (error) {
       toast.error(error.response.data.message, {
         position: "top-center"
@@ -69,6 +73,8 @@ const SavePassword = () => {
 
   const buttonState = isLoading ? { disabled: true } : {};
 
+  const { t } = useTranslation();
+
   return (
     <div className={styles.passwordsection}>
       <form
@@ -79,7 +85,7 @@ const SavePassword = () => {
       >
         <div className="col-md-5">
           <label htmlFor="current_password" className="form-label">
-            Current password
+            {t("current_password")}
           </label>
           <input
             name="current_password"
@@ -90,7 +96,7 @@ const SavePassword = () => {
         </div>
         <div className="col-md-5">
           <label htmlFor="password" className="form-label">
-            New password
+            {t("new_password")}
           </label>
           <input
             name="new_password"
@@ -101,6 +107,9 @@ const SavePassword = () => {
           />
         </div>
         <div className="col-md-4 mb-3 mt-3" id={styles.p_section}>
+          {/* <button className="btn" id="submit">
+            {t("save_password")}
+            </button> */}
           <button className="btn" id="submit" {...buttonState}>
             {isLoading ? (
               <>
@@ -113,8 +122,7 @@ const SavePassword = () => {
           </button>
           <br />
           <p>
-            Can’t remember your current password?{" "}
-            <span>Reset your password by email</span>
+            {t("remember_password")} <span> {t("reset_password")}</span>
           </p>
         </div>
       </form>
