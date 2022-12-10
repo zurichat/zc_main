@@ -70,12 +70,8 @@ function MessageRoomDetailsDialog({
   useEffect(() => {
     let isFetched = true;
 
-    const path = window.location.pathname;
-    const newPath = path.split("/");
-    const room_id = newPath[4];
-
-    const organization = JSON.parse(localStorage.getItem("userData"));
-    const org_id = organization.user.org_id;
+    const org_id = localStorage.getItem("currentWorkspace");
+    const room_id = sessionStorage.getItem("currentRoom");
 
     const fetchData = async () => {
       await axios

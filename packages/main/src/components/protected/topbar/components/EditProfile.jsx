@@ -10,12 +10,15 @@ import toast, { Toaster } from "react-hot-toast";
 import { data } from "../utils/country-code";
 import { StyledProfileWrapper } from "../styles/StyledEditProfile.styled";
 import { useTranslation } from "react-i18next";
+import { deleteAllUtilitiesCache } from "../../../../../../utilities/src/helpers";
+
 const EditProfile = () => {
   // const imageRef = useRef(null)
   const { t } = useTranslation();
   const avatarRef = useRef(null);
   const {
     user,
+    setUser,
     orgId,
     userProfileImage,
     setUserProfileImage,
@@ -80,8 +83,12 @@ const EditProfile = () => {
           formData
         )
         .then(res => {
+          deleteAllUtilitiesCache();
           const newUploadedImage = res.data.data;
           setUserProfileImage(newUploadedImage);
+
+          const newUserDetails = { ...user, image_url: newUploadedImage };
+          setUser(newUserDetails);
           setState({ ...state, imageLoading: false });
           toast.success("User Image Updated Successfully", {
             position: "top-center"
@@ -133,12 +140,24 @@ const EditProfile = () => {
       bio: state.bio,
       time_zone: state.timezone
     };
+
     try {
       const res = await authAxios.patch(
         `/organizations/${orgId}/members/${user._id}/profile`,
         data
       );
-
+      //updating local storage
+      const newUserDetails = {
+        ...user,
+        first_name: data.first_name,
+        last_name: data.last_name,
+        display_name: data.display_name,
+        phone: data.phone,
+        bio: data.bio,
+        time_zone: data.time_zone
+      };
+      deleteAllUtilitiesCache();
+      setUser({ ...user, newUserDetails });
       // setState({ loading: false });
       setState(prev => ({ ...prev, loading: false }));
       toast.success("User Profile Updated Successfully", {
@@ -153,7 +172,7 @@ const EditProfile = () => {
     }
   };
   return (
-    <ProfileModal full title="Edit profile">
+    <ProfileModal scroll full title="Edit profile">
       <>
         <StyledProfileWrapper style={{ backgroundColor: "var(--bg-color)" }}>
           <div className="grid-container">

@@ -6,7 +6,7 @@ const VideoRoom = () => {
   const [videoCall, setVideoCall] = useState(true);
   const rtcProps = {
     appId: AGORA_APP_ID,
-    channl: "plug",
+    channel: "plug",
     token: AGORA_TOKEN
   };
   const callbacks = {
@@ -17,7 +17,9 @@ const VideoRoom = () => {
       <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />
     </div>
   ) : (
-    <h3 onClick={() => setVideoCall(true)}>Join</h3>
+    <button colorScheme="blue" onClick={() => setVideoCall(true)}>
+      Join Video Chat
+    </button>
   );
 };
 

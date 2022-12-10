@@ -9,6 +9,7 @@ import Workspace from "./pages/Workspace";
 import UserOrganizationsListing from "./components/UserOrganizationsListing";
 import TopBarModal from "./components/TopBarModal";
 import Preferences from "./components/Preferences";
+import EditWorkspace from "./components/EditWorkspace";
 
 import Subscribe from "./pages/Subscribe";
 import whyzurichat from "./pages/whyzurichat";
@@ -35,7 +36,11 @@ import SideBar from "./components/SideBar";
 import Download from "./pages/Download";
 import DownloadDesktopSectionTwo from "./pages/DownloadDesktopSectionTwo";
 import DownloadMobileSectionTwo from "./pages/DownloadMobileSectionTwo";
+import ProfileMore from "./pages/ProfileMore";
 import EditProfile from "./components/EditProfile";
+import Help from "./pages/Help";
+import Legal from "./pages/Legal";
+import MainComponents from "./pages/MainComponents";
 
 const resources = {};
 
@@ -56,8 +61,9 @@ const Translations = [
   ...Download,
   ...Workspace,
   ...UserOrganizationsListing,
-   ...Profile,
+  ...Profile,
   ...TopBarModal,
+  ...EditWorkspace,
 
   ...DownloadDesktop,
   ...DownloadMobile,
@@ -65,16 +71,20 @@ const Translations = [
   ...DownloadIos,
   ...DownloadWindows,
   ...ModalComponent,
+  ...Help,
+  ...Legal,
 
   ...Pricing,
   ...PrivacyPage,
   ...DownloadDesktopSectionTwo,
   ...DownloadMobileSectionTwo,
+  ...ProfileMore,
 
   // Components
   ...NavBar,
   ...Footer,
   ...WorkspaceChat,
+  ...MainComponents,
 
   ...FAQ,
 

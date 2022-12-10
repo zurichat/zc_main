@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import ReactTooltip from "react-tooltip";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -20,6 +20,12 @@ import defaultAvatar from "../assets/images/avatar_vct.svg";
 import TopbarModal from "./TopbarModal";
 import styles from "../styles/TopNavBar.module.css";
 import LanguageIcon from "../../../top-navigation-bar/LanguageIcon";
+
+import {
+  NovuProvider,
+  PopoverNotificationCenter,
+  NotificationBell
+} from "@novu/notification-center";
 
 const TopNavbar = ({ toggleSidebar }) => {
   const theme = localStorage.getItem("theme");
@@ -81,6 +87,8 @@ const TopNavbar = ({ toggleSidebar }) => {
       const userInfo = await getUserInfo();
       //Check if user id is valid and get user organization
       if (userInfo.user._id !== "") {
+        //updating user's profile image immediately the page loads
+        setUserProfileImage(userInfo.user.image_url);
         setUser(userInfo);
       }
     } catch (error) {
@@ -105,6 +113,11 @@ const TopNavbar = ({ toggleSidebar }) => {
       } else return;
     });
   }, []);
+
+  //This will update user's image everytime user details changes
+  useEffect(() => {
+    setUserProfileImage(user.image_url);
+  }, [user]);
 
   // useEffect(() => {
   //   const searchFunction = async () => {
@@ -146,17 +159,22 @@ const TopNavbar = ({ toggleSidebar }) => {
     getOrganizations();
   }, [setOrgId, user.image_url, setUser]);
 
-  const getProfileImage = async e => {
-    try {
-      const res = await authAxios.get(
-        `/organizations/${getRealUrl()}/members/${userdef.id}`
-      );
-      setUserProfileImage(res.data.data.image_url);
-    } catch (err) {
-      console.error("Error", err);
-    }
-  };
-  getProfileImage();
+  const getProfileImage = useCallback(() => {
+    return async () => {
+      try {
+        const res = await authAxios.get(
+          `/organizations/${orgId}/members/${user._id}`
+        );
+        setUserProfileImage(res.data.data.image_url);
+      } catch (err) {
+        console.error("Error", err);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    getProfileImage();
+  }, []);
 
   let toggleStatus = null;
 
@@ -326,7 +344,20 @@ const TopNavbar = ({ toggleSidebar }) => {
           />
         ) : null}
       </div>
-
+      <div className={styles.notification_modal}>
+        <NovuProvider
+          backendUrl={"http://139.144.17.179:3000"}
+          socketUrl={"http://139.144.17.179:3002"}
+          subscriberId={user._id}
+          applicationIdentifier={"JJef8vc6vtAj"}
+        >
+          <PopoverNotificationCenter>
+            {({ unseenCount }) => (
+              <NotificationBell unseenCount={unseenCount} />
+            )}
+          </PopoverNotificationCenter>
+        </NovuProvider>
+      </div>
       <LanguageIcon style={{ marginRight: "2.2em" }} />
 
       <ProfileImageContainer className="d-flex justify-content-end">
