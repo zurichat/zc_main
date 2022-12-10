@@ -47,7 +47,6 @@ export default function Footer() {
         </div>
 
         <div className={styles.menu}>
-
           <div>
             <h5>{t("footer_know_us")}</h5>
             <ul>
@@ -71,62 +70,61 @@ export default function Footer() {
             </ul>
           </div>
 
-
           <div className={styles.social}>
             <h5>{t("footer_social_media")}</h5>
             <ul>
-                <li>
-                  <a
-                    href="https://www.facebook.com/Zuri-Chat-101278805666628"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={facebook}
-                      alt="Facebook"
-                      width={24}
-                      title="Connect with us on Facebook"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://instagram.com/zurichathq"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={instagram}
-                      alt="Instagram"
-                      width={21}
-                      title="Connect with us on Instagram"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://twitter.com/zurichat"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={twitter}
-                      alt="Twitter"
-                      width={24}
-                      title="Connect with us on Twitter"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/company/zuri-chat/">
-                    <img
-                      src={linkedin}
-                      alt="Linkedin"
-                      width={24}
-                      title="Connect with us on Linkedin"
-                    />
-                  </a>
-                </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/Zuri-Chat-101278805666628"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={facebook}
+                    alt="Facebook"
+                    width={24}
+                    title="Connect with us on Facebook"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/zurichathq"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={instagram}
+                    alt="Instagram"
+                    width={21}
+                    title="Connect with us on Instagram"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com/zurichat"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={twitter}
+                    alt="Twitter"
+                    width={24}
+                    title="Connect with us on Twitter"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/zuri-chat/">
+                  <img
+                    src={linkedin}
+                    alt="Linkedin"
+                    width={24}
+                    title="Connect with us on Linkedin"
+                  />
+                </a>
+              </li>
             </ul>
           </div>
         </div>

@@ -1,24 +1,38 @@
 .MessageContainer {
-  padding: 14px 16px;
-  position: relative;
+    padding: 14px 16px;
+    position: relative;
 }
 
 .MessageContainer:hover {
-  background-color: #f1fffa;
+    background-color: #f1fffa;
 }
 
 .MessageContainer:hover .hoverItemsContainer {
-  display: flex;
+    display: flex;
 }
 
 .MessageContainer .hoverItemsContainer {
-  display: none;
+    display: none;
 }
 
 .MessageContainer .emojiCardContainer {
-  margin-top: 10px;
-  margin-left: 53px;
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
+    margin-top: 10px;
+    margin-left: 53px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.fileWrapper {
+    height: 200px;
+    width: 250px;
+    background: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid rgb(169, 169, 169);
+    margin: 10px 0;
+    cursor: pointer;
+
 }
