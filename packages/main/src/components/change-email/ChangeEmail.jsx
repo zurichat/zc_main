@@ -2,11 +2,13 @@ import React, { useRef } from "react";
 import useForm from "../use-form-hook";
 import styles from "../change-email/SettingsTab.module.css";
 import { BASE_API_URL } from "@zuri/utilities";
+import { useTranslation } from "react-i18next";
 
 const ChangeEmail = () => {
   const formElement = useRef(null);
   const user = sessionStorage.getItem(`user`);
   const FORM_ENDPOINT = `${BASE_API_URL}/users/${user.id}`;
+  const { t } = useTranslation();
   const { message, handleSubmit } = useForm({
     form: formElement,
     options: {
@@ -33,7 +35,7 @@ const ChangeEmail = () => {
       >
         <div className="col-md-5">
           <label htmlFor="current_email" className="form-label">
-            Current Email
+            {t("change_email_current")}
           </label>
           <input
             id="current_email"
@@ -45,7 +47,7 @@ const ChangeEmail = () => {
         </div>
         <div className="col-md-5">
           <label htmlFor="email" className="form-label">
-            New email address
+            {t("change_email_new")}
           </label>
           <input
             id="email"
@@ -57,7 +59,7 @@ const ChangeEmail = () => {
         </div>
         <div className="col-md-4 mb-3 mt-3">
           <button className="btn" id="submit">
-            Update email address
+            {t("change_email_update")}
           </button>
         </div>
       </form>

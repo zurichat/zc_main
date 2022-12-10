@@ -7,6 +7,9 @@ import { GeneralErrorBoundary, GeneralLoading } from "./components";
 import ManageMembers from "./components/manage-members/ManageMembers";
 import ChangeWorkspaceName from "./components/change-workspace-name/ChangeWorkspaceName";
 import AllSessionSignOut from "./components/sessions-signout/AllSessionSignOut";
+import AcctDeactivation from "./components/account-deactivation/AcctDeactivation";
+import ConfirmDeactivation from "./components/confirm-deactivation/ConfirmDeactivation";
+import AccDeactivated from "./components/account-deactivated/AccDeactivated";
 
 // All utilities imported here
 import { withSuspense } from "./utils";
@@ -37,6 +40,7 @@ import ManageWorkspace from "./pages/protected/manage-workspace/ManageWorkspace"
 import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
 import Help from "./pages/static/help";
 import TermsCondition from "./pages/static/legal";
+import Invitation from "./pages/protected/invitations/Invitation";
 
 const { Workspace, CreateWorkspace, ChooseWorkspace } = lazily(() =>
   import("./pages/protected")
@@ -127,6 +131,24 @@ const App = () => (
           >
             <AllSessionSignOut />
           </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/account-deactivation"
+          >
+            <AcctDeactivation />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/account-deactivation/confirm-deactivate"
+          >
+            <ConfirmDeactivation />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/account-deactivation/confirm-deactivate/acct-deactivated"
+          >
+            <AccDeactivated />
+          </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/ManageWorkspace">
             <ManageWorkspace />
           </ProtectedRoute>
@@ -138,6 +160,9 @@ const App = () => (
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/managemembers">
             <ManageMembers />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/invitation">
+            <Invitation />
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/aboutworkspace">
             <AboutWorkSpace />

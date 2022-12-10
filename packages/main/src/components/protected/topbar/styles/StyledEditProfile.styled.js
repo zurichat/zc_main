@@ -70,7 +70,7 @@ export const StyledProfileWrapper = styled.section`
             width: 100%;
             border: 1px solid #a1a1a1;
             border-radius: 4px;
-            padding: 2px 1rem;
+            padding: 2px 0.5rem;
             &:hover {
               border: 1px solid #00b87c;
               transition: border 0.25s ease-in-out;
@@ -86,8 +86,13 @@ export const StyledProfileWrapper = styled.section`
               width: 100%;
             }
             .pref {
-              width: 72px;
+              width: auto;
               font-size: 15px;
+              margin-right: 5px;
+              color: #696969;
+            }
+            .pref option {
+              text-align: center;
             }
           }
           .time-select {
