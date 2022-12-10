@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import styles from "../styles/Statuses.module.css";
-import ClearTime from "./ClearTIme";
+import styles from "../statuses/Statuses.module.css";
+import ClearTime from "../clear-time/ClearTIme";
 import Picker from "emoji-picker-react";
 
 //
