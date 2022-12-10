@@ -70,9 +70,7 @@ function MessageRoomDetailsDialog({
   useEffect(() => {
     let isFetched = true;
 
-    const organization = JSON.parse(localStorage.getItem("userData"));
     const org_id = localStorage.getItem("currentWorkspace");
-    const member_id = organization.user._id;
     const room_id = sessionStorage.getItem("currentRoom");
 
     const fetchData = async () => {
