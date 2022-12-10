@@ -30,10 +30,9 @@ const SavePassword = () => {
       if (response.status === 200) {
         return response.statusText;
       }
-    },
-    endpointUrl: FORM_ENDPOINT
-  });
-  const { t } = useTranslation();
+      ({
+        endpointUrl: FORM_ENDPOINT
+      });
     } catch (error) {
       toast.error(error.response.data.message, {
         position: "top-center"
@@ -74,6 +73,8 @@ const SavePassword = () => {
 
   const buttonState = isLoading ? { disabled: true } : {};
 
+  const { t } = useTranslation();
+
   return (
     <div className={styles.passwordsection}>
       <form
@@ -106,8 +107,9 @@ const SavePassword = () => {
           />
         </div>
         <div className="col-md-4 mb-3 mt-3" id={styles.p_section}>
-          <button className="btn" id="submit">
+          {/* <button className="btn" id="submit">
             {t("save_password")}
+            </button> */}
           <button className="btn" id="submit" {...buttonState}>
             {isLoading ? (
               <>

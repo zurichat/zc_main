@@ -80,13 +80,10 @@ const SettingsTab = () => {
         </div>
         <div className={styles.settingsright}>
           <Link to="/session-signout">
-            <button className={styles.signout}>
+            <button onClick={handleSignOut} className={styles.signout}>
               {t("signout_settings_tab")}
             </button>
           </Link>
-          <button onClick={handleSignOut} className={styles.signout}>
-            Sign out of all othe sessions
-          </button>
         </div>
       </div>
 
@@ -104,12 +101,10 @@ const SettingsTab = () => {
           </span>
         </div>
         <div className={styles.settingsright}>
-          <Link to="/settings/confirm-password">
+          <Link to="/admin/settings/accountsProfile/account-deactivation">
             <button className={styles.delete}>
               {t("deactivate_settings_tab")}
             </button>
-          <Link to="/admin/settings/accountsProfile/account-deactivation">
-            <button className={styles.delete}>Deactivate your account</button>
           </Link>
         </div>
       </div>
