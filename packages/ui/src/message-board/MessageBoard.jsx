@@ -23,7 +23,8 @@ function MessageBoard({
   height,
   onHandleScroll,
   showEmoji,
-  setShowEmoji
+  setShowEmoji,
+  down
 }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [shouldScrollToBottom, setScrollToBottom] = useState(true);
@@ -81,9 +82,11 @@ function MessageBoard({
   };
 
   useEffect(() => {
-    shouldScrollToBottom && scrollToBottom();
-    setScrollToBottom(true);
-  }, [messages]);
+    if (down === true) {
+      shouldScrollToBottom && scrollToBottom();
+      setScrollToBottom(true);
+    }
+  }, [messages, down]);
 
   return (
     <>
