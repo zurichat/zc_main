@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import toast, { Toaster } from "react-hot-toast";
-// import Loader from "react-loader-spinner";
 
 import styles from "../zuri-bot/Zuribot.module.css";
 import { authAxios } from "../zuri-bot/utils/Api";
@@ -10,21 +8,8 @@ import {
   getCurrentWorkspace,
   getUser
 } from "../zuri-bot/utils/Common";
-
-// icons
 import { AiOutlinePlus, AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { BsPersonBoundingBox } from "react-icons/bs";
-// import { FiCheck } from "react-icons/fi";
-// import { CardContext } from "../../../../context/CardContext";
-
-// let //Zuribotdata =
-//   [
-//     {
-//       "whensomeonesays":"",
-//       "slackresponds":"",
-//       "lasteditedby": null
-//     }
-//   ]
 
 const Zuribot = () => {
   const [loading, setLoading] = React.useState(false);
@@ -67,18 +52,6 @@ const Zuribot = () => {
     }
   };
 
-  // getting all the responses from the database
-  // const retrieve = async () => {
-  //   try {
-  //     const zuribotData = await authAxios.get(
-  //       `/organizations/${id}/slackbotresponses`
-  //     )
-  //     alert(zuribotData.data)
-  //     return zuribotData.data
-  //   } catch (error) {
-  //     throw Error(alert(error))
-  //   }
-  // }
   const [input, setInput] = useState("");
   const [error, setError] = useState(null);
   const [items, setItems] = useState([]);

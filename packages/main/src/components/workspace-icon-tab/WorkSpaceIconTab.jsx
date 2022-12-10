@@ -3,7 +3,6 @@ import { authAxios } from "../workspace-icon-tab/utils/Api";
 import Loader from "react-loader-spinner";
 import ReactCrop from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
-// import LogoCrop from "./LogoCrop";
 import LogoAlert from "../logo-alert/LogoAlert";
 import defaultAvatar from "../workspace-icon-tab/assets/HNG-icon.svg";
 import {
@@ -144,13 +143,6 @@ const WorkSpaceIconTab = () => {
               <WorkSpaceDescription>
                 This icon will be used to identify your workspace in Zuri Chat.
               </WorkSpaceDescription>
-              {/* <Button onClick={handleLogoDelete}>
-                {loader.removeLoader ? (
-                  <Loader type="Oval" color="#fff" height={24} width={80} />
-                ) : (
-                  "Remove"
-                )}
-              </Button> */}
             </WorkSpaceDetail>
           </WorkSpaceDetailContainer>
           <GuidelinesContainer>

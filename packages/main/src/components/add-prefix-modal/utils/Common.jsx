@@ -1,7 +1,5 @@
 import { authAxios } from "./Api";
 import styles from "./styles/PaymentMethod.module.css";
-
-// images
 import mastercard from "../assets/Mastercard.svg";
 import jcb from "../assets/jcb.svg";
 import visa from "../assets/visa.svg";
@@ -31,7 +29,6 @@ export const getCurrentWorkspaceData = () => {
     authAxios
       .get(`/organizations/${getCurrentWorkspace()}`)
       .then(res => {
-        // console.log(res.data.data)
         return res.data.data;
       })
       .catch(err => {
