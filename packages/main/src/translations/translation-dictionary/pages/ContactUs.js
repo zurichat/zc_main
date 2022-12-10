@@ -21,10 +21,10 @@ export default [
     engb: "We are dedicated to making your online communication experience with us a pleasure. We’d like to hear from you.",
     fr: "Nous nous engageons à faire de votre expérience de communication en ligne avec nous un plaisir. Nous aimerions avoir de vos nouvelles.",
     zh: "我们致力于使您与我们的在线交流体验成为一种乐趣。我们希望听到你的声音。",
-    ar: "نحن ملتزمون بجعل تجربة التواصل عبر الإنترنت معنا متعة.نود أن نسمع منك.",
+    ar: "نحن ملتزمون بجعل تجربة التواصل معنا عبر الإنترنت ممتعة. ",
     es: "Nos dedicamos a hacer que su experiencia de comunicación en línea con nosotros sea un placer. Nos gustaría saber de usted.",
     it: "Ci impegniamo a rendere piacevole la vostra esperienza di comunicazione online con noi. Ci piacerebbe sentirvi.",
-    iw: "אנו מחויבים להפוך את חווית התקשורת המקוונת שלך איתנו לתענוג.נשמח לשמוע מכם.",
+    iw: "אנו מחויבים להפוך את חווית התקשורת המקוונת שלך איתנו לתענוג. ",
     pt: "Estamos dedicados a fazer de sua experiência de comunicação on-line conosco um prazer. Gostaríamos de ouvir de você."
   },
   {
@@ -83,7 +83,6 @@ export default [
     iw: "שאלות קשורות",
     pt: "Perguntas relacionadas"
   },
-
   {
     key: "relatedArticles",
     en: "Related articles",
@@ -335,5 +334,117 @@ export default [
     it: "Visitate il Centro assistenza",
     iw: "בקר במרכז העזרה",
     pt: "Visite o Centro de ajuda"
+  },
+  {
+    key: "contact_blankEmail",
+    en: "please type in an email",
+    de: "Bitte geben Sie eine E-Mail ein",
+    nl: "typ alstublieft e-mail",
+    engb: "please type in an email",
+    fr: "veuillez saisir un e-mail",
+    zh: "請輸入電子郵件",
+    ar: "الرجاء كتابة بريد إلكتروني",
+    es: "Por favor escriba un correo electrónico",
+    it: "Si prega di digitare un'e-mail",
+    iw: "אנא הקלד אימייל",
+    pt: "por favor digite um e-mail"
+  },
+  {
+    key: "Contact_invalidEmail",
+    en: "Email is invalid",
+    de: "E-Mail ist ungültig",
+    nl: "typ een bericht",
+    engb: "Emai is invalid",
+    fr: "Le courriel est invalide",
+    zh: "電子郵件無效",
+    ar: "البريد الإلكتروني غير صالح",
+    es: "el correo electrónico es invalido",
+    it: "L'email non è valida",
+    iw: "אימייל לא תקין",
+    pt: "Email inválido"
+  },
+  {
+    key: "contact_blankMessage",
+    en: "Please type in a message",
+    de: "Bitte geben Sie eine Nachricht ein",
+    nl: "contactgegevens succesvol verzonden",
+    engb: "Please type in a message",
+    fr: "s'il vous plaît tapez un message",
+    zh: "請輸入訊息",
+    ar: "الرجاء كتابة رسالة",
+    es: "por favor escriba un correo electrónico",
+    it: "si prega di digitare un messaggio",
+    iw: "אנא הקלד הודעה",
+    pt: "Por favor, digite uma mensagem"
+  },
+  {
+    key: "contact_successfulmessage",
+    en: "Contact information sent successfully",
+    de: "Kontaktdaten erfolgreich gesendet",
+    nl: "contactgegevens succesvol verzonden",
+    engb: "Contact information sent successfully",
+    fr: "Coordonnées envoyées avec succès",
+    zh: "請輸入留言聯繫方式發送成功",
+    ar: "تم إرسال معلومات الاتصال بنجاح",
+    es: "información de contacto enviada con éxito",
+    it: "Informazioni di contatto inviate con successo",
+    iw: "פרטי הקשר נשלחו בהצלחה",
+    pt: "Informações de contato enviadas com sucesso"
+  },
+  {
+    key: "contact_errorMessage",
+    en: "Error Sending details please try again",
+    de: "Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut",
+    nl: "fout Details verzenden, probeer het opnieuw",
+    engb: "Error sending details please try again",
+    fr: "Erreur lors de l'envoi des messages, veuillez réessayer",
+    zh: "發送詳細信息時出錯，請重試",
+    ar: "خطأ في إرسال التفاصيل يرجى المحاولة مرة أخرى",
+    es: "Error al enviar los datos por favor inténtalo de nuevo",
+    it: "Errore durante l'invio dei dettagli, riprova",
+    iw: "שגיאה בשליחת הפרטים אנא נסה שוב",
+    pt: "Erro ao enviar detalhes, tente novamente"
+  },
+  {
+    key: "Contact_emailExample",
+    en: "you@example.com",
+    de: "du@example.com",
+    nl: "jij@voorbeeld.com",
+    engb: "you@example.com",
+    fr: "vous@exemple.com",
+    zh: "you@example.com",
+    ar: "you@example.com",
+    es: "tu@ejemplo.com",
+    it: "tu@esempio.com",
+    iw: "you@example.com",
+    pt: "voce@exemplo.com"
+  },
+  {
+    key: "Contact_messageAsk",
+    en: "Tell us what you need help with",
+    de: "Sagen Sie uns, wobei Sie Hilfe benötigen",
+    nl: "vertel ons waar je hulp bij nodig hebt",
+    engb: "Tell us what you need help with",
+    fr: "Raconter Dites-nous pour quoi vous avez besoin d'aide",
+    zh: "告訴我們您需要什麼幫助",
+    ar: "أخبرنا بما تريد المساعدة فيه",
+    es: "dinos en que necesitas ayuda",
+    it: "Dicci di cosa hai bisogno di aiuto",
+    iw: "ספר לנו במה אתה צריך עזרה",
+    pt: "Diga-nos o que você precisa de ajuda"
+  },
+  {
+    key: "Contact_loadingText",
+    en: "Loading...",
+    de: "Wird geladen...",
+    nl: "Bezig met laden...",
+    engb: "Loading...",
+    fr: "Chargement...",
+    zh: "加載中...",
+    ar: "جار التحميل...",
+    es: "Cargando...",
+    it: "Caricamento in corso...",
+    iw: "טוען...",
+    pt: "Carregando..."
   }
 ];

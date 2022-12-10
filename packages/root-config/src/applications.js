@@ -2,7 +2,7 @@ const PluginImportPathPre = "zuri-plugin-";
 const PluginAppPathPre = "plugin-";
 
 export const coreApps = [
-  { name: "main" },
+  { name: "main" }
   // { name: "zurUi" },
   // { name: "utilities" }
 ];
@@ -12,7 +12,7 @@ export const allPlugins = [
   {
     title: "messaging",
     name: `${PluginImportPathPre}messaging`,
-    pluginPath: `${PluginAppPathPre}chat`,
+    pluginPath: `${PluginAppPathPre}chat`
   },
   // { title: "marketplace", name: "marketplace" },
   // Plugins
@@ -20,18 +20,18 @@ export const allPlugins = [
   {
     title: "chessboard",
     name: `${PluginImportPathPre}chessboard`,
-    pluginPath: `${PluginAppPathPre}chess`,
+    pluginPath: `${PluginAppPathPre}chess`
   },
   {
     title: "music",
     name: `${PluginImportPathPre}music`,
-    pluginPath: `${PluginAppPathPre}music`,
+    pluginPath: `${PluginAppPathPre}music`
   },
   {
     title: "taskManager",
     name: `${PluginImportPathPre}task-manager`,
-    pluginPath: `${PluginAppPathPre}task-manager`,
-  },
+    pluginPath: `${PluginAppPathPre}task-manager`
+  }
   // { title: "deadlines", name: `${PluginImportPathPre}deadlines` },
   // { title: "goals", name: `${PluginImportPathPre}company-goals` },
   // { title: "todo", name: `${PluginImportPathPre}todo` },

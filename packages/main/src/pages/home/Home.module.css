@@ -25,19 +25,18 @@
 .features,
 .sign_up_banner {
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: var(--page-pad-desk);
 }
 
 /* * HERO ----------------------------- */
 .hero_wrap {
-  background-color: var(--bg-2);
+  /* background-color: #CCF1E5; */
 }
 .hero {
   display: flex;
-  padding: 10rem var(--page-pad-desk);
-  padding-bottom: 2rem;
+  padding: 7.5rem var(--page-pad-desk);
+  padding-left: 7rem;
   background-color: #CCF1E5;
 }
 .hero_left,
@@ -49,6 +48,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+.hero_left_texts {
+  width: 85%;
 }
 .hero_text_one {
   font-size: 1rem;
@@ -286,13 +288,20 @@
   /* * HERO ----------------------------- */
   .hero {
     flex-direction: column-reverse;
-    padding: 10rem var(--page-pad-mid);
-    padding-bottom: 0;
   }
 
   .hero_left {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     text-align: center;
+  }
+  .hero_left_texts {
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+  }
+  .hero_btn {
+    margin: 0 auto;
+    margin-top: 1rem;
   }
   .hero_left_texts {
     text-align: center;
