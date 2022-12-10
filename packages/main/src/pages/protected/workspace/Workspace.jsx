@@ -16,8 +16,6 @@ import {
   WorkspaceWrapperStyle
 } from "./Workspace.style";
 
-// import { GeneralLoading } from "../../../components";
-
 import VideoChat from "../../../components/media-chat/VideoChat";
 import VoiceCall from "../../../components/media-chat/VoiceCall/VoiceCall";
 import { Sidebar, TopBar } from "../../../components/protected";
@@ -25,7 +23,6 @@ import ExtraSidebar from "../../../components/protected/extra-sidebar";
 import WorkspaceLoading from "../../../components/general-loading/WorkspaceLoading";
 
 export default function Index() {
-  // const { workspaceId } = useParams();
   const {
     workspaceId: { workspaceId, short_id }
   } = useParamHook({ workspaceId: "workspaceId" });
