@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../styles/ClearTime.module.css";
+import style from "../clear-time/ClearTime.module.css";
 
 const ClearTime = ({ defaultOptionValue }) => {
   return (
