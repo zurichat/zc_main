@@ -6,6 +6,7 @@ import AdminOwners from "../admin-owners/AdminOwners";
 import OverviewWorkspace from "../overview-workspace/OverviewWorkspace";
 import { FiMenu } from "react-icons/fi";
 import { CardProvider } from "../context/CardContext";
+import { useTranslation } from "react-i18next";
 
 const AboutWorkSpaceTabs = ({
   organizationDetails,
@@ -14,7 +15,7 @@ const AboutWorkSpaceTabs = ({
 }) => {
   const [openTab, setOpenTab] = useState(false);
   const [active, setActive] = useState(1);
-
+  const { t } = useTranslation();
   return (
     <CardProvider>
       <div className={styles.tabWrapper}>
@@ -34,7 +35,7 @@ const AboutWorkSpaceTabs = ({
               active === 1 ? styles.tabHeaderItemActive : styles.tabHeaderItem
             }
           >
-            Overview
+            {t("about_workspace_tabs_overview")}
           </div>
           <div
             onClick={() => {
@@ -45,7 +46,7 @@ const AboutWorkSpaceTabs = ({
               active === 2 ? styles.tabHeaderItemActive : styles.tabHeaderItem
             }
           >
-            Admins & Owners
+            {t("about_workspace_tabs_admins")}
           </div>
 
           <div
@@ -57,7 +58,7 @@ const AboutWorkSpaceTabs = ({
               active === 3 ? styles.tabHeaderItemActive : styles.tabHeaderItem
             }
           >
-            Retention & Exports
+            {t("about_workspace_tabs_retention")}
           </div>
         </div>
 
