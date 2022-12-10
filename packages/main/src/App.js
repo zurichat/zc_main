@@ -4,8 +4,10 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 // All components imported here
 import { GeneralErrorBoundary, GeneralLoading } from "./components";
+import AccDeactivated from "./components/account-deactivated/AccDeactivated";
+import AcctDeactivation from "./components/account-deactivation/AcctDeactivation";
 import ChangeWorkspaceName from "./components/change-workspace-name/ChangeWorkspaceName";
-import ManageMembers from "./components/manage-members/ManageMembers";
+import ConfirmDeactivation from "./components/confirm-deactivation/ConfirmDeactivation";
 
 // All utilities imported here
 import { withSuspense } from "./utils";
@@ -15,6 +17,7 @@ import TermsOfService from "../src-old/pages/termsOfService/index";
 import SettingsHome from "../src/pages/protected/settings-home/SettingsHome";
 import { useAuth } from "./auth/use-auth";
 import DeleteWorkspace from "./components/delete-workspace/deleteWorkspace";
+import ManageMembers from "./components/manage-members/ManageMembers";
 import {
   AboutPage,
   ChangePassword,
@@ -34,6 +37,7 @@ import {
 } from "./pages";
 import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
 import AccountProfile from "./pages/protected/account-profile/AccountProfile";
+import Invitation from "./pages/protected/invitations/Invitation";
 import ManageWorkspace from "./pages/protected/manage-workspace/ManageWorkspace";
 import Help from "./pages/static/help";
 import TermsCondition from "./pages/static/legal";
@@ -121,6 +125,24 @@ const App = () => (
           <ProtectedRoute exact path="/admin/settings/accountsProfile">
             <AccountProfile />
           </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/account-deactivation"
+          >
+            <AcctDeactivation />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/account-deactivation/confirm-deactivate"
+          >
+            <ConfirmDeactivation />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/account-deactivation/confirm-deactivate/acct-deactivated"
+          >
+            <AccDeactivated />
+          </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/ManageWorkspace">
             <ManageWorkspace />
           </ProtectedRoute>
@@ -135,6 +157,9 @@ const App = () => (
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/managemembers">
             <ManageMembers />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/invitation">
+            <Invitation />
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/aboutworkspace">
             <AboutWorkSpace />

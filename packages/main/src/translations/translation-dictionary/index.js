@@ -39,6 +39,8 @@ import DownloadMobileSectionTwo from "./pages/DownloadMobileSectionTwo";
 import ProfileMore from "./pages/ProfileMore";
 import EditProfile from "./components/EditProfile";
 import Help from "./pages/Help";
+import Legal from "./pages/Legal";
+import MainComponents from "./pages/MainComponents";
 
 const resources = {};
 
@@ -70,6 +72,7 @@ const Translations = [
   ...DownloadWindows,
   ...ModalComponent,
   ...Help,
+  ...Legal,
 
   ...Pricing,
   ...PrivacyPage,
@@ -81,6 +84,7 @@ const Translations = [
   ...NavBar,
   ...Footer,
   ...WorkspaceChat,
+  ...MainComponents,
 
   ...FAQ,
 

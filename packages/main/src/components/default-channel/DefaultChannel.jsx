@@ -1,6 +1,7 @@
 import { BASE_API_URL } from "@zuri/utilities";
 import axios from "axios";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const myStyle = {
   inputfield: {
@@ -30,6 +31,7 @@ const modifyOrganizationSettings = () => {
 };
 
 const DefaultChannels = () => {
+  const { t } = useTranslation();
   return (
     <>
       <input
@@ -45,7 +47,7 @@ const DefaultChannels = () => {
         style={myStyle.btn}
         onClick={modifyOrganizationSettings}
       >
-        See Paid Plans
+        {t("default_channel_see")}
       </button>
     </>
   );

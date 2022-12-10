@@ -86,21 +86,10 @@ export default function Homepage() {
     );
   };
 
-  const textAlign = () => {
-    if (
-      window.localStorage.myLanguage === "ar" ||
-      window.localStorage.myLanguage === "iw"
-    ) {
-      return {
-        textAlign: "right"
-      };
-    }
-  };
-
   return (
     <>
       <TopNavigationBar />
-      <div className={`${style.homepage}`} style={textAlign()}>
+      <div className={`${style.homepage}`}>
         {/* { COOKIES BANNER} */}
         <div>{loading ? "" : <Cookies />}</div>
         {/* FEATURES */}
