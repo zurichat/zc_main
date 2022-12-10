@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import { authAxios } from "../../Utils/Api";
+import { authAxios } from "../emoji/utils/Api";
 // import { ProfileContext } from "../../../../../../topbar/src/context/ProfileModal"
 import toast from "react-hot-toast";
 import Picker from "emoji-picker-react";
 // import ForwardIcon from "../../../resources/assets/ForwardIcon.svg"
-import classes from "../styles/EmojiTab.module.css";
+import classes from "../emoji/EmojiTab.module.css";
 
 const Emoji = () => {
   // const { orgId, user } = useContext(ProfileContext)
