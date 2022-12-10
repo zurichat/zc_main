@@ -3,7 +3,7 @@ import AgoraUIKit from "agora-react-uikit";
 import { AGORA_APP_ID, AGORA_TOKEN } from "@zuri/utilities";
 import styles from "./styles/videoRoom.css";
 
-const VideoRoom = () => {
+const VideoRoom = ({ workspaceId }) => {
   const [videoCall, setVideoCall] = useState(true);
   const rtcProps = {
     appId: AGORA_APP_ID,
