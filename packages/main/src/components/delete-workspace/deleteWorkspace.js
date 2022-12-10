@@ -1,21 +1,40 @@
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import del from "./assets/delete.svg";
 import classes from "./deleteWorkspace.module.css";
 const DeleteWorkspace = () => {
-  const navigate = useNavigate();
+  const history = useHistory();
   const orgName = localStorage.getItem("orgName");
   const currentWorkspaceShort = localStorage.getItem("currentWorkspaceShort");
   const currentWorkspace = localStorage.getItem("currentWorkspace");
+  const userData = JSON.parse(localStorage.getItem("userData"));
+  const token = userData.token;
 
-  const deleteWorkspace = async () => {
-    await axios.delete(
-      `https://api.zuri.chat/organizations/${currentWorkspace}`
-    );
-    localStorage.removeItem(currentWorkspaceShort);
-    localStorage.removeItem(orgName);
-    localStorage.removeItem(currentWorkspace);
-    navigate("/create-workspace");
+  const deleteWorkspace = async e => {
+    e.preventDefault();
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    };
+    await axios
+      .delete(
+        `https://staging.api.zuri.chat/organizations/${currentWorkspace}`,
+        {
+          headers
+        }
+      )
+      .then(res => {
+        if (res.status === 200) {
+          console.log("Workspace deleted successfully");
+          localStorage.removeItem(currentWorkspaceShort);
+          localStorage.removeItem(orgName);
+          localStorage.removeItem(currentWorkspace);
+          window.location.href = "/create-workspace";
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   return (
@@ -62,7 +81,7 @@ const DeleteWorkspace = () => {
         </div>
 
         <div className="row bg-white py-5 px-5">
-          <form action="post">
+          <form onSubmit={deleteWorkspace}>
             <h3 className="pb-3" style={{ fontWeight: "700" }}>
               Confirm Deletion
             </h3>
@@ -121,7 +140,6 @@ const DeleteWorkspace = () => {
                   color: "#1D1C1D",
                   borderRadius: "5px"
                 }}
-                onClick={deleteWorkspace}
               >
                 Yes, delete my workspace
               </button>
