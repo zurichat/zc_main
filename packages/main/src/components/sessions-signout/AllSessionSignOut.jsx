@@ -10,7 +10,6 @@ import axios from "axios";
 
 function AllSessionSignOut() {
   const [error, setError] = useState("");
-  //const [userSession, setUserSession] = useState({})
   const [user, setUser] = useState();
   const [currentPassword, setCurrentPassword] = useState("");
 
@@ -22,7 +21,6 @@ function AllSessionSignOut() {
       sessionStorage.getItem("session_id")
     ) {
       const userInfo = JSON.parse(sessionStorage.getItem("user"));
-      // console.log(userInfo)
       setUser(userInfo);
     } else {
       history.push("./login");
@@ -59,7 +57,6 @@ function AllSessionSignOut() {
       }
       const { data } = await response.data;
       setUser(data);
-      // console.log(data)
     } catch (error) {
       console.error(error);
       setError("That password is incorrect. Please try again");
