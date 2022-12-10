@@ -10,12 +10,15 @@ import toast, { Toaster } from "react-hot-toast";
 import { data } from "../utils/country-code";
 import { StyledProfileWrapper } from "../styles/StyledEditProfile.styled";
 import { useTranslation } from "react-i18next";
+import { deleteAllUtilitiesCache } from "../../../../../../utilities/src/helpers";
+
 const EditProfile = () => {
   // const imageRef = useRef(null)
   const { t } = useTranslation();
   const avatarRef = useRef(null);
   const {
     user,
+    setUser,
     orgId,
     userProfileImage,
     setUserProfileImage,
@@ -39,8 +42,6 @@ const EditProfile = () => {
     loading: false,
     imageLoading: false
   });
-  //users info in the localstorage to be updated later on
-  const userLocalDetails = JSON.parse(localStorage.getItem("userData"));
   const [image, setimage] = useState(defaultAvatar);
   const addList = () => {
     if (links.length < 5) {
@@ -82,12 +83,12 @@ const EditProfile = () => {
           formData
         )
         .then(res => {
+          deleteAllUtilitiesCache();
           const newUploadedImage = res.data.data;
           setUserProfileImage(newUploadedImage);
+
           const newUserDetails = { ...user, image_url: newUploadedImage };
-          const newLocalStorage = { ...userLocalDetails, user: newUserDetails };
-          //updating the local storage with user's newly updated image
-          localStorage.setItem("userData", JSON.stringify(newLocalStorage));
+          setUser(newUserDetails);
           setState({ ...state, imageLoading: false });
           toast.success("User Image Updated Successfully", {
             position: "top-center"
@@ -155,8 +156,8 @@ const EditProfile = () => {
         bio: data.bio,
         time_zone: data.time_zone
       };
-      const newLocalStorage = { ...userLocalDetails, user: newUserDetails };
-      localStorage.setItem("userData", JSON.stringify(newLocalStorage));
+      deleteAllUtilitiesCache();
+      setUser({ ...user, newUserDetails });
       // setState({ loading: false });
       setState(prev => ({ ...prev, loading: false }));
       toast.success("User Profile Updated Successfully", {

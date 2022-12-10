@@ -15,6 +15,7 @@ import { useTranslation } from "react-i18next";
 const SettingsTab = () => {
   const userData = getUser();
   const { t } = useTranslation();
+  const handleSignOut = () => {};
   return (
     <>
       <AnimateSharedLayout>
@@ -83,6 +84,9 @@ const SettingsTab = () => {
               {t("signout_settings_tab")}
             </button>
           </Link>
+          <button onClick={handleSignOut} className={styles.signout}>
+            Sign out of all othe sessions
+          </button>
         </div>
       </div>
 
@@ -104,6 +108,8 @@ const SettingsTab = () => {
             <button className={styles.delete}>
               {t("deactivate_settings_tab")}
             </button>
+          <Link to="/admin/settings/accountsProfile/account-deactivation">
+            <button className={styles.delete}>Deactivate your account</button>
           </Link>
         </div>
       </div>

@@ -6,8 +6,10 @@ import Security from "../assets/security1.png";
 import Overview from "../assets/hg.png";
 import Policy from "../assets/acceptable-use-policy.png";
 import Arrow from "../assets/arrow-right.svg";
+import { useTranslation } from "react-i18next";
 
 const Content = () => {
+  const { t } = useTranslation();
   const [openMenu, setOpenMenu] = useState(false);
 
   const Selected = () => {
@@ -19,7 +21,7 @@ const Content = () => {
       <section className={Style.legalHero}>
         <div className={Style.legalHeroContent}>
           <header className={Style.legalHeader}>
-            <h1 className={Style.legalHeadingOne}>Terms & Policies</h1>
+            <h1 className={Style.legalHeadingOne}>{t("legal_termsText")}</h1>
           </header>
         </div>
       </section>
@@ -39,14 +41,14 @@ const Content = () => {
                       openMenu ? Style.dontShow : Style.entryPointItem
                     }`}
                   >
-                    Getting Started
+                    {t("legal_startedText")}
                   </span>
                   <span
                     className={`${
                       openMenu ? Style.closeNavigation : Style.dontShow
                     }`}
                   >
-                    Close Legal Navigation
+                    {t("legal_navtext")}
                   </span>
                 </button>
                 <div
@@ -56,53 +58,63 @@ const Content = () => {
                       : Style.legalSideItemMenu
                   }`}
                 >
-                  <h4 className={Style.sideItemHeader}>Getting started</h4>
+                  <h4 className={Style.sideItemHeader}>
+                    {t("legal_startedText")}
+                  </h4>
                   <ul
                     className={`${Style.sideItemOrdered} ${Style.legalSideItemMenu}`}
                   >
                     <li>
-                      <Link title="Overview" />
+                      <Link title={`${t("legal_overview")}`} />
                     </li>
                   </ul>
-                  <h4 className={Style.sideItemHeader}>Terms</h4>
-                  <button className={Style.sideItemButton}>Terms</button>
-                  <ul
-                    className={`${Style.sideItemOrdered} ${Style.legalSideItemMenu}`}
-                  >
-                    <li>
-                      <Link title="ZuriChat Terms of Service" />
-                    </li>
-                    <li>
-                      <Link title="User Terms of Service" />
-                    </li>
-                    <li>
-                      <Link title="API Terms of Service" />
-                    </li>
-                    <li>
-                      <Link title="Service Level Agreement" />
-                    </li>
-                  </ul>
-                  <h4 className={Style.sideItemHeader}>Security</h4>
-                  <button className={Style.sideItemButton}>Security</button>
-                  <ul
-                    className={`${Style.sideItemOrdered} ${Style.legalSideItemMenu}`}
-                  >
-                    <li>
-                      <Link title="Security Practices" />
-                    </li>
-                    <li>
-                      <Link title="Report a Vulnerability" />
-                    </li>
-                  </ul>
-                  <h4 className={Style.sideItemHeader}>Zuri Community</h4>
+                  <h4 className={Style.sideItemHeader}>{t("legal_terms")}</h4>
                   <button className={Style.sideItemButton}>
-                    Zuri Community
+                    {t("legal_terms")}
                   </button>
                   <ul
                     className={`${Style.sideItemOrdered} ${Style.legalSideItemMenu}`}
                   >
                     <li>
-                      <Link title="ZuriChat Community Forum" />
+                      <Link title={`${t("legal_zuriTerms")}`} />
+                    </li>
+                    <li>
+                      <Link title={`${t("legal_UserTerms")}`} />
+                    </li>
+                    <li>
+                      <Link title={`${t("legal_ApiTerms")}`} />
+                    </li>
+                    <li>
+                      <Link title={`${t("legal_serviceLevel")}`} />
+                    </li>
+                  </ul>
+                  <h4 className={Style.sideItemHeader}>
+                    {t("legal_securityText")}
+                  </h4>
+                  <button className={Style.sideItemButton}>
+                    {t("legal_securityText")}
+                  </button>
+                  <ul
+                    className={`${Style.sideItemOrdered} ${Style.legalSideItemMenu}`}
+                  >
+                    <li>
+                      <Link title={`${t("legal_securitiesPractice")}`} />
+                    </li>
+                    <li>
+                      <Link title={`${t("legal_report")}`} />
+                    </li>
+                  </ul>
+                  <h4 className={Style.sideItemHeader}>
+                    {t("legal_ZUriText")}
+                  </h4>
+                  <button className={Style.sideItemButton}>
+                    {t("legal_ZUriText")}
+                  </button>
+                  <ul
+                    className={`${Style.sideItemOrdered} ${Style.legalSideItemMenu}`}
+                  >
+                    <li>
+                      <Link title={`${t("legal_ZuriForum")}`} />
                     </li>
                   </ul>
                 </div>
@@ -113,11 +125,9 @@ const Content = () => {
                 <a href="#" className={Style.legalGridLink}>
                   <header className={Style.legalCardTitle}>
                     <h3 className={Style.legalCardHeading}>
-                      User Terms of Service
+                      {t("legal_user_text")}
                     </h3>
-                    <p className={Style.legalCardSub}>
-                      Agreement with a user that joins an existing team.
-                    </p>
+                    <p className={Style.legalCardSub}>{t("legal_userAgree")}</p>
                   </header>
                   <figure
                     className={Style.legalCardImage}
@@ -127,17 +137,18 @@ const Content = () => {
                   </figure>
                   <div className={Style.legalCardFooter}>
                     <span className={Style.legalCardFooterText}>
-                      Read More
+                      {t("legal_readmore")}
                       <img src={Arrow} alt="Arrow" />
                     </span>
                   </div>
                 </a>
                 <a href="#" className={Style.legalGridLink}>
                   <header className={Style.legalCardTitle}>
-                    <h3 className={Style.legalCardHeading}>Privacy Policy</h3>
+                    <h3 className={Style.legalCardHeading}>
+                      {t("legal_termsText")}
+                    </h3>
                     <p className={Style.legalCardSub}>
-                      Our policy regarding what information we collect at
-                      Zurichat, how we use it, and what choices you have.
+                      {t("legal_policyText")}
                     </p>
                   </header>
                   <figure
@@ -148,7 +159,7 @@ const Content = () => {
                   </figure>
                   <div className={Style.legalCardFooter}>
                     <span className={Style.legalCardFooterText}>
-                      Read More
+                      {t("legal_readmore")}
                       <img src={Arrow} alt="Arrow" />
                     </span>
                   </div>
@@ -156,12 +167,10 @@ const Content = () => {
                 <a href="#" className={Style.legalGridLink}>
                   <header className={Style.legalCardTitle}>
                     <h3 className={Style.legalCardHeading}>
-                      Security Overview
+                      {t("legal_securtyOverview")}
                     </h3>
                     <p className={Style.legalCardSub}>
-                      We take security seriously and we are proud here at
-                      Zurichat to exceed industry when it comes to your
-                      organization.{" "}
+                      {t("legal_takeSecurity")}
                     </p>
                   </header>
                   <figure
@@ -172,7 +181,7 @@ const Content = () => {
                   </figure>
                   <div className={Style.legalCardFooter}>
                     <span className={Style.legalCardFooterText}>
-                      Read More
+                      {t("legal_readmore")}
                       <img src={Arrow} alt="Arrow" />
                     </span>
                   </div>
@@ -180,11 +189,10 @@ const Content = () => {
                 <a href="#" className={Style.legalGridLink}>
                   <header className={Style.legalCardTitle}>
                     <h3 className={Style.legalCardHeading}>
-                      Acceptable Use Policy
+                      {t("legal_acceptable")}
                     </h3>
                     <p className={Style.legalCardSub}>
-                      List of acceptable and unacceptable conduct of our
-                      services
+                      {t("legal_list_ofAccept")}
                     </p>
                   </header>
                   <figure
@@ -195,7 +203,7 @@ const Content = () => {
                   </figure>
                   <div className={Style.legalCardFooter}>
                     <span className={Style.legalCardFooterText}>
-                      Read More
+                      {t("legal_readmore")}
                       <img src={Arrow} alt="Arrow" />
                     </span>
                   </div>

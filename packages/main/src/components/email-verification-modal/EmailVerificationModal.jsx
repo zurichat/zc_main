@@ -3,7 +3,7 @@ import { navigateToUrl } from "single-spa";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
-
+import { useTranslation } from "react-i18next";
 import styles from "./EmailVerificationModal.module.css";
 
 import CodeInput from "./CodeInput";
@@ -15,7 +15,7 @@ export default function EmailVerificationModal({ email }) {
   const auth = useAuth();
   const [success, setsuccess] = React.useState(false);
   const [errorMsg, seterrorMsg] = React.useState(false);
-
+  const { t } = useTranslation();
   const handleSubmit = async code => {
     auth
       .confirmSignupVerificationCode(code)
@@ -43,13 +43,13 @@ export default function EmailVerificationModal({ email }) {
               alt="paper plane"
               className={styles.img}
             />
-            <h4>Check your email for your code !</h4>
+            <h4></h4>
             <p className={styles.enterCode}>
-              Enter the 6-digit code sent to you at{" "}
+              {t("email_verification_check_email")}{" "}
               <a href={`mailto:${email}`} className={styles.email}>
                 {email}
               </a>
-              . This code expires shortly so be quick
+              {t("email_verification_expires")}
             </p>
             <div>{errorMsg}</div>
             <div>
@@ -62,16 +62,19 @@ export default function EmailVerificationModal({ email }) {
             </div>
 
             <div style={{ marginBlock: "2rem" }}>
-              <p style={{ textAlign: "center" }}>Code expired?</p>
+              <p style={{ textAlign: "center" }}>
+                {t("email_verification_modal_code_expired")}
+              </p>
               <Link to="/home" className={styles.request} disabled>
-                Click here to request a new code!
+                {t("email_verification_newcode")}
               </Link>
             </div>
 
             <p>
-              Already have an Account? <br />
+              {t("email_verification_already_have")}
+              <br />
               <Link to="/login" className={styles.request}>
-                Use Password to sign in
+                {t("email_verification_use_password")}
               </Link>
             </p>
           </div>
@@ -82,10 +85,10 @@ export default function EmailVerificationModal({ email }) {
               alt="logo"
               className={styles.img}
             />
-            <h2>Email Verification Succesful!</h2>
-            <p>Click on the Button to continue</p>
+            <h2>{t("email_verification_successful")}</h2>
+            <p>{t("email_verification_click_button")}</p>
             <PrimaryButton onClick={() => navigateToUrl("/login")}>
-              Continue
+              {t("email_verification_continue")}
             </PrimaryButton>
           </Successdiv>
         )}
