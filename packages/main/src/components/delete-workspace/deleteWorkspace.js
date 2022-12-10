@@ -24,7 +24,6 @@ const DeleteWorkspace = () => {
     );
 
     if (res.status === 200) {
-      console.log("Workspace deleted successfully");
       localStorage.removeItem(currentWorkspaceShort);
       localStorage.removeItem(orgName);
       localStorage.removeItem(currentWorkspace);
