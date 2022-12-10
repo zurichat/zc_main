@@ -6,6 +6,9 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { GeneralErrorBoundary, GeneralLoading } from "./components";
 import ManageMembers from "./components/manage-members/ManageMembers";
 import ChangeWorkspaceName from "./components/change-workspace-name/ChangeWorkspaceName";
+import AcctDeactivation from "./components/account-deactivation/AcctDeactivation";
+import ConfirmDeactivation from "./components/confirm-deactivation/ConfirmDeactivation";
+import AccDeactivated from "./components/account-deactivated/AccDeactivated";
 
 // All utilities imported here
 import { withSuspense } from "./utils";
@@ -120,6 +123,24 @@ const App = () => (
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/accountsProfile">
             <AccountProfile />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/account-deactivation"
+          >
+            <AcctDeactivation />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/account-deactivation/confirm-deactivate"
+          >
+            <ConfirmDeactivation />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/account-deactivation/confirm-deactivate/acct-deactivated"
+          >
+            <AccDeactivated />
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/ManageWorkspace">
             <ManageWorkspace />
