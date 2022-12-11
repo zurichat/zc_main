@@ -33,7 +33,7 @@ const Invitation = () => {
                 <p className={styles.invitesDescr}>
                   Invite others to join your workspace. You can also allow
                   members to sign up using your company's email domain.
-                  <Link to={{ pathname: "/admin/settings" }}>
+                  <Link to={{ pathname: "/admin/settings" }} className="link">
                     Setup your email domain
                   </Link>
                 </p>
