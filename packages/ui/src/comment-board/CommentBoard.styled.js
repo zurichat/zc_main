@@ -49,7 +49,6 @@ const CommentMessagesWrapper = styled.div`
   padding-left: 1rem;
   margin-bottom: 9px;
   padding-top: 1.1rem;
-  padding-bottom: 100px;
 
   .msg-container {
     display: flex;
