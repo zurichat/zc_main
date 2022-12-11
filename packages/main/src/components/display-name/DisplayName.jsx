@@ -1,7 +1,7 @@
 import { BASE_API_URL } from "@zuri/utilities";
 import axios from "axios";
 import React from "react";
-
+import { useTranslation } from "react-i18next";
 const myStyle = {
   text: {
     color: "#1d1c1d",
@@ -32,10 +32,11 @@ const modifyOrganizationSettings = () => {
 };
 
 const DisplayName = () => {
+  const { t } = useTranslation();
   return (
     <>
       <input type="checkbox" name="displayname" id="displayname" />
-      <label style={myStyle.text}>Show full name instead of nick name</label>
+      <label style={myStyle.text}>{t("display_name_show_name")}</label>
       <br />
       <button
         type="button"
@@ -43,7 +44,7 @@ const DisplayName = () => {
         style={myStyle.btn}
         onClick={modifyOrganizationSettings}
       >
-        Save
+        {t("display_name_save")}
       </button>
     </>
   );

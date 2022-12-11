@@ -46,6 +46,15 @@ export const WorkspaceWrapperStyle = styled.div`
     flex-direction: column;
     position: relative;
   }
+
+  & > #single-spa-loader {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
 `;
 
 export const ExtraSidebarWrapperStyle = styled.div`

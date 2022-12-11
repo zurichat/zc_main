@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const myStyle = {
   text: {
@@ -27,17 +28,15 @@ const myStyle = {
 };
 
 const Guidelines = () => {
+  const { t } = useTranslation();
   return (
     <>
       <input type="radio" name="guidelines" id="" style={myStyle.radio} />
-      <label style={myStyle.text}>Default guidelines</label>
+      <label style={myStyle.text}>{t("guidelines_default")}</label>
       <br />
-      <p style={myStyle.smalltext}>
-        This could be your first name or nick name - however you’d like people
-        to refer to you on Zuri Chat
-      </p>
+      <p style={myStyle.smalltext}>{t("join_channel_show_message")}</p>
       <input type="radio" name="guidelines" id="" />
-      <label style={myStyle.text}>Custom guidelines</label>
+      <label style={myStyle.text}>{t("guidelines_custom_guidelines")}</label>
       <textarea
         className="form-control"
         id=""
@@ -45,7 +44,7 @@ const Guidelines = () => {
         style={myStyle.inputfield}
       ></textarea>
       <button type="button" className="btn btn-primary" style={myStyle.btn}>
-        Save
+        {t("guidelines_save")}
       </button>
     </>
   );
