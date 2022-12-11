@@ -18,6 +18,7 @@ const CommentBoard = ({
   parent = [],
   isLoadingMessages,
   onSendMessage,
+  onSendAttachedFile,
   currentUserId
 }) => {
   const [displayCommentBoard, setDisplayCommentBoard] = useState(
@@ -74,11 +75,11 @@ const CommentBoard = ({
     }
   };
 
-  // function handleEmojiClicked(event, emojiObject, messageId) {
-  //   const message_id = messageId || currentMessageId;
-  //   onReact && onReact(event, emojiObject, message_id);
-  //   setScrollToBottom(false);
-  // }
+  function handleEmojiClicked(event, emojiObject, messageId) {
+    const message_id = messageId || currentMessageId;
+    // onReact && onReact(event, emojiObject, message_id);
+    setScrollToBottom(false);
+  }
 
   return (
     <>
@@ -100,8 +101,9 @@ const CommentBoard = ({
                 <MessagePane
                   key={idx + "p"}
                   message={message}
-                  onShowEmoji={handleShowEmoji}
+                  // onShowEmoji={handleShowEmoji}
                   currentUserId={currentUserId}
+                  // onEmojiClicked={handleEmojiClicked}
                 />
               ))}
 
@@ -136,6 +138,7 @@ const CommentBoard = ({
             <div className="input-text">
               <MessagePaneInput
                 onSendMessage={handleSendMessage}
+                onAttachFile={onSendAttachedFile}
                 onShowEmoji={handleShowEmoji}
               />
             </div>
