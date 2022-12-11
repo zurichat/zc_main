@@ -1,3 +1,4 @@
+import { BASE_API_URL } from "@zuri/utilities";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 import del from "./assets/delete.svg";
@@ -17,7 +18,7 @@ const DeleteWorkspace = () => {
       Authorization: `Bearer ${token}`
     };
     const res = await axios.delete(
-      `https://api.zuri.chat/organizations/${currentWorkspace}`,
+      `${BASE_API_URL}/organizations/${currentWorkspace}`,
       {
         headers
       }

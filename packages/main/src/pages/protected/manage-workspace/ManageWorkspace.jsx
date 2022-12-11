@@ -1,5 +1,5 @@
-import { AnimateSharedLayout, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { AnimateSharedLayout, motion } from "framer-motion";
 import PreferenceWrapper from "../preference-wrapper/PreferenceWrapper";
 
 import Calls from "../../../components/calls/Calls";
@@ -205,7 +205,7 @@ const adminSettings = () => {
               </div>
               <div className={classes.floatright}>
                 <Link to="/admin/workspace/delete">
-                  <button>Delete Workspace</button>
+                  <button>{t("delwork_manage")}</button>
                 </Link>
               </div>
             </div>
