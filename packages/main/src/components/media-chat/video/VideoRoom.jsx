@@ -1,14 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AgoraUIKit from "agora-react-uikit";
 import { AGORA_APP_ID, AGORA_TOKEN } from "@zuri/utilities";
 import styles from "./styles/videoRoom.css";
+import axios from "axios";
 
 const VideoRoom = ({ workspaceId }) => {
-  const [videoCall, setVideoCall] = useState(true);
+  const [videoCall, setVideoCall] = useState(false);
+  const [token, setToken] = useState(null);
+  const fetchToken = async () => {
+    const response = await fetch(
+      `https://staging.api.zuri.chat/rtc/${workspaceId}/publisher/userAccount`
+    );
+    const data = await response.json();
+    setToken(data.data.token);
+    if (response.status === 200) {
+      setVideoCall(true);
+    }
+  };
+  useEffect(() => {
+    fetchToken();
+  }, []);
   const rtcProps = {
     appId: AGORA_APP_ID,
-    channel: "plug",
-    token: AGORA_TOKEN
+    channel: workspaceId,
+    token: token
   };
   const callbacks = {
     EndCall: () => setVideoCall(false)
