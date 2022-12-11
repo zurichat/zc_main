@@ -44,7 +44,6 @@ const CommentBoard = ({
 
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [showEmoji, setShowEmoji] = useState(false);
-  const [shouldScrollToBottom, setScrollToBottom] = useState(true);
   const [top, setTop] = useState(null);
   const [right, setRight] = useState(null);
   const [currentMessageId, setCurrentMessageId] = useState(null);
@@ -79,7 +78,6 @@ const CommentBoard = ({
   function handleEmojiClicked(event, emojiObject, messageId) {
     const message_id = messageId || currentMessageId;
     // onReact && onReact(event, emojiObject, message_id);
-    setScrollToBottom(false);
   }
 
   return (
