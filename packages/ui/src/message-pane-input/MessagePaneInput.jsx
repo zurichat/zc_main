@@ -163,8 +163,9 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
 
   const sendMessage = contentState => {
     if (
-      contentState.hasText() &&
-      contentState.getPlainText().trim().length > 0
+      (contentState.hasText() &&
+        contentState.getPlainText().trim().length > 0) ||
+      sentAttachedFile
     ) {
       onSendMessage(convertToRaw(contentState));
       clearEditor();
@@ -216,15 +217,18 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
         };
         reader.readAsDataURL(file);
       });
+      onAttachFile(sentAttachedFile);
     } else {
       setPreview([]);
     }
   }, [sentAttachedFile]);
 
   // on click clear attached file
-  const clearAttached = name => {
-    if (name) {
-      setSentAttachedFile(prev => [...prev].filter(file => file.name !== name));
+  const clearAttached = file => {
+    if (file) {
+      setSentAttachedFile(prev =>
+        [...prev].filter((element, index) => index !== file.id)
+      );
     } else {
       setSentAttachedFile([]);
       setPreview([]);
@@ -269,6 +273,15 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
     }
   };
 
+  function attachedFileHandler(file) {
+    if (sentAttachedFile) {
+      const children = Array.from(sentAttachedFile).concat(Array.from(file));
+      setSentAttachedFile(children);
+    } else {
+      setSentAttachedFile(file);
+    }
+  }
+
   // used to render the preview on the message input
   const PreviewItem = () => {
     return (
@@ -277,7 +290,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
           return (
             <Preview key={file.id}>
               <PreviewFile file={file} />
-              <button onClick={() => clearAttached(file.name)}>X</button>
+              <button onClick={() => clearAttached(file)}>X</button>
             </Preview>
           );
         })}
@@ -294,10 +307,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
             setEditorState={setEditorState}
             emojiSelect={<EmojiSelect />}
             sendMessageHandler={sendMessage}
-            sendAttachedFileHandler={onAttachFile}
-            sentAttachedFile={sentAttachedFile =>
-              setSentAttachedFile(sentAttachedFile)
-            }
+            sentAttachedFile={file => attachedFileHandler(file)}
           />
           <Editor
             editorState={editorState}
@@ -313,10 +323,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
           setEditorState={setEditorState}
           emojiSelect={<EmojiSelect />}
           sendMessageHandler={sendMessage}
-          sendAttachedFileHandler={onAttachFile}
-          sentAttachedFile={sentAttachedFile =>
-            setSentAttachedFile(sentAttachedFile)
-          }
+          sentAttachedFile={file => attachedFileHandler(file)}
         />
         <MentionSuggestions
           open={suggestionsOpen}

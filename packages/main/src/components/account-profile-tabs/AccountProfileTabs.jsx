@@ -7,12 +7,13 @@ import NotificationTab from "../notification-tab/NotificationTab";
 
 import { FiMenu } from "react-icons/fi";
 import { CardProvider } from "../context/CardContext";
+import { useTranslation } from "react-i18next";
 
 const AccountsProfileTabs = () => {
   const history = useHistory();
   const [openTab, setOpenTab] = useState(false);
   const [active, setActive] = useState(1);
-
+  const { t } = useTranslation();
   return (
     <CardProvider>
       <div className={styles.tabWrapper}>
@@ -32,7 +33,7 @@ const AccountsProfileTabs = () => {
               active === 1 ? styles.tabHeaderItemActive : styles.tabHeaderItem
             }
           >
-            Settings
+            {t("account_profile_tabs_settings")}
           </div>
           <div
             onClick={() => {
@@ -43,7 +44,7 @@ const AccountsProfileTabs = () => {
               active === 2 ? styles.tabHeaderItemActive : styles.tabHeaderItem
             }
           >
-            Notification
+            {t("account_profile_tabs_notification")}
           </div>
           <div
             onClick={() => {

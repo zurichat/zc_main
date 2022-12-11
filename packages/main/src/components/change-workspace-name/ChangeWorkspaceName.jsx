@@ -5,10 +5,11 @@ import styles from "../change-workspace-name/ChangeWorkspaceName.module.css";
 import Logo from "../change-workspace-name/assets/default.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const ChangeWorkspaceName = () => {
   const [user, setUser] = useState(null);
-
+  const { t } = useTranslation();
   const [orgUrl, setOrgUrl] = useState(null);
   const [orgName, setOrgName] = useState("");
 
@@ -66,7 +67,7 @@ const ChangeWorkspaceName = () => {
     <AdminSettings>
       <div>
         <Helmet>
-          <title>Settings - Zuri Chat</title>
+          <title>{t("change_workspace_name_title")}</title>
         </Helmet>
       </div>
 
@@ -77,27 +78,28 @@ const ChangeWorkspaceName = () => {
               <img src={Logo} alt="" />
             </div>
 
-            <h1> Change Workspace Name</h1>
+            <h1> {t("change_workspace_name_change_name")}</h1>
           </div>
 
           <div className={styles["change_workspace_content"]}>
             <section className={styles["change_workspace_section"]}>
               <div className={styles["change_workspace_div1"]}>
                 <h2 className={styles["change_workspace_h2"]}>
-                  Workspace Name
+                  {t("change_workspace_name_workspace_name")}
                 </h2>
 
                 <div className={styles["change_workspace_text"]}>
                   <div className={styles["change_workspace_flexp"]}>
                     <p className={styles["change_workspace_p"]}>
-                      Your workspace name is displayed in menus and headings. It
-                      will usually be (or include) the name of your company.
+                      {t("change_workspace_name_your_workspace_name")}
                     </p>
                   </div>
                   <div className={styles["inputdiv"]}>
                     <input
                       type="text"
-                      placeholder="New Workspace name"
+                      placeholder={t(
+                        "change_workspace_name_workspace_placeholder"
+                      )}
                       className={styles["change_workspace_input1"]}
                       onChange={e => setOrgName(e.target.value)}
                     />
@@ -108,15 +110,15 @@ const ChangeWorkspaceName = () => {
 
             <section className={styles["change_workspace_section"]}>
               <div>
-                <h2 className={styles["change_workspace_h2"]}>Workspace URL</h2>
+                <h2 className={styles["change_workspace_h2"]}>
+                  {t("change_workspace_name_workspace_url")}
+                </h2>
               </div>
 
               <div className={styles["change_workspace_text"]}>
                 <div>
                   <p className={styles["change_workspace_p"]}>
-                    You can change your workspace’s URL (web address), but out
-                    of courtesy to your fellow Zurichat users, please don’t do
-                    this often :)
+                    {t("change_workspace_name_you_can")}
                   </p>
                 </div>
 
@@ -131,14 +133,12 @@ const ChangeWorkspaceName = () => {
                       onChange={e => setOrgUrl(e.target.value)}
                     />
                     <span className={styles["change_workspace_span"]}>
-                      .zuri.chat
+                      {t("change_workspace_name_-zurichat")}
                     </span>{" "}
                   </div>
                   <div>
                     <p className={styles["change_workspace_small"]}>
-                      Your workspace URL can only contain lowercase letters,
-                      numbers and dashes (and must start with a letter or
-                      number).
+                      {t("change_workspace_name_instruction")}
                     </p>
                   </div>
                 </div>
@@ -148,12 +148,7 @@ const ChangeWorkspaceName = () => {
             <section className={styles["change_workspace_section_last"]}>
               <div className={styles["Note_div"]}>
                 <p className={styles["Note"]}>
-                  Note: If you change your workspace’s URL, Zurichat will
-                  automatically redirect from the old to the new address.
-                  However, you should still make sure everyone in your workspace
-                  knows about the change because the old name will be placed
-                  back into the pool and could be used by some other workspace
-                  in the future.
+                  {t("change_workspace_name_note")}
                 </p>
               </div>
 
@@ -164,7 +159,7 @@ const ChangeWorkspaceName = () => {
                     onClick={updateName}
                     className={styles["Button"]}
                   >
-                    Save Changes
+                    {t("change_workspace_name_save")}
                   </button>
                 </Link>
               </div>

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useTranslation } from "react-i18next";
 const myStyle = {
   text: {
     color: "#1d1c1d",
@@ -27,27 +27,23 @@ const myStyle = {
 };
 
 const JoinWorkspace = () => {
+  const { t } = useTranslation();
   return (
     <>
       <input type="radio" name="join" id="" style={myStyle.radio} />
-      <label style={myStyle.text}>Allow Invitation</label>
+      <label style={myStyle.text}>{t("join_workspace_Allowinvitation")}</label>
       <br />
       <input type="radio" name="join" id="" />
-      <label style={myStyle.text}>
-        Allow invitations, and approve invitations for any email from these
-        domains:
-      </label>
+      <label style={myStyle.text}>{t("join_workspace_allow")}</label>
       <textarea
         className="form-control"
         id=""
         rows="5"
         style={myStyle.inputfield}
       ></textarea>
-      <p style={myStyle.smalltext}>
-        If you want to add more domains, seperate each one with a comma
-      </p>
+      <p style={myStyle.smalltext}>{t("join_workspace_add")}</p>
       <button type="button" className="btn btn-primary" style={myStyle.btn}>
-        Save
+        {t("join_workspace_save")}
       </button>
     </>
   );

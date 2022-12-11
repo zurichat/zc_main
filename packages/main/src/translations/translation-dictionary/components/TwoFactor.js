@@ -1,0 +1,72 @@
+export default [
+  {
+    key: "protect_twofactor",
+    en: "Protect your Zurichat account with an extra layer of security by requiring access to your phone. Once configured, you’ll be required to enter both your password and an authentication code from your mobile phone in order to sign into your Zuri Chat account.",
+    de: "Schützen Sie Ihr Zurichat-Konto mit einer zusätzlichen Sicherheitsebene, indem Sie den Zugriff auf Ihr Telefon verlangen. Einmal konfiguriert, müssen Sie sowohl Ihr Passwort als auch einen Authentifizierungscode von Ihrem Mobiltelefon aus eingeben, um sich bei Ihrem Zuri Chat-Konto anzumelden.",
+    nl: "Bescherm uw Zurichat-account met een extra beveiligingslaag door toegang tot uw telefoon te eisen. Eenmaal geconfigureerd, moet u zowel uw wachtwoord als een verificatiecode van uw mobiele telefoon invoeren om in te loggen op uw Zuri Chat-account.",
+    engb: "Protect your Zurichat account with an extra layer of security by requiring access to your phone. Once configured, you’ll be required to enter both your password and an authentication code from your mobile phone in order to sign into your Zuri Chat account.",
+    fr: "Protégez votre compte Zuri Chat avec une couche de sécurité supplémentaire en exigeant l'accès à votre téléphone. Une fois configuré, vous devrez saisir à la fois votre mot de passe et un code d'authentification depuis votre téléphone portable pour vous connecter à votre compte Zuri Chat.",
+    zh: "通过要求访问您的手机，用额外的安全层保护您的Zurichat账户。一旦配置好，您需要从您的手机上输入密码和验证码，才能登录您的Zuri Chat账户。",
+    ar: "احم حساب Zurichat الخاص بك بطبقة إضافية من الأمان من خلال طلب الوصول إلى هاتفك. بمجرد التكوين، سيُطلب منك إدخال كلمة المرور الخاصة بك ورمز المصادقة من هاتفك المحمول من أجل تسجيل الدخول إلى حساب Zuri Chat الخاص بك.",
+    es: "Protege tu cuenta de Zurichat con una capa extra de seguridad requiriendo acceso a tu teléfono. Una vez configurado, se te pedirá que introduzcas tanto tu contraseña como un código de autenticación desde tu teléfono móvil para iniciar sesión en tu cuenta de Zuri Chat.",
+    it: "Proteggete il vostro account Zuriat con un ulteriore livello di sicurezza richiedendo l'accesso al vostro telefono. Una volta configurato, per accedere al vostro account Zuri Chat dovrete inserire sia la vostra password che un codice di autenticazione dal vostro cellulare.",
+    iw: "הגן על חשבון Zurichat שלך עם שכבת אבטחה נוספת על-ידי דרישת גישה לטלפון שלך. לאחר שתצורתו נקבעה, תידרש להזין הן את הסיסמה והן את קוד האימות מהטלפון הנייד כדי להיכנס לחשבון 'צורי צ'אט' שלך.",
+    pt: "Proteja a sua conta Zurichat com uma camada extra de segurança, exigindo o acesso ao seu telefone. Uma vez configurado, ser-lhe-á solicitado que introduza tanto a sua palavra-passe como um código de autenticação do seu telemóvel para iniciar sessão na sua conta Zuri Chat."
+  },
+  {
+    key: "learn_twofactor",
+    en: "Learn more at our",
+    de: "Erfahren Sie mehr auf unserer",
+    nl: "Kom meer te weten op onze",
+    engb: "Learn more at our",
+    fr: "Pour en savoir plus, consultez notre",
+    zh: "了解更多信息，请访问我们的",
+    ar: "تعرف على المزيد في منزلنا",
+    es: "Más información en",
+    it: "Per saperne di più",
+    iw: "מידע נוסף באתר שלנו",
+    pt: "Saiba mais no nosso"
+  },
+  {
+    key: "link_twofactor",
+    en: "two-factor authentication help page",
+    de: "Hilfeseite zur Zwei-Faktor-Authentifizierung",
+    nl: "twee-factor authenticatie help pagina",
+    engb: "two-factor authentication help page",
+    fr: "page d'aide sur l'authentification à deux facteurs",
+    zh: "双因素认证帮助页面",
+    ar: "صفحة مساعدة المصادقة ذات العاملين",
+    es: "Página de ayuda de la autenticación de dos factores",
+    it: "Pagina di aiuto sull'autenticazione a due fattori",
+    iw: "דף עזרה בנושא אימות דו-גורמי",
+    pt: "página de ajuda para autenticação de dois factores"
+  },
+  {
+    key: "set_twofactor",
+    en: "Set up two-factor authentication page",
+    de: "Seite für die Zwei-Faktor-Authentifizierung einrichten",
+    nl: "Twee-factor authenticatie pagina instellen",
+    engb: "Set up two-factor authentication page",
+    fr: "Configurer la page d'authentification à deux facteurs",
+    zh: "设置双因素认证页面",
+    ar: "قم بإعداد صفحة مصادقة ذات عاملين",
+    es: "Configurar la página de autenticación de dos factores",
+    it: "Impostare la pagina di autenticazione a due fattori",
+    iw: "הגדר דף אימות של שני גורמים",
+    pt: "Criar uma página de autenticação de dois factores"
+  },
+  {
+    key: "note_twofactor",
+    en: "Note: Activating two-factor authentication will sign you out of all other rooms.",
+    de: "Hinweis: Wenn Sie die Zwei-Faktor-Authentifizierung aktivieren, werden Sie von allen anderen Räumen abgemeldet.",
+    nl: "Opmerking: Als u twee-factor-authenticatie activeert, wordt u afgemeld voor alle andere kamers.",
+    engb: "Note: Activating two-factor authentication will sign you out of all other rooms.",
+    fr: "Remarque : l'activation de l'authentification à deux facteurs vous déconnectera de toutes les autres pièces.",
+    zh: "注意：激活双因素认证将使你签出所有其他房间。",
+    ar: "ملاحظة: سيؤدي تنشيط المصادقة الثنائية إلى تسجيل خروجك من جميع الغرف الأخرى.",
+    es: "Nota: Al activar la autenticación de dos factores, se cerrará la sesión en todas las demás salas.",
+    it: "Nota: l'attivazione dell'autenticazione a due fattori comporta l'esclusione da tutte le altre stanze.",
+    iw: "הערה: הפעלת אימות דו-גורמי תוציא אותך מכל החדרים האחרים.",
+    pt: "Nota: A activação da autenticação de dois factores irá assiná-lo a partir de todas as outras salas."
+  }
+];

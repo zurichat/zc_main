@@ -5,6 +5,7 @@ import Group from "../assets/Group.svg";
 import "./App.css";
 import EmailSucessModal from "../src/EmailModal";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 const [modal, setModal] = useState();
 setModal("true");
@@ -29,6 +30,7 @@ function subscribe() {
 }
 
 function EmailSub() {
+  const { t } = useTranslation();
   return (
     <div className="EmailSub-Container-Wrapper">
       <div className="EmailSub-Container-logo">
@@ -37,13 +39,16 @@ function EmailSub() {
 
       <div className="Description-emailsub-container">
         <h1 className="emailsub-title-text">
-          Be the First to get updates<br></br> on latest plugins from Zuri Chat
+          {t("plugin.subscribe.headline")}
+          <br></br> {t("plugin.subscribe.headline_br")}
         </h1>
         <p>
           {" "}
-          Enrich your Zuri Chat experience by subscribing<br></br>
-          here to get the latest plugins via Emails<br></br>
-          on Zuri Chat!{" "}
+          {t("plugin.subscribe.description")}
+          <br></br>
+          {t("plugin.subscribe.description_br")}
+          <br></br>
+          {t("plugin.subscribe.description_brr")}{" "}
         </p>
 
         <div className="emailsubform-container">
@@ -60,6 +65,7 @@ function EmailSub() {
               className="subButton"
               typeName="subscribebutton"
               onClick={subscribe}
+              placeholder={t("plugin.subscribe.button")}
             />
           </form>
         </div>

@@ -39,6 +39,19 @@ import DownloadMobileSectionTwo from "./pages/DownloadMobileSectionTwo";
 import ProfileMore from "./pages/ProfileMore";
 import EditProfile from "./components/EditProfile";
 import Help from "./pages/Help";
+import Legal from "./pages/Legal";
+import MainComponents from "./pages/MainComponents";
+
+import SettingsHome from "./pages/SettingsHome";
+import ErrorPage from "./pages/ErrorPage";
+import WorkspaceLanguage from "./components/WorkspaceLanguage";
+import Username from "./components/Username";
+import TwoFactor from "./components/TwoFactor";
+import SettingsTab from "./components/SettingsTab";
+import SavePassword from "./components/SavePassword";
+import Table from "./components/Table";
+import RetentionAndExports from "./components/RetentionAndExports";
+import ManageWorkspace from "./pages/ManageWorkspace";
 
 const resources = {};
 
@@ -70,6 +83,7 @@ const Translations = [
   ...DownloadWindows,
   ...ModalComponent,
   ...Help,
+  ...Legal,
 
   ...Pricing,
   ...PrivacyPage,
@@ -77,16 +91,29 @@ const Translations = [
   ...DownloadMobileSectionTwo,
   ...ProfileMore,
 
+  ...SettingsHome,
+  ...ErrorPage,
+  ...ManageWorkspace,
+
   // Components
   ...NavBar,
   ...Footer,
   ...WorkspaceChat,
+  ...MainComponents,
 
   ...FAQ,
 
   ...SideBar,
   ...Preferences,
-  ...EditProfile
+  ...EditProfile,
+
+  ...WorkspaceLanguage,
+  ...Username,
+  ...TwoFactor,
+  ...SettingsTab,
+  ...SavePassword,
+  ...Table,
+  ...RetentionAndExports
 ];
 
 Translations.forEach(o => {

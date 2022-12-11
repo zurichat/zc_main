@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import toast, { Toaster } from "react-hot-toast";
 import UnstyledButton from "~/shared/button/Button";
 import {
   CommentBoardWrapper,

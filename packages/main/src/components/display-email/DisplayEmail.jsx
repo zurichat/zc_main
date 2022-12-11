@@ -1,6 +1,7 @@
 import { BASE_API_URL } from "@zuri/utilities";
 import axios from "axios";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const myStyle = {
   maindiv: {
@@ -56,25 +57,22 @@ const modifyOrganizationSettings = () => {
 };
 
 const DisplayEmail = () => {
+  const { t } = useTranslation();
   return (
     <>
       <div style={myStyle.maindiv}>
         <div style={myStyle.div1}></div>
-        <div style={myStyle.div2}>
-          Email address may still be accessible via app, test tokens or API
-        </div>
+        <div style={myStyle.div2}>{t("display_email_accessible")}</div>
       </div>
-      <p style={myStyle.text}>Who can access members mail address?</p>
+      <p style={myStyle.text}>{t("display_email_who_can")}</p>
       <input type="radio" name="email" id="" style={myStyle.radio} />
-      <label style={myStyle.text}>No one</label>
+      <label style={myStyle.text}>{t("display_email_no_one")}</label>
       <br />
       <input type="radio" name="email" id="" />
-      <label style={myStyle.text}>Members and quests</label>
+      <label style={myStyle.text}>{t("display_email_members")}</label>
       <br />
       <input type="radio" name="email" id="" style={myStyle.radio} />
-      <label style={myStyle.text}>
-        Members and quests, plus people from organisation you’re connected to
-      </label>
+      <label style={myStyle.text}>{t("display_email_members_guests")}</label>
       <br />
       <button
         type="button"
@@ -82,7 +80,7 @@ const DisplayEmail = () => {
         style={myStyle.btn}
         onClick={modifyOrganizationSettings}
       >
-        Save
+        {t("display_email_save")}
       </button>
     </>
   );

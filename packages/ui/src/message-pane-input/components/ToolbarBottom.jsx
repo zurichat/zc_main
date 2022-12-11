@@ -95,6 +95,11 @@ const ToolbarBottom = props => {
     setshowAttachInputBox(false);
   };
 
+  function isNumeric(str) {
+    if (typeof str != "string") return false;
+    return !isNaN(str) && !isNaN(parseFloat(str));
+  }
+
   const handleSelectMedia = e => {
     setAttachedFile(e.target.files);
     props.sentAttachedFile(e.target.files);
@@ -197,6 +202,7 @@ const ToolbarBottom = props => {
                     key={inputKey || ""}
                     type="file"
                     ref={fileRef}
+                    accept="image/*"
                     //onClick={handleAttachMedia}
                   />
                 </label>
