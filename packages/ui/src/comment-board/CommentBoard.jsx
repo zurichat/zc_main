@@ -1,12 +1,12 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import toast, { Toaster } from "react-hot-toast";
 import UnstyledButton from "~/shared/button/Button";
 import {
   CommentBoardWrapper,
   CommentBoardHeader,
   CommentMessagesWrapper,
-  ParentMessage
+  ParentMessage,
+  MessagePaneWrapper
 } from "./CommentBoard.styled";
 
 import MessagePaneInput from "~/message-pane-input/MessagePaneInput";
@@ -81,11 +81,11 @@ const CommentBoard = ({
     const message_id = messageId || currentMessageId;
     // onReact && onReact(event, emojiObject, message_id);
   }
-  console.log(isSending, post);
+
   return (
     <>
       {thread === "thread" ? (
-        <div>
+        <div className="commentboard-wrapper">
           <CommentBoardWrapper showCommentBoard={displayCommentBoard}>
             <CommentBoardHeader>
               <div className="header_title">
@@ -109,9 +109,16 @@ const CommentBoard = ({
               ))}
 
               {!isLoadingMessages && (
-                <span style={{ display: "flex" }}>
-                  {messages.length} replies <hr />{" "}
-                </span>
+                <>
+                  {messages.length > 0 ? (
+                    <span style={{ display: "flex", padding: "0 1em" }}>
+                      {messages.length}{" "}
+                      {messages.length === 1 ? "reply" : "replies"} <hr />
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                </>
               )}
             </ParentMessage>
 
@@ -143,13 +150,15 @@ const CommentBoard = ({
                 </div>
               </div>
             )}
-            <div className="input-text">
-              <MessagePaneInput
-                onSendMessage={handleSendMessage}
-                onAttachFile={onSendAttachedFile}
-                onShowEmoji={handleShowEmoji}
-              />
-            </div>
+            <MessagePaneWrapper>
+              <div className="input-text">
+                <MessagePaneInput
+                  onSendMessage={handleSendMessage}
+                  onAttachFile={onSendAttachedFile}
+                  onShowEmoji={handleShowEmoji}
+                />
+              </div>
+            </MessagePaneWrapper>
             {showEmoji && (
               <div>
                 <Overlay handleOverlayClicked={handleOverlayClicked} />
