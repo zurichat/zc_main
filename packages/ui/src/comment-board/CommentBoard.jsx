@@ -20,7 +20,9 @@ const CommentBoard = ({
   isLoadingMessages,
   onSendMessage,
   onSendAttachedFile,
-  currentUserId
+  currentUserId,
+  post,
+  isSending
 }) => {
   const [displayCommentBoard, setDisplayCommentBoard] = useState(
     commentBoardConfig.displayCommentBoard
@@ -79,7 +81,7 @@ const CommentBoard = ({
     const message_id = messageId || currentMessageId;
     // onReact && onReact(event, emojiObject, message_id);
   }
-
+  console.log(isSending, post);
   return (
     <>
       {thread === "thread" ? (
@@ -122,7 +124,14 @@ const CommentBoard = ({
                   currentUserId={currentUserId}
                 />
               ))}
+              {isSending &&
+                post.map((message, idx) => (
+                  <div key={idx} style={{ color: "grey" }}>
+                    <MessagePane message={message} />
+                  </div>
+                ))}
             </CommentMessagesWrapper>
+
             {isLoadingMessages && (
               <div className="text-center">
                 <div
