@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "../admin-sidebar/AdminSidebar.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import avatar from "../admin-sidebar/assets/avatar.svg";
 import zuriLogo from "../admin-sidebar/assets/zuriLogo.svg";
 import grid from "../admin-sidebar/assets/grid.svg";
@@ -33,6 +33,8 @@ import { getUser } from "../admin-sidebar/utils/Common";
 const AdminSidebar = ({ setModal, openModal }) => {
   const user = getUser();
   const { t } = useTranslation();
+  const history = useHistory();
+
   return (
     <div
       className={
@@ -92,14 +94,19 @@ const AdminSidebar = ({ setModal, openModal }) => {
       <div className={styles.sidebarMenu}>
         <h6 className={styles.sidebarHeading}>ACCOUNT</h6>
         <div className={styles.sidebarMenuItems}>
-          <Link
-            onClick={() => setModal(!openModal)}
+          <div
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              setModal(!openModal);
+              history.goBack();
+            }}
             className={styles.sidebarLink}
-            to="/home"
+
+            // to="/"
           >
             <FiCornerUpLeft className={styles.icon} />
             {t("admin_side_bar_back")}
-          </Link>
+          </div>
           <NavLink
             exact
             onClick={() => setModal(!openModal)}
