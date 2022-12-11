@@ -48,7 +48,7 @@ const SettingsTab = () => {
       <AnimateSharedLayout>
         <PreferenceWrapper
           title="Time zone"
-          text={`Zurichat uses your time zone to send summary and notification emails, for times in your activity feeds and for  reminders. Your time zone is currently set to: (UTC+01:00) West Central, ${userData.time_zone}.`}
+          text={`Zurichat uses your time zone to send summary and notification emails, for times in your activity feeds and for  reminders. Your time zone is currently set to: ${userData.time_zone}.`}
           btnText="expand"
         >
           {/* TimeZone input field goes under here */}

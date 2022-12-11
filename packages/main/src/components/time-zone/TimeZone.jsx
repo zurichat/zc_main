@@ -1,12 +1,57 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import styles from "../time-zone/SettingsTab.module.css";
 import TimeZones from "../constants/TimeZone";
+import axios from "axios";
+
 const TimeZone = () => {
+  const [selectTimezone, setSelectTimezone] = useState([]);
+  const [user, setUser] = useState(null);
+
+  const handleSelect = e => {
+    setSelectTimezone(e.target.value);
+  };
+
+  let organization_id = JSON.parse(sessionStorage.organisations)[0].id;
+  let user_member_id = JSON.parse(sessionStorage.organisations)[0].member_id;
+
+  useEffect(() => {
+    const user = JSON.parse(sessionStorage.getItem("user"));
+    if (user) {
+      setUser(user);
+    }
+  }, []);
+
+  const handleTimezone = e => {
+    e.preventDefault();
+
+    axios
+      .patch(
+        `https://api.zuri.chat/organizations/${organization_id}/members/${user_member_id}/settings`,
+
+        {
+          languages_and_regions: {
+            time_zone: selectTimezone
+          }
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + user.token
+          }
+        }
+      )
+      .then(res => console.log(res));
+  };
+
+  useEffect(() => {
+    setSelectTimezone(TimeZones[2]);
+  }, []);
+
+  // console.log(selectTimezone);
   return (
     <div className={styles.passwordsection}>
-      <form className="row d-flex flex-column">
+      <form className="row d-flex flex-column" onSubmit={handleTimezone}>
         <div className="col-md-5 mt-2">
-          <select className="form-select" required>
+          <select className="form-select" required onChange={handleSelect}>
             {TimeZones.map((item, index) => {
               return (
                 <option key={index} value={item}>
