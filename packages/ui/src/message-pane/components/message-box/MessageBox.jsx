@@ -1,6 +1,7 @@
 import { DateTime } from "luxon";
 import avatar from "@assets/profile.svg";
 import RichTextRenderer from "~/rich-text-renderer/RichTextRenderer";
+import styles from "../../message-pane.module.css";
 
 export default function MessageBox({ message }) {
   return (
@@ -33,7 +34,18 @@ export default function MessageBox({ message }) {
             </span>
           </div>
           <div className="message">
-            <RichTextRenderer richUiMessageConfig={message.richUiData} />
+            {Object.keys(message.richUiData).length !== 0 && (
+              <RichTextRenderer richUiMessageConfig={message.richUiData} />
+            )}
+          </div>
+          <div>
+            {message?.files?.map((e, i) => {
+              return (
+                <div key={i} className={styles.fileWrapper}>
+                  <span className="file-name">Media</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}

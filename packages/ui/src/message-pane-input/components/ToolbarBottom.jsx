@@ -95,9 +95,22 @@ const ToolbarBottom = props => {
     setshowAttachInputBox(false);
   };
 
+  function isNumeric(str) {
+    if (typeof str != "string") return false;
+    return !isNaN(str) && !isNaN(parseFloat(str));
+  }
+
   const handleSelectMedia = e => {
-    setAttachedFile(e.target.files);
-    props.sentAttachedFile(e.target.files);
+    if (attachedFile) {
+      const children = Array.from(attachedFile).concat(
+        Array.from(e.target.files)
+      );
+      setAttachedFile(children);
+      props.sentAttachedFile(children);
+    } else {
+      setAttachedFile(e.target.files);
+      props.sentAttachedFile(e.target.files);
+    }
     setshowAttachInputBox(false);
   };
 
@@ -197,6 +210,7 @@ const ToolbarBottom = props => {
                     key={inputKey || ""}
                     type="file"
                     ref={fileRef}
+                    accept="image/*"
                     //onClick={handleAttachMedia}
                   />
                 </label>
