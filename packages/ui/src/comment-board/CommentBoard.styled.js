@@ -17,6 +17,16 @@ const CommentBoardWrapper = styled.aside`
     overflow-y: auto;
     overflow-x: none;
   }
+  .name-time {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  .time {
+    font-weight: 400;
+    color: #5b5858;
+    font-size: 12px;
+  }
 `;
 
 const CommentBoardHeader = styled.header`
@@ -49,15 +59,14 @@ const CommentMessagesWrapper = styled.div`
   padding-left: 1rem;
   margin-bottom: 9px;
   padding-top: 1.1rem;
-  padding-bottom: 100px;
 
   .msg-container {
     display: flex;
-    gap: 16px;
+    gap: 0.5em;
+    align-items: center;
   }
 
   .img__wrapper {
-    width: 69px;
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: 10%;
@@ -67,7 +76,9 @@ const CommentMessagesWrapper = styled.div`
     overflow: hidden;
   }
   .user-avatar {
-    width: 100%;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
   }
 
   #hoverItems {
@@ -86,10 +97,12 @@ export const ParentMessage = styled.div`
   .msg-container {
     display: flex;
     gap: 8px;
+       align-items: center;
   }
   .user-avatar {
-    width: 300px;
-    border-radius: 6px;
+    width: 35px;
+    height: 35px
+    border-radius: 8px;
   }
   #hoverItems {
     position: relative;
@@ -105,15 +118,27 @@ export const ParentMessage = styled.div`
   }
 
   .msgParticulars {
-    padding-left: 1.5rem;
   }
-
+.name-time{
+    display: flex;
+    align-items: center;
+    gap:.5em;
+}
+.time {
+    font-weight: 400;
+    color: #5b5858;
+    font-size: 12px;
+}
   .message {
     width: 100%;
   }
 `;
 
-export const MessagePaneWrapper = styled.div``;
+export const MessagePaneWrapper = styled.div` 
+.input-text {
+    width: 100%;
+    padding: 0 1.2em;
+  `;
 
 export {
   CommentBoardWrapper,
