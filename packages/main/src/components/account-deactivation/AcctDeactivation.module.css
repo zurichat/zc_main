@@ -1,0 +1,100 @@
+/* Deactivation Bar */
+.deactivationSection {
+  padding-top: 60px;
+  margin: 0 13%;
+}
+
+@media screen and (max-width: 800px) {
+  .deactivationSection {
+    padding-top: 40px;
+  }
+
+  .deactivationSection {
+    margin: 0 5%;
+  }
+
+  .deactivationNote {
+    padding: 20px 10px !important;
+  }
+
+  .deactivateButton {
+    margin-right: 15px;
+  }
+}
+
+.deactivationTab p {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+
+.deactivationCaution {
+  border: 2px solid #eedede;
+  border-left: 4px solid #ff0000;
+  padding: 12px 10px;
+  border-radius: 3px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.deactivationCaution img {
+  margin-right: 10px;
+  margin-top: -3px;
+}
+
+.deactivationCaution span {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #3a3a3a;
+}
+
+.deactivationNote {
+  border: 2px solid #eedede;
+  background: #fff;
+  margin-top: 16px;
+  padding: 20px 50px;
+}
+
+.blue {
+  color: #2f80ed;
+}
+
+.firstP {
+  font-size: 15px;
+  font-weight: normal;
+  margin-bottom: 10px;
+  line-height: 25px;
+}
+
+.secondP {
+  font-weight: 500;
+  line-height: 20px;
+  padding: 10px 5px;
+}
+
+.deactivateButton {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  outline: none;
+  margin-top: 15px;
+  margin-right: 25px;
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+.cancelButton {
+  border: 1px solid rgba(0, 184, 124, 0.5);
+  color: rgba(0, 184, 124, 0.5);
+  padding: 10px 25px;
+  outline: none;
+  margin-top: 15px;
+  font-size: 13px;
+  background: #fff;
+  border-radius: 3px;
+}

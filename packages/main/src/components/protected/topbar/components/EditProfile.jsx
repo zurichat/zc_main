@@ -294,7 +294,7 @@ const EditProfile = () => {
                       // country code
                       data.map((item, index) => (
                         <option key={index} value={item.dial_code}>
-                          {item.dial_code}
+                          {item.code} {item.emoji}
                         </option>
                       ))
                     }
