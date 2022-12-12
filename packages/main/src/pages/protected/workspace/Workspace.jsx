@@ -27,9 +27,9 @@ import {
 import VideoRoom from "../../../components/media-chat/video/VideoRoom";
 import { Sidebar, TopBar } from "../../../components/protected";
 import ExtraSidebar from "../../../components/protected/extra-sidebar";
+import WorkspaceLoading from "../../../components/general-loading/WorkspaceLoading";
 
 export default function Index() {
-  // const { workspaceId } = useParams();
   const {
     workspaceId: { workspaceId, short_id }
   } = useParamHook({ workspaceId: "workspaceId" });
