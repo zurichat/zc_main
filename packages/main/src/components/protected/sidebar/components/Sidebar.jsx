@@ -12,6 +12,7 @@ import SingleRoom from "./SingleRoom";
 import Category from "./Category";
 import Starred from "./Starred";
 import { storeSideBarInfo } from "../../../../utils/cache-sidebar";
+import VideoRoom from "../../../media-chat/video/VideoRoom";
 
 const categories = [];
 
