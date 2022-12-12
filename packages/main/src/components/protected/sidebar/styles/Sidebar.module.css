@@ -67,7 +67,7 @@
   padding: 2px 10px;
   background-color: #00b87c;
   color: #fff;
-  z-index: 0;
+  /* z-index: 0; */
 }
 
 .orgInfo {
@@ -265,4 +265,3 @@
 .displayCategory {
   display: block;
 }
-

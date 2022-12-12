@@ -10,8 +10,9 @@ import toast, { Toaster } from "react-hot-toast";
 import { data } from "../utils/country-code";
 import { StyledProfileWrapper } from "../styles/StyledEditProfile.styled";
 import { useTranslation } from "react-i18next";
-const EditProfile = () => {
+const EditProfile = ({ update }) => {
   // const imageRef = useRef(null)
+
   const { t } = useTranslation();
   const avatarRef = useRef(null);
   const {

@@ -81,7 +81,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
   //   }
   // }
   const [hoverState, setHoverState] = useState(false);
-
+  const [update, setUpdate] = useState(false);
   // const [username, setUsername] = state.username
   const [showStatus] = state.status;
   const [showMembersModal] = state.modal;
@@ -127,6 +127,13 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (update) {
+      setUser({
+        ...user
+      });
+    }
+  }, [update]);
   const { t } = useTranslation();
 
   const config = {
@@ -312,7 +319,9 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
 
             <hr className={styles.hr} />
 
-            {reusableModal === "edit profile" && <EditProfile />}
+            {reusableModal === "edit profile" && (
+              <EditProfile update={setUpdate} />
+            )}
 
             {reusableModal === "preference" && <Preferences />}
 

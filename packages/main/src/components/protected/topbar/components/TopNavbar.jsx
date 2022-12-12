@@ -28,6 +28,8 @@ import {
 } from "@novu/notification-center";
 
 const TopNavbar = ({ toggleSidebar }) => {
+  const [update, setUpdate] = useState(false);
+
   const theme = localStorage.getItem("theme");
   // if (theme !== null || theme !== "") {
   //   const topBar = document.getElementById(
@@ -39,7 +41,7 @@ const TopNavbar = ({ toggleSidebar }) => {
 
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext);
-  const {
+  let {
     setUser,
     user,
     userProfileImage,

@@ -24,7 +24,7 @@ import { useTranslation } from "react-i18next";
 
 const Profile = () => {
   const { t } = useTranslation();
-
+  // console.log("PROFILE MODAL HERE");
   const {
     userProfileImage,
     toggleModalState,
@@ -32,6 +32,8 @@ const Profile = () => {
     toggleProfileState,
     user
   } = useContext(ProfileContext);
+  console.log("USER DATA FROM PROFILE CONTEXT", user);
+  console.log("PROFILE CONTEXT", ProfileContext);
   // console.log('user status', user.status)
   const state = useContext(TopbarContext);
   const [dropdown, setDropdown] = useState(false);
