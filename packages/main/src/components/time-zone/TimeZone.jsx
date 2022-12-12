@@ -39,14 +39,15 @@ const TimeZone = () => {
           }
         }
       )
-      .then(res => console.log(res));
+      .then(res => {
+        const userTimeZone = JSON.parse(sessionStorage.getItem("user"));
+
+        userTimeZone.time_zone = selectTimezone;
+
+        sessionStorage.setItem("user", JSON.stringify(userTimeZone));
+      });
   };
 
-  useEffect(() => {
-    setSelectTimezone(TimeZones[2]);
-  }, []);
-
-  // console.log(selectTimezone);
   return (
     <div className={styles.passwordsection}>
       <form className="row d-flex flex-column" onSubmit={handleTimezone}>
