@@ -105,16 +105,8 @@ const ToolbarBottom = props => {
   }
 
   const handleSelectMedia = e => {
-    if (attachedFile) {
-      const children = Array.from(attachedFile).concat(
-        Array.from(e.target.files)
-      );
-      setAttachedFile(children);
-      props.sentAttachedFile(children);
-    } else {
-      setAttachedFile(e.target.files);
-      props.sentAttachedFile(e.target.files);
-    }
+    setAttachedFile(e.target.files);
+    props.sentAttachedFile(e.target.files);
     setshowAttachInputBox(false);
   };
 
