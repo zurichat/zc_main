@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { navigateToUrl } from "single-spa";
 import styles from "../styles/Sidebar.module.css";
 import { useTranslation } from "react-i18next";
-import videoIcon from "../assets/icons/videos.svg";
+// import videoIcon from "../assets/icons/videos.svg";
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
 import draftIcon from "../assets/icons/draft-icon.svg";
@@ -12,7 +13,7 @@ import SingleRoom from "./SingleRoom";
 import Category from "./Category";
 import Starred from "./Starred";
 import { storeSideBarInfo } from "../../../../utils/cache-sidebar";
-import VideoRoom from "../../../media-chat/video/VideoRoom";
+import { FiVideo } from "react-icons/fi";
 
 const categories = [];
 
@@ -250,12 +251,16 @@ const Sidebar = props => {
               {categorizedItems}
             </div>
             <div>
-              <div className={styles.videoCall}>
-                <SingleRoom
-                  name="Video Chat"
-                  image={videoIcon}
-                  link={`/workspace/${currentWorkspace}/video-chat`}
-                />
+              <div
+                className={styles.videoCall}
+                onClick={() =>
+                  navigateToUrl(
+                    `/workspace/${currentWorkspaceShort}/video-chat`
+                  )
+                }
+              >
+                <FiVideo />
+                Video call
               </div>
             </div>
           </div>

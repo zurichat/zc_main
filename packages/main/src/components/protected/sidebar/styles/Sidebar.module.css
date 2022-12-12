@@ -274,16 +274,21 @@
   height: 50px;
   border-top: 2px solid rgba(128, 128, 128, 0.5);
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  gap: 20px;
+  padding: 0px 20px;
 }
 
+.videoCall:hover {
+  background-color: #7ed5af;
+}
+
+.videoCall:active {
+  background-color: #7ed5af;
+}
 .videoCall > div {
   width: 100%;
-}
-
-.videoCall img {
-  width: 24px;
 }
 
 .videoCall > div > div {
