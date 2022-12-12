@@ -29,21 +29,21 @@ export default function Index() {
     e.preventDefault();
 
     if (!name) {
-      setnameerror(`Enter an email address`);
+      setnameerror(`signup_enterEmailAddress`);
       return;
     } else {
       setnameerror(``);
     }
 
     if (!password) {
-      setpassworderror(`Enter a Password`);
+      setpassworderror(`${t("input_password")}`);
       return;
     } else {
       setpassworderror(``);
     }
 
     if (!tos) {
-      seterror(`You must agree to terms and conditions`);
+      seterror(`${t("signup_agreeCondition")}`);
       return;
     } else {
       seterror(``);
@@ -83,7 +83,7 @@ export default function Index() {
         setShowDialog(false);
 
         if (RegExp(/User with email/i).test(errorMessage)) {
-          setemailerror("This email is already in use");
+          setemailerror(`${t("signup_already_email")}`);
           seterror(errorMessage);
         }
       });
@@ -167,7 +167,7 @@ export default function Index() {
               <Link to="/privacy">
                 {" "}
                 {""}
-                {t("privacy_policy")}
+                {t("privacy")}
               </Link>
             </span>
           </div>

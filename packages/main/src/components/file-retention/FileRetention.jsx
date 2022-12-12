@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useTranslation } from "react-i18next";
 const myStyle = {
   text: {
     color: "#c4c4c4",
@@ -19,9 +19,10 @@ const myStyle = {
 };
 
 const FileRetention = () => {
+  const { t } = useTranslation();
   return (
     <>
-      <p style={myStyle.text}>File Retention</p>
+      <p style={myStyle.text}>{t("file_retention_file_retention")}</p>
       <input
         type="text"
         className="form-control"
@@ -30,7 +31,7 @@ const FileRetention = () => {
         style={myStyle.inputfield}
       />
       <button type="button" className="btn btn-primary" style={myStyle.btn}>
-        See Paid Plans
+        {t("file_retention_see-plans")}
       </button>
     </>
   );

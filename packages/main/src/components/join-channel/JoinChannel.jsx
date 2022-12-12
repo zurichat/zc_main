@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useTranslation } from "react-i18next";
 const myStyle = {
   text: {
     color: "#1d1c1d",
@@ -20,18 +20,15 @@ const myStyle = {
 };
 
 const JoinChannel = () => {
+  const { t } = useTranslation();
   return (
     <>
       <input type="checkbox" name="displayname" id="" />
-      <label style={myStyle.text}>
-        Show a message when a user joins or leaves a channel
-      </label>
+      <label style={myStyle.text}>{t("join_channel_show_message")}</label>
       <br />
-      <p style={myStyle.smalltext}>
-        Note: you will always see messages in some cases
-      </p>
+      <p style={myStyle.smalltext}>{t("join_channel_note")}</p>
       <button type="button" className="btn btn-primary" style={myStyle.btn}>
-        Save
+        {t("join_channel_save")}
       </button>
     </>
   );

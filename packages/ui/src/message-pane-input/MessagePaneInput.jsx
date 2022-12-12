@@ -163,8 +163,9 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
 
   const sendMessage = contentState => {
     if (
-      contentState.hasText() &&
-      contentState.getPlainText().trim().length > 0
+      (contentState.hasText() &&
+        contentState.getPlainText().trim().length > 0) ||
+      sentAttachedFile
     ) {
       onSendMessage(convertToRaw(contentState));
       clearEditor();
@@ -225,6 +226,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
         };
         reader.readAsDataURL(file);
       });
+      onAttachFile(sentAttachedFile);
     } else {
       setPreview([]);
     }
@@ -302,8 +304,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
             editorState={editorState}
             setEditorState={setEditorState}
             emojiSelect={<EmojiSelect />}
-            // sendMessageHandler={sendMessage}
-            sendAttachedFileHandler={onAttachFile}
+            sendMessageHandler={sendMessage}
             sentAttachedFile={sentAttachedFile =>
               setSentAttachedFile(sentAttachedFile)
             }
@@ -322,7 +323,6 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
           setEditorState={setEditorState}
           emojiSelect={<EmojiSelect />}
           sendMessageHandler={sendMessage}
-          sendAttachedFileHandler={sendFile}
           sentAttachedFile={sentAttachedFile =>
             setSentAttachedFile(sentAttachedFile)
           }

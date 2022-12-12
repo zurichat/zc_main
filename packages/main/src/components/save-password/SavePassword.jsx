@@ -1,27 +1,73 @@
-import React, { useRef } from "react";
-import useForm from "../use-form-hook";
+import React, { useRef, useState } from "react";
 import styles from "../save-password/SettingsTab.module.css";
 import { BASE_API_URL } from "@zuri/utilities";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const SavePassword = () => {
   const formElement = useRef(null);
+  const [isLoading, setIsLoading] = useState(false);
   const user = JSON.parse(sessionStorage.getItem("user"));
   const FORM_ENDPOINT = `${BASE_API_URL}/users/${user.id}`;
-  const { message, handleSubmit } = useForm({
-    form: formElement.current,
-    options: {
-      method: "PATCH",
-      credentials: "include",
-      headers: {
-        Accept: "application/json",
-        Authorization: `Bearer ${user.token}`,
-        "Content-Type": "application/json"
-      }
-    },
-    endpointUrl: FORM_ENDPOINT
-  });
 
-  /* TODO: Display message after form submission */
+  const checkPassword = async password => {
+    try {
+      const response = await axios.post(
+        `${BASE_API_URL}/auth/confirm-password`,
+        {
+          password,
+          confirm_password: password
+        },
+        {
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${user.token}`,
+            "Content-Type": "application/json"
+          }
+        }
+      );
+      if (response.status === 200) {
+        return response.statusText;
+      }
+    } catch (error) {
+      toast.error(error.response.data.message, {
+        position: "top-center"
+      });
+      return "error";
+    }
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    setIsLoading(true);
+
+    const form = formElement.current;
+
+    const data = Array.from(form.elements)
+      .filter(input => input.name)
+      .reduce(
+        (obj, input) => Object.assign(obj, { [input.name]: input.value }),
+        {}
+      );
+
+    checkPassword(data.current_password)
+      .then(response => {
+        if (response === "OK") {
+          /* TODO SEND REQUEST TO CHANGE USERS PASSWORD */
+          toast.error("can't change password now try later", {
+            position: "top-center"
+          });
+        }
+        setIsLoading(false);
+      })
+      .catch(err => {
+        toast.error(err.response);
+        setIsLoading(false);
+      });
+  };
+
+  const buttonState = isLoading ? { disabled: true } : {};
 
   return (
     <div className={styles.passwordsection}>
@@ -35,14 +81,19 @@ const SavePassword = () => {
           <label htmlFor="current_password" className="form-label">
             Current password
           </label>
-          <input type="password" className="form-control" required />
+          <input
+            name="current_password"
+            type="password"
+            className="form-control"
+            required
+          />
         </div>
         <div className="col-md-5">
           <label htmlFor="password" className="form-label">
             New password
           </label>
           <input
-            name="password"
+            name="new_password"
             id="password"
             type="password"
             className="form-control"
@@ -50,8 +101,15 @@ const SavePassword = () => {
           />
         </div>
         <div className="col-md-4 mb-3 mt-3" id={styles.p_section}>
-          <button className="btn" id="submit">
-            Save password
+          <button className="btn" id="submit" {...buttonState}>
+            {isLoading ? (
+              <>
+                <span className={styles.loader}></span>
+                Please wait....
+              </>
+            ) : (
+              "Save Password"
+            )}
           </button>
           <br />
           <p>
@@ -60,6 +118,7 @@ const SavePassword = () => {
           </p>
         </div>
       </form>
+      <Toaster />
     </div>
   );
 };
