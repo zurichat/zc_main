@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 const CommentBoardWrapper = styled.aside`
   display: ${props => (props.showCommentBoard ? "grid" : "none")};
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
   z-index: 999;
-  width: 350px;
+  width: 390px;
   position: relative;
   height: 100%;
   background-color: #fff;
@@ -28,7 +28,11 @@ const CommentBoardWrapper = styled.aside`
     font-size: 12px;
   }
 `;
-
+const Commentflex = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 const CommentBoardHeader = styled.header`
   display: flex;
   align-items: center;
@@ -56,7 +60,6 @@ const CommentMessagesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-left: 1rem;
   margin-bottom: 9px;
   padding-top: 1.1rem;
 
@@ -142,6 +145,7 @@ export const MessagePaneWrapper = styled.div`
 
 export {
   CommentBoardWrapper,
+  Commentflex,
   CommentBoardHeader,
   CommentMessagesWrapper,
   CommentMessageItem

@@ -4,6 +4,7 @@ import UnstyledButton from "~/shared/button/Button";
 import {
   CommentBoardWrapper,
   CommentBoardHeader,
+  Commentflex,
   CommentMessagesWrapper,
   ParentMessage,
   MessagePaneWrapper
@@ -121,44 +122,45 @@ const CommentBoard = ({
                 </>
               )}
             </ParentMessage>
-
-            <CommentMessagesWrapper>
-              {messages.map((message, idx) => (
-                <MessagePane
-                  key={idx}
-                  message={message}
-                  onShowEmoji={handleShowEmoji}
-                  currentUserId={currentUserId}
-                />
-              ))}
-              {isSending &&
-                post.map((message, idx) => (
-                  <div key={idx} style={{ color: "grey" }}>
-                    <MessagePane message={message} />
-                  </div>
+            <Commentflex>
+              <CommentMessagesWrapper>
+                {messages.map((message, idx) => (
+                  <MessagePane
+                    key={idx}
+                    message={message}
+                    onShowEmoji={handleShowEmoji}
+                    currentUserId={currentUserId}
+                  />
                 ))}
-            </CommentMessagesWrapper>
+                {isSending &&
+                  post.map((message, idx) => (
+                    <div key={idx} style={{ color: "grey" }}>
+                      <MessagePane message={message} />
+                    </div>
+                  ))}
+              </CommentMessagesWrapper>
 
-            {isLoadingMessages && (
-              <div className="text-center">
-                <div
-                  className="spinner-border"
-                  style={{ width: "3rem", height: "3rem", color: "#7ed5af" }}
-                  role="status"
-                >
-                  <span className="visually-hidden">Loading...</span>
+              {isLoadingMessages && (
+                <div className="text-center">
+                  <div
+                    className="spinner-border"
+                    style={{ width: "3rem", height: "3rem", color: "#7ed5af" }}
+                    role="status"
+                  >
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
                 </div>
-              </div>
-            )}
-            <MessagePaneWrapper>
-              <div className="input-text">
-                <MessagePaneInput
-                  onSendMessage={handleSendMessage}
-                  onAttachFile={onSendAttachedFile}
-                  onShowEmoji={handleShowEmoji}
-                />
-              </div>
-            </MessagePaneWrapper>
+              )}
+              <MessagePaneWrapper>
+                <div className="input-text">
+                  <MessagePaneInput
+                    onSendMessage={handleSendMessage}
+                    onAttachFile={onSendAttachedFile}
+                    onShowEmoji={handleShowEmoji}
+                  />
+                </div>
+              </MessagePaneWrapper>
+            </Commentflex>
             {showEmoji && (
               <div>
                 <Overlay handleOverlayClicked={handleOverlayClicked} />
