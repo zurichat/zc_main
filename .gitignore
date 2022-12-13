@@ -78,4 +78,3 @@ dist
 
 packages/main/ignore
 packages/root-config/cypress.env.json
-packages/root-config/src/assets/plugin.importmap.json
