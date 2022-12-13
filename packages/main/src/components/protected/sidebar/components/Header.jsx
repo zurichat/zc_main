@@ -18,7 +18,6 @@ const SidebarHeader = props => {
   const closeToggle = e => {
     if (Menu.current && homeModal && !Menu.current.contains(e.target)) {
       toggleHomeModal(false);
-      console.log("CLICK CLICK");
     }
   };
   document.addEventListener("mousedown", closeToggle);
