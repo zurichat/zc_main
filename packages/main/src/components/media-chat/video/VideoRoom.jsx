@@ -7,15 +7,18 @@ import axios from "axios";
 const VideoRoom = ({ workspaceId }) => {
   const [videoCall, setVideoCall] = useState(false);
   const [token, setToken] = useState(null);
-  const fetchToken = async () => {
-    const response = await fetch(
-      `https://staging.api.zuri.chat/rtc/${workspaceId}/publisher/userAccount`
-    );
-    const data = await response.json();
-    setToken(data.data.token);
-    if (response.status === 200) {
-      setVideoCall(true);
-    }
+  const fetchToken = () => {
+    axios
+      .get(
+        `https://staging.api.zuri.chat/rtc/${workspaceId}/publisher/userAccount`
+      )
+      .then(response => {
+        if (response.status === 200) {
+          setToken(response.data.data.token);
+          setVideoCall(true);
+        }
+      })
+      .catch(error => console.log(error));
   };
   useEffect(() => {
     fetchToken();
