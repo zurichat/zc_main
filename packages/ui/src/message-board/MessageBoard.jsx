@@ -105,7 +105,6 @@ function MessageBoard({
             />
           ))}
           {isPending &&
-            down &&
             sentMessage.map((message, i) => (
               <div key={i} style={{ color: "grey" }}>
                 <MessagePane message={message} />
