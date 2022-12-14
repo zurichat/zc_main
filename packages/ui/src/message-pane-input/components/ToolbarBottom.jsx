@@ -87,7 +87,6 @@ const ToolbarBottom = props => {
 
     //Then this is to clear the file from the state
     props.sentAttachedFile(null);
-    clearAttached();
   };
 
   const handleClickAway = () => {
@@ -108,6 +107,7 @@ const ToolbarBottom = props => {
   const handleClickSendMessage = e => {
     sendMessageHandler(editorState.getCurrentContent());
     setEditorState(EditorState.createEmpty());
+    clearAttached();
   };
   const handleInlineStyle = (event, style) => {
     event.preventDefault();
