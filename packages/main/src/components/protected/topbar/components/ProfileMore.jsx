@@ -64,9 +64,9 @@ export const Dropdown = ({ setDropdown, setModal }) => {
         <div className={styles.topSection}>
           <p
             onClick={() => {
-              setReusableModal("preference");
-              toggleModalState();
+              // setReusableModal("preference");
               setModal(() => "preference");
+              toggleModalState();
             }}
             className={styles.paragraph}
           >
