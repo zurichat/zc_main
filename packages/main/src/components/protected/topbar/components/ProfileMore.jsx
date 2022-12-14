@@ -11,11 +11,11 @@ import useOnClickOutside from "../hooks/useClickOutside";
 
 import { useTranslation } from "react-i18next";
 
-export const Dropdown = ({ setDropdown }) => {
+export const Dropdown = ({ setDropdown, setModal }) => {
   const { t } = useTranslation();
 
   const { toggleModalState } = useContext(ProfileContext);
-  const [modal, setModal] = useState("");
+  // const [modal, setModal] = useState("");
   const ref = useRef();
   const user = getUser();
   const currentWorkspace = getCurrentWorkspace();
@@ -66,6 +66,7 @@ export const Dropdown = ({ setDropdown }) => {
             onClick={() => {
               setReusableModal("preference");
               toggleModalState();
+              setModal(() => "preference");
             }}
             className={styles.paragraph}
           >
