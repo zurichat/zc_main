@@ -162,7 +162,7 @@ const Sidebar = props => {
     sales: "sales",
     productivity: "productivity",
     channels: "channels",
-    "direct messages": "direct_messages",
+    "direct messages": "direct messages",
     others: "others"
   };
 
