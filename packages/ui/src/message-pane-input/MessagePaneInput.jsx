@@ -324,6 +324,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
           emojiSelect={<EmojiSelect />}
           sendMessageHandler={sendMessage}
           sentAttachedFile={file => attachedFileHandler(file)}
+          clearAttached={clearAttached}
         />
         <MentionSuggestions
           open={suggestionsOpen}
