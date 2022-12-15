@@ -93,7 +93,7 @@ function MessageBoard({
   return (
     <>
       <MessageBoardContainer height={height}>
-        <div className="MsgBoard" onScroll={onHandleScroll}>
+        <div className="MsgBoard" onScroll={e => onHandleScroll(e)}>
           {messages.map((message, i) => (
             <MessagePane
               key={`message-item-${i}`}
