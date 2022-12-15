@@ -15,7 +15,6 @@ export const Dropdown = ({ setDropdown, setModal }) => {
   const { t } = useTranslation();
 
   const { toggleModalState } = useContext(ProfileContext);
-  // const [modal, setModal] = useState("");
   const ref = useRef();
   const user = getUser();
   const currentWorkspace = getCurrentWorkspace();
@@ -33,8 +32,6 @@ export const Dropdown = ({ setDropdown, setModal }) => {
         });
     }
   }, [currentWorkspace]);
-
-  // console.log('workspace==>', workspaceData)
 
   const state = useContext(TopbarContext);
   const { presence, toggleUserPresence, reusableModal, setReusableModal } =
@@ -64,7 +61,6 @@ export const Dropdown = ({ setDropdown, setModal }) => {
         <div className={styles.topSection}>
           <p
             onClick={() => {
-              // setReusableModal("preference");
               setModal(() => "preference");
               toggleModalState();
             }}
