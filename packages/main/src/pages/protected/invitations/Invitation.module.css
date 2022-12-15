@@ -53,7 +53,7 @@
   white-space: nowrap;
 }
 
-a:link {
+.invitation-link {
   font-size: 15px;
   line-height: 1.466;
   font-weight: 400px;

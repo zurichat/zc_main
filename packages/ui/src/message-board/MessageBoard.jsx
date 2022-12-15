@@ -23,7 +23,10 @@ function MessageBoard({
   height,
   onHandleScroll,
   showEmoji,
-  setShowEmoji
+  setShowEmoji,
+  down,
+  sentMessage = [],
+  isPending
 }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [shouldScrollToBottom, setScrollToBottom] = useState(true);
@@ -81,9 +84,11 @@ function MessageBoard({
   };
 
   useEffect(() => {
-    shouldScrollToBottom && scrollToBottom();
-    setScrollToBottom(true);
-  }, [messages]);
+    if (down === true) {
+      shouldScrollToBottom && scrollToBottom();
+      setScrollToBottom(true);
+    }
+  }, [messages, down]);
 
   return (
     <>
@@ -99,6 +104,12 @@ function MessageBoard({
               currentUserId={currentUserId}
             />
           ))}
+          {isPending &&
+            sentMessage.map((message, i) => (
+              <div key={i} style={{ color: "grey" }}>
+                <MessagePane message={message} />
+              </div>
+            ))}
           <div ref={messagesEndRef} />
         </div>
         {isLoadingMessages && (

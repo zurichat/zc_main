@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "../styles/Sidebar.module.css";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import newMsgIcon from "../assets/icons/new-msg-icon.svg";
@@ -9,12 +9,18 @@ const SidebarHeader = props => {
   const [homeModal, toggleHomeModal] = useState(false);
 
   const [openModal, setOpenModal] = useState(false);
-
+  const Menu = useRef(null);
   //toggle
   const toggle = () => {
     toggleHomeModal(!homeModal);
     document.removeEventListener("click", toggle);
   };
+  const closeToggle = e => {
+    if (Menu.current && homeModal && !Menu.current.contains(e.target)) {
+      toggleHomeModal(false);
+    }
+  };
+  document.addEventListener("mousedown", closeToggle);
 
   const showModal = () => {
     setOpenModal(!openModal);
@@ -60,7 +66,7 @@ const SidebarHeader = props => {
       </div>
       <div className={`col-12 px-3 ${styles.modalContainer}`}>
         {
-          <div className={`col-12 px-3 ${styles.odalContainer}`}>
+          <div className={`col-12 px-3 ${styles.odalContainer}`} ref={Menu}>
             <ModalComponent
               workSpace={props.state.organization_info}
               isOpen={homeModal}
