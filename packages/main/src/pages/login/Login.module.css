@@ -121,8 +121,8 @@
   line-height: 1.5em;
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
-  align-items: space-between;
+  justify-content: center;
+  align-items: center;
   /* height: 5vh; */
   /* display: inline-block; */
   /* margin: 10px 0; */
@@ -155,14 +155,29 @@
       width: auto; */
   margin: 0;
   margin-right: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* 
-    .rememberMe .right {
-      display: block;
-      float: right;
-      width: auto;
-    } */
+.rememberMe .right {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right > a {
+  color: #1D1C1D;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.right > span {
+  height: 100%;
+  color: #00b87c;
+}
 
 /* Media Query for Screen Width 1080px and Smaller */
 @media only screen and (max-width: 1080px) {
