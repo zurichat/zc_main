@@ -55,7 +55,7 @@ const Sidebar = props => {
         document.querySelector("body").style.cursor = "col-resize";
 
         // collapse the sidebar on further minimization
-        if (newWidth <= 100) setSidebarWidth(0);
+        if (newWidth <= 185) setSidebarWidth(0);
       }
     },
     [isResizing]
