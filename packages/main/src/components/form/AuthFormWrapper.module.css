@@ -46,21 +46,21 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  /* margin-block: 2em; */
-  margin-block: 2rem 1rem;
-  /* margin: 10px 0; */
+
+  margin-top: 6.4rem;
+  margin-bottom: 1rem;
 }
 
 .header {
   color: #3a3a3a;
   font-weight: 700;
-  font-size: 2.2em;
-  /* margin: 0 0 0; */
+  font-size: 1.75em;
 }
 
 .subHeader {
-  font-size: 1.3em;
-  font-weight: 500;
+  color: #3a3a3a;
+  font-size: 0.8em;
+  font-weight: 400;
 }
 
 .googleBtn {
@@ -292,6 +292,7 @@
 }
 
 .footer_a {
+  text-decoration: none;
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline: 1.5em;
