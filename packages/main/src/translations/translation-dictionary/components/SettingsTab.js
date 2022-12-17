@@ -99,17 +99,17 @@ export default [
   },
   {
     key: "time_settings_tab",
-    en: "Zurichat uses your time zone to send summary and notification emails, for times in your activity feeds and for  reminders. Your time zone is currently set to: (UTC+01:00) West Central,",
-    de: "Zurichat verwendet Ihre Zeitzone, um Zusammenfassungs- und Benachrichtigungs-E-Mails zu versenden, für Zeiten in Ihren Aktivitäts-Feeds und für Erinnerungen. Ihre Zeitzone ist derzeit eingestellt auf: (UTC+01:00) West Central,",
-    nl: "Zurichat gebruikt uw tijdzone voor het versturen van overzichts- en notificatie e-mails, voor tijden in uw activiteiten feeds en voor herinneringen. Uw tijdzone is momenteel ingesteld op: (UTC+01:00) West Central,",
+    en: "Zurichat uses your time zone to send summary and notification emails, for times in your activity feeds and for  reminders. Your time zone is currently set to:",
+    de: "Zurichat verwendet Ihre Zeitzone, um Zusammenfassungs- und Benachrichtigungs-E-Mails zu versenden, für Zeiten in Ihren Aktivitäts-Feeds und für Erinnerungen. Ihre Zeitzone ist derzeit eingestellt auf:",
+    nl: "Zurichat gebruikt uw tijdzone voor het versturen van overzichts- en notificatie e-mails, voor tijden in uw activiteiten feeds en voor herinneringen. Uw tijdzone is momenteel ingesteld op:",
     engb: "Zurichat uses your time zone to send summary and notification emails, for times in your activity feeds and for  reminders. Your time zone is currently set to: (UTC+01:00) West Central,",
-    fr: "Zurichat utilise votre fuseau horaire pour envoyer des courriels de résumé et de notification, pour les heures dans vos flux d'activités et pour les rappels. Votre fuseau horaire est actuellement réglé sur : (UTC+01:00) Centre-Ouest,",
+    fr: "Zurichat utilise votre fuseau horaire pour envoyer des courriels de résumé et de notification, pour les heures dans vos flux d'activités et pour les rappels. Votre fuseau horaire est actuellement réglé sur :",
     zh: "Zurichat使用您的时区来发送摘要和通知邮件，用于您活动提要中的时间和提醒。您的时区目前被设置为。(UTC+01:00) 中西部。",
     ar: "يستخدم Zurichat منطقتك الزمنية لإرسال رسائل البريد الإلكتروني الملخصة والإخطار، للأوقات في خلاصات نشاطك وللتذكيرات. تم تعيين منطقتك الزمنية حاليًا على: (UTC + 01:00) West Central،",
-    es: "Zurichat utiliza tu zona horaria para enviar correos electrónicos de resumen y notificación, para las horas en tus feeds de actividad y para los recordatorios. Tu zona horaria está configurada actualmente en: (UTC+01:00) Centro Oeste,",
-    it: "Zurichat utilizza il vostro fuso orario per inviare e-mail di riepilogo e di notifica, per gli orari nei feed delle vostre attività e per i promemoria. Il vostro fuso orario è attualmente impostato su: (UTC+01:00) West Central,",
+    es: "Zurichat utiliza tu zona horaria para enviar correos electrónicos de resumen y notificación, para las horas en tus feeds de actividad y para los recordatorios. Tu zona horaria está configurada actualmente en:",
+    it: "Zurichat utilizza il vostro fuso orario per inviare e-mail di riepilogo e di notifica, per gli orari nei feed delle vostre attività e per i promemoria. Il vostro fuso orario è attualmente impostato su: ",
     iw: "Zurichat משתמש באזור הזמן שלך כדי לשלוח הודעות דואר אלקטרוני של סיכום והודעות, עבור זמנים בהזנות הפעילות ועבור תזכורות. אזור הזמן שלך מוגדר כעת כ: (UTC+01:00) מערב סנטרל,",
-    pt: "A Zurichat utiliza o seu fuso horário para enviar emails de resumo e notificação, para as horas de alimentação das suas actividades e para lembretes. O seu fuso horário está actualmente definido para: (UTC+01:00) Central Oeste,"
+    pt: "A Zurichat utiliza o seu fuso horário para enviar emails de resumo e notificação, para as horas de alimentação das suas actividades e para lembretes. O seu fuso horário está actualmente definido para:"
   },
   {
     key: "lang_settings_tab",
