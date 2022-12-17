@@ -100,7 +100,10 @@ export default function Index() {
       <section id={styles.authFormContainer}>
         <AuthFormWrapper
           header={t("LogInheader")}
-          googleHeader={t("google_header")}
+          subHeader={t(
+            "Login with the data you entered during your registration."
+          )}
+          googleHeader={t("Login with Google")}
           topLineText={t("topline_text")}
           submitButtonName={t("LoginsubmitButtonName")}
           disabled={!(email && password)}
@@ -152,6 +155,7 @@ export default function Index() {
               >
                 {t("forgotPassword")}
               </Link>
+              <span>Get help siging in</span>
             </div>
           </div>
         </AuthFormWrapper>
