@@ -60,7 +60,9 @@ const SidebarHeader = props => {
       </div>
       <div className={`col-12 px-3 ${styles.modalContainer}`}>
         {
-          <div className={`col-12 px-3 ${styles.odalContainer}`}>
+          <div
+            className={`col-12 px-3 ${styles.modalContainer}`} /*ref={Menu}*/
+          >
             <ModalComponent
               workSpace={props.state.organization_info}
               isOpen={homeModal}

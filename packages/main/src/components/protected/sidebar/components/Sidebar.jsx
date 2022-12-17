@@ -55,7 +55,7 @@ const Sidebar = props => {
         document.querySelector("body").style.cursor = "col-resize";
 
         // collapse the sidebar on further minimization
-        if (newWidth <= 230) setSidebarWidth(0);
+        if (newWidth <= 185) setSidebarWidth(0);
       }
     },
     [isResizing]
@@ -162,7 +162,7 @@ const Sidebar = props => {
     sales: "sales",
     productivity: "productivity",
     channels: "channels",
-    "direct messages": "direct_messages",
+    "direct messages": "direct messages",
     others: "others"
   };
 

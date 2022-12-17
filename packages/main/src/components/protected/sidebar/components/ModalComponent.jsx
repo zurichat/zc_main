@@ -139,13 +139,13 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         }`}
       >
         <div>
-          <p>{t("modal_preferences")}*</p>
+          <p>{t("modal_preferences")}</p>
         </div>
         <div
           className={`d-flex align-items-center justify-content-between ${styles.popover}`}
         >
           <p>
-            {t("modal_customize")} {workSpace?.name}*
+            {t("modal_customize")} {workSpace?.name}
           </p>
           {/* <div>
             <Arrow className={`${styles.arrow}`} />
@@ -154,7 +154,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         <div>
           <p onClick={() => history.push("/admin/settings")}>
             {" "}
-            {t("modal_workspace_settings")}*
+            {t("modal_workspace_settings")}
           </p>
         </div>
         <EditWorkspaceModal
@@ -164,7 +164,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         />
       </div>
       <hr className={styles.modalDivider} />
-      <div ref={hoverRef} className={` ${styles.modalSection}`}>
+      <div ref={hoverRef} className={` ${styles.odalSection}`}>
         <div
           className={`d-flex align-items-center justify-content-between ${styles.modalSection}`}
         >
@@ -183,7 +183,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
               className={`d-flex flex-column ${styles.submodalSection}`}
             >
               <div>
-                <p>{t("modal_analytics")}*</p>
+                <p>{t("modal_analytics")}</p>
               </div>
             </section>
           </section>

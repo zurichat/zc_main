@@ -95,7 +95,6 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
           >
             <FiCornerUpLeft className={styles.icon} />
             {t("admin_side_bar_back")}
