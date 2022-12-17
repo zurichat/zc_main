@@ -12,6 +12,7 @@ import AddMemberModal from "./components/AddMemberModal";
 import RemoveMemberModal from "./components/RemoveMemberModal";
 import DeleteChannel from "./components/DeleteChannel";
 import ArchiveChannel from "./components/ArchiveChannel";
+import PrivateChannel from "./components/PrivateChannel";
 import { RiDeleteBinLine, RiDeleteBin7Fill } from "react-icons/ri";
 import {
   AiOutlineUserAdd,
@@ -48,7 +49,7 @@ function MessageRoomDetailsDialog({
   const [showLeaveChannelModal, setShowLeaveChannelModal] = useState(false);
   const [showDeleteChannel, setShowDeleteChannel] = useState(false);
   const [showArchiveChannel, setShowArchiveChannel] = useState(false);
-
+  const [showPrivateChannel, setShowPrivateChannel] = useState(false);
   const toggleEditTopicModal = () => {
     setShowEditTopicModal(!showEditTopicModal);
   };
@@ -58,6 +59,7 @@ function MessageRoomDetailsDialog({
   const toggleLeaveChannelModal = () =>
     setShowLeaveChannelModal(!showLeaveChannelModal);
   const toggleArchiveChannel = () => setShowArchiveChannel(!showArchiveChannel);
+  const togglePrivateChannel = () => setShowPrivateChannel(prev => !prev);
 
   const [description, setDescription] = useState("");
   const [roomData, setRoomData] = useState(null);
@@ -153,6 +155,7 @@ function MessageRoomDetailsDialog({
                 <SettingPanel
                   toggleDeleteChannel={toggleDeleteChannel}
                   toggleArchiveChannel={toggleArchiveChannel}
+                  togglePrivateChannel={togglePrivateChannel}
                   closeModal={close}
                 />
               </TabPanel>
@@ -183,6 +186,9 @@ function MessageRoomDetailsDialog({
         />
       )}
       {showDeleteChannel && <DeleteChannel closeEdit={toggleDeleteChannel} />}
+      {showPrivateChannel && (
+        <PrivateChannel closeEdit={togglePrivateChannel} />
+      )}
       {showArchiveChannel && (
         <ArchiveChannel closeEdit={toggleArchiveChannel} />
       )}
@@ -562,6 +568,7 @@ function SettingPanel({
   closeModal,
   toggleDeleteChannel,
   toggleArchiveChannel,
+  togglePrivateChannel,
   channelName
 }) {
   return (
@@ -573,7 +580,13 @@ function SettingPanel({
       <ChannelWrapper>
         <Channels>
           <AiOutlineLock />
-          <ChannelContent>Change to Private Channel</ChannelContent>
+          <ChannelContent
+            onClick={() => {
+              togglePrivateChannel();
+            }}
+          >
+            Change to Private Channel
+          </ChannelContent>
         </Channels>
       </ChannelWrapper>
       <ChannelWrapper>
