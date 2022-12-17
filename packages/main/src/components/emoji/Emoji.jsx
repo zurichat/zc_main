@@ -208,10 +208,6 @@ const Emoji = () => {
     }
   };
 
-  useEffect(() => {
-    //check for returned data from upload
-  }, [state.name]);
-
   const handleSave = e => {
     setDisplay(false);
 
