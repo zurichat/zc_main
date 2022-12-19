@@ -1,20 +1,19 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { navigateToUrl } from "single-spa";
 import styles from "../styles/Sidebar.module.css";
 import { useTranslation } from "react-i18next";
-
+// import videoIcon from "../assets/icons/videos.svg";
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
-import liveicon from "../assets/icons/newlive.svg";
-import phoneicon from "../assets/icons/phone.svg";
 import draftIcon from "../assets/icons/draft-icon.svg";
 import { subscribeToChannel } from "@zuri/utilities";
 import { ACTIONS } from "../reducers/sidebar.reducer";
 import Header from "./Header";
-import Room from "./Room";
 import SingleRoom from "./SingleRoom";
 import Category from "./Category";
 import Starred from "./Starred";
 import { storeSideBarInfo } from "../../../../utils/cache-sidebar";
+import { FiVideo } from "react-icons/fi";
 
 const categories = [];
 
@@ -231,7 +230,7 @@ const Sidebar = props => {
         <div className={styles.sb__content}>
           <Header state={props.state} />
           <div className={`${styles.subCon2}`}>
-            <>
+            <div>
               <SingleRoom
                 name={`${t("workspace_chat.threads")}`}
                 image={threadIcon}
@@ -243,29 +242,27 @@ const Sidebar = props => {
                 link={`/workspace/${currentWorkspaceShort}/plugin-chat/all-dms`}
               />
               <SingleRoom
-                name="Video Chat"
-                image={dmIcon}
-                link={`/workspace/${currentWorkspaceShort}/video-chat`}
-              />
-              <SingleRoom
                 name={`${t("workspace_chat.drafts")}`}
                 image={draftIcon}
-              />
-              <SingleRoom
-                name="LiveBroadcast"
-                image={liveicon}
-                link={`/workspace/${currentWorkspaceShort}/LiveBroadcast`}
-              />
-              <SingleRoom
-                name="Voice Call"
-                image={phoneicon}
-                link={`/workspace/${currentWorkspaceShort}/voice-call`}
               />
               <div className={styles.sb__divider} />
               <Starred starredRooms={starredRooms} />
               {singleItems}
               {categorizedItems}
-            </>
+            </div>
+            <div>
+              <div
+                className={styles.videoCall}
+                onClick={() =>
+                  navigateToUrl(
+                    `/workspace/${currentWorkspaceShort}/video-chat`
+                  )
+                }
+              >
+                <FiVideo />
+                Video call
+              </div>
+            </div>
           </div>
         </div>
       )}

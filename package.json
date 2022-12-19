@@ -7,7 +7,6 @@
     "type": "git",
     "url": "https://github.com/zurichat/zc_main"
   },
-  
   "bugs": {
     "url": "https://github.com/zurichat/zc_main/issues"
   },
@@ -49,3 +48,4 @@
   },
   "dependencies": {}
 }
+

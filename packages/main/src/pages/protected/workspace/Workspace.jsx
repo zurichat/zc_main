@@ -6,7 +6,6 @@ import {
   useLocation,
   useRouteMatch
 } from "react-router-dom";
-import LiveBroadcast from "../../../components/media-chat/LiveBroadcast";
 import useParamHook from "./useParamHook";
 import {
   ExtraSidebarWrapperStyle,
@@ -16,8 +15,16 @@ import {
   WorkspaceWrapperStyle
 } from "./Workspace.style";
 
-import VideoChat from "../../../components/media-chat/VideoChat";
-import VoiceCall from "../../../components/media-chat/VoiceCall/VoiceCall";
+// import { GeneralLoading } from "../../../components";
+
+import { useMediaQuery } from "@chakra-ui/react";
+import {
+  BsFillCaretDownFill,
+  BsFillQuestionCircleFill,
+  BsGearFill,
+  BsPlusCircle
+} from "react-icons/bs";
+import VideoRoom from "../../../components/media-chat/video/VideoRoom";
 import { Sidebar, TopBar } from "../../../components/protected";
 import ExtraSidebar from "../../../components/protected/extra-sidebar";
 import WorkspaceLoading from "../../../components/general-loading/WorkspaceLoading";
@@ -84,38 +91,29 @@ export default function Index() {
         </>
 
         <WorkspaceWrapperStyle>
-          <div id="single-spa-loader">
-            <WorkspaceLoading text="Initializing Workspace..." />
+          <div id="zuri-plugin-load-section">
+            <Switch>
+              <Route exact path="/workspace/:workspaceId">
+                <h1>Welcome to your Workspace</h1>
+              </Route>
+              <Route path="/workspace/:workspaceId/video-chat">
+                <VideoRoom workspaceId={workspaceId} />
+              </Route>
+
+              {/* <Route
+                exact
+                path="/workspace/:workspaceId/marketplace"
+                component={() => <h1>MarketPlace</h1>}
+              /> */}
+
+              {/* All other routes not by main go to Single SPA */}
+              {/* <Route path="/workspace/:workspaceId/*">
+                <div id="zuri-plugin-load-section">
+                  <p>SHOULD SHOW PLUGINS</p>
+                </div>
+              </Route> */}
+            </Switch>
           </div>
-          <div id="zuri-plugin-load-section"></div>
-          <Switch>
-            <Route exact path="/workspace/:workspaceId">
-              <h1>Welcome to your Workspace</h1>
-            </Route>
-            <Route path="/workspace/:workspaceId/LiveBroadcast">
-              <LiveBroadcast />
-            </Route>
-
-            <Route path="/workspace/:workspaceId/video-chat">
-              <VideoChat />
-            </Route>
-            <Route path="/workspace/:workspaceId/voice-call">
-              <VoiceCall />
-            </Route>
-
-            {/* <Route
-              exact
-              path="/workspace/:workspaceId/marketplace"
-              component={() => <h1>MarketPlace</h1>}
-            /> */}
-
-            {/* All other routes not by main go to Single SPA */}
-            {/* <Route path="/workspace/:workspaceId/*">
-              <div id="zuri-plugin-load-section">
-                <p>SHOULD SHOW PLUGINS</p>
-              </div>
-            </Route> */}
-          </Switch>
         </WorkspaceWrapperStyle>
       </div>
     </>
