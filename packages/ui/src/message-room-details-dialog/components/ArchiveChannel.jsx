@@ -13,30 +13,31 @@ const ArchiveChannel = ({ closeEdit }) => {
   // const room = window.location.href.split("/").at(6);
   const organizationID = localStorage.getItem("currentWorkspace") || null;
   const BASE_URL = "https://chat.zuri.chat";
-  const user = JSON.parse(sessionStorage.getItem("user")) || null;
+  const orgs = JSON.parse(sessionStorage.getItem("organisations")) || null;
   const room = sessionStorage.getItem("currentRoom") || null;
   const [isAdmin, setIsAdmin] = useState(false);
   const [prevData, setPrevData] = useState([]);
-  console.log(user, prevData);
 
+  //
   useEffect(() => {
     axios
       .get(`${BASE_URL}/api/v1/org/${organizationID}/rooms/${room}`)
       .then(res => {
         const data = res.data.data;
         setPrevData(data);
-        if (data.room_members[`${user.id}`].role === "admin") {
+        if (data.room_members[`${orgs?.[0]?.member_id}`].role === "admin") {
           setIsAdmin(true);
         }
       })
       .catch(e => console.error(e));
-  });
+  }, []);
+  //
   const handleArchiveChannel = () => {
     if (prevData !== null) {
       const newData = { ...prevData, is_archived: true };
       axios
         .put(
-          `${BASE_URL}/api/v1/org/${organizationID}/members/${user.id}/rooms/${room}`,
+          `${BASE_URL}/api/v1/org/${organizationID}/members/${orgs?.[0]?.member_id}/rooms/${room}`,
           newData
         )
         .then(res => {
@@ -48,6 +49,7 @@ const ArchiveChannel = ({ closeEdit }) => {
         .catch(er => console.error(er));
     }
   };
+  //
   return (
     <ChannelModal
       closeEdit={closeEdit}
