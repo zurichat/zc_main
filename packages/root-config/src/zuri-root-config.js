@@ -76,6 +76,6 @@ window.addEventListener("zuri-plugin-load", () => {
 function removeLoader() {
   setTimeout(() => {
     const element = document.getElementById("single-spa-loader");
-    element.remove();
+    element?.remove();
   }, 1000);
 }

@@ -9,8 +9,6 @@
   max-width: 300px;
   border: 1px solid #bebebe;
   border-radius: 5px;
-  /* padding: 10px 0; */
-  z-index: 9999;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .open {
@@ -38,6 +36,7 @@
   font-size: 15px;
   position: relative;
   cursor: pointer;
+  padding: 0 24px;
 }
 .modalSection {
   display: flex;
@@ -50,6 +49,7 @@
   font-size: 15px;
   position: relative;
   cursor: pointer;
+  padding: 0 24px;
 }
 .modalSection div:hover > p,
 .submodalSection div:hover > p {
@@ -104,11 +104,14 @@ all:none;
   position: relative;
  padding-right: -1rem;
 } */
-
+.modalSubSection {
+  margin-bottom: 12px;
+}
 .modalDivider {
   height: 15px;
   background: #e7e7e7;
   width: 100%;
+  margin: 8px 0;
 }
 
 .logo {

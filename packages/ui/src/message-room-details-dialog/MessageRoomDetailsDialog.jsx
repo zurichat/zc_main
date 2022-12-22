@@ -177,21 +177,23 @@ function MessageRoomDetailsDialog({
               closeEdit={toggleEditTopicModal}
             />
           )}
+          {showLeaveChannelModal && (
+            <LeaveChannelModal
+              closeEdit={toggleLeaveChannelModal}
+              closeAll={close}
+            />
+          )}
+          {showDeleteChannel && (
+            <DeleteChannel closeEdit={toggleDeleteChannel} />
+          )}
+          {showPrivateChannel && (
+            <PrivateChannel closeEdit={togglePrivateChannel} />
+          )}
+          {showArchiveChannel && (
+            <ArchiveChannel closeEdit={toggleArchiveChannel} />
+          )}
         </DialogContents>
       </DialogOverlays>
-      {showLeaveChannelModal && (
-        <LeaveChannelModal
-          closeEdit={toggleLeaveChannelModal}
-          closeAll={close}
-        />
-      )}
-      {showDeleteChannel && <DeleteChannel closeEdit={toggleDeleteChannel} />}
-      {showPrivateChannel && (
-        <PrivateChannel closeEdit={togglePrivateChannel} />
-      )}
-      {showArchiveChannel && (
-        <ArchiveChannel closeEdit={toggleArchiveChannel} />
-      )}
     </div>
   );
 }

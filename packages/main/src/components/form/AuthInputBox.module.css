@@ -21,11 +21,12 @@
 
 /* input Label */
 .InputLabel {
-  margin-block: 0.2em;
-  font-weight: bold;
-  font-size: 1.4em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  font-size: 0.9rem;
   /* line-height: 1.8em; */
-  color: #3a3a3a;
+  color:#1D1C1D;
 }
 
 .InputLabelError {
