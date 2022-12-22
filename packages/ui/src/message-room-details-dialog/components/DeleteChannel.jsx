@@ -11,7 +11,8 @@ const DeleteChannel = ({ closeEdit }) => {
   const room = sessionStorage.getItem("currentRoom") || null;
   const organizationID = localStorage.getItem("currentWorkspace") || null;
   const BASE_URL = "https://chat.zuri.chat";
-  const user = JSON.parse(sessionStorage.getItem("user")) || null;
+  const orgs = JSON.parse(sessionStorage.getItem("organisations")) || null;
+
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
@@ -19,12 +20,12 @@ const DeleteChannel = ({ closeEdit }) => {
       .get(`${BASE_URL}/api/v1/org/${organizationID}/rooms/${room}`)
       .then(res => {
         const data = res.data.data;
-        if (data.room_members[`${user.id}`].role === "admin") {
+        if (data.room_members[`${orgs?.[0]?.member_id}`].role === "admin") {
           setIsAdmin(true);
         }
       })
       .catch(e => console.error(e));
-  });
+  }, []);
 
   //function for deleting a channel
   const handleDelete = () => {
