@@ -8,7 +8,7 @@ const CommentBoardWrapper = styled.aside`
   position: relative;
   height: 100%;
   background-color: #fff;
-  padding: 0 0 20px 0;
+  padding: 0 0 5px 0;
   overflow-y: auto;
   overflow-x: none;
 

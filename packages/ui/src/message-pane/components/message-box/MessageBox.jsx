@@ -4,6 +4,10 @@ import RichTextRenderer from "~/rich-text-renderer/RichTextRenderer";
 import styles from "../../message-pane.module.css";
 
 export default function MessageBox({ message }) {
+  const isImage = url => {
+    const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    return allowedExtensions.exec(url);
+  };
   return (
     <div className="msg-container">
       <div className="img__wrapper">
@@ -38,13 +42,16 @@ export default function MessageBox({ message }) {
               <RichTextRenderer richUiMessageConfig={message.richUiData} />
             )}
           </div>
-          {message?.files?.map((e, i) => {
-            return (
-              <div key={i} className={styles.fileWrapper}>
-                <span className="file-name">Media</span>
-              </div>
-            );
-          })}
+          <div className={styles.fileWrapper}>
+            {message?.files?.map((e, i) => {
+              return (
+                <div key={i}>
+                  {isImage(e) && <img src={e} className={styles.file} />}
+                  {!isImage(e) && <embed src={e} className={styles.file} />}
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>
