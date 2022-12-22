@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import styles from "../styles/Sidebar.module.css";
 import { useTranslation } from "react-i18next";
-
+import { useHistory } from "react-router-dom";
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
 import liveicon from "../assets/icons/newlive.svg";
@@ -20,8 +20,10 @@ const categories = [];
 
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+  let currentRoom = sessionStorage.getItem("currentRoom") || null;
   let currentWorkspaceShort =
     localStorage.getItem("currentWorkspaceShort") || null;
+  const history = useHistory();
 
   const { t } = useTranslation();
 
@@ -55,7 +57,7 @@ const Sidebar = props => {
         document.querySelector("body").style.cursor = "col-resize";
 
         // collapse the sidebar on further minimization
-        if (newWidth <= 230) setSidebarWidth(0);
+        if (newWidth <= 185) setSidebarWidth(0);
       }
     },
     [isResizing]
@@ -94,6 +96,45 @@ const Sidebar = props => {
     storeSideBarInfo
   ]);
 
+  //
+  //   Check if roomId is Valid else navigate to a valid room
+  useEffect(() => {
+    if (props.state.sidebar) {
+      let data = checkRoomId(props.state.sidebar);
+      if (data.valid === false && data.nextRoomId) {
+        sessionStorage.setItem("currentRoom", data.nextRoomId);
+        history.replace(data.nextRoomId);
+      }
+    }
+  }, [props.state.sidebar]);
+  //
+  //   Check if roomId is Valid else navigate to a valid room
+  function checkRoomId(params) {
+    let valid = [];
+    let nextRoomId = [];
+    if (params) {
+      Object.entries(params).filter(product => {
+        for (let prop in product) {
+          let data = Object.values(product[prop]);
+          for (let i = 0; i < data.length; i++) {
+            if (data[i].joined_rooms) {
+              let validRoomId = data[i].joined_rooms.some(
+                ele => ele.room_id === currentRoom
+              );
+              valid.push(validRoomId);
+              nextRoomId.push(...data[i].joined_rooms);
+              break;
+            }
+          }
+        }
+      });
+    }
+    return {
+      valid: valid.includes(true),
+      nextRoomId: nextRoomId[0].room_id
+    };
+  }
+  //
   function customFilter(objList, public_rooms, joined_rooms) {
     let newObject = {};
     const keys = Object.keys(objList);
@@ -162,7 +203,7 @@ const Sidebar = props => {
     sales: "sales",
     productivity: "productivity",
     channels: "channels",
-    "direct messages": "direct_messages",
+    "direct messages": "direct messages",
     others: "others"
   };
 

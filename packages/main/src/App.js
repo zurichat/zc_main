@@ -1,39 +1,45 @@
-import { lazily } from "react-lazily";
 import React, { Suspense } from "react";
+import { lazily } from "react-lazily";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 // All components imported here
 import { GeneralErrorBoundary, GeneralLoading } from "./components";
-import ManageMembers from "./components/manage-members/ManageMembers";
+import AccDeactivated from "./components/account-deactivated/AccDeactivated";
+import AcctDeactivation from "./components/account-deactivation/AcctDeactivation";
 import ChangeWorkspaceName from "./components/change-workspace-name/ChangeWorkspaceName";
+import ConfirmDeactivation from "./components/confirm-deactivation/ConfirmDeactivation";
+import ManageMembers from "./components/manage-members/ManageMembers";
+import AllSessionSignOut from "./components/sessions-signout/AllSessionSignOut";
 
 // All utilities imported here
 import { withSuspense } from "./utils";
 
 // All Pages imported here
+import TermsOfService from "../src-old/pages/termsOfService/index";
+import SettingsHome from "../src/pages/protected/settings-home/SettingsHome";
+import { useAuth } from "./auth/use-auth";
+import DeleteWorkspace from "./components/delete-workspace/deleteWorkspace";
 import {
-  HomePage,
-  Login,
-  SignUp,
-  NewSignOut,
   AboutPage,
+  ChangePassword,
   ContactUsPage,
   DownloadsPage,
+  ErrorPage,
+  HomePage,
+  InvitePage,
+  Login,
+  NewSignOut,
   PluginsPage,
   PricingPage,
-  InvitePage,
-  ResetPassword,
-  ChangePassword,
-  WhyZuriChat,
   PrivacyPage,
-  ErrorPage
+  ResetPassword,
+  SignUp,
+  WhyZuriChat
 } from "./pages";
-import TermsOfService from "../src-old/pages/termsOfService/index";
-import { useAuth } from "./auth/use-auth";
-import SettingsHome from "../src/pages/protected/settings-home/SettingsHome";
-import AccountProfile from "./pages/protected/account-profile/AccountProfile";
-import ManageWorkspace from "./pages/protected/manage-workspace/ManageWorkspace";
 import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
+import AccountProfile from "./pages/protected/account-profile/AccountProfile";
+import Invitation from "./pages/protected/invitations/Invitation";
+import ManageWorkspace from "./pages/protected/manage-workspace/ManageWorkspace";
 import Help from "./pages/static/help";
 import TermsCondition from "./pages/static/legal";
 
@@ -120,6 +126,30 @@ const App = () => (
           <ProtectedRoute exact path="/admin/settings/accountsProfile">
             <AccountProfile />
           </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/sessions-signout"
+          >
+            <AllSessionSignOut />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/account-deactivation"
+          >
+            <AcctDeactivation />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/account-deactivation/confirm-deactivate"
+          >
+            <ConfirmDeactivation />
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/settings/accountsProfile/account-deactivation/confirm-deactivate/acct-deactivated"
+          >
+            <AccDeactivated />
+          </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/ManageWorkspace">
             <ManageWorkspace />
           </ProtectedRoute>
@@ -129,8 +159,14 @@ const App = () => (
           >
             <ChangeWorkspaceName />
           </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/workspace/delete">
+            <DeleteWorkspace />
+          </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/managemembers">
             <ManageMembers />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/invitation">
+            <Invitation />
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/aboutworkspace">
             <AboutWorkSpace />
