@@ -38,15 +38,13 @@ export default function MessageBox({ message }) {
               <RichTextRenderer richUiMessageConfig={message.richUiData} />
             )}
           </div>
-          <div>
-            {message?.files?.map((e, i) => {
-              return (
-                <div key={i} className={styles.fileWrapper}>
-                  <span className="file-name">Media</span>
-                </div>
-              );
-            })}
-          </div>
+          {message?.files?.map((e, i) => {
+            return (
+              <div key={i} className={styles.fileWrapper}>
+                <span className="file-name">Media</span>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>

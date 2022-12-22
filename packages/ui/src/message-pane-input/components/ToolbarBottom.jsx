@@ -50,7 +50,8 @@ const ToolbarBottom = props => {
     emojiSelect,
     sendMessageHandler,
     sendAttachedFileHandler,
-    sentAttachedFile
+    sentAttachedFile,
+    clearAttached
   } = props;
   const [focus, setFocus] = useState(false);
   const toggleFocus = () => setFocus(!false);
@@ -80,15 +81,12 @@ const ToolbarBottom = props => {
 
   //Handles sending of attachedfile
   const handleAttachMedia = e => {
-    {
-      e.preventDefault();
-      //Post request is sent here
-      sendMessageHandler(attachedFile);
+    e.preventDefault();
+    //Post request is sent here
+    sendMessageHandler(attachedFile);
 
-      //Then this is to clear the file from the state
-      props.sentAttachedFile(null);
-      clearAttached();
-    }
+    //Then this is to clear the file from the state
+    props.sentAttachedFile(null);
   };
 
   const handleClickAway = () => {
@@ -101,29 +99,15 @@ const ToolbarBottom = props => {
   }
 
   const handleSelectMedia = e => {
-    if (attachedFile) {
-      const children = Array.from(attachedFile).concat(
-        Array.from(e.target.files)
-      );
-      setAttachedFile(children);
-      props.sentAttachedFile(children);
-    } else {
-      setAttachedFile(e.target.files);
-      props.sentAttachedFile(e.target.files);
-    }
+    setAttachedFile(e.target.files);
+    props.sentAttachedFile(e.target.files);
     setshowAttachInputBox(false);
   };
 
-  // on click clear attached file
-  const clearAttached = () => {
-    setInputKey("reset-attached");
-    setAttachedFile("");
-    setshowAttachInputBox(false);
-  };
-
-  const handleClickSendMessage = () => {
+  const handleClickSendMessage = e => {
     sendMessageHandler(editorState.getCurrentContent());
     setEditorState(EditorState.createEmpty());
+    clearAttached();
   };
   const handleInlineStyle = (event, style) => {
     event.preventDefault();

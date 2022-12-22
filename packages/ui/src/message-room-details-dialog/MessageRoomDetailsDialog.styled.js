@@ -19,7 +19,6 @@ export const LeaveModal = styled.div`
   background-color: white;
   height: max-content;
   padding: 0.5rem 1rem;
-  margin-top: 10%;
   border-radius: 0.3rem;
 `;
 

@@ -22,6 +22,17 @@ start({
 
 const currentWorkspace = localStorage.getItem("currentWorkspaceShort") || null;
 
+function loadApp(plugin) {
+  return Promise.resolve()
+    .then(() => {
+      return System.import(`@zuri/${plugin.name}`);
+    })
+    .then(app => {
+      removeLoader();
+      return app;
+    });
+}
+
 window.addEventListener("zuri-plugin-load", () => {
   setTimeout(() => {
     const registeredAppsName = getAppNames().filter(
@@ -31,14 +42,11 @@ window.addEventListener("zuri-plugin-load", () => {
       allPlugins.forEach(plugin => {
         registerApplication({
           name: plugin.name,
-          app: () => System.import(`@zuri/${plugin.name}`),
+          app: loadApp(plugin),
           activeWhen: pathToActiveWhen(`/workspace/:id/${plugin.pluginPath}`),
           customProps: {
             domElement: document.getElementById("zuri-plugin-load-section"),
-
             baseName: `/workspace/${currentWorkspace}/${plugin.pluginPath}`
-            // baseName: `/workspace/${localStorage.getItem("currentWorkspace")}/${
-            //   plugin.pluginPath
           }
         });
       });
@@ -64,3 +72,10 @@ window.addEventListener("zuri-plugin-load", () => {
     }
   }, 4000);
 });
+
+function removeLoader() {
+  setTimeout(() => {
+    const element = document.getElementById("single-spa-loader");
+    element?.remove();
+  }, 1000);
+}
