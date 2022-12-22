@@ -8,6 +8,10 @@ export const getUser = () => {
   return result;
 };
 
+export const getLanguage = () => {
+  return JSON.parse(localStorage.getItem("userData"));
+};
+
 // remove the token and user from the session storage
 export const removeUserSession = () => {
   sessionStorage.removeItem("token");

@@ -48,8 +48,7 @@ const TimeZone = () => {
             className: styles.sucess_toast_style,
             draggable: true,
             autoClose: 3000,
-            transition: Zoom,
-            positin: toast.POSITION.BOTTOM_CENTER
+            transition: Zoom
           });
         }
         const userTimeZone = JSON.parse(sessionStorage.getItem("user"));
@@ -64,8 +63,7 @@ const TimeZone = () => {
             className: styles.error_toast_style,
             draggable: true,
             autoClose: 3000,
-            transition: Zoom,
-            position: toast.POSITION.BOTTOM_CENTER
+            transition: Zoom
           });
         }
       });

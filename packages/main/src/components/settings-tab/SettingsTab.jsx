@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import styles from "../settings-tab/SettingsTab.module.css";
 import TimeZone from "../time-zone/TimeZone";
@@ -9,11 +9,12 @@ import TwoFactor from "../two-factor/TwoFactor";
 import ChangeEmail from "../change-email/ChangeEmail";
 import Language from "../language/Language";
 import UserName from "../user-name/UserName";
-import { getUser } from "../settings-tab/utils/Common";
+import { getUser, getLanguage } from "../settings-tab/utils/Common";
 import { useTranslation } from "react-i18next";
 
 const SettingsTab = () => {
   const userData = getUser();
+  const lang = getLanguage();
   const { t } = useTranslation();
   const handleSignOut = () => {};
   return (
@@ -65,7 +66,9 @@ const SettingsTab = () => {
       <AnimateSharedLayout>
         <PreferenceWrapper
           title={t("lang_settings_tab")}
-          text={t("chooselang_settings_tab")}
+          text={`${t("chooselang_settings_tab")}  ${
+            lang.user.settings.languages_and_regions.language
+          }.`}
           btnText={t("expand_settings_tab")}
         >
           {/* Language input field goes under here */}

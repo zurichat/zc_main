@@ -127,17 +127,17 @@ export default [
   },
   {
     key: "chooselang_settings_tab",
-    en: "Choose the language you’d like to use with Zurichat. Your language is currently set to: English (Nigeria).",
-    de: "Wählen Sie die Sprache, die Sie mit Zurichat verwenden möchten. Ihre Sprache ist derzeit eingestellt auf: Englisch (Nigeria).",
-    nl: "Kies de taal die u wilt gebruiken met Zurichat. Uw taal is momenteel ingesteld op: Engels (Nigeria).",
-    engb: "Choose the language you’d like to use with Zurichat. Your language is currently set to: English (Nigeria).",
-    fr: "Choisissez la langue que vous souhaitez utiliser avec Zurichat. Votre langue est actuellement réglée sur : English (Nigeria).",
+    en: "Choose the language you’d like to use with Zurichat. Your language is currently set to:",
+    de: "Wählen Sie die Sprache, die Sie mit Zurichat verwenden möchten. Ihre Sprache ist derzeit eingestellt auf:",
+    nl: "Kies de taal die u wilt gebruiken met Zurichat. Uw taal is momenteel ingesteld op:",
+    engb: "Choose the language you’d like to use with Zurichat. Your language is currently set to:",
+    fr: "Choisissez la langue que vous souhaitez utiliser avec Zurichat. Votre langue est actuellement réglée sur :",
     zh: "选择你想使用的语言与Zurichat。你的语言目前被设置为。英语（尼日利亚）。",
-    ar: "اختر اللغة التي ترغب في استخدامها مع Zurichat. تم تعيين لغتك حاليًا على: الإنجليزية (نيجيريا).",
-    es: "Elija el idioma que desea utilizar con Zurichat. Su idioma actual es: Inglés (Nigeria).",
-    it: "Scegliete la lingua che desiderate utilizzare con Zurichat. Attualmente la lingua è impostata su: Inglese (Nigeria).",
+    ar: "اختر اللغة التي ترغب في استخدامها مع Zurichat. تم تعيين لغتك حاليًا على:",
+    es: "Elija el idioma que desea utilizar con Zurichat. Su idioma actual es:",
+    it: "Scegliete la lingua che desiderate utilizzare con Zurichat. Attualmente la lingua è impostata su:",
     iw: "בחר את השפה שבה ברצונך להשתמש עם Zurichat. השפה שלך מוגדרת כעת ל: אנגלית (ניגריה).",
-    pt: "Escolha a língua que gostaria de utilizar com Zurichat. A sua língua está actualmente definida: Inglês (Nigéria)."
+    pt: "Escolha a língua que gostaria de utilizar com Zurichat. A sua língua está actualmente definida:"
   },
   {
     key: "sign_settings_tab",
