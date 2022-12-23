@@ -89,6 +89,7 @@ const Home = () => {
                 style={{
                   display: "flex",
                   alignItems: "center",
+                  justifyContent: "space-between",
                   marginLeft: " 1em"
                 }}
               >
