@@ -33,14 +33,14 @@
   font-family: Lato;
   font-style: normal;
   font-weight: 900;
-  font-size: 15px;
+  font-size: 24px;
   color: #242424;
   font-weight: bold;
   width: 70%;
 }
 
 .settingleft span {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: normal;
   color: rgba(58, 58, 58, 0.9);
 }
@@ -58,7 +58,7 @@
   box-sizing: border-box;
   border-radius: 4px;
   padding: 9px 18px !important;
-  font-size: 13px;
+  font-size: 14px;
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   -ms-transition: all 0.5s ease-out;
@@ -77,11 +77,11 @@
 .settingsright .signout {
   background: #f40101;
   color: white;
-  font-size: 12px;
+  font-size: 14px !important;
 }
 
 .settingsright .delete {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .settings_wrapper {
@@ -157,7 +157,7 @@
 /* THE SECTION OF THE TWO FACTOR */
 
 .two_factor p {
-  font-size: 14px;
+  font-size: 20px;
   width: 60%;
   margin-top: 10px;
   line-height: 20px;

@@ -7,7 +7,11 @@ const Language = () => {
     <div className={styles.passwordsection}>
       <form className="row d-flex flex-column">
         <div className="col-md-5 mt-2">
-          <select className="form-select" required>
+          <select
+            className="form-select"
+            style={{ height: "40px", fontSize: "16px" }}
+            required
+          >
             <option disabled defaultValue>
               Choose language
             </option>

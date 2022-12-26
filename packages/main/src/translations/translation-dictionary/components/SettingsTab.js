@@ -14,6 +14,20 @@ export default [
     pt: "Senha"
   },
   {
+    key: "change_password_settings_tab",
+    en: "Change your password anytime",
+    de: "Ändern Sie Ihr Passwort jederzeit",
+    nl: "Wijzig uw wachtwoord op elk gewenst moment",
+    engb: "Change your password anytime",
+    fr: "Changez votre mot de passe à tout moment",
+    zh: "随时更改您的密码",
+    ar: "تغيير كلمة المرور الخاصة بك في أي وقت",
+    es: "Cambia tu contraseña en cualquier momento",
+    it: "Cambia la tua password in qualsiasi momento",
+    iw: "שנה את הסיסמה שלך בכל עת",
+    pt: "Altere sua senha a qualquer momento"
+  },
+  {
     key: "expand_settings_tab",
     en: "expand",
     de: "erweitern.",
@@ -278,5 +292,19 @@ export default [
     it: "Nome utente",
     iw: "שם המשתמש",
     pt: "Nome de utilizador"
+  },
+  {
+    key: "change_username_settings_tab",
+    en: "Change your username anytime",
+    de: "Ändern Sie Ihren Benutzernamen jederzeit",
+    nl: "Wijzig uw gebruikersnaam op elk gewenst moment",
+    engb: "Change your username anytime",
+    fr: "Changez votre nom d'utilisateur à tout moment",
+    zh: "随时更改您的用户名",
+    ar: "تغيير اسم المستخدم الخاص بك في أي وقت",
+    es: "Cambia tu nombre de usuario en cualquier momento",
+    it: "Cambia il tuo nome utente in qualsiasi momento",
+    iw: "שנה את שם המשתמש שלך בכל עת",
+    pt: "Altere seu nome de usuário a qualquer momento"
   }
 ];
