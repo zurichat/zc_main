@@ -22,7 +22,7 @@ const SettingsTab = () => {
       <AnimateSharedLayout>
         <PreferenceWrapper
           title={t("password_settings_tab")}
-          text=""
+          text={t("change_password_settings_tab")}
           btnText={t("expand_settings_tab")}
         >
           {/* Password input goes uunder here */}
@@ -77,9 +77,13 @@ const SettingsTab = () => {
       </AnimateSharedLayout>
 
       <div className={styles.settingsTab} id={styles.settingtab}>
-        <div className={styles.settingleft} id={styles.settingleft}>
+        <div
+          className={styles.settingleft}
+          id={styles.settingleft}
+          style={{ fontSize: "24px" }}
+        >
           {t("sign_settings_tab")} <br />
-          <span>{t("lost_settings_tab")}</span>
+          <span style={{ fontSize: "18px" }}>{t("lost_settings_tab")}</span>
         </div>
         <div className={styles.settingsright}>
           <Link to="/session-signout">
@@ -91,11 +95,15 @@ const SettingsTab = () => {
       </div>
 
       <div className={styles.settingsTab} id={styles.settingtab}>
-        <div className={styles.settingleft} id={styles.settingleft}>
+        <div
+          className={styles.settingleft}
+          id={styles.settingleft}
+          style={{ fontSize: "24px" }}
+        >
           {t("acc_settings_tab")} <br />
-          <span>{t("zuri_settings_tab")}</span>
+          <span style={{ fontSize: "18px" }}>{t("zuri_settings_tab")}</span>
           <br />
-          <span>
+          <span style={{ fontSize: "18px" }}>
             <strong> {t("note_settings_tab")}</strong>{" "}
             {t("account_settings_tab")}{" "}
             <NavLink to="/" className={styles.emailLink}>
@@ -115,6 +123,7 @@ const SettingsTab = () => {
       <AnimateSharedLayout>
         <PreferenceWrapper
           title={t("user_settings_tab")}
+          text={t("change_username_settings_tab")}
           btnText={t("expand_settings_tab")}
         >
           {/* Username input field goes under here */}

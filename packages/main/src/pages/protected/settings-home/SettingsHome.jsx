@@ -39,7 +39,14 @@ const Home = () => {
 
         <div className={classes.card}>
           <div className="mt-2">
-            <div className="" style={{ display: "flex", paddingLeft: "1.4em" }}>
+            <div
+              className=""
+              style={{
+                display: "flex",
+                paddingLeft: "1.4em",
+                alignItems: "center"
+              }}
+            >
               <div>
                 <span
                   className={classes.settings_icon_holder}
@@ -74,7 +81,7 @@ const Home = () => {
             <Link
               to="/admin/settings/accountsProfile"
               className=""
-              style={{ display: "flex" }}
+              style={{ display: "flex", alignItems: "center" }}
             >
               <div>
                 <span
@@ -89,6 +96,8 @@ const Home = () => {
                 style={{
                   display: "flex",
                   alignItems: "center",
+                  justifyContent: "space-between",
+                  width: "100%",
                   marginLeft: " 1em"
                 }}
               >
@@ -109,7 +118,7 @@ const Home = () => {
             style={{
               width: "calc(100% - 5%)",
               height: "0.5px",
-              margin: "2em auto"
+              margin: "1em auto"
             }}
           />
 
@@ -117,7 +126,7 @@ const Home = () => {
             <Link
               to="/admin/settings/ManageWorkspace"
               className=""
-              style={{ display: "flex" }}
+              style={{ display: "flex", alignItems: "center" }}
             >
               <div>
                 <span
