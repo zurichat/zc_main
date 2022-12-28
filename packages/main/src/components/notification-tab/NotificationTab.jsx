@@ -56,13 +56,10 @@ const NotificationTab = ({ toggleState }) => {
 
   return (
     <Container>
-      <Heading>Mobile push notifications</Heading>
+      <Heading>Mobile Push Notifications</Heading>
       <NotifyMeAndSoundContainer>
         <NotifyContainer>
-          <InputLabel htmlFor="notify">
-            {" "}
-            <b>notify me about...</b>{" "}
-          </InputLabel>
+          <InputLabel htmlFor="notify"> Notify me about </InputLabel>
 
           <NotifyInput>
             <Select>
@@ -79,7 +76,7 @@ const NotificationTab = ({ toggleState }) => {
         <SoundContainer>
           <InputLabel htmlFor="notify">
             {" "}
-            <b>Sound: </b>
+            <>Sound </>
           </InputLabel>
           <SoundPreviewBox>
             <Select
@@ -262,7 +259,7 @@ const NotificationTab = ({ toggleState }) => {
         <InputBox>
           <Input type="radio" />
           <SigninBox>
-            <span>Dont't send me any sign-in notifications</span>
+            <span>Don't send me any sign-in notifications</span>
             <Saved>
               <CheckCircle /> saved
             </Saved>
@@ -292,12 +289,12 @@ const Container = styled.div`
 `;
 
 const Heading = styled.h2`
-  font-size: 1.5rem;
+  font-size: 24px;
   line-height: 1.75rem;
   width: 100%;
   font-weight: 700;
   @media (max-width: ${500}px) {
-    font-size: 1.2rem;
+    font-size: 18px;
   }
 `;
 
@@ -328,21 +325,30 @@ const SoundContainer = styled.div`
   }
 `;
 
-const InputLabel = styled.label``;
+const InputLabel = styled.label`
+  font-size: 19px;
+  font-weight: normal;
+  margin-top: 0.7rem;
+`;
 const Select = styled.select`
   width: 100%;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 18px;
   padding: 0.45rem 0.75rem 0.55rem;
   border: 1px solid #868686;
   -webkit-appearance: none;
   outline: 0;
+  height: 50px;
 `;
 
 const IconBox = styled.span`
   position: absolute;
   right: 0.5rem;
-  bottom: 0.5em;
+  bottom: 27%;
+  :hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
   &.preview {
     right: 8em;
   }
@@ -360,8 +366,9 @@ const SoundPreviewBox = styled.div`
   }
 `;
 const PreviewButton = styled.button`
-  padding: 8px 14px 9px;
-  font-size: 15px;
+  padding: 0 14px;
+  height: 50px;
+  font-size: 16px;
   background: #00b87c;
   color: white;
   border-radius: 5px;
@@ -382,24 +389,24 @@ const NotifyInput = styled.div`
 `;
 
 const EmailPreferenceBox = styled.div`
-  margin-top: 2em;
+  margin-top: 0.7rem;
 `;
 
 const EmailTitle = styled.h2`
-  font-size: 1rem;
+  font-size: 24px;
   line-height: 1.75rem;
 `;
 
 const EmailDetail = styled.p`
-  font-size: 14px;
+  font-size: 18px;
+  margin: 0.7em 0 1.3rem;
   &.signin {
     font-weight: 600;
-    margin-top: 1.5em;
-    font-size: 16px;
+    font-size: 18px;
   }
   &.emailnotify {
     color: #1d1c1d;
-    font-size: 14px;
+    font-size: 18px;
   }
 `;
 
@@ -407,7 +414,7 @@ const EmailNotify = styled.h2`
   padding-bottom: 0 !important;
   margin-bottom: 0;
   line-height: normal;
-  font-size: 16px;
+  font-size: 24px;
 `;
 
 const Form = styled.form``;
@@ -416,7 +423,7 @@ const Input = styled.input`
   top: 0.1em;
 `;
 const FormParagraph = styled.p`
-  font-size: 14px;
+  font-size: 18px;
 `;
 
 const InputBox = styled.div`
@@ -428,7 +435,7 @@ const InputBox = styled.div`
   }
   span {
     padding-left: 0.5em;
-    font-size: 13px;
+    font-size: 18px;
   }
 `;
 
@@ -456,7 +463,7 @@ const SigninBox = styled.div`
     font-weight: bold;
   }
   p {
-    font-size: 14px;
+    font-size: 18px;
     padding-left: 0.5em;
   }
 `;
