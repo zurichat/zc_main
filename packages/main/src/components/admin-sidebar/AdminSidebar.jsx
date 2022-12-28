@@ -101,8 +101,6 @@ const AdminSidebar = ({ setModal, openModal }) => {
               history.goBack();
             }}
             className={styles.sidebarLink}
-
-            // to="/"
           >
             <FiCornerUpLeft className={styles.icon} />
             {t("admin_side_bar_back")}

@@ -36,6 +36,7 @@
   font-size: 15px;
   position: relative;
   cursor: pointer;
+  padding: 0 24px;
 }
 .modalSection {
   display: flex;
@@ -48,6 +49,7 @@
   font-size: 15px;
   position: relative;
   cursor: pointer;
+  padding: 0 24px;
 }
 .modalSection div:hover > p,
 .submodalSection div:hover > p {
@@ -102,11 +104,14 @@ all:none;
   position: relative;
  padding-right: -1rem;
 } */
-
+.modalSubSection {
+  margin-bottom: 12px;
+}
 .modalDivider {
   height: 15px;
   background: #e7e7e7;
   width: 100%;
+  margin: 8px 0;
 }
 
 .logo {
