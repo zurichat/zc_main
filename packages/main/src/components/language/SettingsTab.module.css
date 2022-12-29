@@ -88,6 +88,38 @@
   padding: 10px 0;
 }
 
+/* TOAST STYLE */
+.sucess_toast_style  {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 240px;
+  background: #00b87c;
+  font-size: 13px;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.sucess_toast_style > button, .error_toast_style > button {
+  background: transparent;
+  border: 0;
+  color: #dedede;
+}
+
+.error_toast_style  {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 220px;
+  background: rgba(244, 66, 66, 0.852);
+  font-size: 13px;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
 /* THE SECTION OF THE PASSWORD */
 
 .passwordsection {
