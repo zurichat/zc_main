@@ -78,3 +78,5 @@ dist
 
 packages/main/ignore
 packages/root-config/cypress.env.json
+temp_auto_push.bat
+temp_interactive_push.bat
